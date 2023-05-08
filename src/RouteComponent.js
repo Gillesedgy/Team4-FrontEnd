@@ -1,5 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { matchRoutes } from "react-router";
+
 //components
 
 import Account from "./Pages/Account";
@@ -23,7 +25,7 @@ export default function RouteComponent() {
   return (
     <div>
       <Routes>
-        <Route path="/welcome" element={<Welcome />} />
+        <Route path="/" element={<Welcome />} />
         <Route path="/login" element={<Login />} />
         <Route path="/jobs" element={<JobPage />} />
         <Route path="/jobs/:id" element={<JobDetails />} />
