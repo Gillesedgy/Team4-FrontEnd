@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import { matchRoutes } from "react-router";
 
 //components
-
 import Account from "./Pages/Account";
 import CommunityBoard from "./Pages/CommunityBoard";
 import Error from "./Pages/Error";

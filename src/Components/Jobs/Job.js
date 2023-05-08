@@ -1,5 +1,26 @@
 import React from "react";
 
-export default function Job() {
-  return <div>Job</div>;
+//Todo: Import params from jobs (use table for reference)
+export default function Job({
+  jobTitle,
+  company,
+  email,
+  location,
+  date,
+  jobType,
+  description,
+  language,
+}) {
+  return (
+    <div className="job-single">
+      <h2>{jobTitle}</h2>
+      <p>{language}</p>
+      <p>postingDate</p>
+      <h4>{email}</h4>
+      <h3>{company}</h3>
+      <p>{location}</p>
+      <p>{jobType}</p>
+      <p>{description}</p>
+    </div>
+  );
 }
