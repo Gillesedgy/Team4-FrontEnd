@@ -6,7 +6,7 @@ export function useContextProvider() {
 }
 
 function Provider({ children }) {
-  // a piece of state that will be passed to other files
+  // A piece of state that will be passed to other files
   return <ContextData.Provider value={{}}>{children}</ContextData.Provider>;
 }
 
