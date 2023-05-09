@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-";
+import { Link } from "react-router-dom";
 
 export default function Rental() {
   return <div></div>;
