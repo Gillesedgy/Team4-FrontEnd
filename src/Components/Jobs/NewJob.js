@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./form.css";
 export default function NewJob({ data }) {
   // create new job state
   const [newJob, setNewJob] = useState({
@@ -13,6 +13,7 @@ export default function NewJob({ data }) {
     language: "",
     is_favorite: false,
   });
+  //Todo:
   // add new job by making a call
   const addNewJob = () => {
     // axios goes here ...
@@ -31,6 +32,7 @@ export default function NewJob({ data }) {
     e.preventDefasult();
     addNewJob(newJob);
   };
+
   //! Character Count Feature
   // const characterLimit = 500;
   // const handleCharacterCount = (e) => {
@@ -42,8 +44,7 @@ export default function NewJob({ data }) {
   //   }
   // };
   return (
-    <div>
-      NewJob
+    <div className="jobFrom">
       <form onSubmit={handleSubmit}>
         <label htmlFor="jobTitle">Job Title:</label>
         <input
@@ -102,6 +103,7 @@ export default function NewJob({ data }) {
 
         <label htmlFor="description">Description:</label>
         <textarea
+          style={{ resize: "none" }}
           id="description"
           value={newJob.description}
           onChange={handleTextChange}
@@ -119,7 +121,7 @@ export default function NewJob({ data }) {
         {/* //ToDo:  modify this to update or create/post on the same form */}
         <button type="submit">{data ? "Update" : "Post"}</button>
         <button type="submit">Back</button>
-        {/* have button navigate back */}
+        {/* have button navigate back prev page */}
       </form>
     </div>
   );
