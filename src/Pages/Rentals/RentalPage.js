@@ -1,5 +1,5 @@
 import React from "react";
-import Rentals from "../Components/Rentals/Rentals";
+import Rentals from "../../Components/Rentals/Rentals";
 
 export default function RentalPage() {
   return (
