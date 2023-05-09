@@ -1,5 +1,5 @@
 import React from "react";
-import Job from "../Components/Jobs/Job";
+import Job from "../../Components/Jobs/Job";
 export default function JobPage() {
   return (
     <div>

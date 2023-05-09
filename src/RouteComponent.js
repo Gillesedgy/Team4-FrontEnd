@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { matchRoutes } from "react-router";
 
 //components
 import Account from "./Pages/Account";
@@ -10,15 +9,15 @@ import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import Welcome from "./Pages/Welcome";
 //? Jobs
-import JobPage from "./Pages/JobPage";
+import JobPage from "./Pages/Jobs/JobPage";
 import JobDetails from "./Components/Jobs/JobDetails";
-import JobEdit from "./Components/Jobs/JobEdit";
-import NewJob from "./Components/Jobs/NewJob";
+import JobEditPage from "./Pages/Jobs/JobEditPage";
+import JobNewPage from "./Pages/Jobs/JobNewPage";
 //? Rentals
-import RentalPage from "./Pages/RentalPage";
+import RentalPage from "./Pages/Rentals/RentalPage";
 import RentalDetails from "./Components/Rentals/RentalDetails";
-import NewRental from "./Components/Rentals/NewRental";
-import RentalEdit from "./Components/Rentals/RentalEdit";
+import RentalNewPage from "./Pages/Rentals/RentalNewPage";
+import RentalEditPage from "./Pages/Rentals/RentalEditPage";
 
 export default function RouteComponent() {
   return (
@@ -28,12 +27,12 @@ export default function RouteComponent() {
         <Route path="/login" element={<Login />} />
         <Route path="/jobs" element={<JobPage />} />
         <Route path="/jobs/:id" element={<JobDetails />} />
-        <Route path="/jobs/:id/edit" element={<JobEdit />} />
-        <Route path="/jobs/new" element={<NewJob />} />
+        <Route path="/jobs/:id/edit" element={<JobEditPage />} />
+        <Route path="/jobs/new" element={<JobNewPage />} />
         <Route path="/rentals" element={<RentalPage />} />
         <Route path="/rentals/:id" element={<RentalDetails />} />
-        <Route path="/rentals/:id/edit" element={<RentalEdit />} />
-        <Route path="/rentals/new" element={<NewRental />} />
+        <Route path="/rentals/:id/edit" element={<RentalEditPage />} />
+        <Route path="/rentals/new" element={<RentalNewPage />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="CommunityBoard" element={<CommunityBoard />} />
         <Route path="/account" element={<Account />} />
