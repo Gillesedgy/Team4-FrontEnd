@@ -14,6 +14,7 @@ export default function Rentals() {
       .then((res) => setRentals(res))
       .catch((err) => console.warn(err));
   }, []);
+
   return (
     <div className="rentals">
       <h3>Rental Listings</h3>
