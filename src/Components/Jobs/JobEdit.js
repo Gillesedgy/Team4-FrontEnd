@@ -103,7 +103,6 @@ export default function JobEdit() {
           onChange={handleTextChange}
           required
         />
-        <p></p>
         <label htmlFor="is_favorite">Favorite:</label>
         <input
           type="checkbox"
