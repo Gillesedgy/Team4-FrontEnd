@@ -40,7 +40,7 @@ export default function NewJob({ data }) {
   //   if (characterLimit - newJob.description.length >= 1) {
   //     setNewJob({ ...NewJob, [e.target.id]: e.target.value });
   //   } else {
-  //     // playMySound(error);
+  //    // playMySound(error);
   //   }
   // };
   return (
