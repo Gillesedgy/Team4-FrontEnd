@@ -29,10 +29,10 @@ export default function RouteComponent() {
         <Route path="/jobs/:id" element={<JobDetails />} />
         <Route path="/jobs/:id/edit" element={<JobEditPage />} />
         <Route path="/jobs/new" element={<JobNewPage />} />
-        <Route path="/rentals" element={<RentalPage />} />
-        <Route path="/rentals/:id" element={<RentalDetails />} />
-        <Route path="/rentals/:id/edit" element={<RentalEditPage />} />
-        <Route path="/rentals/new" element={<RentalNewPage />} />
+        <Route path="/listings" element={<RentalPage />} />
+        <Route path="/listings/:id" element={<RentalDetails />} />
+        <Route path="/listings/:id/edit" element={<RentalEditPage />} />
+        <Route path="/listings/new" element={<RentalNewPage />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="CommunityBoard" element={<CommunityBoard />} />
         <Route path="/account" element={<Account />} />
