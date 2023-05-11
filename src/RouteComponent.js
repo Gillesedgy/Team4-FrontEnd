@@ -7,7 +7,7 @@ import CommunityBoard from "./Pages/CommunityBoard";
 import Error from "./Pages/Error";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
-import Welcome from "./Pages/Welcome";
+import Welcome from "./Pages/Welcome/Welcome";
 //? Jobs
 import JobPage from "./Pages/Jobs/JobPage";
 import JobDetails from "./Components/Jobs/JobDetails";
