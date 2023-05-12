@@ -12,13 +12,15 @@ export default function RentalDetails() {
 
   const [showMore, setShowMore] = useState(false);
 
-  // const fullText = rental.description;
+  const fullText = rental.description;
+  const shortText =
+    String(rental.description).split("").splice(0, 10).join("") + "...";
 
-  // const toggleShowMore = () => {
-  //   setShowMore(!showMore);
-  // };
+  const toggleShowMore = () => {
+    setShowMore(!showMore);
+  };
 
-  // const displayText = showMore ? fullText : fullText.slice(0, 100);
+  const displayText = showMore ? fullText : shortText;
 
   useEffect(() => {
     axios
@@ -40,8 +42,8 @@ export default function RentalDetails() {
   };
 
   return (
-    <div>
-      RentalDetails
+    <div className="rental_detail">
+      Rental Details
       <div>
         <h3 className="rental_title">{rental.title}</h3>
       </div>
@@ -49,13 +51,13 @@ export default function RentalDetails() {
         <img src={rental.image_url} alt={rental.image_url} />
       </div>
       <div className="rental_description">
-        <p>{rental.description}</p>
+        <p>{displayText}</p>
 
-        {/* {!showMore ? (
+        {!showMore ? (
           <button onClick={toggleShowMore}>View More...</button>
         ) : (
-          <button onClick={toggleShowMore}>View less...</button>
-        )} */}
+          <button onClick={toggleShowMore}>View less</button>
+        )}
       </div>
       <div className="rental_map">
         <h5>View on Map</h5>
