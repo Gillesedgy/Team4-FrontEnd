@@ -2,7 +2,10 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
+//* --------Map---------------
+import MapView from "../../Features/MapView";
+import { useLoadScript } from "@react-google-maps/api"; // this is needed to make sure the map loads correctly
+//* -------------------------------------------
 let API = process.env.REACT_APP_API_URL;
 
 export default function RentalDetails() {
@@ -40,9 +43,13 @@ export default function RentalDetails() {
       })
       .catch((error) => console.warn(error));
   };
+  //*
 
   return (
     <div className="rental_detail">
+      <div className="map-container">
+        <MapView />
+      </div>
       Rental Details
       <div>
         <h3 className="rental_title">{rental.title}</h3>
