@@ -17,19 +17,18 @@ export default function Job({
 }) {
   return (
     <div className="job-container">
-       <p className="date">
-          <strong>Posted Date:</strong> {posted_date}
-        </p>
+      <p className="date">
+        <strong>Posted Date:</strong> {posted_date}
+      </p>
       <div className="job-body">
         {" "}
-        <Link className="link" to={`jobs/${id}`}>
+        <Link className="link" to={`/jobs/${id}`}>
           {" "}
           <p>{job_title}</p>
         </Link>
         <p>
           <strong>Favorite:</strong> {is_favorite ? "<3" : null}
         </p>
-       
         <p>
           <strong>Company:</strong> {company}
         </p>

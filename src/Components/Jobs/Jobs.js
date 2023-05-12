@@ -5,22 +5,21 @@ import Job from "./Job";
 // This components is responsible for rendering all the jobs that are present from the database
 const API = process.env.REACT_APP_API_URL;
 export default function Jobs() {
-  const [myJobs, setMyJobs] = useState([]);
+  const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
     axios
       .get(`${API}/jobs`)
       .then((res) => {
-        setMyJobs(res.data);
-        console.log("!!!", res.data);
+        setJobs(res.data);
       })
       .catch((error) => console.warn(error));
   }, []);
 
   return (
-    <div className="job-page">
+    <div className="jobs">
       <h2>Current Jobs</h2>
-      {myJobs.map((job) => {
+      {jobs.map((job) => {
         return <Job job={job} key={job.id} />;
       })}
     </div>
