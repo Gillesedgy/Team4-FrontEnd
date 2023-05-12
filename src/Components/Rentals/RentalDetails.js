@@ -59,6 +59,16 @@ export default function RentalDetails() {
           <button onClick={toggleShowMore}>View less</button>
         )}
       </div>
+      <div className="rental_details_buttons">
+        <button
+          onClick={() => {
+            navigate(`/listings/${id}/edit`);
+          }}
+        >
+          Edit
+        </button>
+        <button onClick={deleteRental}>Delete</button>
+      </div>
       <div className="rental_map">
         <h5>View on Map</h5>
       </div>

@@ -88,6 +88,7 @@ export default function RentalEdit() {
           Description:
           <input
             type="text"
+            id="description"
             name="description"
             value={rental.description}
             onChange={handleTextChange}
@@ -98,7 +99,7 @@ export default function RentalEdit() {
         <label>
           Native Language:
           <select
-            id={rental.native_language}
+            id="native_language"
             value={rental.native_language}
             onChange={handleSelectChange}
             required
@@ -116,6 +117,7 @@ export default function RentalEdit() {
           Image URL:
           <input
             type="text"
+            id="image_url"
             name="imageUrl"
             value={rental.image_url}
             onChange={handleTextChange}
@@ -138,6 +140,7 @@ export default function RentalEdit() {
           Address:
           <input
             type="text"
+            id="address"
             name="address"
             value={address}
             onChange={handleAddress}
@@ -161,6 +164,7 @@ export default function RentalEdit() {
           Company:
           <input
             type="text"
+            id="company"
             name="company"
             value={rental.company}
             onChange={handleTextChange}
@@ -169,6 +173,13 @@ export default function RentalEdit() {
         <br />
         <button type="submit">Submit</button>
       </form>
+      <button
+        onClick={() => {
+          navigate(`/listings`);
+        }}
+      >
+        Go Back
+      </button>
     </div>
   );
 }
