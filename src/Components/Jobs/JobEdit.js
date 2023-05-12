@@ -38,7 +38,7 @@ export default function JobEdit() {
     //axios.get(`{API}//jobs/${id}`)
   }, [id]);
   return (
-    <div className="jobFrom">
+    <div className="jobForm">
       <form onSubmit={handleSubmit}>
         <label htmlFor="jobTitle">Job Title:</label>
         <input

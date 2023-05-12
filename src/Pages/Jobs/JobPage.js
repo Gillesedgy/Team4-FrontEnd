@@ -1,10 +1,9 @@
 import React from "react";
-import Job from "../../Components/Jobs/Job";
+import Jobs from "../../Components/Jobs/Jobs";
 export default function JobPage() {
   return (
-    <div>
-      JobPage
-      <Job />
+    <div className="job-page">
+      <Jobs />
     </div>
   );
 }
