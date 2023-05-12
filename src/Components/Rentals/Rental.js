@@ -9,11 +9,11 @@ export default function Rental({
   return (
     <Link to={`/listings/${id}`}>
       <div className="rental">
-        <div>
-          <h3 className="rental_title">{title}</h3>
-        </div>
         <div className="rental_image">
           <img src={image_url} alt={image_url} />
+        </div>
+        <div>
+          <h3 className="rental_title">{title}</h3>
         </div>
         <div className="rental_description">
           <p>{shortDescript}</p>

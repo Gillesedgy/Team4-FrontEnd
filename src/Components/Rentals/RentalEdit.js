@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import "./RentalForm.css";
+import "./rentalForm.css";
 
 let API = process.env.REACT_APP_API_URL;
 

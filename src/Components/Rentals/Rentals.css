@@ -1,0 +1,40 @@
+.rentals_page {
+  padding: 1em;
+  font-family: sans-serif;
+}
+
+.rentals {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.rental {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  width: 80%;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  border: solid 1px teal;
+  border-radius: 10px;
+  box-shadow: 3px 5px 4px rgb(225, 221, 221);
+  padding: 0.8em;
+}
+
+.rentals a {
+  text-decoration: none;
+  color: rgb(37, 37, 37);
+}
+
+.rentals h3 {
+  margin-left: 1em;
+  font-size: larger;
+}
+
+.rental:hover {
+  background-color: rgb(250, 244, 233);
+}
+
+.rental_description {
+  margin-right: 1em;
+}

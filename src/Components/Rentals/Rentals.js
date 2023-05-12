@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Rental from "./Rental";
+import "./Rentals.css";
 
 let API = process.env.REACT_APP_API_URL;
 
