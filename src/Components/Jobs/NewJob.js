@@ -109,7 +109,7 @@ export default function NewJob({ data }) {
         />
         <label htmlFor="job_date">Job Date:</label>
         <input
-          type="text"
+          type="date"
           id="job_date"
           value={newJob.posted_date}
           onChange={handleTextChange}
