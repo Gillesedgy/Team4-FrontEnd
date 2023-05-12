@@ -34,7 +34,7 @@ export default function RouteComponent() {
         <Route path="/listings/:id/edit" element={<RentalEditPage />} />
         <Route path="/listings/new" element={<RentalNewPage />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="CommunityBoard" element={<CommunityBoard />} />
+        <Route path="/communityBoard" element={<CommunityBoard />} />
         <Route path="/account" element={<Account />} />
         <Route path="/error" element={<Error />} />
       </Routes>
