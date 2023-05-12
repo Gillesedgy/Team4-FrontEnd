@@ -14,14 +14,17 @@
 
 
 .navbar {
-    background: rgb(235, 229, 230);
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-   
-  }
+  background: rgb(235, 229, 230);
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: fixed;
+  top: 0;
+}
+
   
   /* .navbar-logo {
     color: #fff;
