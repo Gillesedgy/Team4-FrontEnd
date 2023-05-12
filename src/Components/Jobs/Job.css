@@ -3,7 +3,7 @@
   flex-direction: column;
   margin-bottom: 15px;
   background-color: lightcyan;
-  padding: 15px;
+  /* padding: 1em; */
   box-shadow: 10px 5px 5px lightgrey;
   border-radius: 20px;
 }
@@ -23,7 +23,15 @@
 .job-body p {
   margin-bottom: 5px;
 }
-
+/* Job Page */
+.job-page {
+  padding: 1em;
+  font-family: sans-serif;
+}
+/* Jobs */
+.jobs {
+  /* display: flex; */
+}
 @media (min-width: 768px) {
   .job-container {
     grid-template-columns: 1fr 2fr;
