@@ -20,11 +20,16 @@ function Welcome() {
     <div className="welcome-page">
       <div className="welcometext">Welcome!</div>
       <p className="welcome_p">lets find you, your community</p>
-      <div className="welcome-btn-div">
+        <div className="welcome-btn-div">
          <Link to={`/login`}>
         <button className="welcome-btn">Get Started</button>
       </Link>
       </div>
+      {/* <img className="doodle1" src='./doodle1.png'
+      alt="doddle1"
+      width={100} height={100}/> */}
+     
+    
      
     </div>
   );
