@@ -17,6 +17,7 @@ function NavBar() {
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
       setDropDown(false);
+      setTimeout()
     } else {
       setDropDown(false);
     }
