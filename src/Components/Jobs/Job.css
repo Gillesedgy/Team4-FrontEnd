@@ -1,0 +1,39 @@
+.job-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  background-color: lightcyan;
+  padding: 15px;
+  box-shadow: 10px 5px 5px lightgrey;
+  border-radius: 20px;
+}
+/* .date {
+// move it to the center  
+} */
+.link {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+  color: black;
+}
+.link:hover {
+  color: orange;
+}
+
+.job-body p {
+  margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+  .job-container {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .job-body {
+    flex-direction: row;
+  }
+
+  .job-body p {
+    margin-right: 20px;
+  }
+}

@@ -1,32 +1,55 @@
-import React from "react";
-
-//Todo: Import params from jobs (use table for reference)
-// Job view page
-// migh tneed an add file button
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./Job.css";
 export default function Job({
-  jobTitle,
-  company,
-  email,
-  location,
-  date,
-  jobType,
-  description,
-  language,
-  is_favorite,
+  job: {
+    id,
+    job_title,
+    company,
+    job_type,
+    description,
+    location,
+    native_language,
+    posted_date,
+    email,
+    is_favorite,
+  },
 }) {
   return (
-    <div className="job-single">
-      <h2>{jobTitle}</h2>
-
-      <p>{language}</p>
-      <p>{date}</p>
-      <h4>{email}</h4>
-      <h3>{company}</h3>
-      <p>{location}</p>
-      <p>{jobType}</p>
-      <p>{description}</p>
-      <p>Update is_favorite</p>
-      <p>{is_favorite ? "yes" : null}</p>
+    <div className="job-container">
+       <p className="date">
+          <strong>Posted Date:</strong> {posted_date}
+        </p>
+      <div className="job-body">
+        {" "}
+        <Link className="link" to={`jobs/${id}`}>
+          {" "}
+          <p>{job_title}</p>
+        </Link>
+        <p>
+          <strong>Favorite:</strong> {is_favorite ? "<3" : null}
+        </p>
+       
+        <p>
+          <strong>Company:</strong> {company}
+        </p>
+        <p>
+          <strong>Email:</strong> {email}
+        </p>
+        <p>
+          <strong>Location:</strong> {location}
+        </p>
+        <p>
+          <strong>Job Type:</strong> {job_type}
+        </p>
+        {/* <p>
+          <strong>Description:</strong>
+        </p>
+        <p>{description}</p> */}
+        <p>
+          <strong>Native Language:</strong> {native_language}
+        </p>
+      </div>
     </div>
   );
 }

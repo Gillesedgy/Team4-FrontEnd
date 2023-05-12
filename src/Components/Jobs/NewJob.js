@@ -44,7 +44,7 @@ export default function NewJob({ data }) {
   //   }
   // };
   return (
-    <div className="jobFrom">
+    <div className="jobForm">
       <form onSubmit={handleSubmit}>
         <label htmlFor="jobTitle">Job Title:</label>
         <input
