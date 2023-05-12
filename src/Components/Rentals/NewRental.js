@@ -35,7 +35,7 @@ export default function NewRental() {
       .catch((error) => console.warn(error));
   };
 
-  const [select, setSelect] = useState("");
+  // const [select, setSelect] = useState("");
 
   const [address, setAddress] = useState("");
 
@@ -63,8 +63,9 @@ export default function NewRental() {
   };
 
   const handleSelectChange = (e) => {
-    setSelect(e.target.value);
-    setRental({ ...rental, native_language: select });
+    // setSelect(e.target.value);
+    let selected = e.target.value;
+    setRental({ ...rental, native_language: selected });
   };
 
   const handleSubmit = (e) => {
@@ -80,6 +81,7 @@ export default function NewRental() {
           Description:
           <textarea
             name="description"
+            id="description"
             value={rental.description}
             onChange={handleTextChange}
             required
@@ -89,7 +91,7 @@ export default function NewRental() {
         <label>
           Native Language:
           <select
-            id={rental.native_language}
+            id="native_language"
             value={rental.native_language}
             onChange={handleSelectChange}
             required
@@ -107,6 +109,7 @@ export default function NewRental() {
           Image URL:
           <input
             type="text"
+            id="image_url"
             name="imageUrl"
             value={rental.image_url}
             onChange={handleTextChange}
@@ -129,6 +132,7 @@ export default function NewRental() {
           Address:
           <input
             type="text"
+            id="address"
             name="address"
             value={address}
             onChange={handleAddress}
@@ -152,6 +156,7 @@ export default function NewRental() {
           Company:
           <input
             type="text"
+            id="company"
             name="company"
             value={rental.company}
             onChange={handleTextChange}
