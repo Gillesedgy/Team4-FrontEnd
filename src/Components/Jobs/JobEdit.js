@@ -170,16 +170,12 @@ export default function JobEdit() {
           ))}
         </select>
 
-        {/* //ToDo:  modify this to update or create/post on the same form */}
-
-        {/* have button navigate back to previous page */}
         <button onClick={() => navigate(`/jobs/${id}`)} type="submit">
           Back
         </button>
         <button onClick={() => navigate(`/jobs`)} type="submit">
           Done
         </button>
-        {/* have button navigate back to page/id */}
       </form>
     </div>
   );

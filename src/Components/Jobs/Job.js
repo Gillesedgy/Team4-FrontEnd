@@ -26,25 +26,25 @@ export default function Job({
           {" "}
           <p>{job_title}</p>
         </Link>
-        <p>
+        {/* <p>
           <strong>Favorite:</strong> {is_favorite ? "<3" : null}
-        </p>
+        </p> */}
         <p>
           <strong>Company:</strong> {company}
         </p>
-        <p>
+        {/* <p>
           <strong>Email:</strong> {email}
-        </p>
+        </p> */}
         <p>
           <strong>Location:</strong> {location}
         </p>
         <p>
           <strong>Job Type:</strong> {job_type}
         </p>
-        {/* <p>
+        <p>
           <strong>Description:</strong>
         </p>
-        <p>{description}</p> */}
+        <p>{description}</p>
         <p>
           <strong>Native Language:</strong> {native_language}
         </p>
