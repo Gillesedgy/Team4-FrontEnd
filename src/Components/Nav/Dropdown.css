@@ -1,9 +1,10 @@
 .dropdown-menu {
     width: 150px;
-    position: relative;
-    top: 80px;
+    position: fixed;
     list-style: none;
     text-align: start;
+    right: 170px;
+    top: 60px;
   
 }
 
@@ -33,3 +34,14 @@
   padding: 8px;
 }
 
+/* @media screen and (max-width: 960px) {
+  .dropdown-menu {
+    width: 150px;
+    position: fixed;
+    list-style: none;
+    text-align: start;
+    right: 150px;
+    top: 700px;
+  
+}
+} */

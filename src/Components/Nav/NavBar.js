@@ -13,11 +13,11 @@ function NavBar() {
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+ 
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
       setDropDown(false);
-      setTimeout()
     } else {
       setDropDown(false);
     }
@@ -29,6 +29,11 @@ function NavBar() {
     } else {
       setDropDown(true);
     }
+  };
+
+  const toggleDropDown = () => {
+    
+    setDropDown(!dropDown);
   };
 
   return (
@@ -72,7 +77,7 @@ function NavBar() {
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         >
-          <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+          <Link className="nav-links" onClick={toggleDropDown} >
             Add New <GoTriangleDown />
           </Link>
           {dropDown && <Dropdown />}

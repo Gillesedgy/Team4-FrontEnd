@@ -9,23 +9,26 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right;
-    opacity: 0.8px;
+    opacity: 0.4px;
 }
 
 .welcometext{
-    margin-top: 30px;
+    margin-top: 100px;
     font-size: 90px;
     text-align: center;
     z-index: 1;
+  
 }
 
 .welcome_p{
     font-size: 60px;
     margin-top: 30px;
     text-align: center;
+    
 }
 
 .welcome-btn-div {
+  margin-top: 50px;
   display: grid;
   justify-content: center; 
 }
@@ -79,3 +82,9 @@ button:active {
 
 
 
+/* .doodle1{
+  margin-left: 450px;
+  display: flex;
+  justify-content: bottom;
+  align-items: center;
+} */
