@@ -63,7 +63,6 @@ export default function NewRental() {
   };
 
   const handleSelectChange = (e) => {
-    // setSelect(e.target.value);
     let selected = e.target.value;
     setRental({ ...rental, native_language: selected });
   };

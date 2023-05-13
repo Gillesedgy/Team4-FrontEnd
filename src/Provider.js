@@ -7,7 +7,19 @@ export function useContextProvider() {
 
 function Provider({ children }) {
   // A piece of state that will be passed to other files
-  return <ContextData.Provider value={{}}>{children}</ContextData.Provider>;
+
+  const [user, setUser] = useState({
+    username: "",
+    email: "",
+    password: "",
+    address: "",
+    native_language: "",
+  });
+  return (
+    <ContextData.Provider value={{ user, setUser }}>
+      {children}
+    </ContextData.Provider>
+  );
 }
 
 export default Provider;

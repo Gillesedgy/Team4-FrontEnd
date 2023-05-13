@@ -23,6 +23,7 @@ export default function Rentals() {
   return (
     <div className="rentals">
       <h3>Rental Listings</h3>
+
       {rentals.map((rental) => {
         return <Rental key={rental.id} rental={rental} />;
       })}
