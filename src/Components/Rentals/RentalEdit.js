@@ -64,8 +64,8 @@ export default function RentalEdit() {
   };
 
   const handleSelectChange = (e) => {
-    setSelect(e.target.value);
-    setRental({ ...rental, native_language: select });
+    let selected = e.target.value;
+    setRental({ ...rental, native_language: selected });
   };
 
   useEffect(() => {
