@@ -1,20 +1,19 @@
 import axios from "axios";
 import "../../Features/Map.css";
 import React, { useState, useEffect } from "react";
-// import { useParams, useNavigate, Link } from "react-router-dom";
 import { useNavigate, useParams } from "react-router-dom";
 //* --------Map---------------
-import { GoogleMap, Marker } from "@react-google-maps/api";
+import { addressConverter } from "../../Features/helper";
 import Search from "../../Features/Search";
-import { useLoadScript } from "@react-google-maps/api";
-// import Map from "../../Features/Map";
-// import MapView from "../../Features/MapView";
+import MapContainer from "../../Features/MapContainer";
 //* -------------------------------------------
-// API
-const gKey = process.env.REACT_APP_GOOGLE_MAP_API_KEY;
 const API = process.env.REACT_APP_API_URL;
 
-export default function JobDetails() {
+export default function JobDetails({
+  latitude,
+  longitude,
+  handleAddressSubmit,
+}) {
   const [jobs, setJobs] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -40,81 +39,23 @@ export default function JobDetails() {
       .cath((error) => console.warn(error));
   };
   //Todo: Try to make map work in its own Component
-  //* ---------------------MAP---------------------------
-  const [longitude, setLongitude] = useState(0);
-  const [latitude, setLatitude] = useState(0);
 
-  useEffect(() => {
-    const centered = () => {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setLongitude(position.coords.longitude);
-          setLatitude(position.coords.latitude);
-        },
-        (error) => {
-          console.log("Error getting your current position: " + error.message);
-        }
-      );
-    };
-    centered();
-  }, []);
-
-  const addressConverter = (address) => {
-    return new Promise((resolve, reject) => {
-      const geocoder = new window.google.maps.Geocoder();
-      geocoder.geocode({ address: address }, function (results, status) {
-        if (
-          status === window.google.maps.GeocoderStatus.OK &&
-          results.length > 0
-        ) {
-          const lat = results[0].geometry.location.lat();
-          const lng = results[0].geometry.location.lng();
-          setLongitude(lng);
-          setLatitude(lat);
-          resolve({ lat, lng });
-        } else {
-          reject("Address not found!");
-        }
-      });
-    });
-  };
-
-  const handleAddressSubmit = (address) => {
-    addressConverter(address)
-      .then((coords) => {
-        setLatitude(coords.lat);
-        setLongitude(coords.lng);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
-  const gKey = process.env.REACT_APP_GOOGLE_MAP_API_KEY;
-  // allows us to see if the map is loaded
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: gKey,
-  });
   //*--------------------------------------------------
   return (
     <div className="job-details">
       <Search
-        addressConverter={handleAddressSubmit}
+        addressConverter={addressConverter}
+        handleAddressSubmit={handleAddressSubmit}
         lat={latitude}
         lng={longitude}
       />
       <div className="map-container">
-        {" "}
-        {!isLoaded ? (
-          <p> Map Error, check address again</p>
-        ) : (
-          <GoogleMap
-            zoom={15}
-            center={{ lat: latitude, lng: longitude }}
-            mapContainerStyle={{ height: "100%", width: "100%" }}
-          >
-            <Marker size={33} position={{ lat: latitude, lng: longitude }} />
-          </GoogleMap>
-        )}
+        <MapContainer
+          handleAddressSubmit={handleAddressSubmit}
+          addressConverter={addressConverter}
+          // latitude={latitude}
+          // longitude={longitude}
+        />
       </div>
       <p className="date">
         <strong>Posted Date:</strong> {jobs.posted_date}

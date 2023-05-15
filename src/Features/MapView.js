@@ -3,10 +3,10 @@ import { useLoadScript } from "@react-google-maps/api"; // this is needed to mak
 import Map from "./Map";
 
 function MapView() {
-  const gKey = process.env.REACT_APP_GOOGLE_MAP_API_KEY2;
+  // const gKey = process.env.REACT_APP_GOOGLE_MAP_API_KEY2;
   // allows us to see if the map is loaded
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: gKey,
+    // googleMapsApiKey: gKey,
   });
   // if map isnt working or loaded
   if (!isLoaded) return <div>Map Error, check address again</div>;
