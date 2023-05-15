@@ -1,40 +1,44 @@
 import React, { useState } from "react";
 import "./NavBar.css";
-import Dropdown from "./Dropdown";
+// import Dropdown from "./Dropdown";
 import Button from "./Button";
 import { Link } from "react-router-dom";
 import logo from "../../Assets/logo1.png";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { GoTriangleDown } from "react-icons/go";
+import { GoCommentDiscussion } from "react-icons/go";
+import {BiHomeHeart} from "react-icons/bi"
+import {TbHomeDollar} from 'react-icons/tb'
+import {MdWorkOutline} from 'react-icons/md'
+
 
 function NavBar() {
   const [click, setClick] = useState(false);
-  const [dropDown, setDropDown] = useState(false);
+  // const [dropDown, setDropDown] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
  
 
-  const onMouseEnter = () => {
-    if (window.innerWidth < 960) {
-      setDropDown(false);
-    } else {
-      setDropDown(false);
-    }
-  };
+  // const onMouseEnter = () => {
+  //   if (window.innerWidth < 960) {
+  //     setDropDown(false);
+  //   } else {
+  //     setDropDown(false);
+  //   }
+  // };
 
-  const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
-      setDropDown(false);
-    } else {
-      setDropDown(true);
-    }
-  };
+  // const onMouseLeave = () => {
+  //   if (window.innerWidth < 960) {
+  //     setDropDown(false);
+  //   } else {
+  //     setDropDown(true);
+  //   }
+  // };
 
-  const toggleDropDown = () => {
+  // const toggleDropDown = () => {
     
-    setDropDown(!dropDown);
-  };
+  //   setDropDown(!dropDown);
+  // };
 
   return (
     <nav className="navbar">
@@ -49,18 +53,18 @@ function NavBar() {
       <ul className={click ? "nav-menu active" : "nav-menu"}>
         <li className="nav-item">
           <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-            Home
+            Home <BiHomeHeart />
           </Link>
         </li>
 
         <li className="nav-item">
           <Link to="/listings" className="nav-links" onClick={closeMobileMenu}>
-            Rentals
+            Rentals <TbHomeDollar/>
           </Link>
         </li>
         <li className="nav-item">
           <Link to="/jobs" className="nav-links" onClick={closeMobileMenu}>
-            Jobs
+            Jobs <MdWorkOutline />
           </Link>
         </li>
         <li className="nav-item">
@@ -69,10 +73,10 @@ function NavBar() {
             className="nav-links"
             onClick={closeMobileMenu}
           >
-            Community Board
+            Community <GoCommentDiscussion />
           </Link>
         </li>
-        <li
+        {/* <li
           className="nav-item"
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
@@ -81,7 +85,7 @@ function NavBar() {
             Add New <GoTriangleDown />
           </Link>
           {dropDown && <Dropdown />}
-        </li>
+        </li> */}
 
         <li className="nav-item">
           <Link
