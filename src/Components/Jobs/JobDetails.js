@@ -39,7 +39,11 @@ export default function JobDetails({
       )
       .cath((error) => console.warn(error));
   };
-
+  // Date format
+  let dateMade = new Date(jobs.posted_date);
+  dateMade = dateMade.toDateString();
+  let year = dateMade.split(" ").pop();
+  let middle = dateMade.split(" ").splice(1, 2).join(" ");
   return (
     <div className="job-details">
       <div className="map-container">
@@ -56,7 +60,7 @@ export default function JobDetails({
         </div>
         <div className="job-details-body">
           <p className="date">
-            <strong>Posted Date:</strong> {jobs.posted_date}
+            <strong>Posted Date:</strong> {middle}, {year}
           </p>
           <p className="job-title">{jobs.job_title}</p>
           <p className="favorite">

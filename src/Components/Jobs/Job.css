@@ -15,6 +15,9 @@
 .left-section {
   width: 33%;
 }
+.left-section h2:hover {
+  color: salmon;
+}
 
 .right-section {
   text-align: center;
