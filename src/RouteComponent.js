@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 
 //components
 import Account from "./Pages/Account";
-import CommunityBoard from "./Pages/CommunityBoard";
 import Error from "./Pages/Error";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
@@ -18,6 +17,11 @@ import RentalPage from "./Pages/Rentals/RentalPage";
 import RentalDetails from "./Components/Rentals/RentalDetails";
 import RentalNewPage from "./Pages/Rentals/RentalNewPage";
 import RentalEditPage from "./Pages/Rentals/RentalEditPage";
+//Community Board
+import CommunityBoard from "./Pages/CommunityBoard";
+import PostDetails from "./Components/Posts/PostDetails";
+import NewPostForm from "./Components/Posts/NewPostForm";
+import EditPostForm from "./Components/Posts/EditPostForm";
 
 export default function RouteComponent() {
   return (
@@ -35,6 +39,9 @@ export default function RouteComponent() {
         <Route path="/listings/new" element={<RentalNewPage />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/communityBoard" element={<CommunityBoard />} />
+        <Route path="/communityBoard/:id" element={<PostDetails />} />
+        <Route path="/communityBoard/:id/edit" element={<EditPostForm />} />
+        <Route path="/communityBoard/new" element={<NewPostForm />} />
         <Route path="/account" element={<Account />} />
         <Route path="/error" element={<Error />} />
       </Routes>

@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import "./rentalForm.css";
 
-let API = process.env.REACT_APP_API_URL;
+const API = process.env.REACT_APP_API_URL;
 
 export default function RentalEdit() {
   const navigate = useNavigate();
@@ -69,10 +69,13 @@ export default function RentalEdit() {
   };
 
   useEffect(() => {
-    axios.get(`${API}/listings/${id}`).then(
-      (res) => setRental(res.data),
-      (err) => navigate(`/error`)
-    );
+    axios
+      .get(`${API}/listings/${id}`)
+      .then(
+        (res) => setRental(res.data),
+        (err) => navigate(`/error`)
+      )
+      .catch((err) => console.warn(err));
   }, [id, navigate]);
 
   const handleSubmit = (e) => {
@@ -86,7 +89,7 @@ export default function RentalEdit() {
       <form onSubmit={handleSubmit}>
         <label>
           Description:
-          <input
+          <textarea
             type="text"
             id="description"
             name="description"

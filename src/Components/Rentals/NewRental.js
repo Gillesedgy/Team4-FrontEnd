@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./rentalForm.css";
 
-let API = process.env.REACT_APP_API_URL;
+const API = process.env.REACT_APP_API_URL;
 
 export default function NewRental() {
   const navigate = useNavigate();
@@ -40,7 +40,6 @@ export default function NewRental() {
   const [address, setAddress] = useState("");
 
   const [rental, setRental] = useState({
-    user_id: 0,
     description: "",
     native_language: "",
     image_url: "",

@@ -6,7 +6,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import MapView from "../../Features/MapView";
 // import { useLoadScript } from "@react-google-maps/api"; // this is needed to make sure the map loads correctly
 //* -------------------------------------------
-let API = process.env.REACT_APP_API_URL;
+const API = process.env.REACT_APP_API_URL;
 
 export default function RentalDetails() {
   const [rental, setRental] = useState({});
