@@ -17,7 +17,7 @@ export default function Jobs() {
 
   return (
     <div className="jobs">
-      <h2>Current Jobs</h2>
+      <h2 className="jobs-title">Current Jobs</h2>
       {jobs.map((job) => {
         return <Job job={job} key={job.id} />;
       })}
