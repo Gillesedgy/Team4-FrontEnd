@@ -5,6 +5,7 @@ import axios from "axios";
 const API = process.env.REACT_APP_API;
 export default function NewJob({ data }) {
   const navigate = useNavigate();
+  //todo: Add new Table details to job state
   const [newJob, setNewJob] = useState({
     jobTitle: "",
     company: "",
@@ -72,6 +73,8 @@ export default function NewJob({ data }) {
   //    // playMySound(error);
   //   }
   // };
+  //! Found CSS Format Online
+
   return (
     <div className="jobForm">
       <form onSubmit={handleSubmit}>
@@ -131,6 +134,14 @@ export default function NewJob({ data }) {
           onChange={handleTextChange}
           required
         />
+        <label htmlFor="salary">Salary:</label>
+        <input
+          type="text"
+          id="salary"
+          value={newJob.salary}
+          onChange={handleTextChange}
+          required
+        />
         <label htmlFor="is_favorite">Favorite:</label>
         <input
           type="checkbox"
@@ -140,22 +151,6 @@ export default function NewJob({ data }) {
           required
         />
 
-        {/* <label htmlFor="salary">Salary:</label>
-        <input
-          type="text"
-          id="salary"
-          value={newJob.salary}
-          onChange={handleTextChange}
-          required
-        /> */}
-
-        {/* <label htmlFor="native_language">Language:</label>
-        <input
-          id="native_language"
-          value={newJob.native_language}
-          onChange={handleTextChange}
-          required
-        /> */}
         <label>Languages: </label>
         <select
           id={newJob.native_language}
@@ -170,16 +165,14 @@ export default function NewJob({ data }) {
             </option>
           ))}
         </select>
-
-        {/* //ToDo:  modify this to update or create/post on the same form */}
-
-        {/* have button navigate back to previous page */}
       </form>
-      {/* //ToDo:  modify this to update or create/post on the same form */}
-      <button type="submit">Post</button>
-      <button onClick={() => navigate(`/jobs`)} type="submit">
-        Back
-      </button>
+      <div className="button">
+        {" "}
+        <button type="submit">Post</button>
+        <button onClick={() => navigate(`/jobs`)} type="submit">
+          Back
+        </button>
+      </div>
     </div>
   );
 }
