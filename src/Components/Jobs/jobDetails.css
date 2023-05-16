@@ -53,7 +53,7 @@
 }
 
 /* Delete Btn */
-.delete-button button {
+.button button {
   margin: 5px;
   padding: 10px 20px;
   border: none;
@@ -63,7 +63,7 @@
   transition: background-color 0.3s;
 }
 
-.delete-button button:hover {
+.button button:hover {
   background-color: orange;
   color: #fff;
 }

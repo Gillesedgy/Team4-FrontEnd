@@ -82,7 +82,7 @@ export default function JobDetails({
           <p className="native-language">
             <strong>Native Language:</strong> {jobs.native_language}
           </p>
-          <div className="delete-button">
+          <div className="button">
             <button type="submit" onClick={deleteJob}>
               Delete
             </button>
@@ -97,65 +97,4 @@ export default function JobDetails({
       </div>
     </div>
   );
-
-  // return (
-  //   <div className="job-details">
-  //     <Search
-  //       addressConverter={addressConverter}
-  //       handleAddressSubmit={handleAddressSubmit}
-  //       lat={latitude}
-  //       lng={longitude}
-  //     />
-  //     <div className="map-container">
-  //       <MapContainer
-  //         handleAddressSubmit={handleAddressSubmit}
-  //         addressConverter={addressConverter}
-  //         // latitude={latitude}
-  //         // longitude={longitude}
-  //       />
-  //     </div>
-  //     <p className="date">
-  //       <strong>Posted Date:</strong> {jobs.posted_date}
-  //     </p>
-  //     <div className="job-details-body">
-  //       {" "}
-  //       <p className="job-title">{jobs.job_title}</p>
-  //       <p>
-  //         <strong>Favorite:</strong> {jobs.is_favorite ? "<3" : null}
-  //       </p>
-  //       <p>
-  //         <strong>Company:</strong> {jobs.company}
-  //       </p>
-  //       <p>
-  //         <strong>Email:</strong> {jobs.email}
-  //       </p>
-  //       <p>
-  //         <strong>Location:</strong> {jobs.location}
-  //       </p>
-  //       <p>
-  //         <strong>Job Type:</strong> {jobs.job_type}
-  //       </p>
-  //       <p>
-  //         <strong>Description:</strong>
-  //       </p>
-  //       <p>{jobs.description}</p>
-  //       <p>
-  //         <strong>Native Language:</strong> {jobs.native_language}
-  //       </p>
-  //     </div>
-  //     <div className="delete-button">
-  //       <button type="submit" onClick={deleteJob}>
-  //         Delete
-  //       </button>
-
-  //       <button onClick={() => navigate(`/jobs/${id}/edit`)} type="submit">
-  //         Edit
-  //       </button>
-
-  //       <button onClick={() => navigate(`/jobs`)} type="submit">
-  //         Back
-  //       </button>
-  //     </div>
-  //   </div>
-  // );
 }
