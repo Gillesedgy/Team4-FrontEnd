@@ -4,7 +4,7 @@ import axios from "axios";
 import Rental from "./Rental";
 import "./Rentals.css";
 
-let API = process.env.REACT_APP_API_URL;
+const API = process.env.REACT_APP_API_URL;
 
 export default function Rentals() {
   const [rentals, setRentals] = useState([]);
