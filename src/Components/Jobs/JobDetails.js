@@ -39,7 +39,7 @@ export default function JobDetails({
       )
       .cath((error) => console.warn(error));
   };
-  //*--------------------------------------------------
+
   return (
     <div className="job-details">
       <div className="map-container">
