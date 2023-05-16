@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./Job.css";
+import "./job.css";
 export default function Job({
   job: {
     id,
@@ -17,34 +17,25 @@ export default function Job({
 }) {
   return (
     <div className="job-container">
-      <p className="date">
-        <strong>Posted Date:</strong> {posted_date}
-      </p>
-      <div className="job-body">
-        {" "}
+      <div className="left-section">
         <Link className="link" to={`/jobs/${id}`}>
-          {" "}
-          <p>{job_title}</p>
+          <h2>{job_title}</h2>
         </Link>
-        {/* <p>
-          <strong>Favorite:</strong> {is_favorite ? "<3" : null}
-        </p> */}
-        <p>
-          <strong>Company:</strong> {company}
-        </p>
-        {/* <p>
-          <strong>Email:</strong> {email}
-        </p> */}
-        <p>
-          <strong>Location:</strong> {location}
-        </p>
-        <p>
-          <strong>Job Type:</strong> {job_type}
-        </p>
+        <p className="company">{company}</p>
+      </div>
+      <div className="middle-section">
         <p>
           <strong>Description:</strong>
         </p>
         <p>{description}</p>
+      </div>
+      <div className="right-section">
+        <p className="date">
+          <strong>Posted Date:</strong> {posted_date}
+        </p>
+        <p>
+          <strong>Location:</strong> {location}
+        </p>
         <p>
           <strong>Native Language:</strong> {native_language}
         </p>

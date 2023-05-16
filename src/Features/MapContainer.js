@@ -12,20 +12,22 @@ export default function MapContainer() {
   const [latitude, setLatitude] = useState(0);
 
   useEffect(() => {
-    const centered = () => {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setLongitude(position.coords.longitude);
-          setLatitude(position.coords.latitude);
-        },
-        (error) => {
-          console.log("Error getting your current position: " + error.message);
-          // setLongitude(0);
-          // setLatitude(0);
-        }
-      );
-    };
-    centered();
+    // Gets LongLat
+    //Todo: Delete line 17, and 30..
+    // const centered = () => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setLongitude(position.coords.longitude);
+        setLatitude(position.coords.latitude);
+      },
+      (error) => {
+        console.log("Error getting your current position: " + error.message);
+        // setLongitude(0);
+        // setLatitude(0);
+      }
+    );
+    // };
+    // centered();
   }, []);
 
   const handleAddressSubmit = (address) => {
