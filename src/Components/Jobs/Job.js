@@ -15,6 +15,11 @@ export default function Job({
     is_favorite,
   },
 }) {
+  // Date format
+  let dateMade = new Date(posted_date);
+  dateMade = dateMade.toDateString();
+  let year = dateMade.split(" ").pop();
+  let middle = dateMade.split(" ").splice(1, 2).join(" ");
   return (
     <div className="job-container">
       <div className="left-section">
@@ -23,15 +28,17 @@ export default function Job({
         </Link>
         <p className="company">{company}</p>
       </div>
+      {/* Middle  */}
       <div className="middle-section">
         <p>
           <strong>Description:</strong>
         </p>
         <p>{description}</p>
       </div>
+      {/* Right */}
       <div className="right-section">
         <p className="date">
-          <strong>Posted Date:</strong> {posted_date}
+          <strong>Posted Date:</strong> {middle}, {year}
         </p>
         <p>
           <strong>Location:</strong> {location}
