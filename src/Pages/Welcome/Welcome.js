@@ -25,7 +25,7 @@ function Welcome() {
         <button className="welcome-btn">Get Started</button>
       </Link>
       </div>
-      {/* <img className="doodle1" src='./doodle1.png'
+      {/* <img className="doodle1" src="/public/welcome1white.png"
       alt="doddle1"
       width={100} height={100}/> */}
      

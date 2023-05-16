@@ -14,7 +14,7 @@
 
 .navbar {
   /* background: rgb(235, 229, 230); */
-  background: transparent;
+  background: white;
   height: 10%;
   width: 100%;
   display: flex;
@@ -24,6 +24,7 @@
   position: fixed;
   top: 0;
 }
+
 
 /* .navbar-logo {
     color: #fff;

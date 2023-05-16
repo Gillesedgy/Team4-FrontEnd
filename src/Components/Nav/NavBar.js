@@ -19,6 +19,7 @@ function NavBar() {
   const closeMobileMenu = () => setClick(false);
  
 
+
   // const onMouseEnter = () => {
   //   if (window.innerWidth < 960) {
   //     setDropDown(false);
