@@ -1,41 +1,34 @@
 .job-container {
   display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-
-  background-color: lightcyan;
-  padding: 1em;
-  box-shadow: 10px 5px 5px lightgrey;
-  border-radius: 20px;
-  height: 90%;
-  overflow: scroll;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
 }
-/* .date {
-// move it to the center  
-} */
+
+.left-section {
+  flex-basis: 50%;
+}
+
+.right-section {
+  flex-basis: 50%;
+}
+
 .link {
   text-decoration: none;
-  color: black;
-  font-size: 24px;
-  color: black;
-}
-.link:hover {
-  color: orange;
+  color: #333333;
 }
 
-.job-body p {
-  margin-bottom: 5px;
+.company {
+  font-weight: bold;
 }
-/* Job Page */
-.job-page {
-  padding: 1em;
-  font-family: sans-serif;
 
+.date {
+  margin-bottom: 10px;
 }
-/* Jobs */
-.jobs {
-  /* display: flex; */
-}
+
 @media (min-width: 768px) {
   .job-container {
     grid-template-columns: 1fr 2fr;

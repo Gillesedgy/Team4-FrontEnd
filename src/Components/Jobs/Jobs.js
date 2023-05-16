@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Job from "./Job";
 
-// This components is responsible for rendering all the jobs that are present from the database
 const API = process.env.REACT_APP_API_URL;
 export default function Jobs() {
   const [jobs, setJobs] = useState([]);
