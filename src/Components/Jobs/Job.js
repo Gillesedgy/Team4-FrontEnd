@@ -1,6 +1,6 @@
 // import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./job.css";
+// import "./job.css";
 export default function Job({
   job: {
     id,
