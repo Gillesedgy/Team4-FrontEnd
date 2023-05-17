@@ -41,16 +41,16 @@ export default function Map() {
     });
   };
 
-  const handleAddressSubmit = (address) => {
-    addressConverter(address)
-      .then((coords) => {
-        setLatitude(coords.lat);
-        setLongitude(coords.lng);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
+  // const handleAddressSubmit = (address) => {
+  //   addressConverter(address)
+  //     .then((coords) => {
+  //       setLatitude(coords.lat);
+  //       setLongitude(coords.lng);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // };
   return (
     <div>
       <div className="Map_Container">

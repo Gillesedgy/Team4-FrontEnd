@@ -10,12 +10,9 @@ import MapContainer from "../../Features/MapContainer";
 //* -------------------------------------------
 const API = process.env.REACT_APP_API_URL;
 
-export default function JobDetails({
-  latitude,
-  longitude,
-  handleAddressSubmit,
-}) {
+export default function JobDetails({ handleAddressSubmit }) {
   const [jobs, setJobs] = useState([]);
+  // const [location, setLocation] = useState("");
   const { id } = useParams();
   const navigate = useNavigate();
   useEffect(() => {
@@ -23,6 +20,7 @@ export default function JobDetails({
       .get(`${API}/jobs/${id}`)
       .then((res) => {
         setJobs(res.data);
+        // setLocation(jobs.location);
       })
       .catch((error) => console.warn("catch", error));
   }, [id]);
@@ -48,11 +46,9 @@ export default function JobDetails({
     <div className="job-details">
       <div className="map-container">
         <MapContainer
-        className="map"
           handleAddressSubmit={handleAddressSubmit}
-          addressConverter={addressConverter}
-          latitude={latitude}
-          longitude={longitude}
+          // addressConverter={addressConverter}
+          location={jobs.location}
         />
       </div>
       <div className="job-page">
