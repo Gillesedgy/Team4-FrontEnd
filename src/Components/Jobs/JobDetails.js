@@ -48,10 +48,11 @@ export default function JobDetails({
     <div className="job-details">
       <div className="map-container">
         <MapContainer
+        className="map"
           handleAddressSubmit={handleAddressSubmit}
           addressConverter={addressConverter}
-          // latitude={latitude}
-          // longitude={longitude}
+          latitude={latitude}
+          longitude={longitude}
         />
       </div>
       <div className="job-page">
@@ -85,6 +86,12 @@ export default function JobDetails({
           <p>{jobs.description}</p>
           <p className="native-language">
             <strong>Native Language:</strong> {jobs.native_language}
+          </p>
+          <p className="skills">
+            <strong>Skills:</strong> {jobs.skills}
+          </p>
+          <p className="requirements">
+            <strong>Requirements:</strong> {jobs.requirements}
           </p>
           <div className="button">
             <button type="submit" onClick={deleteJob}>
