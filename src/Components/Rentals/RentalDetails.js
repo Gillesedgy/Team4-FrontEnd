@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+
+import "./RentalDetails.css";
 //* --------Map---------------
 import MapView from "../../Features/MapView";
 // import { useLoadScript } from "@react-google-maps/api"; // this is needed to make sure the map loads correctly

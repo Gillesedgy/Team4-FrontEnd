@@ -22,7 +22,7 @@ export default function Rentals() {
 
   return (
     <div className="rentals">
-      <h3>Rental Listings</h3>
+      <h2 className="rentals_title">Rental Listings</h2>
 
       {rentals.map((rental) => {
         return <Rental key={rental.id} rental={rental} />;

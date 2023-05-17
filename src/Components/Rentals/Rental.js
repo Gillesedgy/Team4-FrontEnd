@@ -2,20 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Rental({
-  rental: { id, title, image_url, description },
+  rental: { id, title, image_url, rooms, price },
 }) {
-  const shortDescript = description.slice(0, 100);
   return (
     <Link to={`/listings/${id}`}>
       <div className="rental">
-        <div className="rental_image">
-          <img src={image_url} alt={image_url} />
-        </div>
         <div>
-          <h3 className="rental_title">{title}</h3>
+          <img className="rental_image" src={image_url} alt={image_url} />
         </div>
-        <div className="rental_description">
-          <p>{shortDescript}</p>
+        <div className="rental_title">
+          <h3>{title}</h3>
+        </div>
+        <div className="rental_descrip">
+          <p>${price}</p>
+          <p>{rooms === 0 ? "Studio" : rooms + " BR"} </p>
         </div>
       </div>
     </Link>
