@@ -21,11 +21,12 @@ export default function Job({
   let year = dateMade.split(" ").pop();
   let middle = dateMade.split(" ").splice(1, 2).join(" ");
   return (
-    <div className="job-container">
+   <Link className="link" to={`/jobs/${id}`}>  <div className="job-container">
+    
       <div className="left-section">
-        <Link className="link" to={`/jobs/${id}`}>
+       
           <h2>{job_title}</h2>
-        </Link>
+     
         <p className="company">{company}</p>
       </div>
       {/* Middle  */}
@@ -47,6 +48,6 @@ export default function Job({
           <strong>Native Language:</strong> {native_language}
         </p>
       </div>
-    </div>
+    </div>   </Link>
   );
 }

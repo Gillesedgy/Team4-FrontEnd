@@ -11,12 +11,15 @@
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
   grid-column-gap: 1em;
 }
+.job-container:hover {
+  background-color: salmon;
+}
 
 .left-section {
   width: 33%;
 }
 .left-section h2:hover {
-  color: salmon;
+  /* color: salmon; */
 }
 
 .right-section {
@@ -45,6 +48,19 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1em;
+}
+.jobs-title button {
+  padding: 8px 16px;
+  background-color: salmon;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 55em;
+  margin-right: auto;
+}
+.jobs-title button:hover {
+  background-color: rgb(250, 116, 102);
 }
 @media (max-width: 768px) {
   .job-container {
