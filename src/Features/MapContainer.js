@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
-//helper
-import { addressConverter } from "./helper";
+
 const gKey = process.env.REACT_APP_GOOGLE_MAP_API_KEY;
 
-export default function MapContainer() {
+export default function MapContainer({ location }) {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: gKey,
   });
@@ -13,24 +12,40 @@ export default function MapContainer() {
 
   useEffect(() => {
     // Gets LongLat
-    //Todo: Delete line 17, and 30..
-    // const centered = () => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setLongitude(position.coords.longitude);
-        setLatitude(position.coords.latitude);
-      },
-      (error) => {
-        console.log("Error getting your current position: " + error.message);
-        // setLongitude(0);
-        // setLatitude(0);
-      }
-    );
-    // };
-    // centered();
-  }, []);
+    handleAddressSubmit(location);
+    // console.log("lng:", longitude, "lat:", latitude);
+    // navigator.geolocation.getCurrentPosition(
+    //   (position) => {
+    //     console.log("position:", position);
+    //     setLongitude(position.coords.longitude);
+    //     setLatitude(position.coords.latitude);
+    //   },
+    //   (error) => {
+    //     console.log("Error getting your current position: " + error.message);
+    //   }
+    // );
+  }, [location, handleAddressSubmit]);
 
-  const handleAddressSubmit = (address) => {
+  function addressConverter(address) {
+    return new Promise((resolve, reject) => {
+      const geocoder = new window.google.maps.Geocoder();
+      geocoder.geocode({ address: address }, function (results, status) {
+        if (
+          status === window.google.maps.GeocoderStatus.OK &&
+          results.length > 0
+        ) {
+          const lat = results[0].geometry.location.lat();
+          const lng = results[0].geometry.location.lng();
+          setLongitude(lng);
+          setLatitude(lat);
+          resolve({ lat, lng });
+        } else {
+          reject("Address not found!");
+        }
+      });
+    });
+  }
+  function handleAddressSubmit(address) {
     addressConverter(address)
       .then((coords) => {
         setLatitude(coords.lat);
@@ -39,12 +54,11 @@ export default function MapContainer() {
       .catch((error) => {
         console.error(error);
       });
-  };
+  }
   return (
     <div className="map">
       {isLoaded ? (
         <GoogleMap
-          // addressConverter={addressConverter}
           zoom={9}
           center={{ lat: latitude, lng: longitude }}
           mapContainerStyle={{ height: "100%", width: "100%" }}
