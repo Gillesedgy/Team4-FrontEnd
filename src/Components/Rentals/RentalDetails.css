@@ -1,0 +1,21 @@
+.rental_details_buttons button,
+.view_button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+.rental_details_buttons button:hover,
+.view_button:hover {
+  background-color: rgb(127, 177, 190);
+  color: white;
+}
+
+.rental_detail {
+  margin: 2em;
+  padding: 2em;
+  /* background-color: azure; */
+}

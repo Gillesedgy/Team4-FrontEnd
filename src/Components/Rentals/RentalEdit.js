@@ -95,6 +95,7 @@ export default function RentalEdit() {
             name="description"
             value={rental.description}
             onChange={handleTextChange}
+            style={{ fontFamily: "Supreme, sans-serif" }}
             required
           />
         </label>
