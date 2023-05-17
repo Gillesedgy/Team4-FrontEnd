@@ -39,7 +39,7 @@
   }
   
   .login-form button[type="submit"]:hover {
-    background-color: #eaad62;
+    background-color: #45a0a0;
   }
   
   .login-form button[type="submit"]:focus {
@@ -71,6 +71,6 @@
   
   .signup-btn:hover {
     text-decoration: none;
-    color: black;
+    color: #45a0a0;
   }
   
