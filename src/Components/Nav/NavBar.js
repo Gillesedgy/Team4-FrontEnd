@@ -15,10 +15,11 @@ function NavBar() {
   const [click, setClick] = useState(false);
   // const [dropDown, setDropDown] = useState(false);
 
+
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
  
-
+  
 
   // const onMouseEnter = () => {
   //   if (window.innerWidth < 960) {
@@ -98,7 +99,7 @@ function NavBar() {
           </Link>
         </li>
       </ul>
-      <Button />
+      <Button className="nav-sign-btn"/>
     </nav>
   );
 }

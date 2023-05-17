@@ -2,7 +2,7 @@
 
 .btn{
     align-items: center;
-    background-color: #fad5ad;
+    background-color: #f08f44;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: .25rem;
     box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
@@ -10,13 +10,12 @@
     color: rgba(0, 0, 0, 0.85);
     cursor: pointer;
     display: inline-flex;
-    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 19px;
+    font-weight: 200;
     justify-content: center;
     line-height: .50;
-    margin: 0;
-    min-height: 2rem;
+    margin-top: 20px;
+    min-height: 2.3rem;
     padding: calc(.875rem - 1px) calc(1.5rem - 1px);
     position: relative;
     text-decoration: none;
@@ -26,6 +25,8 @@
     touch-action: manipulation;
     vertical-align: baseline;
     width: auto;
+
+
   }
   
   .btn:hover,
@@ -37,6 +38,8 @@
   
   .btn:hover {
     transform: translateY(-1px);
+    background-color: rgba(14, 14, 14, 0.928);
+    color: #F0F0F1;
   }
   
   .btn:active {

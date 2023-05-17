@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Post from "./Post";
+import "./post.css";
+import { GrAdd } from "react-icons/gr";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -21,9 +23,18 @@ export default function Posts() {
   }, []);
 
   return (
-    <div className="community_board_posts">
-      <h3>Community Board</h3>
-      <button onClick={() => navigate(`/communityBoard/new`)}>New Post</button>
+    <div className="posts">
+      <div className="community-board-title">      
+        <h3>Community Board </h3>
+
+        {" "}
+        <button
+          className="add-btn-comunity"
+          onClick={() => navigate(`/communityBoard/new`)}
+        >
+          <GrAdd /> Add new
+        </button>
+      </div>
       {posts.map((post) => {
         return <Post key={post.id} post={post} />;
       })}

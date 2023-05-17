@@ -1,6 +1,8 @@
 import React from "react";
 import "./Welcome.css";
 import { Link } from "react-router-dom";
+// import doodle1 from "../../Assets/doodle1.png";
+
 
 function Welcome() {
   const languageFlip = [
@@ -14,8 +16,8 @@ function Welcome() {
     "akeyi!",
     "maligayang pagdating!",
     "خوش آمدید!",
-    
   ]
+
   return (
     <div className="welcome-page">
       <div className="welcometext">Welcome!</div>
@@ -25,11 +27,11 @@ function Welcome() {
         <button className="welcome-btn">Get Started</button>
       </Link>
       </div>
-      {/* <img className="doodle1" src="/public/welcome1white.png"
+      {/* <img className="doodle1" src={doodle1}
       alt="doddle1"
       width={100} height={100}/> */}
      
-    
+
      
     </div>
   );
