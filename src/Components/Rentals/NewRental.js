@@ -82,6 +82,7 @@ export default function NewRental() {
             id="description"
             value={rental.description}
             onChange={handleTextChange}
+            style={{ fontFamily: "Supreme, sans-serif" }}
             required
           />
         </label>

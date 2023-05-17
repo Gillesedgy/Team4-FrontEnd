@@ -5,7 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 import "./RentalDetails.css";
 //* --------Map---------------
-import MapView from "../../Features/MapView";
+import MapContainer from "../../Features/MapContainer";
 // import { useLoadScript } from "@react-google-maps/api"; // this is needed to make sure the map loads correctly
 //* -------------------------------------------
 const API = process.env.REACT_APP_API_URL;
@@ -50,9 +50,9 @@ export default function RentalDetails() {
   return (
     <div className="rental_detail">
       <div className="map-container">
-        <MapView />
+        <MapContainer />
       </div>
-      Rental Details
+
       <div>
         <h3 className="rental_title">{rental.title}</h3>
       </div>
@@ -63,9 +63,13 @@ export default function RentalDetails() {
         <p>{displayText}</p>
 
         {!showMore ? (
-          <button onClick={toggleShowMore}>View More...</button>
+          <button className="view_button" onClick={toggleShowMore}>
+            View More...
+          </button>
         ) : (
-          <button onClick={toggleShowMore}>View less</button>
+          <button className="view_button" onClick={toggleShowMore}>
+            View less
+          </button>
         )}
       </div>
       <div className="rental_details_buttons">
