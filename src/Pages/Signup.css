@@ -48,12 +48,3 @@
   background-color: #7cbdce;
 }
 
-input#address {
-  width: 100%;
-  margin: opx opx 10px ;
-  padding: 10px;
-  margin: 0 auto;
-  background-color: #ffffff;
-  border-radius: 5px;
-  border-color: #ccc;
-}

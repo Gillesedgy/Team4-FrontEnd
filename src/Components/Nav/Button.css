@@ -2,7 +2,7 @@
 
 .btn{
     align-items: center;
-    background-color: #f08f44;
+    background-color: rgb(247,182,102);
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: .25rem;
     box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
@@ -38,7 +38,7 @@
   
   .btn:hover {
     transform: translateY(-1px);
-    background-color: rgba(14, 14, 14, 0.928);
+    background-color:  #45a0a0;
     color: #F0F0F1;
   }
   

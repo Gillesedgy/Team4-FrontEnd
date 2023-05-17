@@ -71,7 +71,7 @@ export default function Signup() {
         <label>
           Address:
           <input
-            type="type"
+            type="text"
             id="address"
             value={user.address}
             onChange={handleTextChange}
