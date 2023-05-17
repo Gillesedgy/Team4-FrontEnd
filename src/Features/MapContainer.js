@@ -11,20 +11,18 @@ export default function MapContainer({ location }) {
   const [latitude, setLatitude] = useState(0);
 
   useEffect(() => {
-    // Gets LongLat
+    function handleAddressSubmit(address) {
+      addressConverter(address)
+        .then((coords) => {
+          setLatitude(coords.lat);
+          setLongitude(coords.lng);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
     handleAddressSubmit(location);
-    // console.log("lng:", longitude, "lat:", latitude);
-    // navigator.geolocation.getCurrentPosition(
-    //   (position) => {
-    //     console.log("position:", position);
-    //     setLongitude(position.coords.longitude);
-    //     setLatitude(position.coords.latitude);
-    //   },
-    //   (error) => {
-    //     console.log("Error getting your current position: " + error.message);
-    //   }
-    // );
-  }, [location, handleAddressSubmit]);
+  }, [location]);
 
   function addressConverter(address) {
     return new Promise((resolve, reject) => {
@@ -45,16 +43,7 @@ export default function MapContainer({ location }) {
       });
     });
   }
-  function handleAddressSubmit(address) {
-    addressConverter(address)
-      .then((coords) => {
-        setLatitude(coords.lat);
-        setLongitude(coords.lng);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
+
   return (
     <div className="map">
       {isLoaded ? (
