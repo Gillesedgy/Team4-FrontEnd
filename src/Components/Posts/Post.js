@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./post.css"
 
 export default function Post({
   post: { id, post_title, post_content, image_url, created_at, updated_at },

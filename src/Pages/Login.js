@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import "./Login.css"
+import { useNavigate, Link } from "react-router-dom";
 import { useContextProvider } from "../Provider";
 
 const API = process.env.REACT_APP_API_URL;
@@ -32,7 +33,7 @@ export default function Login() {
   }
 
   return (
-    <div>
+    <div className="login-form">
       <h2 className="login_title">Log in</h2>
       <form onSubmit={handleLogin}>
         <label>
@@ -58,6 +59,10 @@ export default function Login() {
         </label>
         <button type="submit">Submit</button>
       </form>
+      <div className="signup-prompt">
+        <p>Dont have an account? <Link to="/signup"> <button className="signup-btn">Sign Up</button></Link></p>
+        
+      </div>
     </div>
   );
 }

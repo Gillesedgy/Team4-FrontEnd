@@ -5,7 +5,7 @@
 }
 
 .nav-logo {
-  width: 100px;
+  width: 130px;
 }
 
 .menu-icon {
@@ -50,16 +50,17 @@
 .nav-item {
   display: flex;
   align-items: center;
+  padding-top: 1.7rem;
 }
 
 .nav-links {
   color: rgb(8, 8, 8);
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.5rem;
 }
 
 .nav-links:hover {
-  background-color: #f7d9ad;
+  background-color: #f4cea2;
   border-radius: 4px;
   transition: all 0.2s ease-out;
 }
@@ -90,8 +91,8 @@
   }
 
   .nav-menu.active {
-    background: #d87c7c;
-    left: 0;
+    background: rgb(251,197,146);
+    background: linear-gradient(0deg, rgba(251,197,146,1) 25%, rgb(245, 206, 171) 45%, rgb(255, 255, 255) 83%);    left: 0;
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 1;
@@ -105,7 +106,7 @@
   }
 
   .nav-links:hover {
-    background-color: #f0e4c3;
+    background: #ffe4c6;
     border-radius: 0;
   }
 
@@ -123,6 +124,7 @@
     right: 0;
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
+    color: #f2ab59;
     cursor: pointer;
   }
 
@@ -148,4 +150,8 @@
   button.btn {
     display: none;
   }
+}
+
+.nav-sign-btn{
+  padding-top: 1.5rem;
 }

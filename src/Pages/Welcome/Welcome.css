@@ -2,14 +2,13 @@
   width: 50%;
   /* background-image: url("/public/diversity.webp"); */
   /* background-image: url("https://i.pinimg.com/564x/b8/d4/2f/b8d42fb7165855a7f8b24a2f16875085.jpg"); */
-  background-image: url("/public/welcome1white.png");
+  background-image: url("../../Assets/welcome1white.png");
   background-size: cover;
   height: 700px;
   width: 100%;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
-  opacity: 0.4px;
 }
 
 .welcometext {
@@ -61,9 +60,9 @@
 
 .welcome-btn:hover,
 .welcome-btn:focus {
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 180, 68, 0.97);
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(255, 157, 60, 0.956);
 }
 
 .welcome-btn:hover {
@@ -78,9 +77,8 @@ button:active {
   transform: translateY(0);
 }
 
-/* .doodle1{
-  margin-left: 450px;
+.doodle1{
+  margin-left: 560px;
   display: flex;
-  justify-content: bottom;
   align-items: center;
-} */
+}

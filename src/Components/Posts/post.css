@@ -1,0 +1,38 @@
+.post {
+  width: 310px;
+  border: 2px solid black;
+  border-radius: 25px;
+  margin: 20px 65px 25px 65px;
+  text-align: center;
+  padding: 5px;
+  color: black;
+}
+
+.posts {
+  display: grid;
+  /* flex-wrap: row wrap; */
+  justify-content: center;
+  text-align: center;
+  width: auto;
+  margin-top: 20px;
+}
+
+.community-board-title {
+  display: flex;
+  justify-content: space-around;
+  
+
+}
+
+.add-btn-comunity {
+  background-color: #f8f7f7;
+  height: 33px;
+  width: 120px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  display: flex;
+  align-items: right;
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
+}
