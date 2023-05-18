@@ -68,7 +68,10 @@
   border: 1px solid grey;
   color: white;
   border-radius: 8px;
-  background-color: rgb(123, 186, 186);
+}
+
+.rentals_add:hover {
+  transform: translateY(-1px);
 }
 
 .rental:hover {
