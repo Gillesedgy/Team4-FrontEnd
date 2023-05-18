@@ -14,8 +14,13 @@ export default function Rental({
           <h3>{title}</h3>
         </div>
         <div className="rental_descrip">
-          <p>${price}</p>
-          <p>{rooms === 0 ? "Studio" : rooms + " BR"} </p>
+          <p>
+            <b>Rent: </b>${price}
+          </p>
+          <p>
+            <b>Beds: </b>
+            {rooms === 0 ? "Studio" : rooms + " BR"}{" "}
+          </p>
         </div>
       </div>
     </Link>

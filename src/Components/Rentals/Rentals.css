@@ -31,7 +31,8 @@
 }
 
 .rental_image {
-  height: 14em;
+  height: 10em;
+  border-radius: 8px;
 }
 
 .rental_title,
@@ -55,8 +56,24 @@
   font-size: larger;
 }
 
+.rentals_button_container {
+  width: 90%;
+  display: grid;
+  justify-content: right;
+}
+
+.rentals_add {
+  margin: 10px;
+  padding: 0.8em;
+  border: 1px solid grey;
+  color: white;
+  border-radius: 8px;
+  background-color: rgb(123, 186, 186);
+}
+
 .rental:hover {
-  background-color: rgb(187, 227, 238);
+  /* background-color: rgb(204, 240, 251); */
+  background-color: rgba(85, 195, 195, 0.325);
 }
 
 .rental_description {
