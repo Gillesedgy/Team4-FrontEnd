@@ -11,8 +11,9 @@ import MapContainer from "../../Features/MapContainer";
 //* -------------------------------------------
 const API = process.env.REACT_APP_API_URL;
 
-export default function RentalDetails() {
+export default function RentalDetails({ handleAddressSubmit }) {
   const [rental, setRental] = useState({});
+  const [location, setLocation] = useState({ lat: 0, lng: 0 });
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -39,6 +40,10 @@ export default function RentalDetails() {
       .then((res) => {
         console.log(res.data);
         setRental(res.data);
+        setLocation({
+          lat: parseInt(res.data.latitude),
+          lng: parseInt(res.data.longitude),
+        });
       })
       .catch((err) => console.warn(err));
   }, [id]);
@@ -105,8 +110,13 @@ export default function RentalDetails() {
       </div>
       <div className="rental_map">
         <h5>View on Map</h5>
-        <div className="map-container">
-          <MapContainer />
+        <div style={{ display: "flex", height: "400px" }}>
+          <MapContainer
+            handleAddressSubmit={handleAddressSubmit}
+            // lat={rental.latitude}
+            // lng={rental.longitude}
+            location={location}
+          />
         </div>
       </div>
       <div className="rental_recs">

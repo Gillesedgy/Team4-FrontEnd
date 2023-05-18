@@ -17,6 +17,7 @@ export function addressConverter(address) {
     });
   });
 }
+
 export const handleAddressSubmit = (address, setLatitude, setLongitude) => {
   addressConverter(address)
     .then((coords) => {

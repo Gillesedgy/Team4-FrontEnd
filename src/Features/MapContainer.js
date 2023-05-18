@@ -21,10 +21,14 @@ export default function MapContainer({ location }) {
           console.error(error);
         });
     }
-    handleAddressSubmit(location);
+    console.log(location);
+    typeof location === "string"
+      ? handleAddressSubmit(location)
+      : setLatitude(location.lat);
+    setLongitude(location.lng);
   }, [location]);
 
-  function addressConverter(address) {
+  function addressConverter(address, setLongitude, setLatitude) {
     return new Promise((resolve, reject) => {
       const geocoder = new window.google.maps.Geocoder();
       geocoder.geocode({ address: address }, function (results, status) {
