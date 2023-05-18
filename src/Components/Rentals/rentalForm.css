@@ -6,34 +6,58 @@
   border-radius: 5px;
 }
 
+.rental_edit_title {
+  margin-bottom: 1em;
+  color: #45a0a0;
+}
+
+.new_rental_title {
+  margin-bottom: 1em;
+  color: #45a0a0;
+}
+
 .rental_form label {
   display: block;
   margin-bottom: 5px;
+  margin-top: 0.5em;
   font-weight: bold;
 }
 
 .rental_form input[type="text"] {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
+  padding: 1em;
+  /* margin-bottom: 1em; */
+  margin-top: 0.5em;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+.rental_form input[type="text"]:focus,
+textarea:focus,
+input[type="number"]:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px teal;
 }
 
 .rental_form textarea {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
+  height: 6em;
+  padding: 1.1em;
+  margin-top: 0.5em;
   border: 1px solid #ccc;
   border-radius: 5px;
   resize: none;
+  margin-top: 0.5em;
 }
 
 .rental_form button[type="submit"] {
-  display: block;
-  margin: 0 auto;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 0.5em;
   padding: 10px 20px;
-  background-color: #008cba;
+  background-color: rgb(76, 160, 160);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -42,5 +66,37 @@
 }
 
 .rental_form button[type="submit"]:hover {
-  background-color: #006e9f;
+  background-color: rgb(2, 101, 101);
+  transform: translateY(-1.5px);
+}
+.rental_form select {
+  margin: 1em;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.rental_form [type="number"] {
+  margin: 1em;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.go_back {
+  display: grid;
+  margin-bottom: 0.5em;
+  margin-top: 1.8em;
+  padding: 10px 20px;
+  background-color: rgb(125, 188, 188);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.go_back:hover {
+  background-color: teal;
+  transform: translateY(-1px);
 }

@@ -54,7 +54,7 @@ export default function RentalDetails() {
       </div>
 
       <div>
-        <h3 className="rental_title">{rental.title}</h3>
+        <h2 className="rental_title">{rental.title}</h2>
       </div>
       <div className="rental_image">
         <img src={rental.image_url} alt={rental.image_url} />

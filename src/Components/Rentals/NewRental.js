@@ -73,7 +73,7 @@ export default function NewRental() {
 
   return (
     <div className="rental_form">
-      <h3 className="new_rental_title">New Rental Listing</h3>
+      <h2 className="new_rental_title">New Rental Listing</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Description:
@@ -164,6 +164,14 @@ export default function NewRental() {
         <br />
         <button type="submit">Submit</button>
       </form>
+      <button
+        className="go_back"
+        onClick={() => {
+          navigate(`/listings`);
+        }}
+      >
+        Go Back
+      </button>
     </div>
   );
 }
