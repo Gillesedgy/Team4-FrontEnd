@@ -15,7 +15,24 @@
 }
 
 .rental_detail {
-  margin: 2em;
+  margin: 3em;
   padding: 2em;
-  /* background-color: azure; */
+  border: 1px solid grey;
+}
+
+.rental_dets_title {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.rental_dets_image {
+  margin-left: auto;
+  margin-right: auto;
+}
+.rental_dets_image img {
+  border-radius: 8px;
+}
+.details_main_content {
+  display: flex;
+  flex-direction: column;
 }

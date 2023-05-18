@@ -53,24 +53,25 @@ export default function RentalDetails() {
         <MapContainer />
       </div>
 
-      <div>
-        <h2 className="rental_title">{rental.title}</h2>
-      </div>
-      <div className="rental_image">
-        <img src={rental.image_url} alt={rental.image_url} />
-      </div>
-      <div className="rental_description">
-        <p>{displayText}</p>
+      <div className="details_main_content">
+        <div className="rental_dets_image">
+          <img src={rental.image_url} alt={rental.image_url} />
+        </div>
+        <h2 className="rental_dets_title">{rental.title}</h2>
 
-        {!showMore ? (
-          <button className="view_button" onClick={toggleShowMore}>
-            View More...
-          </button>
-        ) : (
-          <button className="view_button" onClick={toggleShowMore}>
-            View less
-          </button>
-        )}
+        <div className="rental_dets_description">
+          <p>{displayText}</p>
+
+          {!showMore ? (
+            <button className="view_button" onClick={toggleShowMore}>
+              View More...
+            </button>
+          ) : (
+            <button className="view_button" onClick={toggleShowMore}>
+              View less
+            </button>
+          )}
+        </div>
       </div>
       <div className="rental_details_buttons">
         <button
