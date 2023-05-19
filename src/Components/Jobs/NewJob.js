@@ -7,15 +7,18 @@ export default function NewJob({ data }) {
   const navigate = useNavigate();
   //todo: Add new Table details to job state
   const [newJob, setNewJob] = useState({
-    jobTitle: "",
+    user_id: 0,
+    job_title: "",
     company: "",
     email: "",
     location: "",
-    date: "",
-    jobType: "",
+    posted_date: "",
+    job_type: "",
     description: "",
-    language: "",
+    native_language: "",
     is_favorite: false,
+    requirements: "",
+    salary: "",
   });
   //Todo:
   // add new job by making a call
@@ -110,10 +113,10 @@ export default function NewJob({ data }) {
           onChange={handleTextChange}
           required
         />
-        <label htmlFor="job_date">Job Date:</label>
+        <label htmlFor=" posted_date">Job Date:</label>
         <input
-          type="date"
-          id="job_date"
+          type="text"
+          id="posted_date"
           value={newJob.posted_date}
           onChange={handleTextChange}
           required
@@ -121,7 +124,7 @@ export default function NewJob({ data }) {
         <label htmlFor="job_type">Job Type:</label>
         <input
           type="text"
-          id="jobType"
+          id="job_type"
           value={newJob.job_type}
           onChange={handleTextChange}
           required
@@ -134,6 +137,13 @@ export default function NewJob({ data }) {
           onChange={handleTextChange}
           required
         />
+        <label htmlFor="is_favorite">Favorite:</label>
+        <input
+          type="checkbox"
+          id="is_favorite"
+          value={newJob.is_favorite}
+          onChange={handleCheckChange}
+        />
         <label htmlFor="salary">Salary:</label>
         <input
           type="text"
@@ -142,15 +152,6 @@ export default function NewJob({ data }) {
           onChange={handleTextChange}
           required
         />
-        <label htmlFor="is_favorite">Favorite:</label>
-        <input
-          type="checkbox"
-          id="is_favorite"
-          value={newJob.is_favorite}
-          onChange={handleCheckChange}
-          required
-        />
-
         <label>Languages: </label>
         <select
           id={newJob.native_language}
@@ -164,11 +165,10 @@ export default function NewJob({ data }) {
               {language.label}
             </option>
           ))}
-        </select>
+        </select>{" "}
+        <button type="submit">Post</button>
       </form>
       <div className="button">
-        {" "}
-        <button type="submit">Post</button>
         <button onClick={() => navigate(`/jobs`)} type="submit">
           Back
         </button>

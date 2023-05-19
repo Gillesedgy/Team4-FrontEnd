@@ -33,6 +33,7 @@ export default function RouteComponent() {
         <Route path="/jobs/:id" element={<JobDetails />} />
         <Route path="/jobs/:id/edit" element={<JobEditPage />} />
         <Route path="/jobs/new" element={<JobNewPage />} />
+
         <Route path="/listings" element={<RentalPage />} />
         <Route path="/listings/:id" element={<RentalDetails />} />
         <Route path="/listings/:id/edit" element={<RentalEditPage />} />
