@@ -30,7 +30,7 @@ export default function Rentals() {
           className="rentals_add"
           onClick={() => navigate(`/listings/new`)}
         >
-          Add +
+          Add New +
         </button>
       </div>
       {rentals.map((rental) => {
