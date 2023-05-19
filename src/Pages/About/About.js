@@ -1,8 +1,9 @@
 import React from 'react'
+import "./About.css"
 
 function About() {
   return (
-    <div>
+    <div className='about-container'>
         <div className='rentals-about'>
           <h1>Find Housing</h1>
           <p>Connect with locals who have affordable housing options not listed on the market.</p>
