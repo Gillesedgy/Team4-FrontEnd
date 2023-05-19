@@ -64,14 +64,16 @@
 
 .rentals_add {
   margin: 10px;
-  padding: 0.8em;
+  padding: 0.5em;
   border: 1px solid grey;
   color: white;
+  background-color: teal;
   border-radius: 8px;
+  font-size: medium;
 }
 
 .rentals_add:hover {
-  transform: translateY(-1px);
+  transform: translateY(-1.5px);
 }
 
 .rental:hover {

@@ -8,6 +8,7 @@ export default function Suggested({
     <div className="suggested">
       <Link
         to={`/listings/${id}`}
+        onClick={() => window.scrollTo(0, 0)}
         style={{ textDecoration: "none", color: "#303030" }}
       >
         <div className="suggested_divs">
