@@ -5,7 +5,7 @@
   border: none;
   border-radius: 4px;
   color: #333;
-  transition: background-color 0.3s;
+  transition: 0.3s;
 }
 
 .rental_details_buttons button:hover,
@@ -14,10 +14,15 @@
   color: white;
 }
 
-.rental_detail {
-  margin: 3em;
+.rental_details {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
   padding: 2em;
-  border: 1px solid grey;
+  border: 1px solid rgb(175, 175, 175);
+  border-style: double;
+  border-width: 5px;
+  border-radius: 8px;
 }
 
 .rental_dets_title {
@@ -31,6 +36,7 @@
 }
 .rental_dets_image img {
   border-radius: 8px;
+  height: 22em;
 }
 .details_main_content {
   display: flex;
@@ -38,8 +44,6 @@
 }
 
 .important_dets {
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr; */
   display: flex;
   flex-direction: row;
   width: 50%;
@@ -48,18 +52,71 @@
   padding: 0.5em;
   justify-content: space-around;
   background-color: rgba(0, 128, 128, 0.163);
+  border-radius: 10px;
+}
+
+.hr {
+  position: right;
+  box-shadow: 1px 1px 1px teal;
 }
 
 .rental_dets_description {
   border: 1px solid rgb(180, 180, 180);
   border-radius: 10px;
   padding: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.rental_map,
+.rental_map h5 {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .rental_recs {
   margin-top: 1em;
+  margin-bottom: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1.5em;
 }
 
-.rental_recs h4 {
+.rental_recs_h {
   color: rgb(54, 135, 130);
+  margin-bottom: 1em;
+  margin-top: 0.5em;
+}
+.suggested {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px rgb(157, 156, 156);
+  border-radius: 10px;
+  padding: 1em;
+}
+
+.suggested:hover {
+  transform: scale(1.05);
+  background-color: rgba(0, 128, 128, 0.109);
+  cursor: pointer;
+}
+
+.suggested_divs {
+  text-align: center;
+}
+
+.sug_image {
+  height: 10em;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sug_title,
+.sug_descrip {
+  margin: 10px;
+}
+
+.sug_descrip p {
+  margin-bottom: 0.5em;
 }

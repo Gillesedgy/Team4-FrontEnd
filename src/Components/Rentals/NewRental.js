@@ -21,6 +21,10 @@ export default function NewRental() {
     { value: "Creole", label: "Creole" },
     { value: "Filipino", label: "Filipino" },
     { value: "Urdu", label: "Urdu" },
+    { value: "French", label: "French" },
+    { value: "German", label: "German" },
+    { value: "Italian", label: "Italian" },
+    { value: "Vietnamese", label: "Vietnamese" },
   ];
 
   const addRental = (newRental) => {
@@ -51,6 +55,7 @@ export default function NewRental() {
     is_favorite: false,
     title: "",
     company: "",
+    rooms: 0,
   });
 
   const handleTextChange = (e) => {
@@ -76,6 +81,17 @@ export default function NewRental() {
       <h2 className="new_rental_title">New Rental Listing</h2>
       <form onSubmit={handleSubmit}>
         <label>
+          Title:
+          <input
+            type="text"
+            id="title"
+            name="title"
+            value={rental.title}
+            onChange={handleTextChange}
+            required
+          />
+        </label>
+        <label>
           Description:
           <textarea
             name="description"
@@ -86,7 +102,19 @@ export default function NewRental() {
             required
           />
         </label>
-        <br />
+
+        <label>
+          Rooms:
+          <input
+            type="number"
+            id="rooms"
+            name="rooms"
+            value={rental.rooms}
+            onChange={handleTextChange}
+            required
+          />
+        </label>
+
         <label>
           Native Language:
           <select
@@ -103,7 +131,7 @@ export default function NewRental() {
             ))}
           </select>
         </label>
-        <br />
+
         <label>
           Image URL:
           <input
@@ -114,7 +142,7 @@ export default function NewRental() {
             onChange={handleTextChange}
           />
         </label>
-        <br />
+
         <label>
           Rent:
           <input
@@ -126,7 +154,7 @@ export default function NewRental() {
             required
           />
         </label>
-        <br />
+
         <label>
           Address:
           <input
@@ -138,19 +166,7 @@ export default function NewRental() {
             required
           />
         </label>
-        <br />
-        <label>
-          Title:
-          <input
-            type="text"
-            id="title"
-            name="title"
-            value={rental.title}
-            onChange={handleTextChange}
-            required
-          />
-        </label>
-        <br />
+
         <label>
           Company:
           <input
