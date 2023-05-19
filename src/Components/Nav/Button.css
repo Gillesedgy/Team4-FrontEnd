@@ -50,3 +50,13 @@
     transform: translateY(0);
   }
   
+
+  @media screen and (max-width: 960px) {
+    .btn {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      
+  
+    }
+  }

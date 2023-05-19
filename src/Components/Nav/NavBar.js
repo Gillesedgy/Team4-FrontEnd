@@ -19,28 +19,7 @@ function NavBar() {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
  
-  
-
-  // const onMouseEnter = () => {
-  //   if (window.innerWidth < 960) {
-  //     setDropDown(false);
-  //   } else {
-  //     setDropDown(false);
-  //   }
-  // };
-
-  // const onMouseLeave = () => {
-  //   if (window.innerWidth < 960) {
-  //     setDropDown(false);
-  //   } else {
-  //     setDropDown(true);
-  //   }
-  // };
-
-  // const toggleDropDown = () => {
-    
-  //   setDropDown(!dropDown);
-  // };
+ 
 
   return (
     <nav className="navbar">
@@ -55,40 +34,30 @@ function NavBar() {
       <ul className={click ? "nav-menu active" : "nav-menu"}>
         <li className="nav-item">
           <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-            Home <BiHomeHeart />
+            <BiHomeHeart className="icon-nav"/>Home 
           </Link>
         </li>
 
         <li className="nav-item">
           <Link to="/listings" className="nav-links" onClick={closeMobileMenu}>
-            Rentals <TbHomeDollar/>
+           <TbHomeDollar className="icon-nav"/> Rentals 
           </Link>
         </li>
         <li className="nav-item">
           <Link to="/jobs" className="nav-links" onClick={closeMobileMenu}>
-            Jobs <MdWorkOutline />
+            <MdWorkOutline className="icon-nav"/>Jobs 
           </Link>
         </li>
-        <li className="nav-item">
-          <Link
+        <li className="nav-item" >
+          <Link 
             to="/communityBoard"
             className="nav-links"
             onClick={closeMobileMenu}
           >
-            Community <GoCommentDiscussion />
+           <GoCommentDiscussion className="icon-nav"/> Community 
           </Link>
         </li>
-        {/* <li
-          className="nav-item"
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-        >
-          <Link className="nav-links" onClick={toggleDropDown} >
-            Add New <GoTriangleDown />
-          </Link>
-          {dropDown && <Dropdown />}
-        </li> */}
-
+        
         <li className="nav-item">
           <Link
             to="/login"

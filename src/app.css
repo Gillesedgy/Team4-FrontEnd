@@ -1,7 +1,7 @@
 body{
     margin-top: 8%;
     font-family: 'Supreme', sans-serif;
-
+    max-width: 1200px;
 }
 
 a{text-decoration: none;}

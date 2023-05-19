@@ -12,6 +12,13 @@
   font-size: 30px;
 }
 
+
+svg.icon-nav{
+  font-size: 30px;
+  
+  }
+
+
 .navbar {
   /* background: rgb(235, 229, 230); */
   background: white;
@@ -23,6 +30,8 @@
   font-size: 1.2rem;
   position: fixed;
   top: 0;
+  z-index:1;
+  /* overflow: hidden; */
 }
 
 
@@ -75,8 +84,17 @@
 }
 
 @media screen and (max-width: 960px) {
+
+  .navbar {
+    /* background: rgb(235, 229, 230); */
+    background: white;
+    height: 15%;
+  
+  }
+
   .NavbarItems {
     position: relative;
+    margin: 0;
   }
 
   .nav-menu {
@@ -87,16 +105,16 @@
     position: absolute;
     top: 80px;
     left: -100%;
-    opacity: 1;
+    /* opacity: 1; */
     transition: all 0.5s ease;
   }
 
   .nav-menu.active {
     background: rgb(251,197,146);
     background: linear-gradient(0deg, rgba(251,197,146,1) 25%, rgb(245, 206, 171) 45%, rgb(255, 255, 255) 83%);    left: 0;
-    opacity: 1;
+    /* opacity: 1; */
     transition: all 0.5s ease;
-    z-index: 1;
+    /* z-index: 1; */
   }
 
   .nav-links {
@@ -125,18 +143,19 @@
     right: 0;
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
-    color: #f2ab59;
+    color: #6d59f2;
     cursor: pointer;
   }
 
   .nav-links-mobile {
     display: block;
     text-align: center;
+    align-items: center;
     padding: 1.5rem;
-    margin: 2rem auto;
+    /* margin: 2rem auto; */
     border-radius: 4px;
-    width: 80%;
-    background: #fadabb;
+    width: 100%;
+    background: #6d59f2;
     text-decoration: none;
     color: rgb(0, 0, 0);
     font-size: 1.5rem;
