@@ -108,14 +108,14 @@ export default function JobEdit() {
           onChange={handleTextChange}
           required
         />
-        <label htmlFor="job_date">Job Date:</label>
+        {/* <label htmlFor="job_date">Job Date:</label>
         <input
           type="date"
           id="job_date"
           value={edit.posted_date}
           onChange={handleTextChange}
           required
-        />
+        /> */}
         <label htmlFor="job_type">Job Type:</label>
         <input
           type="text"
