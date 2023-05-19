@@ -22,6 +22,10 @@ export default function RentalEdit() {
     { value: "Creole", label: "Creole" },
     { value: "Filipino", label: "Filipino" },
     { value: "Urdu", label: "Urdu" },
+    { value: "French", label: "French" },
+    { value: "German", label: "German" },
+    { value: "Italian", label: "Italian" },
+    { value: "Vietnamese", label: "Vietnamese" },
   ];
 
   const updateRental = (updatedRental) => {
@@ -53,6 +57,7 @@ export default function RentalEdit() {
     is_favorite: false,
     title: "",
     company: "",
+    rooms: 0,
   });
 
   const handleTextChange = (e) => {
@@ -85,8 +90,20 @@ export default function RentalEdit() {
 
   return (
     <div className="rental_form">
-      <h2 className="rental_edit_title">New Rental Listing</h2>
+      <h2 className="rental_edit_title">Edit form</h2>
       <form onSubmit={handleSubmit}>
+        <label>
+          Title:
+          <input
+            type="text"
+            id="title"
+            name="title"
+            value={rental.title}
+            onChange={handleTextChange}
+            required
+          />
+        </label>
+
         <label>
           Description:
           <textarea
@@ -99,7 +116,19 @@ export default function RentalEdit() {
             required
           />
         </label>
-        <br />
+
+        <label>
+          Rooms:
+          <input
+            type="number"
+            id="rooms"
+            name="rooms"
+            value={rental.rooms}
+            onChange={handleTextChange}
+            required
+          />
+        </label>
+
         <label>
           Native Language:
           <select
@@ -116,7 +145,7 @@ export default function RentalEdit() {
             ))}
           </select>
         </label>
-        <br />
+
         <label>
           Image URL:
           <input
@@ -127,7 +156,7 @@ export default function RentalEdit() {
             onChange={handleTextChange}
           />
         </label>
-        <br />
+
         <label>
           Rent:
           <input
@@ -139,7 +168,7 @@ export default function RentalEdit() {
             required
           />
         </label>
-        <br />
+
         <label>
           Address:
           <input
@@ -151,19 +180,7 @@ export default function RentalEdit() {
             required
           />
         </label>
-        <br />
-        <label>
-          Title:
-          <input
-            type="text"
-            id="title"
-            name="title"
-            value={rental.title}
-            onChange={handleTextChange}
-            required
-          />
-        </label>
-        <br />
+
         <label>
           Company:
           <input
@@ -180,7 +197,7 @@ export default function RentalEdit() {
       <button
         className="go_back"
         onClick={() => {
-          navigate(`/listings`);
+          navigate(`/listings/${id}`);
         }}
       >
         Go Back

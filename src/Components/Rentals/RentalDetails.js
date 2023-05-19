@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { BsSuitHeart } from "react-icons/bs";
+import Suggested from "./Suggested";
 
 import "./RentalDetails.css";
 //* --------Map---------------
@@ -13,6 +14,7 @@ const API = process.env.REACT_APP_API_URL;
 
 export default function RentalDetails({ handleAddressSubmit }) {
   const [rental, setRental] = useState({});
+  const [moreRentals, setMoreRentals] = useState([]);
   const [location, setLocation] = useState({ lat: 0, lng: 0 });
   const { id } = useParams();
   const navigate = useNavigate();
@@ -56,10 +58,23 @@ export default function RentalDetails({ handleAddressSubmit }) {
       })
       .catch((error) => console.warn(error));
   };
-  //*
+
+  useEffect(() => {
+    axios
+      .get(`${API}/listings`)
+
+      .then((res) => {
+        setMoreRentals(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => console.warn(err));
+  }, []);
+
+  let filtered = moreRentals.filter((more) => rental.rooms === more.rooms);
+  filtered = filtered.length > 3 ? filtered.splice(0, 3) : filtered;
 
   return (
-    <div className="rental_detail">
+    <div className="rental_details">
       <div className="details_main_content">
         <div className="rental_dets_image">
           <img src={rental.image_url} alt={rental.image_url} />
@@ -77,12 +92,12 @@ export default function RentalDetails({ handleAddressSubmit }) {
           <p>
             <b>Monthly Rent:</b> ${rental.price}
           </p>
-          {"|"}
+
+          <hr className="hr" />
           <p>
             <b>Rooms: </b>
             {rental.rooms}
           </p>
-          {/* {"|"} */}
         </div>
         <div className="rental_dets_description">
           <p>{displayText}</p>
@@ -113,14 +128,16 @@ export default function RentalDetails({ handleAddressSubmit }) {
         <div style={{ display: "flex", height: "400px" }}>
           <MapContainer
             handleAddressSubmit={handleAddressSubmit}
-            // lat={rental.latitude}
-            // lng={rental.longitude}
             location={location}
           />
         </div>
       </div>
+      <hr></hr>
+      <h3 className="rental_recs_h">Similar listings</h3>
       <div className="rental_recs">
-        <h4>Similar listings</h4>
+        {filtered.map((rental) => {
+          return <Suggested id={rental.id} rental={rental} />;
+        })}
       </div>
     </div>
   );
