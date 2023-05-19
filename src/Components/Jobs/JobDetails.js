@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./jobDetails.css";
 import Contact from "../../Features/Contact";
+import Recommended from "./Recommended";
 //* --------Map---------------
 // import { addressConverter } from "../../Features/helper";
 import MapContainer from "../../Features/MapContainer";
@@ -28,21 +29,21 @@ export default function JobDetails({ handleAddressSubmit }) {
       .catch((error) => console.warn("catch", error));
   }, [id]);
   //* Fetching for jobs that have things in common -------
-  const recommendedJobs = () => {
+  useEffect(() => {
     axios
       .get(`${API}/jobs`)
       .then((res) => {
         setRecommended(res.data);
       })
       .catch((error) => console.warn(error));
-  };
-  //* filter Recommended Jobs
-  useEffect(() => {
-    const filtered = recommended.filter((rec) => {
-      return rec.skills === jobs.skills && rec.id === jobs.id;
-    });
-    setRecommended(filtered);
   }, []);
+
+  //* filter Recommended Jobs
+  const filtered = recommended.filter((rec) => {
+    return rec.skills === jobs.skills && rec.id !== jobs.id;
+  });
+  // setRecommended(filtered);
+
   // //* ----------------
   // Delete
   const deleteJob = () => {
@@ -65,24 +66,9 @@ export default function JobDetails({ handleAddressSubmit }) {
     <div className="page-container">
       {/* //!LEFT ----- */}
       <div className="left-aside">
-        {recommended.map((job) => (
-          <div className="rec">
-            {" "}
-            <p key={job.id}>{job.job_title}</p>
-          </div>
-        ))}
-        <p className="p1">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque rerum
-          sit voluptate perspiciatis sed animi velit quaerat recusandae,
-          molestias aspernatur deleniti. Facere molestias, minima nam, alias
-          similique iure consequuntur earum unde vitae amet adipisci non ab
-          accusamus ratione doloribus, delectus repudiandae iste. Ad id,
-          ratione, culpa minima sint iusto modi dignissimos cum magni quibusdam
-          a totam, quis perspiciatis. Deserunt nisi totam, iste facere sit porro
-          quod a laboriosam ut asperiores nesciunt, laudantium velit distinctio,
-          accusamus corrupti voluptatum! Vitae, iusto hic unde, nobis blanditiis
-          eaque fugiat omnis quod voluptas distinctio modi.
-        </p>
+        {filtered.map((rec) => {
+          return <Recommended id={rec.id} rec={rec} />;
+        })}
       </div>
       {/* //!MIDDLE ----- */}
       <div className="job-details-body middle">
