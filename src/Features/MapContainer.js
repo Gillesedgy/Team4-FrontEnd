@@ -21,11 +21,11 @@ export default function MapContainer({ location }) {
           console.error(error);
         });
     }
-    console.log(location);
-    typeof location === "string"
-      ? handleAddressSubmit(location)
-      : setLatitude(location.lat);
-    setLongitude(location.lng);
+    //ToDo: Fix Error => Cannot read properties of undefined lat.
+    // typeof location === "string"
+    //   ? handleAddressSubmit(location, lat, lng)
+    //   : setLatitude(location.lat);
+    // setLongitude(location.lng);
   }, [location]);
 
   function addressConverter(address, setLongitude, setLatitude) {

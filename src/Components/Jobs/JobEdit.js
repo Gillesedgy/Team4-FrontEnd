@@ -10,13 +10,15 @@ export default function JobEdit() {
     user_id: 0,
     job_title: "",
     company: "",
+    email: "",
+    location: "",
+    posted_date: "",
     job_type: "",
     description: "",
-    location: "",
     native_language: "",
-    posted_date: "",
-    email: "",
     is_favorite: false,
+    requirements: "",
+    salary: "",
   });
   //* Languages
   const [select, setSelect] = useState("");
@@ -35,16 +37,16 @@ export default function JobEdit() {
   ];
   const handleSelectChange = (e) => {
     const selected = e.target.value;
-    setSelect(e.target.value);
+    setSelect(selected);
     setEdit({ ...edit, native_language: selected });
   };
 
   //* Update Job
   const updateJob = (updatedJob) => {
     axios
-      .get(`${API}/jobs/${id}`)
+      .put(`${API}/jobs/${id}`, updatedJob)
       .then(
-        (res) => {
+        (response) => {
           navigate(`/jobs/${id}`);
         },
         (error) => console.log(error)
@@ -59,18 +61,18 @@ export default function JobEdit() {
   const handleCheckChange = () => {
     setEdit({ ...edit, is_favorite: !edit.is_favorite });
   };
-  // Submit
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    updateJob(edit, id);
-  };
-
   useEffect(() => {
     axios.get(`${API}/jobs/${id}`).then(
-      (res) => setEdit(res.data),
+      (response) => setEdit(response.data),
       (error) => navigate(`/error`)
     );
   }, [id, navigate]);
+  // Submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    updateJob(edit);
+  };
+
   return (
     <div className="jobForm">
       <form onSubmit={handleSubmit}>
@@ -108,7 +110,7 @@ export default function JobEdit() {
         />
         <label htmlFor="job_date">Job Date:</label>
         <input
-          type="text"
+          type="date"
           id="job_date"
           value={edit.posted_date}
           onChange={handleTextChange}
@@ -117,7 +119,7 @@ export default function JobEdit() {
         <label htmlFor="job_type">Job Type:</label>
         <input
           type="text"
-          id="jobType"
+          id="job_type"
           value={edit.job_type}
           onChange={handleTextChange}
           required
@@ -134,27 +136,21 @@ export default function JobEdit() {
         <input
           type="checkbox"
           id="is_favorite"
-          value={edit.is_favorite}
+          checked={edit.is_favorite}
+          // value={edit.is_favorite}
           onChange={handleCheckChange}
           required
         />
 
-        {/* <label htmlFor="salary">Salary:</label>
+        <label htmlFor="salary">Salary:</label>
         <input
           type="text"
           id="salary"
           value={edit.salary}
           onChange={handleTextChange}
           required
-        /> */}
+        />
 
-        {/* <label htmlFor="native_language">Language:</label>
-        <input
-          id="native_language"
-          value={edit.native_language}
-          onChange={handleTextChange}
-          required
-        /> */}
         <label>Languages: </label>
         <select
           id={edit.native_language}
@@ -173,7 +169,7 @@ export default function JobEdit() {
         <button onClick={() => navigate(`/jobs/${id}`)} type="submit">
           Back
         </button>
-        <button onClick={() => navigate(`/jobs`)} type="submit">
+        <button onClick={() => navigate(`/jobs/${id}`)} type="submit">
           Done
         </button>
       </form>

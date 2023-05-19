@@ -7,6 +7,7 @@ import { RiFileAddLine } from "react-icons/ri";
 const API = process.env.REACT_APP_API_URL;
 export default function Jobs() {
   const [jobs, setJobs] = useState([]);
+
   const navigate = useNavigate();
 
   useEffect(() => {
