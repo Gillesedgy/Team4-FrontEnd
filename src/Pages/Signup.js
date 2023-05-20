@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useContextProvider } from "../Provider";
-import "./Signup.css"
+import "./Signup.css";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -10,20 +10,21 @@ export default function Signup() {
   const navigate = useNavigate();
   const { user, setUser } = useContextProvider();
 
+  const handleTextChange = (e) => {
+    setUser({ ...user, [e.target.id]: e.target.value });
+  };
+
   const handleSignup = (e) => {
     e.preventDefault();
     signUpUser(user);
-  };
-
-  const handleTextChange = (e) => {
-    setUser({ ...user, [e.target.id]: e.target.value });
   };
 
   function signUpUser(user) {
     axios
       .post(`${API}/users/signup`, user)
       .then(
-        () => {
+        (res) => {
+          console.log(res.data);
           navigate("/listings");
         },
         (error) => console.log(error)
