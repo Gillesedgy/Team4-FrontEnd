@@ -40,7 +40,7 @@ export default function RentalEdit() {
       .catch((err) => console.warn(err));
   };
 
-  const [select, setSelect] = useState("");
+  // const [select, setSelect] = useState("");
 
   const [address, setAddress] = useState("");
 
