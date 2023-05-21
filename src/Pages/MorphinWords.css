@@ -9,13 +9,13 @@
 #container {
   position: absolute;
   margin: auto;
-  width: 100vw;
   height: 450pt;
   top: 0;
   bottom: 0;
   display: flex;
   justify-content: center;
   text-align: center;
+  width: 100vw;
 
   filter: url(#threshold) blur(0.6px);
 }

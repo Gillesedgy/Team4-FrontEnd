@@ -1,12 +1,13 @@
     .page {
         overflow-y: scroll;
-        background-color: black;
+        background-color:rgb(74,110,222);
       }
       .page {
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 100vh;
+        width: 100vw;
         padding: 20px;
       }
       
