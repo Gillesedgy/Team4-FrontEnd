@@ -42,7 +42,7 @@ export default function NewPostForm() {
 
   const addPost = (newPost) => {
     axios
-      .post(`${API}/discussions`, newPost)
+      .post(`${API}/communityBoard`, newPost)
       .then(
         () => {
           navigate(`/communityBoard`);
