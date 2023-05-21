@@ -14,7 +14,7 @@ export default function Posts() {
 
   useEffect(() => {
     axios
-      .get(`${API}/discussions`)
+      .get(`${API}/communityBoard`)
       .then((res) => {
         setPosts(res.data);
         console.log(res.data);
@@ -24,10 +24,8 @@ export default function Posts() {
 
   return (
     <div className="posts">
-      <div className="community-board-title">      
-        <h3>Community Board </h3>
-
-        {" "}
+      <div className="community-board-title">
+        <h3>Community Board </h3>{" "}
         <button
           className="add-btn-comunity"
           onClick={() => navigate(`/communityBoard/new`)}

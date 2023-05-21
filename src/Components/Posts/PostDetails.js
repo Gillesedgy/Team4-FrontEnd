@@ -12,7 +12,7 @@ export default function PostDetails() {
 
   useEffect(() => {
     axios
-      .get(`${API}/discussions/${id}`)
+      .get(`${API}/communityBoard/${id}`)
       .then((res) => {
         console.log(res.data);
         setPost(res.data);
@@ -32,7 +32,7 @@ export default function PostDetails() {
 
   const deletePost = () => {
     axios
-      .delete(`${API}/discussions/${id}`)
+      .delete(`${API}/communityBoard/${id}`)
       .then(() => {
         navigate(`/communityBoard`);
       })

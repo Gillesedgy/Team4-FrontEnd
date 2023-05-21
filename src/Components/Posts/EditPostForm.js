@@ -12,7 +12,7 @@ export default function EditPostForm() {
 
   const updatePost = (updatedPost) => {
     axios
-      .put(`${API}/discussions/${id}`, updatedPost)
+      .put(`${API}/communityBoard/${id}`, updatedPost)
       .then(
         () => {
           navigate(`/communityBoard/${id}`);
@@ -28,7 +28,7 @@ export default function EditPostForm() {
 
   useEffect(() => {
     axios
-      .get(`${API}/discussions/${id}`)
+      .get(`${API}/communityBoard/${id}`)
       .then(
         (res) => setPost(res.data),
         (err) => navigate(`/error`)
