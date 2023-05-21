@@ -1,24 +1,45 @@
-import React from 'react'
-import "./About.css"
+import React from "react";
+import "./About.css";
+import { Link } from "react-router-dom";
 
 function About() {
   return (
-    <div className='about-container'>
-        <div className='rentals-about'>
+    <div className="page">
+      <div className="box">
+        <div className="rentals-about">
           <h1>Find Housing</h1>
-          <p>Connect with locals who have affordable housing options not listed on the market.</p>
+          <p>
+            Connect with locals who have affordable housing options not listed
+            on the market.
+          </p>
+          <Link to="/listings"><button className="About-btn">See More..</button></Link>
         </div>
-        <div className='jobs-about'>
+      </div>
+      <div className="box">
+        <div className="jobs-about">
           <h1>Find a Job</h1>
-          <p>Find work within your community quickly to start building towards your new life.</p>
+          <p>
+            Find work within your community quickly to start building towards
+            your new life.
+          </p>
+          <Link to="/jobs"><button className="About-btn">See More..</button></Link>
+
         </div>
-        <div className='community-about'>
+      </div>
+      <div className="box">
+        <div className="community-about">
           <h1>Connect with people like you!</h1>
-          <p>Engage with others who speak your native language and who also are new to NYC, 
-            <br/> though posting and commenting in the community board!</p>
+          <p>
+            Engage with others who speak your native language and who also are
+            new to NYC,
+            <br /> though posting and commenting in the community board!
+          </p>
+          <Link to="/communityBoard"><button className="About-btn">See More..</button></Link>
+
         </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default About
+export default About;

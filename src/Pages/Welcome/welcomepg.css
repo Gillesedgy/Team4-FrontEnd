@@ -1,9 +1,10 @@
 .welcome-img{
-    width: 100%;
+    width: 120%;
     display: flex;
     /* background-image: url("../../Assets/welcome1white.png"); */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    justify-content: center;
+    /* background-size: contain; */
+    /* background-repeat: no-repeat; */
+    /* background-position: bottom; */
+    /* justify-content: center; */
+    margin-top: 0%;
   }
