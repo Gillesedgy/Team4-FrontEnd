@@ -15,6 +15,9 @@
 
 svg.icon-nav{
   font-size: 30px;
+    display: flex;
+    align-items: center;
+  
   
   }
 
@@ -95,6 +98,7 @@ svg.icon-nav{
   .NavbarItems {
     position: relative;
     margin: 0;
+    justify-content: center;
   }
 
   .nav-menu {

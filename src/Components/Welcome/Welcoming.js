@@ -19,11 +19,11 @@ function Welcoming() {
 
   return (
     <div className="welcome-page">
-      <div>
+      {/* <div>
         <p className="welcometext">
          Welcome
         </p>
-      </div>
+      </div> */}
       <p className="welcome_p">Find Your Community</p>
       <div className="welcome-btn-div">
         <div className="doodle1">
