@@ -40,7 +40,6 @@ export default function RentalDetails({ handleAddressSubmit }) {
     axios
       .get(`${API}/listings/${id}`)
       .then((res) => {
-        console.log(res.data);
         setRental(res.data);
         setLocation({
           lat: parseInt(res.data.latitude),
@@ -65,7 +64,6 @@ export default function RentalDetails({ handleAddressSubmit }) {
 
       .then((res) => {
         setMoreRentals(res.data);
-        console.log(res.data);
       })
       .catch((err) => console.warn(err));
   }, []);
@@ -136,7 +134,7 @@ export default function RentalDetails({ handleAddressSubmit }) {
       <h3 className="rental_recs_h">Similar listings</h3>
       <div className="rental_recs">
         {filtered.map((rental) => {
-          return <Suggested id={rental.id} rental={rental} />;
+          return <Suggested key={rental.id} id={rental.id} rental={rental} />;
         })}
       </div>
     </div>

@@ -14,10 +14,13 @@ export default function Jobs() {
     axios
       .get(`${API}/jobs`)
       .then((res) => {
+        console.log(res.data)
         setJobs(res.data);
       })
       .catch((error) => console.warn(error));
   }, []);
+
+
 
   return (
     <div className="jobs">

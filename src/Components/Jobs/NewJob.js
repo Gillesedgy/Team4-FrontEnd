@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import "./form.css";
 import axios from "axios";
-const API = process.env.REACT_APP_API;
+const API = process.env.REACT_APP_API_URL;
 export default function NewJob({ data }) {
   const navigate = useNavigate();
   //todo: Add new Table details to job state
   const [newJob, setNewJob] = useState({
-    user_id: 0,
     job_title: "",
     company: "",
     email: "",
@@ -24,7 +23,9 @@ export default function NewJob({ data }) {
   // add new job by making a call
   const addNewJob = (addedJob) => {
     axios
-      .post(`${API}/jobs`, addedJob)
+      .post(`${API}/jobs`, addedJob, { headers: {
+        authorization: localStorage.getItem('jwtToken')
+      }})
       .then(
         () => {
           navigate(`/jobs`);
