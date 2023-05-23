@@ -29,7 +29,9 @@ export default function NewRental() {
 
   const addRental = (newRental) => {
     axios
-      .post(`${API}/listings`, newRental)
+      .post(`${API}/listings`, newRental, { headers: {
+        authorization: localStorage.getItem('jwtToken')
+      }})
       .then(
         () => {
           navigate(`/listings`);
@@ -51,6 +53,7 @@ export default function NewRental() {
     price: 0,
     longitude: 0,
     latitude: 0,
+    location: '',
     is_applied: false,
     is_favorite: false,
     title: "",
@@ -178,7 +181,7 @@ export default function NewRental() {
           />
         </label>
         <br />
-        <button type="submit">Submit</button>
+        <button onClick={handleSubmit}>Submit</button>
       </form>
       <button
         className="go_back"

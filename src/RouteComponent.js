@@ -2,10 +2,10 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 //components
-import Account from "./Pages/Account";
+import Account from "./Pages/Profile/Account";
 import Error from "./Pages/Error";
-import Login from "./Pages/Login";
-import Signup from "./Pages/Signup";
+import Login from "./Pages/Login/Login";
+import Signup from "./Pages/Signup/Signup";
 import Welcome from "./Pages/Welcome/Welcome";
 //? Jobs
 import JobPage from "./Pages/Jobs/JobPage";

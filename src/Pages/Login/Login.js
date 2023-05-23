@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
-import "./Login.css";
+import "./Login.css"; 
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useContextProvider } from "../Provider";
+import { useContextProvider } from "../../Provider";
 
 const API = process.env.REACT_APP_API_URL;
 
