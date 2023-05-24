@@ -67,7 +67,7 @@ export default function JobDetails({ handleAddressSubmit }) {
       {/* //!LEFT ----- */}
       <div className="left-aside">
         {filtered.map((rec) => {
-          return <Recommended id={rec.id} rec={rec} />;
+          return <Recommended key={rec.id} rec={rec} />;
         })}
       </div>
       {/* //!MIDDLE ----- */}
