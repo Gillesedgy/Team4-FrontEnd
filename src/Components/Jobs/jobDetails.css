@@ -18,6 +18,7 @@
 
 .job-details-body {
   grid-column: 2;
+  border: rgb(175, 175, 175);
 }
 
 .right-aside {

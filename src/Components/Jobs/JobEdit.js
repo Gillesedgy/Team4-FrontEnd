@@ -34,10 +34,22 @@ export default function JobEdit() {
     { value: "Filipino", label: "Filipino" },
     { value: "Urdu", label: "Urdu" },
   ];
+
+  const jobType = [
+    { value: "Full-Time", label: "Full-Time" },
+    { value: "Part-Time", label: "Part-Time" },
+    // { value: "Contract", label: "Contract" },
+    // { value: "Freelance", label: "Freelance" }
+  ];
   const handleSelectChange = (e) => {
     const selected = e.target.value;
     setSelect(selected);
     setEdit({ ...edit, native_language: selected });
+  };
+  const handleTypeChange = (e) => {
+    const selected = e.target.value;
+    setSelect(selected);
+    setEdit({ ...edit, job_type: selected });
   };
 
   //* Update Job
@@ -107,22 +119,21 @@ export default function JobEdit() {
           onChange={handleTextChange}
           required
         />
-        {/* <label htmlFor="job_date">Job Date:</label>
-        <input
-          type="date"
-          id="job_date"
-          value={edit.posted_date}
-          onChange={handleTextChange}
-          required
-        /> */}
-        <label htmlFor="job_type">Job Type:</label>
-        <input
-          type="text"
-          id="job_type"
+
+        <label>Job Type: </label>
+        <select
+          id={edit.job_type}
           value={edit.job_type}
-          onChange={handleTextChange}
+          onChange={handleTypeChange}
           required
-        />
+        >
+          <option value="">Select a language</option>
+          {jobType.map((job_type) => (
+            <option value={job_type.value} key={job_type.value}>
+              {job_type.label}
+            </option>
+          ))}
+        </select>
         <label htmlFor="description">Description:</label>
         <textarea
           style={{ resize: "none" }}
@@ -165,9 +176,7 @@ export default function JobEdit() {
           ))}
         </select>
 
-        <button onClick={() => navigate(`/jobs/${id}`)}>
-          Back
-        </button>
+        <button onClick={() => navigate(`/jobs/${id}`)}>Back</button>
         <button onClick={handleSubmit} type="submit">
           Done
         </button>
