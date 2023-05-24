@@ -7,12 +7,11 @@ export default function JobEdit() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [edit, setEdit] = useState({
-    user_id: 0,
     job_title: "",
     company: "",
     email: "",
     location: "",
-    posted_date: "",
+    posted_date: new Date().toLocaleDateString(),
     job_type: "",
     description: "",
     native_language: "",
@@ -166,10 +165,10 @@ export default function JobEdit() {
           ))}
         </select>
 
-        <button onClick={() => navigate(`/jobs/${id}`)} type="submit">
+        <button onClick={() => navigate(`/jobs/${id}`)}>
           Back
         </button>
-        <button onClick={() => navigate(`/jobs/${id}`)} type="submit">
+        <button onClick={handleSubmit} type="submit">
           Done
         </button>
       </form>

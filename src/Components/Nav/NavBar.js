@@ -13,7 +13,7 @@ function NavBar() {
   const [click, setClick] = useState(false);
   const [hover, setHover] = useState({});
   const navItems = [
-    { text: "Home", icon: BiHomeHeart, to:"/" },
+    { text: "Account", icon: BiHomeHeart, to:"/account" },
     { text: "Rentals", icon: TbHomeDollar,  to:"/listings" },
     { text: "Jobs", icon: MdWorkOutline,  to:"/jobs"  },
     { text: "Community", icon: GoCommentDiscussion,  to:"/communityBoard"  },

@@ -11,7 +11,7 @@ export default function NewJob({ data }) {
     company: "",
     email: "",
     location: "",
-    posted_date: "",
+    posted_date: new Date().toLocaleDateString(),
     job_type: "",
     description: "",
     native_language: "",
@@ -111,14 +111,6 @@ export default function NewJob({ data }) {
           type="text"
           id="location"
           value={newJob.location}
-          onChange={handleTextChange}
-          required
-        />
-        <label htmlFor=" posted_date">Job Date:</label>
-        <input
-          type="text"
-          id="posted_date"
-          value={newJob.posted_date}
           onChange={handleTextChange}
           required
         />
