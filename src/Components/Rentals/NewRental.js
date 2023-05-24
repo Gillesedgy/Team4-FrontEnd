@@ -29,9 +29,11 @@ export default function NewRental() {
 
   const addRental = (newRental) => {
     axios
-      .post(`${API}/listings`, newRental, { headers: {
-        authorization: localStorage.getItem('jwtToken')
-      }})
+      .post(`${API}/listings`, newRental, {
+        headers: {
+          authorization: localStorage.getItem("jwtToken"),
+        },
+      })
       .then(
         () => {
           navigate(`/listings`);
@@ -43,17 +45,13 @@ export default function NewRental() {
 
   // const [select, setSelect] = useState("");
 
-  const [address, setAddress] = useState("");
-
   const [rental, setRental] = useState({
     description: "",
     native_language: "",
     image_url: "",
     date_posted: new Date().toLocaleDateString(),
     price: 0,
-    longitude: 0,
-    latitude: 0,
-    location: '',
+    location: "",
     is_applied: false,
     is_favorite: false,
     title: "",
@@ -63,10 +61,6 @@ export default function NewRental() {
 
   const handleTextChange = (e) => {
     setRental({ ...rental, [e.target.id]: e.target.value });
-  };
-
-  const handleAddress = (e) => {
-    setAddress(e.target.value);
   };
 
   const handleSelectChange = (e) => {
@@ -162,10 +156,10 @@ export default function NewRental() {
           Address:
           <input
             type="text"
-            id="address"
+            id="location"
             name="address"
-            value={address}
-            onChange={handleAddress}
+            value={rental.location}
+            onChange={handleTextChange}
             required
           />
         </label>

@@ -30,7 +30,7 @@ export default function RentalEdit() {
 
   const updateRental = (updatedRental) => {
     axios
-      .put(`${API}/listings/${id}`)
+      .put(`${API}/listings/${id}`, updatedRental)
       .then(
         () => {
           navigate(`/listings/${id}`);
@@ -42,8 +42,6 @@ export default function RentalEdit() {
 
   // const [select, setSelect] = useState("");
 
-  const [address, setAddress] = useState("");
-
   const [rental, setRental] = useState({
     user_id: 0,
     description: "",
@@ -51,8 +49,7 @@ export default function RentalEdit() {
     image_url: "",
     date_posted: new Date().toLocaleDateString(),
     price: 0,
-    longitude: 0,
-    latitude: 0,
+    location: "",
     is_applied: false,
     is_favorite: false,
     title: "",
@@ -62,10 +59,6 @@ export default function RentalEdit() {
 
   const handleTextChange = (e) => {
     setRental({ ...rental, [e.target.id]: e.target.value });
-  };
-
-  const handleAddress = (e) => {
-    setAddress(e.target.value);
   };
 
   const handleSelectChange = (e) => {
@@ -173,10 +166,10 @@ export default function RentalEdit() {
           Address:
           <input
             type="text"
-            id="address"
+            id="location"
             name="address"
-            value={address}
-            onChange={handleAddress}
+            value={rental.location}
+            onChange={handleTextChange}
             required
           />
         </label>
