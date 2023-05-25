@@ -4,6 +4,7 @@ import "./Account.css";
 import { useEffect } from "react";
 import { useContextProvider } from "../../Provider";
 import UserJob from "./userJob";
+import UserFavs from "./UserFavs";
 
 const API = process.env.REACT_APP_API_URL;
 export default function Account() {
@@ -20,23 +21,35 @@ export default function Account() {
       .catch((err) => console.warn(err));
   }, []);
 
-
-
   return (
     <div className="user-profile">
-      <div className="profile-header">
-        <img src={user.image_url} alt="User Avatar" />
-        <h2>{user.username}</h2>
-        <p>{user.email}</p>
+      <div className="user-container">
+        <div>
+          <img src={user.image_url} alt="User Avatar" />
+        </div>
+        <div className="profile-header">
+          <h2>Username: {user.username}</h2>
+          <p>
+            <b>Email: </b>
+            {user.email}
+          </p>
+          {/* </div> */}
+          {/* <div className="profile-body"> */}
+          <p>
+            <b>Address: </b>
+            {user.address}
+          </p>
+          <p>
+            <b>Native Language: </b>
+            {user.native_language}
+          </p>
+        </div>
       </div>
-      <div className="profile-body">
-        <p>{user.address}</p>
-        <p>{user.native_language}</p>
-      </div>
+
       <div className="user-job-profile">
+        <UserFavs />
         <UserJob />
       </div>
-      
     </div>
   );
 }
