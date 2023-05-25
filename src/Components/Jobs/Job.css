@@ -10,6 +10,7 @@
   margin-bottom: 1em;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
   grid-column-gap: 1em;
+  border: solid 1px teal;
 }
 .job-container:hover {
   background-color: salmon;

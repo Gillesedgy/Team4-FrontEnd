@@ -1,12 +1,14 @@
 import React from "react";
-
-export default function Recommended({ rec: { job_title, company } }) {
+import { Link } from "react-router-dom";
+import "./rec.css";
+export default function Recommended({ rec: { id, job_title, company } }) {
   return (
     <div className="recommended">
-      <div className="titles">
-        <h4>{job_title}</h4>
+      <Link to={`/jobs/${id}`}>
+        {" "}
+        <h3>{job_title}</h3>
         {company}
-      </div>
+      </Link>
     </div>
   );
 }

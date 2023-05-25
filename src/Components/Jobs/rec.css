@@ -1,0 +1,9 @@
+.recommended a {
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+}
+.recommended a:hover {
+  color: #e3be99;
+  /* color: teal; */
+}

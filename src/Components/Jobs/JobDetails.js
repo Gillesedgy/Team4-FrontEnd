@@ -63,75 +63,77 @@ export default function JobDetails({ handleAddressSubmit }) {
   let year = dateMade.split(" ").pop();
   let middle = dateMade.split(" ").splice(1, 2).join(" ");
   return (
-    <div className="page-container">
-      {/* //!LEFT ----- */}
-      <div className="left-aside">
-        {filtered.map((rec) => {
-          return <Recommended key={rec.id} rec={rec} />;
-        })}
-      </div>
-      {/* //!MIDDLE ----- */}
-      <div className="job-details-body middle">
-        <p className="date">
-          <em>Posted Date:</em> {middle}, {year}
-        </p>
-        <p className="job-title">{jobs.job_title}</p>
+    <>
+      <div className="page-container">
+        {/*  */}
+        {/* //!LEFT ----- */}
+        <div className="left-aside job-details-body">
+          <p className="date">
+            <em>Posted Date:</em> {middle}, {year}
+          </p>
+          <p className="job-title">{jobs.job_title}</p>
 
-        <p className="company">
-          <strong>Company:</strong> {jobs.company}
-        </p>
-        <p className="email">
-          <strong>Email:</strong> {jobs.email}
-        </p>
-        <p className="location">
-          <strong>Location:</strong> {jobs.location}
-        </p>
-        <p className="job-type">
-          <strong>Job Type:</strong> {jobs.job_type}
-        </p>
-        <p className="salary">
-          <strong>Salary:</strong> $ {jobs.salary}/hr
-        </p>
-        <p className="description">
-          <strong>Description</strong>
-        </p>
-        <p className="description">{jobs.description}</p>
-        <p className="native-language">
-          <strong>Native Language:</strong> {jobs.native_language}
-        </p>
-        <p className="skills">
-          <strong>Skills:</strong> {jobs.skills}
-        </p>
-        <p className="requirements">
-          <strong>Requirements:</strong> {jobs.requirements}
-        </p>
-        {/* //!BUTTONS -----  */}
-        <div className="buttons">
-          <button className="button" type="submit" onClick={deleteJob}>
-            Delete
-          </button>
-          <button
-            className="button"
-            onClick={() => navigate(`/jobs/${id}/edit`)}
-            type="submit"
-          >
-            Edit
-          </button>
-          <button
-            className="button"
-            onClick={() => navigate(`/jobs`)}
-            type="submit"
-          >
-            Back
-          </button>
+          <p className="company">
+            <strong>Company:</strong> {jobs.company}
+          </p>
+          <p className="email">
+            <strong>Email:</strong> {jobs.email}
+          </p>
+          <p className="location">
+            <strong>Location:</strong> {jobs.location}
+          </p>
+          <p className="job-type">
+            <strong>Job Type:</strong> {jobs.job_type}
+          </p>
+          <p className="salary">
+            <strong>Salary:</strong> $ {jobs.salary}/hr
+          </p>
+          <p className="description">
+            <strong>Description</strong>
+          </p>
+          <p className="description">{jobs.description}</p>
+          <p className="native-language">
+            <strong>Native Language:</strong> {jobs.native_language}
+          </p>
+          <p className="skills">
+            <strong>Skills:</strong> {jobs.skills}
+          </p>
+          <p className="requirements">
+            <strong>Requirements:</strong> {jobs.requirements}
+          </p>
+          {/* //!BUTTONS -----  */}
+          <div className="buttons-container">
+            <button className="button" type="submit" onClick={deleteJob}>
+              Delete
+            </button>
+            <button
+              className="button"
+              onClick={() => navigate(`/jobs/${id}/edit`)}
+              type="submit"
+            >
+              Edit
+            </button>
+            <button
+              className="button"
+              onClick={() => navigate(`/jobs`)}
+              type="submit"
+            >
+              Back
+            </button>
+          </div>
+        </div>
+        {/* //!MIDDLE ----- */}
+        <div className="middle">
+          {filtered.map((rec) => {
+            return <Recommended key={rec.id} rec={rec} />;
+          })}
+        </div>
+        {/* //! RIGHT ----- */}
+        <div className="right-aside">
+          <Contact />
         </div>
       </div>
-      {/* //! RIGHT ----- */}
-      <div className="right-aside">
-        <Contact />
-      </div>
       {/* //! BOTTOM ---- Map */}
-      <div className="empty"></div>
       <div className="map-container bottom ">
         <MapContainer
           handleAddressSubmit={handleAddressSubmit}
@@ -139,6 +141,6 @@ export default function JobDetails({ handleAddressSubmit }) {
           location={jobs.location}
         />
       </div>
-    </div>
+    </>
   );
 }

@@ -23,9 +23,11 @@ export default function NewJob({ data }) {
   // add new job by making a call
   const addNewJob = (addedJob) => {
     axios
-      .post(`${API}/jobs`, addedJob, { headers: {
-        authorization: localStorage.getItem('jwtToken')
-      }})
+      .post(`${API}/jobs`, addedJob, {
+        headers: {
+          authorization: localStorage.getItem("jwtToken"),
+        },
+      })
       .then(
         () => {
           navigate(`/jobs`);
@@ -62,10 +64,19 @@ export default function NewJob({ data }) {
     { value: "Filipino", label: "Filipino" },
     { value: "Urdu", label: "Urdu" },
   ];
+  const jobType = [
+    { value: "Full-Time", label: "Full-Time" },
+    { value: "Part-Time", label: "Part-Time" },
+  ];
   const handleSelectChange = (e) => {
     const selected = e.target.value;
     setSelect(e.target.value);
     setNewJob({ ...newJob, native_language: selected });
+  };
+  const handleTypeChange = (e) => {
+    const selected = e.target.value;
+    setSelect(selected);
+    setNewJob({ ...newJob, job_type: selected });
   };
   //! Character Count Feature
   // const characterLimit = 500;
@@ -74,7 +85,7 @@ export default function NewJob({ data }) {
   //   if (characterLimit - newJob.description.length >= 1) {
   //     setNewJob({ ...NewJob, [e.target.id]: e.target.value });
   //   } else {
-  //    // playMySound(error);
+
   //   }
   // };
   //! Found CSS Format Online
@@ -114,14 +125,20 @@ export default function NewJob({ data }) {
           onChange={handleTextChange}
           required
         />
-        <label htmlFor="job_type">Job Type:</label>
-        <input
-          type="text"
-          id="job_type"
+        <label>Job Type: </label>
+        <select
+          id={newJob.job_type}
           value={newJob.job_type}
-          onChange={handleTextChange}
+          onChange={handleTypeChange}
           required
-        />
+        >
+          <option value="">Select a language</option>
+          {jobType.map((job_type) => (
+            <option value={job_type.value} key={job_type.value}>
+              {job_type.label}
+            </option>
+          ))}
+        </select>
         <label htmlFor="description">Description:</label>
         <textarea
           style={{ resize: "none" }}
