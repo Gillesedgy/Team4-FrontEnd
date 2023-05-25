@@ -21,33 +21,33 @@ export default function Job({
   let year = dateMade.split(" ").pop();
   let middle = dateMade.split(" ").splice(1, 2).join(" ");
   return (
-   <Link className="link" to={`/jobs/${id}`}>  <div className="job-container">
-    
-      <div className="left-section">
-       
+    <Link className="link" to={`/jobs/${id}`}>
+      {" "}
+      <div className="job-container">
+        <div className="left-section">
+          <p className="company">{company}</p>
+        </div>
+        {/* Middle  */}
+        <div className="middle-section">
           <h2>{job_title}</h2>
-     
-        <p className="company">{company}</p>
-      </div>
-      {/* Middle  */}
-      <div className="middle-section">
-        <p>
+          {/* <p>
           <strong>Description:</strong>
         </p>
-        <p>{description}</p>
-      </div>
-      {/* Right */}
-      <div className="right-section">
-        <p className="date">
-          <strong>Posted Date:</strong> {middle}, {year}
-        </p>
-        <p>
-          <strong>Location:</strong> {location}
-        </p>
-        <p>
-          <strong>Native Language:</strong> {native_language}
-        </p>
-      </div>
-    </div>   </Link>
+        <p>{description}</p> */}
+        </div>
+        {/* Right */}
+        <div className="right-section">
+          <p className="date">
+            <strong>Posted Date:</strong> {middle}, {year}
+          </p>
+          <p>
+            <strong>Location:</strong> {location}
+          </p>
+          <p>
+            <strong>Native Language:</strong> {native_language}
+          </p>
+        </div>
+      </div>{" "}
+    </Link>
   );
 }

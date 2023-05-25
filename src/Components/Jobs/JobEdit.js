@@ -39,7 +39,8 @@ export default function JobEdit() {
     { value: "Full-Time", label: "Full-Time" },
     { value: "Part-Time", label: "Part-Time" },
     // { value: "Contract", label: "Contract" },
-    // { value: "Freelance", label: "Freelance" }
+    // { value: "Freelance", label: "Freelance" },
+    // { value: "Seasonal", label: "Seasonal" }
   ];
   const handleSelectChange = (e) => {
     const selected = e.target.value;
