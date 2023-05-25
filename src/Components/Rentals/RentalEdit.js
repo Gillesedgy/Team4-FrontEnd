@@ -40,10 +40,7 @@ export default function RentalEdit() {
       .catch((err) => console.warn(err));
   };
 
-  // const [select, setSelect] = useState("");
-
   const [rental, setRental] = useState({
-    user_id: 0,
     description: "",
     native_language: "",
     image_url: "",
@@ -185,7 +182,9 @@ export default function RentalEdit() {
           />
         </label>
         <br />
-        <button type="submit">Submit</button>
+        <button type="submit" onClick={handleSubmit}>
+          Submit
+        </button>
       </form>
       <button
         className="go_back"

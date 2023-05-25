@@ -1,0 +1,34 @@
+.user-profile {
+  margin-left: 3em;
+}
+
+.profile-header,
+.profile-body {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  background-color: rgb(106, 195, 195);
+  margin-bottom: 1em;
+  float: right;
+  padding: 1.5em;
+}
+
+.user-container {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50%;
+  padding: 1em;
+}
+
+.userjob {
+  margin-top: 1em;
+  padding: 1em;
+}
+
+.favorites {
+  margin-top: 1em;
+  border-top: 1px gray solid;
+  padding: 1em;
+}
