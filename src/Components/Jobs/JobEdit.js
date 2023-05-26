@@ -34,12 +34,11 @@ export default function JobEdit() {
     { value: "Filipino", label: "Filipino" },
     { value: "Urdu", label: "Urdu" },
   ];
-
+  //todo: for community page --> Neighbourhood meals / YTvids
   const jobType = [
     { value: "Full-Time", label: "Full-Time" },
     { value: "Part-Time", label: "Part-Time" },
     // { value: "Contract", label: "Contract" },
-    // { value: "Freelance", label: "Freelance" },
     // { value: "Seasonal", label: "Seasonal" }
   ];
   const handleSelectChange = (e) => {
@@ -70,9 +69,9 @@ export default function JobEdit() {
     setEdit({ ...edit, [e.target.id]: e.target.value });
   };
   // check change
-  const handleCheckChange = () => {
-    setEdit({ ...edit, is_favorite: !edit.is_favorite });
-  };
+  // const handleCheckChange = () => {
+  //   setEdit({ ...edit, is_favorite: !edit.is_favorite });
+  // };
   useEffect(() => {
     axios.get(`${API}/jobs/${id}`).then(
       (response) => setEdit(response.data),
@@ -143,7 +142,7 @@ export default function JobEdit() {
           onChange={handleTextChange}
           required
         />
-        <label htmlFor="is_favorite">Favorite:</label>
+        {/* <label htmlFor="is_favorite">Favorite:</label>
         <input
           type="checkbox"
           id="is_favorite"
@@ -151,7 +150,7 @@ export default function JobEdit() {
           // value={edit.is_favorite}
           onChange={handleCheckChange}
           required
-        />
+        /> */}
 
         <label htmlFor="salary">Salary:</label>
         <input
@@ -176,10 +175,11 @@ export default function JobEdit() {
             </option>
           ))}
         </select>
-
-        <button onClick={() => navigate(`/jobs/${id}`)}>Back</button>
-        <button onClick={handleSubmit} type="submit">
+        <button className="button_edit" onClick={handleSubmit} type="submit">
           Done
+        </button>
+        <button className="button_edit" onClick={() => navigate(`/jobs/${id}`)}>
+          Back
         </button>
       </form>
     </div>

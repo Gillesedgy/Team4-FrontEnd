@@ -67,7 +67,7 @@ export default function JobDetails({ handleAddressSubmit }) {
       <div className="page-container">
         {/*  */}
         {/* //!LEFT ----- */}
-        <div className="left-aside job-details-body">
+        <div className="top job-details-body">
           <p className="date">
             <em>Posted Date:</em> {middle}, {year}
           </p>
@@ -123,23 +123,19 @@ export default function JobDetails({ handleAddressSubmit }) {
           </div>
         </div>
         {/* //!MIDDLE ----- */}
-        <div className="middle">
-          {filtered.map((rec) => {
-            return <Recommended key={rec.id} rec={rec} />;
-          })}
-        </div>
-        {/* //! RIGHT ----- */}
-        <div className="right-aside">
-          <Contact />
+        <div className="middle map-container">
+          <MapContainer
+            handleAddressSubmit={handleAddressSubmit}
+            location={jobs.location}
+          />
         </div>
       </div>
-      {/* //! BOTTOM ---- Map */}
-      <div className="map-container bottom ">
-        <MapContainer
-          handleAddressSubmit={handleAddressSubmit}
-          // addressConverter={addressConverter}
-          location={jobs.location}
-        />
+      {/* //! BOTTOM ---Contact / Recs*/}
+      <div className="bottom ">
+        <Contact />
+        {filtered.map((rec) => {
+          return <Recommended key={rec.id} rec={rec} />;
+        })}
       </div>
     </>
   );

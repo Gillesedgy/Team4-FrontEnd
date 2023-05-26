@@ -7,3 +7,40 @@ body {
 a {
   text-decoration: none;
 }
+
+/* CSS Var */
+:root {
+  --form-color: #f2f2f2;
+  --form-radius: 8px;
+  --form-width: 500px;
+  --form-padding: 20px;
+  --form-label: block;
+  --form-margin-bottom: 0.5em;
+  --form-input-width: 100%;
+  --form-input-padding: 10px;
+  --form-input-border: 1px solid #ccc;
+  --form-input-border-radius: 5px;
+  --form-button-width: 100%;
+  --form-button-padding: 10px;
+  --form-button-radius: 5px;
+  --form-button-font: 1.1rem;
+  --form-cursor: pointer;
+  --form-textArea-resize: none;
+
+  /* Buttons */
+  --button-width: ;
+  --button-border: 1px solid rgba(0, 0, 0, 0.1);
+  --button-radius: 0.25rem;
+  --button-box-sizing: border-box;
+  --button-cursor: pointer;
+  --button-font-size: 19px;
+  --button-font-weight: 200;
+  --button-min-height: 2.3rem;
+  --button-transition: all 250ms;
+  --button-box-shadow: rgba(0, 0, 0, 0.2);
+  --button-hover-box-shadow: rgba(0, 0, 0, 0.3) 0 4px 12px;
+  --button-hover-color: #f0f0f1;
+  --button-hover-transform: translateY(-1px);
+  /* --button-hover-
+  --button-hover- */
+}
