@@ -14,7 +14,7 @@
   overflow: hidden;
 }
 .job-container:hover {
-  background-color: rgba(85, 195, 195, 0.325);
+  background-color: rgba(85, 133, 195, 0.325);
 }
 
 .left-section {
@@ -79,7 +79,8 @@
   cursor: pointer;
 }
 .add-button {
-  background-color: teal;
+  background: rgb(74, 110, 222);
+
   width: 90%;
   margin: 10px;
   padding: 0.5em;
