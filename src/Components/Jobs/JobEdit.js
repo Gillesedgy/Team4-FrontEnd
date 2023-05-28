@@ -90,6 +90,7 @@ export default function JobEdit() {
 
   return (
     <div className="jobForm">
+      <h2>Job Edit Form</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="job_title">Job Title:</label>
         <input
@@ -179,12 +180,18 @@ export default function JobEdit() {
             </option>
           ))}
         </select>
-        <button className="button_edit" onClick={handleSubmit} type="submit">
-          Done
-        </button>
-        <button className="button_edit" onClick={() => navigate(`/jobs/${id}`)}>
-          Back
-        </button>
+        <div className="form-button-container">
+          {" "}
+          <button className="button_edit" onClick={handleSubmit} type="submit">
+            Done
+          </button>
+          <button
+            className="button_edit"
+            onClick={() => navigate(`/jobs/${id}`)}
+          >
+            Back
+          </button>
+        </div>
       </form>
     </div>
   );

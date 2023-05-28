@@ -88,10 +88,10 @@ export default function NewJob({ data }) {
 
   //   }
   // };
-  //! Found CSS Format Online
 
   return (
     <div className="jobForm">
+      <h2>New Job Form</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="job_title">Job Title:</label>
         <input
@@ -147,13 +147,6 @@ export default function NewJob({ data }) {
           onChange={handleTextChange}
           required
         />
-        <label htmlFor="is_favorite">Favorite:</label>
-        <input
-          type="checkbox"
-          id="is_favorite"
-          value={newJob.is_favorite}
-          onChange={handleCheckChange}
-        />
         <label htmlFor="salary">Salary:</label>
         <input
           type="text"
@@ -176,10 +169,17 @@ export default function NewJob({ data }) {
             </option>
           ))}
         </select>{" "}
-        <button type="submit">Post</button>
       </form>
-      <div className="button">
-        <button onClick={() => navigate(`/jobs`)} type="submit">
+      <div className="form-button-container">
+        {" "}
+        <button className="button_edit" type="submit">
+          Post
+        </button>
+        <button
+          className="button_edit"
+          onClick={() => navigate(`/jobs`)}
+          type="submit"
+        >
           Back
         </button>
       </div>
