@@ -51,7 +51,11 @@ export default function RentalDetails({ handleAddressSubmit }) {
 
   const deleteRental = () => {
     axios
-      .delete(`${API}/listings/${id}`)
+      .delete(`${API}/listings/${id}`, {
+        headers: {
+          authorization: localStorage.getItem("jwtToken"),
+        },
+      })
       .then(() => {
         navigate(`/listings`);
       })
@@ -73,6 +77,7 @@ export default function RentalDetails({ handleAddressSubmit }) {
 
   return (
     <div className="rental_details">
+      {console.log(rental)}
       <div className="details_main_content">
         <div className="rental_dets_image">
           <img src={rental.image_url} alt={rental.image_url} />
@@ -111,8 +116,24 @@ export default function RentalDetails({ handleAddressSubmit }) {
           )}
         </div>
       </div>
-      <div className="rental_details_buttons">
-        <button
+      <>
+        {localStorage.getItem("user_id") === String(rental.user_id) ? (
+          <div className="rental_details_buttons">
+            <button
+              onClick={() => {
+                navigate(`/listings/${id}/edit`);
+              }}
+            >
+              Edit
+            </button>
+            <button onClick={deleteRental}>Delete</button>
+          </div>
+        ) : null}
+      </>
+
+      {/* <div className="rental_details_buttons">
+     <button
+      
           onClick={() => {
             navigate(`/listings/${id}/edit`);
           }}
@@ -120,7 +141,7 @@ export default function RentalDetails({ handleAddressSubmit }) {
           Edit
         </button>
         <button onClick={deleteRental}>Delete</button>
-      </div>
+      </div> */}
       <div className="rental_map">
         <h5>View on Map</h5>
         <div style={{ display: "flex", height: "400px" }}>

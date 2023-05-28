@@ -9,6 +9,7 @@ function Provider({ children }) {
   // A piece of state that will be passed to other files
 
   const [user, setUser] = useState({
+    id: null,
     username: "",
     email: "",
     password: "",
