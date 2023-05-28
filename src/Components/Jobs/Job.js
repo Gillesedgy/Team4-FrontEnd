@@ -6,7 +6,7 @@ export default function Job({
   job: { id, job_title, company, location, native_language, posted_date },
 }) {
   const [icon, setIcon] = useState(handleIcons());
-  // Date format
+
   let dateMade = new Date(posted_date);
   dateMade = dateMade.toDateString();
   let year = dateMade.split(" ").pop();
