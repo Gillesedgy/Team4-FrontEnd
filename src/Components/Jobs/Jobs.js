@@ -14,22 +14,21 @@ export default function Jobs() {
     axios
       .get(`${API}/jobs`)
       .then((res) => {
-        console.log(res.data)
+        console.log(res.data);
         setJobs(res.data);
       })
       .catch((error) => console.warn(error));
   }, []);
 
-
-
   return (
     <div className="jobs">
-      {/* <div className="title-button"> */}{" "}
       <h2 className="jobs-title">
         Current Jobs{" "}
-        <button onClick={() => navigate(`/jobs/new`)} className="add-button">
-          <RiFileAddLine />
-        </button>
+        <div className="jobs-button-container">
+          <button onClick={() => navigate(`/jobs/new`)} className="add-button">
+            <RiFileAddLine /> Add New
+          </button>
+        </div>
       </h2>
       {/* </div> */}
       {jobs.map((job) => {

@@ -5,18 +5,15 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./jobDetails.css";
 import Contact from "../../Features/Contact";
 import Recommended from "./Recommended";
-//* --------Map---------------
-// import { addressConverter } from "../../Features/helper";
 import MapContainer from "../../Features/MapContainer";
-//* -------------------------------------------
+//
 const API = process.env.REACT_APP_API_URL;
 
 export default function JobDetails({ handleAddressSubmit }) {
   const [jobs, setJobs] = useState([]);
-  // Recommended Jobs
-  const [recommended, setRecommended] = useState([]);
+  const [recommended, setRecommended] = useState([]); // Recommended Jobs
   // const [filteredJobs, setFilteredJobs]= useState([]);
-  const [jobSkills, setJobSkills] = useState("");
+  // const [jobSkills, setJobSkills] = useState("");
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -28,7 +25,7 @@ export default function JobDetails({ handleAddressSubmit }) {
       })
       .catch((error) => console.warn("catch", error));
   }, [id]);
-  //* Fetching for jobs that have things in common -------
+
   useEffect(() => {
     axios
       .get(`${API}/jobs`)
@@ -36,16 +33,12 @@ export default function JobDetails({ handleAddressSubmit }) {
         setRecommended(res.data);
       })
       .catch((error) => console.warn(error));
-  }, []);
+  }, []); // Fetching for similar jobs
 
-  //* filter Recommended Jobs
   const filtered = recommended.filter((rec) => {
     return rec.skills === jobs.skills && rec.id !== jobs.id;
   });
-  // setRecommended(filtered);
-
-  // //* ----------------
-  // Delete
+  //
   const deleteJob = () => {
     axios
       .delete(`${API}/jobs/${id}`, {
@@ -61,7 +54,7 @@ export default function JobDetails({ handleAddressSubmit }) {
       )
       .catch((error) => console.warn(error));
   };
-  // Date format
+  //
   let dateMade = new Date(jobs.posted_date);
   dateMade = dateMade.toDateString();
   let year = dateMade.split(" ").pop();
