@@ -32,7 +32,11 @@ export default function PostDetails() {
 
   const deletePost = () => {
     axios
-      .delete(`${API}/communityBoard/${id}`)
+      .delete(`${API}/communityBoard/${id}`, {
+        headers: {
+          authorization: localStorage.getItem("jwtToken"),
+        },
+      })
       .then(() => {
         navigate(`/communityBoard`);
       })
@@ -54,13 +58,15 @@ export default function PostDetails() {
 
         <p>{post.post_content}</p>
       </div>
-      <div className="post_details_buttons">
-        <button onClick={() => navigate(`/communityBoard`)}>Back</button>
-        <button onClick={() => navigate(`/communityBoard/${id}/edit`)}>
-          Edit
-        </button>
-        <button onclick={deletePost}>Delete!</button>
-      </div>
+      {localStorage.getItem("user_id") === String(post.user_id) ? (
+        <div className="post_details_buttons">
+          <button onClick={() => navigate(`/communityBoard`)}>Back</button>
+          <button onClick={() => navigate(`/communityBoard/${id}/edit`)}>
+            Edit
+          </button>
+          <button onClick={deletePost}>Delete!</button>
+        </div>
+      ) : null}
     </div>
   );
 }
