@@ -1,59 +1,46 @@
 .page-container {
-  border: 2px solid black;
+  border: 2px solid rgb(170, 168, 168);
+  border-style: dashed;
+  padding: 2em;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.date {
+  display: flex;
+  justify-content: right;
+  font-style: italic;
   padding: 10px;
 }
-.left-aside {
-  border: 2px solid red;
+.details-icon,
+.top h2 {
+  display: flex;
+  justify-content: center;
 }
-.middle {
-  border: 2px solid blue;
+.details-icon img {
+  /* //todo: Import Clear images */
 }
-.right-aside {
-  border: 2px solid orangered;
-}
-/*  */
-/* .page-container {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-gap: 20px;
+.job-title {
 }
 
-.left-aside,
-.job-details-body,
-.right-aside {
-  padding: 20px;
-  background-color: #f5f5f5;
+.job-details-body strong {
+  font-size: 1.2em;
 }
-
-.left-aside {
-  grid-column: 1;
+.job-details-body span {
+  margin-left: 5px;
+  font-size: 14px;
 }
-
-.job-details-body {
-  grid-column: 2;
-  border: rgb(175, 175, 175);
+.description {
+  border: 2px solid rgb(170, 168, 168);
+  border-style: dotted;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 10px;
 }
-
-.right-aside {
-  grid-column: 3;
-}
-
-.rec {
-  margin-bottom: 10px;
-}
-
 .p1 {
   margin-top: 20px;
-}
-
-.date {
-  font-style: italic;
-}
-
-.job-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
 }
 
 .company {
@@ -63,20 +50,29 @@
 .salary {
   margin-bottom: 10px;
 }
-
-.email,
-.location,
-.job-type {
-  margin-bottom: 10px;
+.native-language {
+  margin-bottom: 18px;
 }
-.description {
-  margin-bottom: 10px;
-.native-language,
-.skills,
+
 .requirements {
   margin-bottom: 10px;
 }
-
+.center {
+  margin-top: 1em;
+  display: flex;
+  border-radius: 10px;
+  background-color: rgba(85, 133, 195, 0.325);
+  width: 50%;
+  padding: 0.5em;
+  justify-content: space-around;
+}
+.divide {
+  border: 1px solid black;
+  border-radius: 3px;
+}
+.rec {
+  margin-bottom: 10px;
+}
 .button {
   margin-top: 20px;
 }
@@ -84,15 +80,18 @@
 .button button {
   margin-right: 10px;
 }
-
-.bottom {
-  margin-top: 20px;
+/* //! Middle map */
+.middle {
+  border: 2px solid blue;
 }
 
 .map-container {
-  width: 60vw;
-} */
-
+  width: 90%;
+}
+/* //! Bottom */
+.bottom {
+  border: 2px solid orangered;
+}
 /* button */
 .buttons-container {
   display: grid;

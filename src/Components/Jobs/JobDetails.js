@@ -7,13 +7,15 @@ import Contact from "../../Features/Contact";
 import Recommended from "./Recommended";
 import MapContainer from "../../Features/MapContainer";
 //
+import Job from "./Job"; //? imported to pass icon state
+import { handleIcons } from "../../Features/helper";
+
 const API = process.env.REACT_APP_API_URL;
 
 export default function JobDetails({ handleAddressSubmit }) {
   const [jobs, setJobs] = useState([]);
   const [recommended, setRecommended] = useState([]); // Recommended Jobs
-  // const [filteredJobs, setFilteredJobs]= useState([]);
-  // const [jobSkills, setJobSkills] = useState("");
+
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -64,40 +66,57 @@ export default function JobDetails({ handleAddressSubmit }) {
       <div className="page-container">
         {/*  */}
         {/* //!LEFT ----- */}
+        <p className="date p1">
+          <em>Posted Date:</em> {middle}, {year}
+        </p>
+        <div className="details-icon">
+          {<img src={handleIcons()} alt="job-icon" />}
+        </div>
         <div className="top job-details-body">
-          <p className="date">
-            <em>Posted Date:</em> {middle}, {year}
-          </p>
           <h2 className="job-title">{jobs.job_title}</h2>
 
-          <p className="company">
-            <strong>Company:</strong> {jobs.company}
+          <p className="company p1">
+            <strong>Company:</strong>
+            <span> {jobs.company}</span>
           </p>
-          <p className="email">
-            <strong>Email:</strong> {jobs.email}
+          <p className="email p1">
+            <strong>Email:</strong>
+            <span> {jobs.email}</span>
           </p>
-          <p className="location">
-            <strong>Location:</strong> {jobs.location}
+          <p className="location p1">
+            <strong>Location:</strong>
+            <span>{jobs.location}</span>
           </p>
-          <p className="job-type">
-            <strong>Job Type:</strong> {jobs.job_type}
+          <p className="job-type p1">
+            <strong>Job Type:</strong>
+            <span>{jobs.job_type}</span>
           </p>
-          <p className="salary">
-            <strong>Salary:</strong> $ {jobs.salary}/hr
+          <p className="salary p1">
+            <strong>Salary:</strong>
+            <span> $ {jobs.salary}/hr</span>
           </p>
-          <p className="description">
+
+          <p className="native-language p1">
+            <strong>Native Language:</strong>
+            <span>{jobs.native_language}</span>
+          </p>
+          <div className="center">
+            <div className="skill">
+              <strong>Skills:</strong> <span> {jobs.skills}</span>{" "}
+            </div>
+            <p className="divide"> </p>
+            <div className="requirement">
+              <strong>Requirements:</strong> <span>{jobs.requirements}</span>{" "}
+            </div>{" "}
+          </div>
+
+          <p className="requirements p1">
+            {/* <span>{jobs.requirements}</span> */}
+          </p>
+          <p className="description-label p1">
             <strong>Description</strong>
           </p>
           <p className="description">{jobs.description}</p>
-          <p className="native-language">
-            <strong>Native Language:</strong> {jobs.native_language}
-          </p>
-          <p className="skills">
-            <strong>Skills:</strong> {jobs.skills}
-          </p>
-          <p className="requirements">
-            <strong>Requirements:</strong> {jobs.requirements}
-          </p>
           {/* //!BUTTONS -----  */}
           {localStorage.getItem("user_id") === String(jobs.user_id) ? (
             <div className="buttons-container">
@@ -122,6 +141,7 @@ export default function JobDetails({ handleAddressSubmit }) {
           ) : null}
         </div>
         {/* //!MIDDLE ----- */}
+        <p>View on map</p>
         <div className="middle map-container">
           <MapContainer
             handleAddressSubmit={handleAddressSubmit}
@@ -131,10 +151,13 @@ export default function JobDetails({ handleAddressSubmit }) {
       </div>
       {/* //! BOTTOM ---Contact / Recs*/}
       <div className="bottom ">
-        <Contact />
-        {filtered.map((rec) => {
-          return <Recommended key={rec.id} rec={rec} />;
-        })}
+        <div className="contact-rec">
+          {" "}
+          <Contact />
+          {filtered.map((rec) => {
+            return <Recommended key={rec.id} rec={rec} />;
+          })}
+        </div>
       </div>
     </>
   );
