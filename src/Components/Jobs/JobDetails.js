@@ -14,6 +14,7 @@ const API = process.env.REACT_APP_API_URL;
 
 export default function JobDetails({ handleAddressSubmit }) {
   const [jobs, setJobs] = useState([]);
+  const [showMap, setShowMap] = useState(false);
   const [recommended, setRecommended] = useState([]); // Recommended Jobs
 
   const { id } = useParams();
@@ -55,6 +56,10 @@ export default function JobDetails({ handleAddressSubmit }) {
         (error) => console.log(error)
       )
       .catch((error) => console.warn(error));
+  };
+  //map view
+  const handleToggle = () => {
+    setShowMap(!showMap);
   };
   //
   let dateMade = new Date(jobs.posted_date);
@@ -141,22 +146,36 @@ export default function JobDetails({ handleAddressSubmit }) {
           ) : null}
         </div>
         {/* //!MIDDLE ----- */}
-        <p>View on map</p>
-        <div className="middle map-container">
-          <MapContainer
-            handleAddressSubmit={handleAddressSubmit}
-            location={jobs.location}
-          />
-        </div>
+        <p>
+          <button className="button" onClick={handleToggle}>
+            {showMap ? "Hide Map" : "View on map"}
+          </button>
+        </p>
+        {showMap && (
+          <div className="middle map-container">
+            <MapContainer
+              handleAddressSubmit={handleAddressSubmit}
+              location={jobs.location}
+            />
+          </div>
+        )}
       </div>
       {/* //! BOTTOM ---Contact / Recs*/}
-      <div className="bottom ">
-        <div className="contact-rec">
-          {" "}
-          <Contact />
-          {filtered.map((rec) => {
-            return <Recommended key={rec.id} rec={rec} />;
-          })}
+
+      <div className="bottom">
+        <div className="contact-rec-container">
+          <div className="recommended-container">
+            <h3>Recommended</h3>
+            {filtered.map((rec) => {
+              return (
+                <Recommended key={rec.id} rec={rec} icon={handleIcons()} />
+              );
+            })}
+          </div>
+          <div className="contact-container">
+            <h3>Contact</h3>
+            <Contact />
+          </div>
         </div>
       </div>
     </>

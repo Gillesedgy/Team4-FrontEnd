@@ -1,9 +1,45 @@
+.recommended {
+  border: 2px solid rgb(170, 168, 168);
+  border-style: dotted;
+  border-radius: 8px;
+  text-align: center;
+  margin: 10px;
+}
 .recommended a {
   color: black;
   text-decoration: none;
   padding: 10px;
 }
-.recommended a:hover {
-  color: #e3be99;
-  /* color: teal; */
+.recommended {
+  border: 2px solid rgb(170, 168, 168);
+  border-style: dotted;
+}
+.recommended:hover {
+  box-shadow: var(--button-hover-box-shadow);
+  transform: var(--button-hover-transform);
+}
+.recommended:nth-child(odd) {
+  background-color: rgba(85, 133, 195, 0.325);
+}
+.recommended:nth-child(odd) .color:hover {
+  color: whitesmoke;
+}
+.recommended:nth-child(even) {
+  background-color: rgb(74, 110, 222);
+}
+.recommended:nth-child(even) .color:hover {
+  color: #fadabb;
+}
+
+.recommended:nth-child(even) img {
+  border: 2px solid rgba(120, 134, 188, 0.401);
+  background-color: rgba(85, 133, 195, 0.325);
+  border-radius: 10px;
+  padding: 5px;
+}
+.recommended:nth-child(odd) img {
+  border: 1px solid rgb(74, 110, 222);
+  background-color: rgb(195, 206, 239);
+  border-radius: 10px;
+  padding: 5px;
 }
