@@ -42,7 +42,11 @@ export default function NewPostForm() {
 
   const addPost = (newPost) => {
     axios
-      .post(`${API}/communityBoard`, newPost)
+      .post(`${API}/communityBoard`, newPost, {
+        headers: {
+          authorization: localStorage.getItem("jwtToken"),
+        },
+      })
       .then(
         () => {
           navigate(`/communityBoard`);

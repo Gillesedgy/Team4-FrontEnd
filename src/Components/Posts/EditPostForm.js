@@ -12,7 +12,11 @@ export default function EditPostForm() {
 
   const updatePost = (updatedPost) => {
     axios
-      .put(`${API}/communityBoard/${id}`, updatedPost)
+      .put(`${API}/communityBoard/${id}`, updatedPost, {
+        headers: {
+          authorization: localStorage.getItem("jwtToken"),
+        },
+      })
       .then(
         () => {
           navigate(`/communityBoard/${id}`);
