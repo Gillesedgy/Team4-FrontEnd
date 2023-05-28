@@ -27,7 +27,7 @@ export default function Job({
         </div>
         {/* Right */}
         <div className="right-section">
-          <p className="date">
+          <p>
             <strong>Posted Date:</strong> {middle}, {year}
           </p>
           <p>
