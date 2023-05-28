@@ -48,7 +48,11 @@ export default function JobDetails({ handleAddressSubmit }) {
   // Delete
   const deleteJob = () => {
     axios
-      .delete(`${API}/jobs/${id}`)
+      .delete(`${API}/jobs/${id}`, {
+        headers: {
+          authorization: localStorage.getItem("jwtToken"),
+        },
+      })
       .then(
         () => {
           navigate(`/jobs`);
@@ -71,7 +75,7 @@ export default function JobDetails({ handleAddressSubmit }) {
           <p className="date">
             <em>Posted Date:</em> {middle}, {year}
           </p>
-          <p className="job-title">{jobs.job_title}</p>
+          <h2 className="job-title">{jobs.job_title}</h2>
 
           <p className="company">
             <strong>Company:</strong> {jobs.company}
@@ -102,25 +106,27 @@ export default function JobDetails({ handleAddressSubmit }) {
             <strong>Requirements:</strong> {jobs.requirements}
           </p>
           {/* //!BUTTONS -----  */}
-          <div className="buttons-container">
-            <button className="button" type="submit" onClick={deleteJob}>
-              Delete
-            </button>
-            <button
-              className="button"
-              onClick={() => navigate(`/jobs/${id}/edit`)}
-              type="submit"
-            >
-              Edit
-            </button>
-            <button
-              className="button"
-              onClick={() => navigate(`/jobs`)}
-              type="submit"
-            >
-              Back
-            </button>
-          </div>
+          {localStorage.getItem("user_id") === String(jobs.user_id) ? (
+            <div className="buttons-container">
+              <button className="button" type="submit" onClick={deleteJob}>
+                Delete
+              </button>
+              <button
+                className="button"
+                onClick={() => navigate(`/jobs/${id}/edit`)}
+                type="submit"
+              >
+                Edit
+              </button>
+              <button
+                className="button"
+                onClick={() => navigate(`/jobs`)}
+                type="submit"
+              >
+                Back
+              </button>
+            </div>
+          ) : null}
         </div>
         {/* //!MIDDLE ----- */}
         <div className="middle map-container">

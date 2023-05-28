@@ -55,7 +55,11 @@ export default function JobEdit() {
   //* Update Job
   const updateJob = (updatedJob) => {
     axios
-      .put(`${API}/jobs/${id}`, updatedJob)
+      .put(`${API}/jobs/${id}`, updatedJob, {
+        headers: {
+          authorization: localStorage.getItem("jwtToken"),
+        },
+      })
       .then(
         (response) => {
           navigate(`/jobs/${id}`);

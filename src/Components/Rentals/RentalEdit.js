@@ -30,7 +30,11 @@ export default function RentalEdit() {
 
   const updateRental = (updatedRental) => {
     axios
-      .put(`${API}/listings/${id}`, updatedRental)
+      .put(`${API}/listings/${id}`, updatedRental, {
+        headers: {
+          authorization: localStorage.getItem("jwtToken"),
+        },
+      })
       .then(
         () => {
           navigate(`/listings/${id}`);

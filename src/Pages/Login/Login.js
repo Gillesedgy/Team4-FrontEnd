@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import "./Login.css"; 
+import "./Login.css";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useContextProvider } from "../../Provider";
@@ -51,6 +51,7 @@ export default function Login() {
           const jwtToken = response.data.token;
           user_id = response.data.id;
           localStorage.setItem("jwtToken", jwtToken);
+          localStorage.setItem("user_id", user_id);
           // handleUserInfo(user_id);
           setUser(response.data);
           console.log(response.data);
