@@ -12,10 +12,12 @@ h4 {
   display: flex;
   flex-direction: column;
   max-width: var(--form-width);
+
   margin: 0 auto;
   padding: var(--form-padding);
   background-color: var(--form-color);
   border-radius: 8px;
+  margin-bottom: var(--form-margin-bottom);
 }
 
 .jobForm label {
@@ -29,8 +31,8 @@ h4 {
 .jobForm select {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: var(--form-input-border);
+  border-radius: var(--form-input-border-radius);
   box-sizing: border-box;
 }
 
@@ -39,18 +41,23 @@ h4 {
   height: 100px;
   font-family: sans-serif;
 }
+.form-button-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
 .button_edit {
   align-items: center;
-  background-color: rgb(247, 182, 102);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgb(74, 110, 222);
+  border: var(--button-border);
   border-radius: 0.25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
+  box-shadow: rgba(85, 133, 195, 0.325) 2px 5px 0 1px 3px 0;
+  /* box-sizing: border-box; */
   color: rgba(0, 0, 0, 0.85);
   cursor: pointer;
   display: inline-flex;
   font-size: 19px;
-  font-weight: 200;
+  font-weight: var(--button-font-weight);
   justify-content: center;
   line-height: 0.5;
   margin-top: 20px;
@@ -65,15 +72,14 @@ h4 {
   vertical-align: baseline;
   width: auto;
 }
-
-.jobForm button:hover {
-  background-color: #45a049;
+.jobForm h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(74, 110, 222);
+  text-shadow: rgba(85, 133, 195, 0.325) 2px 5px;
 }
-
-.jobForm button[type="submit"] {
-  background-color: #3f51b5;
-}
-
-.jobForm button[type="submit"]:hover {
-  background-color: #3949ab;
+.button_edit:hover {
+  transform: var(--button-hover-transform);
+  box-shadow: var(--button-hover-box-shadow);
+  color: var(--button-hover-color);
 }

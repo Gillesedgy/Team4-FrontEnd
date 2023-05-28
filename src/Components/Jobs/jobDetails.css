@@ -11,8 +11,12 @@
 .date {
   display: flex;
   justify-content: right;
-  font-style: italic;
+
   padding: 10px;
+}
+.date span {
+  margin-left: 5px;
+  font-style: italic;
 }
 .details-icon,
 .top h2 {
@@ -86,7 +90,10 @@
   margin-left: auto;
   margin-right: auto;
 }
-
+.show-button {
+  width: 6rem;
+  font-size: var(--button-font-size);
+}
 .map-container {
   width: 90%;
 }

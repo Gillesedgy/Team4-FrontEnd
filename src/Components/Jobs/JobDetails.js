@@ -72,7 +72,10 @@ export default function JobDetails({ handleAddressSubmit }) {
         {/*  */}
         {/* //!LEFT ----- */}
         <p className="date p1">
-          <em>Posted Date:</em> {middle}, {year}
+          <strong>Posted Date:</strong>
+          <span>
+            {middle}, {year}
+          </span>
         </p>
         <div className="details-icon">
           {<img src={handleIcons()} alt="job-icon" />}
@@ -147,7 +150,7 @@ export default function JobDetails({ handleAddressSubmit }) {
         </div>
         {/* //!MIDDLE ----- */}
         <p>
-          <button className="button" onClick={handleToggle}>
+          <button className="show-button button" onClick={handleToggle}>
             {showMap ? "Hide Map" : "View on map"}
           </button>
         </p>
