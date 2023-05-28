@@ -32,12 +32,13 @@ export default function Contact() {
 
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
-      <div className="container">
+      <div>
         <label htmlFor="first-name">First Name:</label>
         <input
           className="field"
           type="text"
           id="first-name"
+          placeholder="Enter first name"
           value={firstName}
           onChange={handleFirstNameChange}
           required
@@ -47,6 +48,7 @@ export default function Contact() {
         <label htmlFor="last-name">Last Name:</label>
         <input
           className="field"
+          placeholder="Enter last name"
           type="text"
           id="last-name"
           value={lastName}
@@ -78,7 +80,9 @@ export default function Contact() {
           required
         ></textarea>
       </div>
-      <button type="submit">Send Your Message</button>
+      <button className="button" type="submit">
+        Send Your Message
+      </button>
     </form>
   );
 }
