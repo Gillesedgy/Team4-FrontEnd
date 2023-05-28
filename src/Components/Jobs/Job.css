@@ -17,10 +17,6 @@
   background-color: rgba(85, 133, 195, 0.325);
 }
 
-.left-section {
-  /* width: 33%; */
-}
-
 .middle-section,
 .left-section {
   display: flex;
