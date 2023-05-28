@@ -30,7 +30,7 @@ export default function Jobs() {
           </button>
         </div>
       </h2>
-      {/* </div> */}
+
       {jobs.map((job) => {
         return <Job job={job} key={job.id} />;
       })}
