@@ -72,7 +72,7 @@ export default function JobDetails({ handleAddressSubmit }) {
         {/*  */}
         {/* //!LEFT ----- */}
         <p className="date p1">
-          <strong>Posted Date:</strong>
+          Posted Date:
           <span>
             {middle}, {year}
           </span>
@@ -85,7 +85,7 @@ export default function JobDetails({ handleAddressSubmit }) {
 
           <p className="company p1">
             <strong>Company:</strong>
-            <span> {jobs.company}</span>
+            <span>{jobs.company}</span>
           </p>
           <p className="email p1">
             <strong>Email:</strong>
