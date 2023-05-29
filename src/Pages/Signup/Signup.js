@@ -25,7 +25,7 @@ export default function Signup() {
       .then(
         (res) => {
           console.log(res.data);
-          navigate("/listings");
+          navigate("/login");
         },
         (error) => console.log(error)
       )
@@ -90,7 +90,9 @@ export default function Signup() {
             required
           />
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit" onClick={handleSignup}>
+          Submit
+        </button>
       </form>
     </div>
   );

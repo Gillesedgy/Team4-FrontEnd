@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./contact.css";
 export default function Contact() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [firstName, setFirstName] = useState(""); //* Maybe just full name here
+  const [lastName, setLastName] = useState(""); //
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
@@ -20,10 +20,9 @@ export default function Contact() {
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
   };
-
+  //
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setFirstName("");
     setLastName("");
     setEmail("");
@@ -36,6 +35,7 @@ export default function Contact() {
         <label htmlFor="first-name">First Name:</label>
         <input
           className="field"
+          name="name" //
           type="text"
           id="first-name"
           placeholder="Enter first name"
@@ -63,6 +63,7 @@ export default function Contact() {
           placeholder="YourEmail@email.com"
           type="email"
           id="email"
+          name="email"
           value={email}
           onChange={handleEmailChange}
           required

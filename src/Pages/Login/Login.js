@@ -55,7 +55,7 @@ export default function Login() {
           // handleUserInfo(user_id);
           setUser(response.data);
           console.log(response.data);
-          navigate("/listings");
+          navigate("/");
         },
         (error) => console.log(error)
       )
