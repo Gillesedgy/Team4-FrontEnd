@@ -169,20 +169,20 @@ export default function NewJob({ data }) {
             </option>
           ))}
         </select>{" "}
+        <div className="form-button-container">
+          {" "}
+          <button className="button_edit" type="submit">
+            Post
+          </button>
+          <button
+            className="button_edit"
+            onClick={() => navigate(`/jobs`)}
+            type="submit"
+          >
+            Back
+          </button>
+        </div>
       </form>
-      <div className="form-button-container">
-        {" "}
-        <button className="button_edit" type="submit">
-          Post
-        </button>
-        <button
-          className="button_edit"
-          onClick={() => navigate(`/jobs`)}
-          type="submit"
-        >
-          Back
-        </button>
-      </div>
     </div>
   );
 }

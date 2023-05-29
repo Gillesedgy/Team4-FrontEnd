@@ -13,9 +13,13 @@ import MapContainer from "../../Features/MapContainer";
 const API = process.env.REACT_APP_API_URL;
 
 export default function RentalDetails({ handleAddressSubmit }) {
+  const [showMap, setShowMap] = useState(false);
+  const handleToggle = () => {
+    setShowMap(!showMap);
+  };
   const [rental, setRental] = useState({});
   const [moreRentals, setMoreRentals] = useState([]);
-  const [location, setLocation] = useState({ lat: 0, lng: 0 });
+
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -41,10 +45,6 @@ export default function RentalDetails({ handleAddressSubmit }) {
       .get(`${API}/listings/${id}`)
       .then((res) => {
         setRental(res.data);
-        setLocation({
-          lat: parseInt(res.data.latitude),
-          lng: parseInt(res.data.longitude),
-        });
       })
       .catch((err) => console.warn(err));
   }, [id]);
@@ -131,23 +131,25 @@ export default function RentalDetails({ handleAddressSubmit }) {
         ) : null}
       </>
 
-      {/* <div className="rental_details_buttons">
-     <button
-      
-          onClick={() => {
-            navigate(`/listings/${id}/edit`);
-          }}
-        >
-          Edit
-        </button>
-        <button onClick={deleteRental}>Delete</button>
-      </div> */}
       <div className="rental_map">
         <h5>View on Map</h5>
+        {/* <p>
+          <button className="show-button button" onClick={handleToggle}>
+            {showMap ? "Hide Map" : "View on map"}
+          </button>
+        </p>
+        {showMap && (
+          <div className="middle map-container">
+            <MapContainer
+              handleAddressSubmit={handleAddressSubmit}
+              location={rental.location}
+            />
+          </div>
+        )} */}
         <div style={{ display: "flex", height: "400px" }}>
           <MapContainer
             handleAddressSubmit={handleAddressSubmit}
-            location={location}
+            location={rental.location}
           />
         </div>
       </div>

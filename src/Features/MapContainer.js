@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 
-const gKey = process.env.REACT_APP_GOOGLE_MAP_API_KEY;
+import {
+  google,
+  GoogleMap,
+  Marker,
+  useLoadScript,
+} from "@react-google-maps/api";
+
+const gKey = process.env.REACT_APP_GOOGLE_MAP_API_KEY2;
 
 export default function MapContainer({ location }) {
   const { isLoaded } = useLoadScript({
@@ -10,28 +16,26 @@ export default function MapContainer({ location }) {
   const [longitude, setLongitude] = useState(0);
   const [latitude, setLatitude] = useState(0);
 
+  function handleAddressSubmit(address) {
+    addressConverter(address)
+      .then((coords) => {
+        setLatitude(coords.lat);
+        setLongitude(coords.lng);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
   useEffect(() => {
-    function handleAddressSubmit(address) {
-      addressConverter(address)
-        .then((coords) => {
-          setLatitude(coords.lat);
-          setLongitude(coords.lng);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-    //ToDo: Fix Error => Cannot read properties of undefined lat.
-    // typeof location === "string"
-    //   ? handleAddressSubmit(location, lat, lng)
-    //   : setLatitude(location.lat);
-    // setLongitude(location.lng);
+    handleAddressSubmit(String(location));
   }, [location]);
 
-  function addressConverter(address, setLongitude, setLatitude) {
+  function addressConverter(address) {
     return new Promise((resolve, reject) => {
       const geocoder = new window.google.maps.Geocoder();
       geocoder.geocode({ address: address }, function (results, status) {
+        console.log(results);
         if (
           status === window.google.maps.GeocoderStatus.OK &&
           results.length > 0
