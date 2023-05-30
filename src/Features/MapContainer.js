@@ -28,7 +28,7 @@ export default function MapContainer({ location }) {
   }
 
   useEffect(() => {
-    handleAddressSubmit(String(location));
+    setTimeout(handleAddressSubmit(String(location)), 2000);
   }, [location]);
 
   function addressConverter(address) {
