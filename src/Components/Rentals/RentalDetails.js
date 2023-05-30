@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { BsSuitHeart } from "react-icons/bs";
 import Suggested from "./Suggested";
+import Contact from "../../Features/Contact";
 
 import "./RentalDetails.css";
 //* --------Map---------------
@@ -133,8 +134,12 @@ export default function RentalDetails({ handleAddressSubmit }) {
 
       <div className="rental_map">
         <h5>View on Map</h5>
-        {/* <p>
-          <button className="show-button button" onClick={handleToggle}>
+        <p>
+          <button
+            className="show-button button"
+            onClick={handleToggle}
+            style={{ backgroundColor: "teal" }}
+          >
             {showMap ? "Hide Map" : "View on map"}
           </button>
         </p>
@@ -145,13 +150,26 @@ export default function RentalDetails({ handleAddressSubmit }) {
               location={rental.location}
             />
           </div>
-        )} */}
-        <div style={{ display: "flex", height: "400px" }}>
+        )}
+        {/* <div style={{ display: "flex", height: "400px" }}>
           <MapContainer
             handleAddressSubmit={handleAddressSubmit}
             location={rental.location}
           />
-        </div>
+        </div> */}
+      </div>
+      <hr />
+      <div
+        className="contact-container"
+        style={{
+          marginTop: "1em",
+          marginBottom: "1em",
+          marginRight: "auto",
+          marginLeft: "auto",
+        }}
+      >
+        <h3 style={{ color: "teal" }}>Contact</h3>
+        <Contact />
       </div>
       <hr></hr>
       <h3 className="rental_recs_h">Similar listings</h3>

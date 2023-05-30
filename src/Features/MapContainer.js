@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 
-const gKey = process.env.REACT_APP_GOOGLE_MAP_API_KEY2;
+const gKey = process.env.REACT_APP_GOOGLE_MAP_API_KEY;
 
 export default function MapContainer({ location }) {
   const { isLoaded } = useLoadScript({
