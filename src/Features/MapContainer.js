@@ -15,6 +15,7 @@ export default function MapContainer({ location }) {
   const [marker, setMarker] = useState(null);
   //? ---------------------------------------
   useEffect(() => {
+
     //
     function handleAddressSubmit(address) {
       addressConverter(address)
@@ -41,6 +42,8 @@ export default function MapContainer({ location }) {
     }
     handleAddressSubmit(String(location));
   }, [location, map]);
+    setTimeout(handleAddressSubmit(String(location)), 2000);
+  }, [location]);
 
   function addressConverter(address) {
     return new Promise((resolve, reject) => {
