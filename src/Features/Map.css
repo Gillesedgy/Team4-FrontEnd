@@ -1,12 +1,11 @@
 .map-container {
-  border: 2px solid black;
+  border: 1px solid black;
   display: flex;
   height: 30vh;
   margin-bottom: 20px;
   margin-top: 5px;
-  /* width: 30vw; */
 }
 .map {
-  width: 100vw;
-  /* height: 400px; */
+  height: 30vh;
+  width: 100%;
 }

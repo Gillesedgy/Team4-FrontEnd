@@ -1,81 +1,75 @@
-import React, { useState, useEffect } from "react";
-import { GoogleMap, Marker } from "@react-google-maps/api";
-import Search from "./Search";
+// import React, { useState, useEffect } from "react";
+// import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 
-export default function Map() {
-  const [longitude, setLongitude] = useState(0);
-  const [latitude, setLatitude] = useState(0);
+// const gKey = process.env.REACT_APP_GOOGLE_MAP_API_KEY;
 
-  useEffect(() => {
-    const centered = () => {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setLongitude(position.coords.longitude);
-          setLatitude(position.coords.latitude);
-        },
-        (error) => {
-          console.log("Error getting your current position: " + error.message);
-        }
-      );
-    };
-    centered();
-  }, []);
+// export default function MapContainer({ location }) {
+//   const { isLoaded } = useLoadScript({
+//     googleMapsApiKey: gKey,
+//   });
+//   const [longitude, setLongitude] = useState(0);
+//   const [latitude, setLatitude] = useState(0);
 
-  const addressConverter = (address) => {
-    return new Promise((resolve, reject) => {
-      const geocoder = new window.google.maps.Geocoder();
-      geocoder.geocode({ address: address }, function (results, status) {
-        if (
-          status === window.google.maps.GeocoderStatus.OK &&
-          results.length > 0
-        ) {
-          const lat = results[0].geometry.location.lat();
-          const lng = results[0].geometry.location.lng();
-          setLongitude(lng);
-          setLatitude(lat);
-          resolve({ lat, lng });
-        } else {
-          reject("Address not found!");
-        }
-      });
-    });
-  };
+//   useEffect(() => {
+//     function handleAddressSubmit(address) {
+//       extractCoordinatesFromAddress(address)
+//         .then(({ lat, lng }) => {
+//           setLatitude(lat);
+//           setLongitude(lng);
+//         })
+//         .catch((error) => {
+//           console.error(error);
+//         });
+//     }
 
-  // const handleAddressSubmit = (address) => {
-  //   addressConverter(address)
-  //     .then((coords) => {
-  //       setLatitude(coords.lat);
-  //       setLongitude(coords.lng);
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // };
-  return (
-    <div>
-      <div className="Map_Container">
-        <div className="places_container">
-          {/* <Search
-            addressConverter={handleAddressSubmit}
-            lat={latitude}
-            lng={longitude}
-          /> */}
-        </div>
-        <div className="Map">
-          {/* <GoogleMap
-            zoom={15}
-            center={{ lat: latitude, lng: longitude }}
-            mapContainerStyle={{ height: "100%", width: "100%" }}
-          >
-            <Marker size={33} position={{ lat: latitude, lng: longitude }} />
-          </GoogleMap> */}
-          {/* <p>Checking for Map</p> */}
-        </div>
-      </div>
-    </div>
-  );
-}
+//     handleAddressSubmit(String(location));
+//   }, [location]);
 
+//   function extractCoordinatesFromAddress(formattedAddress) {
+//     return new Promise((resolve, reject) => {
+//       if (!window.google.maps || !window.google.maps.Geocoder) {
+//         reject(new Error("Google Maps API is not loaded"));
+//         return;
+//       }
+//       const geocoder = new window.google.maps.Geocoder();
+//       geocoder.geocode({ address: formattedAddress }, (results, status) => {
+//         if (
+//           status === window.google.maps.GeocoderStatus.OK &&
+//           results.length > 0
+//         ) {
+//           const { lat, lng } = results[0].geometry.location;
+//           resolve({ lat, lng });
+//         } else {
+//           reject(new Error("Failed to extract coordinates from address."));
+//         }
+//       });
+//     });
+//   }
+
+//   console.log("Latitude:", latitude);
+//   console.log("Longitude:", longitude);
+
+//   return (
+//     <div className="map">
+//       {isLoaded ? (
+//         <GoogleMap
+//           zoom={16}
+//           center={{ lat: latitude, lng: longitude }}
+//           mapContainerStyle={{ height: "100%", width: "100%" }}
+//         >
+//           <Marker
+//             size={30}
+//             position={{ lat: parseFloat(latitude), lng: parseFloat(longitude) }}
+//           />
+//         </GoogleMap>
+//       ) : (
+//         <p>Map Error, check address again</p>
+//       )}
+//     </div>
+//   );
+// }
+
+//* ----------------------------------------------------------------
 //  This centered function is used to grab the user's current location. Two states were created and restated to the user's coords by long and lat. (Navigator.getCurrentlPosition method that allows the web to access user's location  )
 
 //  handleAddressSubmit This function take the new address and updates the map
