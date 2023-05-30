@@ -1,10 +1,10 @@
 import NavBar from "./Components/Nav/NavBar";
 import RouteComponent from "./RouteComponent";
-import "./app.css"
+import "./app.css";
 
 function App() {
   return (
-    <div>
+    <div className="main-container">
       <NavBar />
       <RouteComponent />
     </div>
