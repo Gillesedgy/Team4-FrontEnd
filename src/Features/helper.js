@@ -8,37 +8,7 @@ import jobpic6 from "../Assets/jobpic6.png";
 import jobpic7 from "../Assets/jobpic7.png";
 import jobpic8 from "../Assets/jobpic8.png";
 import jobpic9 from "../Assets/jobpic9.png";
-//
-// export function addressConverter(address) {
-//   return new Promise((resolve, reject) => {
-//     const geocoder = new window.google.maps.Geocoder();
-//     geocoder.geocode({ address: address }, function (results, status) {
-//       if (
-//         status === window.google.maps.GeocoderStatus.OK &&
-//         results.length > 0
-//       ) {
-//         const lat = results[0].geometry.location.lat();
-//         const lng = results[0].geometry.location.lng();
-//         // setLongitude(lng);
-//         // setLatitude(lat);
-//         resolve({ lat, lng });
-//       } else {
-//         reject("Address not found!");
-//       }
-//     });
-//   });
-// }
 
-// export const handleAddressSubmit = (address, setLatitude, setLongitude) => {
-//   addressConverter(address)
-//     .then((coords) => {
-//       setLatitude(coords.lat);
-//       setLongitude(coords.lng);
-//     })
-//     .catch((error) => {
-//       console.error(error);
-//     });
-// };
 //Job Icons
 const jobIcons = [
   jobpic1,
@@ -55,4 +25,18 @@ export const handleIcons = () => {
   // randomize Icon
   const randomizeIcon = jobIcons[Math.floor(Math.random() * jobIcons.length)];
   return randomizeIcon;
+};
+export const handleLogo = () => {
+  const jobIcons2 = [
+    { value: jobpic1, label: "logo1" },
+    { value: jobpic2, label: "logo2" },
+    { value: jobpic3, label: "logo3" },
+    { value: jobpic4, label: "logo4" },
+    { value: jobpic5, label: "logo5" },
+    { value: jobpic6, label: "logo6" },
+    { value: jobpic7, label: "logo7" },
+    { value: jobpic8, label: "logo8" },
+    { value: jobpic9, label: "logo9" },
+  ];
+  return jobIcons2;
 };

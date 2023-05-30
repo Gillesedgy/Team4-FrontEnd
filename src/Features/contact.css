@@ -10,7 +10,7 @@
 
 .contact-form {
   font-size: 18px;
-  max-width: 400px;
+  /* max-width: 400px; */
   display: flex;
   flex-direction: column;
 }
@@ -57,12 +57,13 @@ label {
 
 .contact-form input:focus,
 .textarea:focus {
-  background: rgba(85, 133, 195, 0.325);
+  /* background: rgba(85, 133, 195, 0.325); */
   box-shadow: none;
+  outline: 2px solid rgb(0, 62, 128);
 }
 
 .contact-form button {
-  background: #fadabb;
+  background: rgb(0, 62, 128);
   padding: 8px 16px;
   margin: 16px 0 50px 0;
   color: white;

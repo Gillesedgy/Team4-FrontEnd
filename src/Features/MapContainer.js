@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-
-import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
+import { GoogleMap, useLoadScript } from "@react-google-maps/api";
 
 const gKey = process.env.REACT_APP_GOOGLE_MAP_API_KEY;
 
@@ -84,9 +83,7 @@ export default function MapContainer({ location }) {
           center={{ lat: latitude, lng: longitude }}
           mapContainerStyle={{ height: "100%", width: "100%" }}
           onLoad={handleMapLoad}
-        >
-          {/* <Marker size={33} position={{ lat: 0, lng: 0 }} /> */}
-        </GoogleMap>
+        ></GoogleMap>
       ) : (
         <p>Map Error, check address again</p>
       )}

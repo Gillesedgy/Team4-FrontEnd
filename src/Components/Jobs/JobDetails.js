@@ -80,6 +80,10 @@ export default function JobDetails({ handleAddressSubmit }) {
         <div className="details-icon">
           {<img src={handleIcons()} alt="job-icon" />}
         </div>
+        <p className="is_favorite p1">
+          <p>{jobs.is_favorite ? "❤️" : "not liked"}</p>
+          <span>{jobs.is_favorite}</span>
+        </p>
         <div className="top job-details-body">
           <h2 className="job-title">{jobs.job_title}</h2>
 
@@ -117,10 +121,6 @@ export default function JobDetails({ handleAddressSubmit }) {
               <strong>Requirements:</strong> <span>{jobs.requirements}</span>{" "}
             </div>{" "}
           </div>
-
-          <p className="requirements p1">
-            {/* <span>{jobs.requirements}</span> */}
-          </p>
           <p className="description-label p1">
             <strong>Description</strong>
           </p>
