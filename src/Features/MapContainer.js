@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 
-const gKey = process.env.REACT_APP_GOOGLE_MAP_API_KEY;
+const gKey = process.env.REACT_APP_GOOGLE_MAP_API_KEY2;
 
 export default function MapContainer({ location }) {
   const { isLoaded } = useLoadScript({
@@ -15,19 +15,17 @@ export default function MapContainer({ location }) {
   const [marker, setMarker] = useState(null);
   //? ---------------------------------------
   useEffect(() => {
-
     //
     function handleAddressSubmit(address) {
       addressConverter(address)
         .then((coords) => {
-          setLatitude(coords.latitude);
+          setLatitude(coords.lat);
           setLongitude(coords.lng);
           if (map) {
             if (marker) {
               // This condition will check is theres a marker present... if so,it removes it
               marker.setMap(null);
             }
-
             // Create new marker
             const newMarker = new window.google.maps.Marker({
               position: coords,
@@ -42,8 +40,6 @@ export default function MapContainer({ location }) {
     }
     handleAddressSubmit(String(location));
   }, [location, map]);
-    setTimeout(handleAddressSubmit(String(location)), 2000);
-  }, [location]);
 
   function addressConverter(address) {
     return new Promise((resolve, reject) => {
@@ -76,7 +72,7 @@ export default function MapContainer({ location }) {
   }
   console.log("latitude", latitude, " ", "longitude:", longitude);
 
-  //? Load thr map
+  //? Load the map
   function handleMapLoad(map) {
     setMap(map);
   }
