@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import "./form.css";
 import axios from "axios";
+import { LogoSelect } from "./LogoSelect";
+// import { handleLogo } from "../../Features/helper";
+import { LanguageSelect } from "./LanguageSelect";
 const API = process.env.REACT_APP_API_URL;
 export default function NewJob({ data }) {
   const navigate = useNavigate();
-  //todo: Add new Table details to job state
   const [newJob, setNewJob] = useState({
+    //toDO: Inlcude Logo key
+    logo: "",
     job_title: "",
     company: "",
     email: "",
@@ -19,8 +23,11 @@ export default function NewJob({ data }) {
     requirements: "",
     salary: "",
   });
-  //Todo:
-  // add new job by making a call
+  //Todo: Job icon functionality
+  // const [logo, setLogo] = useState(handleLogo());
+  const [selectLogo, setSelectLogo] = useState(""); //tracks
+
+  // console.log("logo", logo);
   const addNewJob = (addedJob) => {
     axios
       .post(`${API}/jobs`, addedJob, {
@@ -41,49 +48,41 @@ export default function NewJob({ data }) {
   const handleTextChange = (e) => {
     setNewJob({ ...newJob, [e.target.id]: e.target.value });
   };
-  // check change
-  const handleCheckChange = () => {
-    setNewJob({ ...newJob, is_favorite: !newJob.is_favorite });
-  };
   // Submit
   const handleSubmit = (e) => {
     e.preventDefault();
     addNewJob(newJob);
   };
-  const [select, setSelect] = useState("");
-  const languages = [
-    { value: "English", label: "English" },
-    { value: "Spanish", label: "Spanish" },
-    { value: "Chinese", label: "Chinese" },
-    { value: "Bengali", label: "Bengali" },
-    { value: "Hindi", label: "Hindi" },
-    { value: "Korean", label: "Korean" },
-    { value: "Arabic", label: "Arabic" },
-    { value: "Japanese", label: "Japanese" },
-    { value: "Creole", label: "Creole" },
-    { value: "Filipino", label: "Filipino" },
-    { value: "Urdu", label: "Urdu" },
-  ];
+  const [selectedLanguage, setSelectLanguage] = useState("");
+
   const jobType = [
     { value: "Full-Time", label: "Full-Time" },
     { value: "Part-Time", label: "Part-Time" },
   ];
-  const handleSelectChange = (e) => {
+  const handleSelectedLanguage = (e) => {
     const selected = e.target.value;
-    setSelect(e.target.value);
+    setSelectLanguage(e.target.value);
     setNewJob({ ...newJob, native_language: selected });
   };
   const handleTypeChange = (e) => {
     const selected = e.target.value;
-    setSelect(selected);
+    setSelectLanguage(selected);
     setNewJob({ ...newJob, job_type: selected });
+  };
+  //Todo: handleLogo Dropdown function
+  // const handleLogoChange = handleLogo;
+
+  const handleLogoSelect = (e) => {
+    const selectedLogo = e.target.value;
+    setSelectLogo(selectedLogo);
+    setNewJob({ ...newJob, logo: selectedLogo });
   };
   //! Character Count Feature
   // const characterLimit = 500;
   // const handleCharacterCount = (e) => {
   //   console.log(newJob.description);
   //   if (characterLimit - newJob.description.length >= 1) {
-  //     setNewJob({ ...NewJob, [e.target.id]: e.target.value });
+  //     setNewJob({ ...NewJob,z [e.target.id]: e.target.value });
   //   } else {
 
   //   }
@@ -101,6 +100,13 @@ export default function NewJob({ data }) {
           onChange={handleTextChange}
           required
         />
+        {/* //! Logo */}
+        <LogoSelect
+          selectedLogo={selectLogo}
+          handleLogoSelect={handleLogoSelect}
+        />
+
+        {/* //!------------- */}
         <label htmlFor="company">Company:</label>
         <input
           type="text"
@@ -155,20 +161,11 @@ export default function NewJob({ data }) {
           onChange={handleTextChange}
           required
         />
-        <label>Languages: </label>
-        <select
-          id={newJob.native_language}
-          value={newJob.native_language}
-          onChange={handleSelectChange}
-          required
-        >
-          <option value="">Select a language</option>
-          {languages.map((language) => (
-            <option value={language.value} key={language.value}>
-              {language.label}
-            </option>
-          ))}
-        </select>{" "}
+        <LanguageSelect
+          selected={selectedLanguage}
+          handleSelectedLanguage={handleSelectedLanguage}
+        />
+
         <div className="form-button-container">
           {" "}
           <button className="button_edit" type="submit">

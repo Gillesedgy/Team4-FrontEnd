@@ -11,12 +11,12 @@ h4 {
 .jobForm {
   display: flex;
   flex-direction: column;
-  max-width: var(--form-width);
-
+  min-width: 30vw;
   margin: 0 auto;
-  padding: var(--form-padding);
   background-color: var(--form-color);
   border-radius: 8px;
+  /* max-width: var(--form-width); */
+  padding: var(--form-padding);
   margin-bottom: var(--form-margin-bottom);
 }
 

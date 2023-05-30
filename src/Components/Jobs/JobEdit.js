@@ -2,11 +2,17 @@ import React, { useState, useEffect } from "react";
 import "./form.css";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import { LogoSelect } from "./LogoSelect";
+import { LanguageSelect } from "./LanguageSelect";
 const API = process.env.REACT_APP_API_URL;
+//
 export default function JobEdit() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [selectLogo, setSelectLogo] = useState("");
+  const [selectedLanguage, setSelectLanguage] = useState("");
   const [edit, setEdit] = useState({
+    logo: "",
     job_title: "",
     company: "",
     email: "",
@@ -21,19 +27,19 @@ export default function JobEdit() {
   });
   //* Languages
   const [select, setSelect] = useState("");
-  const languages = [
-    { value: "English", label: "English" },
-    { value: "Spanish", label: "Spanish" },
-    { value: "Chinese", label: "Chinese" },
-    { value: "Bengali", label: "Bengali" },
-    { value: "Hindi", label: "Hindi" },
-    { value: "Korean", label: "Korean" },
-    { value: "Arabic", label: "Arabic" },
-    { value: "Japanese", label: "Japanese" },
-    { value: "Creole", label: "Creole" },
-    { value: "Filipino", label: "Filipino" },
-    { value: "Urdu", label: "Urdu" },
-  ];
+  // const languages = [
+  //   { value: "English", label: "English" },
+  //   { value: "Spanish", label: "Spanish" },
+  //   { value: "Chinese", label: "Chinese" },
+  //   { value: "Bengali", label: "Bengali" },
+  //   { value: "Hindi", label: "Hindi" },
+  //   { value: "Korean", label: "Korean" },
+  //   { value: "Arabic", label: "Arabic" },
+  //   { value: "Japanese", label: "Japanese" },
+  //   { value: "Creole", label: "Creole" },
+  //   { value: "Filipino", label: "Filipino" },
+  //   { value: "Urdu", label: "Urdu" },
+  // ];
   //todo: for community page --> Neighbourhood meals / YTvids
   const jobType = [
     { value: "Full-Time", label: "Full-Time" },
@@ -41,10 +47,15 @@ export default function JobEdit() {
     // { value: "Contract", label: "Contract" },
     // { value: "Seasonal", label: "Seasonal" }
   ];
-  const handleSelectChange = (e) => {
+  const handleSelectedLanguage = (e) => {
     const selected = e.target.value;
-    setSelect(selected);
+    setSelectLanguage(selected);
     setEdit({ ...edit, native_language: selected });
+  };
+  const handleLogoSelect = (e) => {
+    const selectedLogo = e.target.value;
+    setSelectLogo(selectedLogo);
+    setEdit({ ...edit, logo: selectedLogo });
   };
   const handleTypeChange = (e) => {
     const selected = e.target.value;
@@ -76,6 +87,8 @@ export default function JobEdit() {
   // const handleCheckChange = () => {
   //   setEdit({ ...edit, is_favorite: !edit.is_favorite });
   // };
+  //* Logo
+
   useEffect(() => {
     axios.get(`${API}/jobs/${id}`).then(
       (response) => setEdit(response.data),
@@ -99,6 +112,10 @@ export default function JobEdit() {
           value={edit.job_title}
           onChange={handleTextChange}
           required
+        />
+        <LogoSelect
+          selectedLogo={selectLogo}
+          handleLogoSelect={handleLogoSelect}
         />
         <label htmlFor="company">Company:</label>
         <input
@@ -165,12 +182,15 @@ export default function JobEdit() {
           onChange={handleTextChange}
           required
         />
-
-        <label>Languages: </label>
+        <LanguageSelect
+          selected={selectedLanguage}
+          handleSelectedLanguage={handleSelectedLanguage}
+        />
+        {/* <label>Languages: </label>
         <select
           id={edit.native_language}
           value={edit.native_language}
-          onChange={handleSelectChange}
+          onChange={handleSelectedLanguage}
           required
         >
           <option value="">Select a language</option>
@@ -179,7 +199,7 @@ export default function JobEdit() {
               {language.label}
             </option>
           ))}
-        </select>
+        </select> */}
         <div className="form-button-container">
           {" "}
           <button className="button_edit" onClick={handleSubmit} type="submit">
