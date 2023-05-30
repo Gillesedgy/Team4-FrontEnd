@@ -58,12 +58,12 @@ export default function MapContainer({ location }) {
         ) {
           const lat = results[0].geometry.location.lat();
           const lng = results[0].geometry.location.lng();
-          // const formattedAddress = results[0].formatted_address; //*
+          //* const formattedAddress = results[0].formatted_address;
           setLongitude(lng);
           setLatitude(lat);
           console.log(lat, lng); //!
           // console.log(`Formatted Address: ${formattedAddress}`); //!
-          // resolve({ formattedAddress, lat, lng });
+          //* resolve({ formattedAddress, lat, lng });
           resolve({ lat, lng });
         } else {
           reject("Address not found!");
