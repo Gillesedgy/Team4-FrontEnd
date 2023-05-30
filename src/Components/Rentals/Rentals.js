@@ -5,6 +5,7 @@ import axios from "axios";
 import Rental from "./Rental";
 import { useContextProvider } from "../../Provider";
 import "./Rentals.css";
+import { RiFileAddLine } from "react-icons/ri";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -33,7 +34,7 @@ export default function Rentals() {
           className="rentals_add"
           onClick={() => navigate(`/listings/new`)}
         >
-          Add New +
+          <RiFileAddLine /> Add New
         </button>
       </div>
       {rentals.map((rental) => {
