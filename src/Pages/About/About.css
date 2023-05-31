@@ -1,23 +1,50 @@
     .page {
         overflow-y: scroll;
         background-color:rgb(74,110,222);
+        height: 100vh;
+     
       }
+
+      
       .page {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 100vh;
-        width: 100vw;
-        padding: 20px;
+        flex-direction: column;
       }
       
       .box {
-        width: 300px;
-        background-color: #f0f0f0;
+        margin: 5%;
+        width: 100%;
         padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
+        box-sizing: border-box;      }
+      
+        .rentals-about {
+          align-self: flex-start;
+          margin-right: 20px;
+          background-color: white;
+          width: 50%;
+        }
+        
+        .jobs-about {
+          align-self: flex-end;
+          margin-left: 20px;
+          background-color: white;
+          width: 50%;
+        }
+        
+        .community-about {
+          align-self: flex-start;
+          margin-right: 20px;
+          background-color: white;
+          width: 50%;
+        }
+      
+      
+      
+      
+      
+      
+      
+
       
       .rentals-about h1,
       .jobs-about h1,

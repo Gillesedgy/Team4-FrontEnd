@@ -8,22 +8,10 @@ import WelcomeImg from "../../Assets/welcome1white.png"
 import "./welcomepg.css"
 // import Profile from "../Profile/Profile";
 // import { useContextProvider } from "../../Provider";
-import { useRef } from 'react';
 
 
 function Welcome() {
-  // const languageFlip = [
-  //   "Welcome!",
-  //   "bienvenido!",
-  //   "স্বাগতম!",
-  //   "مرحباً!",
-  //   "स्वागत!",
-  //   "いらっしゃいませ!",
-  //   "欢迎!",
-  //   "akeyi!",
-  //   "maligayang pagdating!",
-  //   "خوش آمدید!",
-  // ];
+
  
   return (
     <div >

@@ -67,7 +67,7 @@ export default function JobDetails({ handleAddressSubmit }) {
   let year = dateMade.split(" ").pop();
   let middle = dateMade.split(" ").splice(1, 2).join(" ");
   return (
-    <>
+    <div className="job-page-whole">
       <div className="page-container">
         {/*  */}
         {/* //!LEFT ----- */}
@@ -181,6 +181,6 @@ export default function JobDetails({ handleAddressSubmit }) {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

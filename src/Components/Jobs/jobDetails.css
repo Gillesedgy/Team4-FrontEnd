@@ -1,3 +1,12 @@
+.job-page-whole{
+  width: 100%;
+  align-items: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
 .page-container {
   border: 2px solid rgb(170, 168, 168);
   border-style: double;
@@ -8,6 +17,7 @@
   width: 100%;
   margin-right: auto;
   margin-left: auto;
+  
 }
 .date {
   display: flex;
@@ -166,3 +176,4 @@
   box-shadow: var(--button-hover-box-shadow);
   transform: var(--button-hover-transform);
 }
+
