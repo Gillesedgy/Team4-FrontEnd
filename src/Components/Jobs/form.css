@@ -11,7 +11,7 @@ h4 {
 .jobForm {
   display: flex;
   flex-direction: column;
-  min-width: 30vw;
+  max-width: 700px;
   margin: 0 auto;
   background-color: var(--form-color);
   border-radius: 8px;

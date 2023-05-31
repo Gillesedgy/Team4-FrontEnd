@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import "./Job.css";
 import { handleIcons } from "../../Features/helper";
 export default function Job({
-  job: { id, job_title, company, location, native_language, posted_date },
+  job: { id, job_title, company, location, native_language, posted_date, logo },
 }) {
-  const [icon, setIcon] = useState(handleIcons());
+  // const [icon, setIcon] = useState(handleIcons());
 
   let dateMade = new Date(posted_date);
   dateMade = dateMade.toDateString();
@@ -17,7 +17,7 @@ export default function Job({
       <div className="job-container">
         <div className="left-section">
           <div className="job-icon">
-            <img src={icon} alt="job-icon" />
+            <img src={logo} alt="job-icon" />
             <p className="company">{company}</p>
           </div>
         </div>
