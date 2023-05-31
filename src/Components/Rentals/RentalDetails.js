@@ -20,21 +20,10 @@ export default function RentalDetails({ handleAddressSubmit }) {
   };
   const [rental, setRental] = useState({});
   const [moreRentals, setMoreRentals] = useState([]);
+  const [images, setImages] = useState([]);
 
   const { id } = useParams();
   const navigate = useNavigate();
-
-  const [showMore, setShowMore] = useState(false);
-
-  const fullText = rental.description;
-  const shortText =
-    String(rental.description).split("").splice(0, 10).join("") + "...";
-
-  const toggleShowMore = () => {
-    setShowMore(!showMore);
-  };
-
-  const displayText = showMore ? fullText : shortText;
 
   let datePosted = new Date(rental.date_posted);
   datePosted = datePosted.toDateString();
@@ -46,6 +35,7 @@ export default function RentalDetails({ handleAddressSubmit }) {
       .get(`${API}/listings/${id}`)
       .then((res) => {
         setRental(res.data);
+        setImages(res.data.image_url);
       })
       .catch((err) => console.warn(err));
   }, [id]);
@@ -81,7 +71,16 @@ export default function RentalDetails({ handleAddressSubmit }) {
       {console.log(rental)}
       <div className="details_main_content">
         <div className="rental_dets_image">
-          <img src={rental.image_url} alt={rental.image_url} />
+          {images.map((image) => {
+            return <img src={image} alt={image} />;
+          })}
+          {/* {typeof rental.image_url === "string" ? (
+            <img src={rental.image_url} alt={rental.image_url} />
+          ) : (
+            <img src={rental.image_url} alt={rental.image_url} />
+          )} */}
+          {/* <img src={images[0]} alt={rental.image_url} /> */}
+          {console.log(rental.image_url)}
           <button>
             <BsSuitHeart />
           </button>
@@ -104,17 +103,7 @@ export default function RentalDetails({ handleAddressSubmit }) {
           </p>
         </div>
         <div className="rental_dets_description">
-          <p>{displayText}</p>
-
-          {!showMore ? (
-            <button className="view_button" onClick={toggleShowMore}>
-              View More...
-            </button>
-          ) : (
-            <button className="view_button" onClick={toggleShowMore}>
-              View less
-            </button>
-          )}
+          <p>{rental.description}</p>
         </div>
       </div>
       <>

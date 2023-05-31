@@ -43,12 +43,13 @@ export default function NewRental() {
       .catch((error) => console.warn(error));
   };
 
-  // const [select, setSelect] = useState("");
+  const [imageUrls, setImageUrls] = useState([]);
+  const [imageUrl, setImageUrl] = useState("");
 
   const [rental, setRental] = useState({
     description: "",
     native_language: "",
-    image_url: "",
+    image_url: [],
     date_posted: new Date().toLocaleDateString(),
     price: 0,
     location: "",
@@ -66,6 +67,20 @@ export default function NewRental() {
   const handleSelectChange = (e) => {
     let selected = e.target.value;
     setRental({ ...rental, native_language: selected });
+  };
+
+  const handleImageChange = (e) => {
+    setImageUrl(e.target.value);
+  };
+
+  const handleAddImage = (e) => {
+    e.preventDefault();
+
+    if (imageUrl) {
+      const updatedImageUrls = [...rental.image_url, imageUrl];
+      setRental({ ...rental, image_url: updatedImageUrls });
+      setImageUrl("");
+    }
   };
 
   const handleSubmit = (e) => {
@@ -133,11 +148,20 @@ export default function NewRental() {
           Image URL:
           <input
             type="text"
+            value={imageUrl}
+            onChange={handleImageChange}
+            placeholder="Image URL"
+          />
+          <button type="button" onClick={handleAddImage}>
+            Add Image
+          </button>
+          {/* <input
+            type="text"
             id="image_url"
             name="imageUrl"
             value={rental.image_url}
             onChange={handleTextChange}
-          />
+          /> */}
         </label>
 
         <label>
@@ -177,6 +201,14 @@ export default function NewRental() {
         <br />
         <button onClick={handleSubmit}>Submit</button>
       </form>
+
+      <div>
+        {imageUrls.map((url, index) => (
+          <div key={index}>
+            <img src={url} alt={`${index}`} />
+          </div>
+        ))}
+      </div>
       <button
         className="go_back"
         onClick={() => {

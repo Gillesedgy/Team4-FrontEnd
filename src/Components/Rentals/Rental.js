@@ -8,7 +8,7 @@ export default function Rental({
     <Link to={`/listings/${id}`}>
       <div className="rental">
         <div>
-          <img className="rental_image" src={image_url} alt={image_url} />
+          <img className="rental_image" src={image_url[0]} alt={image_url} />
         </div>
         <div className="rental_title">
           <h3>{title}</h3>
