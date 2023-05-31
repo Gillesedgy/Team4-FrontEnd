@@ -18,23 +18,21 @@
     margin: 0%;
     top: 0%;
     width: 100vw;
+    height: 20vh;
 
 }
 
 .welcometext {
-  margin-top: 100px;
-  font-size: 80px;
+  margin-top: 120px;
+  font-size: 70px;
   text-align: center;
  
 }
-p.welcometext{
-  word-break: break-all;
 
-}
 
 .welcome_p {
-  font-size: 60px;
-  margin-top: 30px;
+  font-size: 50px;
+  margin-top: -70px;
   text-align: center;
   justify-content: center;
 }
@@ -96,7 +94,7 @@ button:active {
 
 .doodle1{
   margin-top: 50px;
-
+padding: 0%;
   display: flex;
   align-items: center;
 }

@@ -25,7 +25,7 @@ svg.icon-nav{
 .navbar {
   /* background: rgb(235, 229, 230); */
   background: white;
-  height: 10%;
+  height: 13%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -36,7 +36,13 @@ svg.icon-nav{
   z-index:1;
   /* overflow: hidden; */
 }
-
+.navbar.active {
+  background-color: rgb(252, 252, 252);
+  /* background-image: url("../../Assets/navimg1.png"); */
+  /* opacity: 0.9; */
+  background-size: cover;
+  background-position: center;
+}
 
 /* .navbar-logo {
     color: #fff;

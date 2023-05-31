@@ -5,15 +5,16 @@ import { Link } from "react-router-dom";
 import logo from "../../Assets/logo1.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { GoCommentDiscussion } from "react-icons/go";
-import { BiHomeHeart } from "react-icons/bi";
+import { VscAccount } from "react-icons/vsc";
 import { TbHomeDollar } from "react-icons/tb";
 import { MdWorkOutline } from "react-icons/md";
+import { BsWindowDesktop } from "react-icons/bs";
 
 function NavBar() {
   const [click, setClick] = useState(false);
   const [hover, setHover] = useState({});
   const navItems = [
-    { text: "Account", icon: BiHomeHeart, to:"/account" },
+    { text: "Account", icon: VscAccount, to:"/account" },
     { text: "Rentals", icon: TbHomeDollar,  to:"/listings" },
     { text: "Jobs", icon: MdWorkOutline,  to:"/jobs"  },
     { text: "Community", icon: GoCommentDiscussion,  to:"/communityBoard"  },
@@ -29,9 +30,19 @@ function NavBar() {
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+  const [navbar, setNavbar] = useState(false)
+
+  const changeBackground = () => {
+   if(window.scrollY >= 100){
+    setNavbar(true)
+   }else{
+    setNavbar(false)
+   }
+  }
+  window.addEventListener('scroll', changeBackground)
 
   return (
-    <nav className="navbar">
+    <nav className={navbar ?'navbar active' : 'navbar'}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
           <img className="nav-logo" src={logo} alt="navlogo" />

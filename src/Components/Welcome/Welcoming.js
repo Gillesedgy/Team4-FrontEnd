@@ -4,18 +4,7 @@ import { Link } from "react-router-dom";
 import doodle1 from "../../Assets/doodle1.png";
 
 function Welcoming() {
-  // const languageFlip = [
-  //   "Welcome!",
-  //   "bienvenido!",
-  //   "স্বাগতম!",
-  //   "مرحباً!",
-  //   "स्वागत!",
-  //   "いらっしゃいませ!",
-  //   "欢迎!",
-  //   "akeyi!",
-  //   "maligayang pagdating!",
-  //   "خوش آمدید!",
-  // ];
+
 
   return (
     <div className="welcome-page">

@@ -25,7 +25,7 @@ export default function Account() {
     <div className="user-profile">
       <div className="user-container">
         <div>
-          <img src={user.image_url} alt="User Avatar" />
+          <img className="user-avatar" src={user.image_url} alt="User Avatar" />
         </div>
         <div className="profile-header">
           <h2>Username: {user.username}</h2>
