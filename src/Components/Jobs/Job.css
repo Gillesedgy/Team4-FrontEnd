@@ -16,7 +16,9 @@
 .job-container:hover {
   background-color: rgba(85, 133, 195, 0.325);
 }
-
+.left-section {
+  font-size: 1.3em;
+}
 .middle-section,
 .left-section {
   display: flex;
@@ -27,17 +29,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
-  /* margin-left: 10px; */
+  width: 90%;
+  height: 90px;
 }
 
 .job-icon img {
   border: 1px solid black;
-  max-width: 100%;
-  max-height: 100%;
+  /* max-width: 100%;
+  max-height: 100%; */
+  width: 90%;
+  height: 90%;
+
   margin-right: 8px;
-  border-radius: 2px;
+  border-radius: 3px;
   background-color: rgba(245, 245, 245, 0.834);
 }
 
@@ -69,9 +73,6 @@
 .jobs-button-container {
   display: grid;
   justify-content: right;
-  /* padding: 8px 16px; */
-  /* border: none; */
-  /* border-radius: 4px; */
   cursor: pointer;
 }
 .add-button {
