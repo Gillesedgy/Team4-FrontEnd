@@ -13,6 +13,7 @@ export default function Job({
       <div className="job-container">
         <div className="left-section">
           <div className="job-icon">
+            {logo}
             <img src={logo} alt="job-icon" />
             <p className="company">{company}</p>
           </div>
