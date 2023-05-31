@@ -153,6 +153,22 @@ export default function NewJob({ data }) {
           onChange={handleTextChange}
           required
         />
+        <label htmlFor="skills">Skills:</label>
+        <input
+          type="text"
+          id="skills"
+          value={newJob.skills}
+          onChange={handleTextChange}
+          required
+        />
+        <label htmlFor="requirements">Requirements:</label>
+        <input
+          type="text"
+          id="requirements"
+          value={newJob.requirements}
+          onChange={handleTextChange}
+          required
+        />
         <label htmlFor="salary">Salary:</label>
         <input
           type="text"

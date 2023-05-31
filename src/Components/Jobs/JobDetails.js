@@ -15,7 +15,8 @@ const API = process.env.REACT_APP_API_URL;
 export default function JobDetails({ handleAddressSubmit }) {
   const [jobs, setJobs] = useState([]);
   const [showMap, setShowMap] = useState(false);
-  const [recommended, setRecommended] = useState([]); // Recommended Jobs
+  const [recommended, setRecommended] = useState([]);
+  const [logo, setLogo] = useState(handleIcons());
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -77,11 +78,9 @@ export default function JobDetails({ handleAddressSubmit }) {
             {middle}, {year}
           </span>
         </p>
-        <div className="details-icon">
-          {<img src={handleIcons()} alt="job-icon" />}
-        </div>
+        <div className="details-icon">{<img src={logo} alt="job-icon" />}</div>
         <p className="is_favorite p1">
-          <p>{jobs.is_favorite ? "❤️" : "not liked"}</p>
+          <p>{jobs.is_favorite ? "★" : null}</p>
           <span>{jobs.is_favorite}</span>
         </p>
         <div className="top job-details-body">
@@ -162,22 +161,22 @@ export default function JobDetails({ handleAddressSubmit }) {
             />
           </div>
         )}
-      </div>
-      {/* //! BOTTOM ---Contact / Recs*/}
+        {/* //! BOTTOM ---Contact / Recs*/}
 
-      <div className="bottom">
-        <div className="contact-rec-container">
-          <div className="recommended-container">
-            <h3>Recommended</h3>
-            {filtered.map((rec) => {
-              return (
-                <Recommended key={rec.id} rec={rec} icon={handleIcons()} />
-              );
-            })}
-          </div>
-          <div className="contact-container">
-            <h3>Contact</h3>
-            <Contact />
+        <div className="bottom">
+          <div className="contact-rec-container">
+            <div className="recommended-container">
+              <h3>Recommended</h3>
+              {filtered.map((rec) => {
+                return (
+                  <Recommended key={rec.id} rec={rec} icon={handleIcons()} />
+                );
+              })}
+            </div>
+            <div className="contact-container">
+              <h3>Contact</h3>
+              <Contact />
+            </div>
           </div>
         </div>
       </div>

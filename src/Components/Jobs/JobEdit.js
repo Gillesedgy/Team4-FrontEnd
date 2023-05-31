@@ -174,6 +174,22 @@ export default function JobEdit() {
           required
         /> */}
 
+        <label htmlFor="skills">Skills:</label>
+        <input
+          type="text"
+          id="skills"
+          value={edit.skills}
+          onChange={handleTextChange}
+          required
+        />
+        <label htmlFor="srequirements">Requirements:</label>
+        <input
+          type="text"
+          id="requirements"
+          value={edit.requirements}
+          onChange={handleTextChange}
+          required
+        />
         <label htmlFor="salary">Salary:</label>
         <input
           type="text"
