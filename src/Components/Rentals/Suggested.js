@@ -12,7 +12,7 @@ export default function Suggested({
         style={{ textDecoration: "none", color: "#303030" }}
       >
         <div className="suggested_divs">
-          <img className="sug_image" src={image_url} alt={image_url} />
+          <img className="sug_image" src={image_url[0]} alt={image_url[0]} />
         </div>
         <div className="sug_title">
           <h3>{title}</h3>
