@@ -1,12 +1,8 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Job.css";
-import { handleIcons } from "../../Features/helper";
 export default function Job({
   job: { id, job_title, company, location, native_language, posted_date, logo },
 }) {
-  // const [icon, setIcon] = useState(handleIcons());
-
   let dateMade = new Date(posted_date);
   dateMade = dateMade.toDateString();
   let year = dateMade.split(" ").pop();

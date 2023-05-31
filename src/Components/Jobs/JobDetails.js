@@ -78,14 +78,15 @@ export default function JobDetails({ handleAddressSubmit }) {
             {middle}, {year}
           </span>
         </p>
-        <div className="details-icon">{<img src={logo} alt="job-icon" />}</div>
+        <div className="details-icon">
+          {<img src={jobs.logo} alt="job-icon" />}
+        </div>
         <p className="is_favorite p1">
           <p>{jobs.is_favorite ? "★" : null}</p>
           <span>{jobs.is_favorite}</span>
         </p>
         <div className="top job-details-body">
           <h2 className="job-title">{jobs.job_title}</h2>
-
           <p className="company p1">
             <strong>Company:</strong>
             <span>{jobs.company}</span>
@@ -106,7 +107,6 @@ export default function JobDetails({ handleAddressSubmit }) {
             <strong>Salary:</strong>
             <span> $ {jobs.salary}/hr</span>
           </p>
-
           <p className="native-language p1">
             <strong>Native Language:</strong>
             <span>{jobs.native_language}</span>
@@ -124,6 +124,9 @@ export default function JobDetails({ handleAddressSubmit }) {
             <strong>Description</strong>
           </p>
           <p className="description">{jobs.description}</p>
+          <br />
+          <hr />
+
           {/* //!BUTTONS -----  */}
           {localStorage.getItem("user_id") === String(jobs.user_id) ? (
             <div className="buttons-container">
