@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./rentalForm.css";
@@ -78,13 +78,32 @@ export default function NewRental() {
 
     if (imageUrl) {
       const updatedImageUrls = [...rental.image_url, imageUrl];
+      setImageUrls(updatedImageUrls);
       setRental({ ...rental, image_url: updatedImageUrls });
       setImageUrl("");
     }
   };
 
+  function deleteImage(index) {
+    let imageList = imageUrls.filter((item, i) => i !== index);
+    setImageUrls(imageList);
+    setRental({ ...rental, image_url: imageList });
+  }
+
+  useEffect(() => {
+    if (!rental.image_url || rental.image_url.length === 0) {
+      setRental({
+        ...rental,
+        image_url: [
+          "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image",
+        ],
+      });
+    }
+  }, [rental]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
     addRental(rental);
   };
 
@@ -144,6 +163,22 @@ export default function NewRental() {
           </select>
         </label>
 
+        <div style={{ display: "flex", flexDirection: "row", gap: ".5em" }}>
+          {imageUrls.map((imageUrl, index) => {
+            return (
+              <li key={index}>
+                {" "}
+                <img src={imageUrl} alt={index} style={{ height: "80px" }} />
+                <button
+                  className="delete_pic"
+                  onClick={() => deleteImage(index)}
+                >
+                  X
+                </button>
+              </li>
+            );
+          })}
+        </div>
         <label>
           Image URL:
           <input
@@ -152,16 +187,9 @@ export default function NewRental() {
             onChange={handleImageChange}
             placeholder="Image URL"
           />
-          <button type="button" onClick={handleAddImage}>
+          <button type="button" className="add_image" onClick={handleAddImage}>
             Add Image
           </button>
-          {/* <input
-            type="text"
-            id="image_url"
-            name="imageUrl"
-            value={rental.image_url}
-            onChange={handleTextChange}
-          /> */}
         </label>
 
         <label>
@@ -202,13 +230,13 @@ export default function NewRental() {
         <button onClick={handleSubmit}>Submit</button>
       </form>
 
-      <div>
+      {/* <div>
         {imageUrls.map((url, index) => (
           <div key={index}>
             <img src={url} alt={`${index}`} />
           </div>
         ))}
-      </div>
+      </div> */}
       <button
         className="go_back"
         onClick={() => {
