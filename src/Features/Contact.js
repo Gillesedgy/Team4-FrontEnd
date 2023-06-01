@@ -6,7 +6,7 @@ export default function Contact() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  //
+  //EmailJS Auth
   const ServiceKey = process.env.REACT_APP_SERVICE_KEY;
   const TemplateID = process.env.REACT_APP_TEMPLATE_ID;
   const PublicKey = process.env.REACT_APP_PUBLIC_KEY;
