@@ -47,7 +47,7 @@ export default function RentalEdit() {
   const [rental, setRental] = useState({
     description: "",
     native_language: "",
-    image_url: "",
+    image_url: [],
     date_posted: new Date().toLocaleDateString(),
     price: 0,
     location: "",
@@ -58,6 +58,9 @@ export default function RentalEdit() {
     rooms: 0,
   });
 
+  const [imageUrls, setImageUrls] = useState([]);
+  const [imageUrl, setImageUrl] = useState("");
+
   const handleTextChange = (e) => {
     setRental({ ...rental, [e.target.id]: e.target.value });
   };
@@ -67,18 +70,54 @@ export default function RentalEdit() {
     setRental({ ...rental, native_language: selected });
   };
 
+  const handleImageChange = (e) => {
+    setImageUrl(e.target.value);
+  };
+
+  const handleAddImage = (e) => {
+    e.preventDefault();
+
+    if (imageUrl) {
+      const updatedImageUrls = [...rental.image_url, imageUrl];
+      setImageUrls([...updatedImageUrls]);
+      setRental({ ...rental, image_url: updatedImageUrls });
+      setImageUrl("");
+    }
+  };
+
+  function deleteImage(index) {
+    let imageList = imageUrls.filter((item, i) => i !== index);
+    setImageUrls(imageList);
+    setRental({ ...rental, image_url: imageList });
+  }
+
   useEffect(() => {
     axios
       .get(`${API}/listings/${id}`)
       .then(
-        (res) => setRental(res.data),
+        (res) => {
+          setRental(res.data);
+          setImageUrls(res.data.image_url);
+        },
         (err) => navigate(`/error`)
       )
       .catch((err) => console.warn(err));
   }, [id, navigate]);
 
+  useEffect(() => {
+    if (!rental.image_url || rental.image_url.length === 0) {
+      setRental({
+        ...rental,
+        image_url: [
+          "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image",
+        ],
+      });
+    }
+  }, [rental]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
     updateRental(rental);
   };
 
@@ -140,15 +179,34 @@ export default function RentalEdit() {
           </select>
         </label>
 
+        <div style={{ display: "flex", flexDirection: "row", gap: ".5em" }}>
+          {imageUrls.map((imageUrl, index) => {
+            return (
+              <li key={index}>
+                {" "}
+                <img src={imageUrl} alt={index} style={{ height: "80px" }} />
+                <button
+                  type="button"
+                  className="delete_pic"
+                  onClick={() => deleteImage(index)}
+                >
+                  X
+                </button>
+              </li>
+            );
+          })}
+        </div>
         <label>
           Image URL:
           <input
             type="text"
-            id="image_url"
-            name="imageUrl"
-            value={rental.image_url}
-            onChange={handleTextChange}
+            value={imageUrl}
+            onChange={handleImageChange}
+            placeholder="Image URL"
           />
+          <button type="button" className="add_image" onClick={handleAddImage}>
+            Add Image
+          </button>
         </label>
 
         <label>

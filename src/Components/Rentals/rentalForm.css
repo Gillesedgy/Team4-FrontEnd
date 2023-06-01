@@ -1,9 +1,9 @@
 .rental_form {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 .rental_edit_title {
@@ -33,9 +33,9 @@
 }
 
 .rental_form input[type="text"]:focus,
-textarea:focus,
-input[type="number"]:focus,
-select:focus {
+.rental_form textarea:focus,
+.rental_form input[type="number"]:focus,
+.rental_form select:focus {
   outline: none;
   box-shadow: 0 0 0 1px teal;
 }
