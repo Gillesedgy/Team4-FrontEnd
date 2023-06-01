@@ -13,6 +13,10 @@ export const LanguageSelect = ({ selected, handleSelectedLanguage }) => {
     { value: "Creole", label: "Creole" },
     { value: "Filipino", label: "Filipino" },
     { value: "Urdu", label: "Urdu" },
+    { value: "French", label: "French" },
+    { value: "German", label: "German" },
+    { value: "Italian", label: "Italian" },
+    { value: "Vietnamese", label: "Vietnamese" },
   ];
   return (
     <div>
