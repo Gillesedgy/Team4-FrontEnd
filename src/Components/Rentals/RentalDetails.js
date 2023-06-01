@@ -5,6 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { BsSuitHeart } from "react-icons/bs";
 import Suggested from "./Suggested";
 import Contact from "../../Features/Contact";
+import Carousel from "./Carousel";
 
 import "./RentalDetails.css";
 //* --------Map---------------
@@ -71,9 +72,11 @@ export default function RentalDetails({ handleAddressSubmit }) {
       {console.log(rental)}
       <div className="details_main_content">
         <div className="rental_dets_image">
-          {images.map((image) => {
+          <Carousel images={images} />
+          {/* {images.map((image) => {
             return <img src={image} alt={image} />;
-          })}
+          })} */}
+
           {/* {typeof rental.image_url === "string" ? (
             <img src={rental.image_url} alt={rental.image_url} />
           ) : (
@@ -81,10 +84,13 @@ export default function RentalDetails({ handleAddressSubmit }) {
           )} */}
           {/* <img src={images[0]} alt={rental.image_url} /> */}
           {console.log(rental.image_url)}
+        </div>
+        <div>
           <button>
             <BsSuitHeart />
           </button>
         </div>
+
         <h2 className="rental_dets_title">{rental.title}</h2>
         <p>
           <em>

@@ -15,7 +15,7 @@
 }
 
 .rental_details {
-  width: 80%;
+  width: 70%;
   margin-right: auto;
   margin-left: auto;
   padding: 2em;
@@ -31,12 +31,16 @@
 }
 
 .rental_dets_image {
+  display: flex;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
 }
 .rental_dets_image img {
   border-radius: 8px;
-  height: 22em;
+  height: 28em;
+  margin-left: auto;
+  margin-right: auto;
 }
 .details_main_content {
   display: flex;
