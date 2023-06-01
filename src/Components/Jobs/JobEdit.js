@@ -27,19 +27,7 @@ export default function JobEdit() {
   });
   //* Languages
   const [select, setSelect] = useState("");
-  // const languages = [
-  //   { value: "English", label: "English" },
-  //   { value: "Spanish", label: "Spanish" },
-  //   { value: "Chinese", label: "Chinese" },
-  //   { value: "Bengali", label: "Bengali" },
-  //   { value: "Hindi", label: "Hindi" },
-  //   { value: "Korean", label: "Korean" },
-  //   { value: "Arabic", label: "Arabic" },
-  //   { value: "Japanese", label: "Japanese" },
-  //   { value: "Creole", label: "Creole" },
-  //   { value: "Filipino", label: "Filipino" },
-  //   { value: "Urdu", label: "Urdu" },
-  // ];
+
   //todo: for community page --> Neighbourhood meals / YTvids
   const jobType = [
     { value: "Full-Time", label: "Full-Time" },
@@ -202,20 +190,6 @@ export default function JobEdit() {
           selected={selectedLanguage}
           handleSelectedLanguage={handleSelectedLanguage}
         />
-        {/* <label>Languages: </label>
-        <select
-          id={edit.native_language}
-          value={edit.native_language}
-          onChange={handleSelectedLanguage}
-          required
-        >
-          <option value="">Select a language</option>
-          {languages.map((language) => (
-            <option value={language.value} key={language.value}>
-              {language.label}
-            </option>
-          ))}
-        </select> */}
         <div className="form-button-container">
           {" "}
           <button className="button_edit" onClick={handleSubmit} type="submit">

@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import "./contact.css";
 export default function Contact() {
-  const [firstName, setFirstName] = useState(""); //* Maybe just full name here
-  const [lastName, setLastName] = useState(""); //
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-
+  //EmailJS Auth
+  const ServiceKey = process.env.REACT_APP_SERVICE_KEY;
+  const TemplateID = process.env.REACT_APP_TEMPLATE_ID;
+  const PublicKey = process.env.REACT_APP_PUBLIC_KEY;
+  const contact = useRef();
+  //
   const handleFirstNameChange = (e) => {
     setFirstName(e.target.value);
   };
@@ -20,17 +26,35 @@ export default function Contact() {
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
   };
-  //
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    emailjs
+      .sendForm(
+        `${ServiceKey}`,
+        `${TemplateID}`,
+        contact.current,
+        `${PublicKey}`
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
     setFirstName("");
     setLastName("");
     setEmail("");
     setMessage("");
+    // or e.target.reset()
   };
+  //
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit}>
+    <form ref={contact} className="contact-form" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="first-name">First Name:</label>
         <input
@@ -63,7 +87,7 @@ export default function Contact() {
           placeholder="YourEmail@email.com"
           type="email"
           id="email"
-          name="email"
+          name="user_email"
           value={email}
           onChange={handleEmailChange}
           required
@@ -75,6 +99,7 @@ export default function Contact() {
           placeholder="Hi [Name],
         My name is [your name], and I'm writing about the [post title] ...."
           className="textarea"
+          name="user_message"
           id="message"
           value={message}
           onChange={handleMessageChange}
