@@ -4,7 +4,7 @@ import "./form.css";
 import axios from "axios";
 import { LogoSelect } from "./LogoSelect";
 // import { handleLogo } from "../../Features/helper";
-import { LanguageSelect } from "./LanguageSelect";
+import { LanguageSelect } from "../../Features/LanguageSelect";
 const API = process.env.REACT_APP_API_URL;
 export default function NewJob({ data }) {
   const navigate = useNavigate();
