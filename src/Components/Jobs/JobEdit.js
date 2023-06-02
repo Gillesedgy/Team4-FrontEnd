@@ -3,7 +3,7 @@ import "./form.css";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { LogoSelect } from "./LogoSelect";
-import { LanguageSelect } from "./LanguageSelect";
+import { LanguageSelect } from "../../Features/LanguageSelect";
 const API = process.env.REACT_APP_API_URL;
 //
 export default function JobEdit() {
