@@ -22,19 +22,20 @@
   margin: 16px 0;
 }
 
-label,
-input,
-textarea {
+.contact-form label,
+.contact-form input,
+.contact-form textarea {
   padding: 8px;
 }
 
-label,
+.contact-form label,
 [placeholder] {
   color: #555;
 }
 
-label {
+.contact-form label {
   margin-right: 10px;
+  margin-bottom: 6px;
 }
 
 .field:focus-within label {
@@ -59,7 +60,7 @@ label {
 .textarea:focus {
   /* background: rgba(85, 133, 195, 0.325); */
   box-shadow: none;
-  outline: 2px solid rgb(0, 62, 128);
+  outline: 2px solid rgba(0, 62, 128, 0.765);
 }
 
 .contact-form button {

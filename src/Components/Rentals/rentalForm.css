@@ -19,15 +19,13 @@
 .rental_form label {
   display: block;
   margin-bottom: 1em;
-  margin-top: 0.5em;
   font-weight: bold;
 }
 
 .rental_form input[type="text"] {
   width: 100%;
   padding: 1em;
-  /* margin-bottom: 1em; */
-  margin-top: 0.5em;
+  margin-top: 0.3em;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
@@ -70,7 +68,7 @@
   transform: translateY(-1.5px);
 }
 .rental_form select {
-  margin: 1em;
+  margin-left: 0.5em;
   padding: 0.5em;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -83,10 +81,10 @@
   border: 1px solid #ccc;
 }
 
-.go_back {
-  display: grid;
+.go_back,
+.add_image {
   margin-bottom: 0.5em;
-  margin-top: 1.8em;
+
   padding: 10px 20px;
   background-color: rgb(125, 188, 188);
   color: #fff;
@@ -96,7 +94,59 @@
   cursor: pointer;
 }
 
+.add_image {
+  display: block;
+  width: 15%;
+  margin-top: 0.3em;
+  margin-bottom: 0.2em;
+  float: right;
+}
+
+.add_image:hover {
+  background-color: rgba(0, 128, 128, 0.7);
+  transform: translateY(-1px);
+}
+
+.go_back {
+  display: grid;
+  margin-top: 1.8em;
+}
+
 .go_back:hover {
   background-color: teal;
   transform: translateY(-1px);
+}
+
+.language_select {
+  margin: -8px;
+}
+
+.image_adder {
+  display: block;
+}
+
+.delete_pic {
+  border-style: none;
+  background-color: transparent;
+  color: black;
+  text-shadow: white 1px 1px 1px;
+  font-weight: 800;
+  font-size: 12px;
+
+  height: 26%;
+  margin-left: -13px;
+  cursor: pointer;
+}
+
+.delete_pic:hover {
+  color: red;
+}
+
+.image_form_display {
+  display: flex;
+}
+
+.images_added_form {
+  height: 80px;
+  border-radius: 5px;
 }

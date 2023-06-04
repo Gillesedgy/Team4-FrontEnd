@@ -9,12 +9,11 @@ export default function Job({
   let middle = dateMade.split(" ").splice(1, 2).join(" ");
   return (
     <Link className="link" to={`/jobs/${id}`}>
-      {" "}
       <div className="job-container">
         <div className="left-section">
           <div className="icon-company-container">
             <img className="job-icon" src={logo} alt="job-icon" />
-            <p className="company">{company}</p>
+            <h4 className="company">{company}</h4>
           </div>
         </div>
         {/* Middle  */}
