@@ -7,8 +7,8 @@ import Contact from "../../Features/Contact";
 import Recommended from "./Recommended";
 import MapContainer from "../../Features/MapContainer";
 //
-import Job from "./Job"; //? imported to pass icon state
-import { handleIcons } from "../../Features/helper";
+// import Job from "./Job"; //? imported to pass icon state
+// import { handleIcons } from "../../Features/helper";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -16,7 +16,7 @@ export default function JobDetails({ handleAddressSubmit }) {
   const [jobs, setJobs] = useState([]);
   const [showMap, setShowMap] = useState(false);
   const [recommended, setRecommended] = useState([]);
-  const [logo, setLogo] = useState(handleIcons());
+  // const [logo, setLogo] = useState(handleIcons());
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -172,7 +172,11 @@ export default function JobDetails({ handleAddressSubmit }) {
               <h3>Recommended</h3>
               {filtered.map((rec) => {
                 return (
-                  <Recommended key={rec.id} rec={rec} icon={handleIcons()} />
+                  <Recommended
+                    key={rec.id}
+                    rec={rec}
+                    // icon={handleIcons()}
+                  />
                 );
               })}
             </div>

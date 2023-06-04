@@ -2,7 +2,8 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
+import NewCommentForm from "../Comments/NewCommentForm";
+import Comments from "../Comments/Comments";
 const API = process.env.REACT_APP_API_URL;
 
 export default function PostDetails() {
@@ -67,6 +68,11 @@ export default function PostDetails() {
           <button onClick={deletePost}>Delete!</button>
         </div>
       ) : null}
+      <hr />
+      {/* //* Comments pass id as props to render comments */}
+      <Comments postId={id} />
+      <hr />
+      <NewCommentForm />
     </div>
   );
 }
