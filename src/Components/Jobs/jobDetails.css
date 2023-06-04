@@ -1,4 +1,4 @@
-.job-page-whole{
+.job-page-whole {
   width: 100%;
   align-items: center;
   display: grid;
@@ -17,7 +17,6 @@
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  
 }
 .date {
   display: flex;
@@ -36,13 +35,13 @@
 }
 .details-icon img {
   /* //todo: Import Clear images */
+  width: 50%;
 }
 
 .job-title {
 }
 
 .job-details-body strong {
-  /* font-size: 1.2em; */
   font-size: 14px;
 }
 .job-details-body span {
@@ -65,7 +64,6 @@
 }
 
 .company {
-  /* font-weight: bold; */
   margin-bottom: 10px;
 }
 .salary {
@@ -120,7 +118,6 @@
   margin-left: auto;
   margin-right: auto;
   min-width: 100%;
-  /* border: 2px solid salmon; */
 }
 
 .contact-rec-container {
@@ -176,4 +173,3 @@
   box-shadow: var(--button-hover-box-shadow);
   transform: var(--button-hover-transform);
 }
-

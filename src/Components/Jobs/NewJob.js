@@ -100,13 +100,10 @@ export default function NewJob({ data }) {
           onChange={handleTextChange}
           required
         />
-        {/* //! Logo */}
         <LogoSelect
           selectedLogo={selectLogo}
           handleLogoSelect={handleLogoSelect}
         />
-
-        {/* //!------------- */}
         <label htmlFor="company">Company:</label>
         <input
           type="text"
