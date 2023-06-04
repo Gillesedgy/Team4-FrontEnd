@@ -1,0 +1,10 @@
+.job-logo label {
+  /* border: 2px solid red; */
+}
+.job-logo img {
+  width: 20%;
+  height: 20%;
+  margin-left: 10px;
+  border: 1px solid black;
+  border-radius: 8px;
+}
