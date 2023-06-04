@@ -1,7 +1,9 @@
 import React from "react";
 import axios from "axios";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useContextProvider } from "../../Provider";
+import { LanguageSelect } from "../../Features/LanguageSelect";
 import "./Signup.css";
 
 const API = process.env.REACT_APP_API_URL;
@@ -9,9 +11,16 @@ const API = process.env.REACT_APP_API_URL;
 export default function Signup() {
   const navigate = useNavigate();
   const { user, setUser } = useContextProvider();
+  const [selectedLanguage, setSelectLanguage] = useState("");
 
   const handleTextChange = (e) => {
     setUser({ ...user, [e.target.id]: e.target.value });
+  };
+
+  const handleSelectedLanguage = (e) => {
+    const selected = e.target.value;
+    setSelectLanguage(e.target.value);
+    setUser({ ...user, native_language: selected });
   };
 
   const handleSignup = (e) => {
@@ -81,13 +90,10 @@ export default function Signup() {
         </label>
         <br />
         <label>
-          Native language:
-          <input
-            type="text"
-            id="native_language"
-            value={user.native_language}
-            onChange={handleTextChange}
-            required
+          Native Language:
+          <LanguageSelect
+            selected={selectedLanguage}
+            handleSelectedLanguage={handleSelectedLanguage}
           />
         </label>
         <button type="submit" onClick={handleSignup}>

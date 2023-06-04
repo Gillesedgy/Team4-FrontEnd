@@ -2,30 +2,14 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { LanguageSelect } from "../../Features/LanguageSelect";
 import "./rentalForm.css";
 
 const API = process.env.REACT_APP_API_URL;
 
 export default function NewRental() {
   const navigate = useNavigate();
-
-  const languages = [
-    { value: "English", label: "English" },
-    { value: "Spanish", label: "Spanish" },
-    { value: "Chinese", label: "Chinese" },
-    { value: "Bengali", label: "Bengali" },
-    { value: "Hindi", label: "Hindi" },
-    { value: "Korean", label: "Korean" },
-    { value: "Arabic", label: "Arabic" },
-    { value: "Japanese", label: "Japanese" },
-    { value: "Creole", label: "Creole" },
-    { value: "Filipino", label: "Filipino" },
-    { value: "Urdu", label: "Urdu" },
-    { value: "French", label: "French" },
-    { value: "German", label: "German" },
-    { value: "Italian", label: "Italian" },
-    { value: "Vietnamese", label: "Vietnamese" },
-  ];
+  const [selectedLanguage, setSelectLanguage] = useState("");
 
   const addRental = (newRental) => {
     axios
@@ -64,13 +48,14 @@ export default function NewRental() {
     setRental({ ...rental, [e.target.id]: e.target.value });
   };
 
-  const handleSelectChange = (e) => {
-    let selected = e.target.value;
-    setRental({ ...rental, native_language: selected });
-  };
-
   const handleImageChange = (e) => {
     setImageUrl(e.target.value);
+  };
+
+  const handleSelectedLanguage = (e) => {
+    const selected = e.target.value;
+    setSelectLanguage(e.target.value);
+    setRental({ ...rental, native_language: selected });
   };
 
   const handleAddImage = (e) => {
@@ -146,29 +131,21 @@ export default function NewRental() {
           />
         </label>
 
-        <label>
-          Native Language:
-          <select
-            id="native_language"
-            value={rental.native_language}
-            onChange={handleSelectChange}
-            required
-          >
-            <option value="">Select a language</option>
-            {languages.map((language) => (
-              <option value={language.value} key={language.value}>
-                {language.label}
-              </option>
-            ))}
-          </select>
-        </label>
+        <LanguageSelect
+          selected={selectedLanguage}
+          handleSelectedLanguage={handleSelectedLanguage}
+        />
 
         <div style={{ display: "flex", flexDirection: "row", gap: ".5em" }}>
           {imageUrls.map((imageUrl, index) => {
             return (
-              <li key={index}>
-                {" "}
-                <img src={imageUrl} alt={index} style={{ height: "80px" }} />
+              <li key={index} className="image_form_display">
+                <img
+                  src={imageUrl}
+                  alt={index}
+                  style={{ height: "80px" }}
+                  className="images_added_form"
+                />
                 <button
                   className="delete_pic"
                   onClick={() => deleteImage(index)}
@@ -181,15 +158,23 @@ export default function NewRental() {
         </div>
         <label>
           Image URL:
-          <input
-            type="text"
-            value={imageUrl}
-            onChange={handleImageChange}
-            placeholder="Image URL"
-          />
-          <button type="button" className="add_image" onClick={handleAddImage}>
-            Add Image
-          </button>
+          <div className="image_adder">
+            <input
+              style={{ width: "84%" }}
+              type="text"
+              value={imageUrl}
+              onChange={handleImageChange}
+              placeholder="Image URL"
+            />
+
+            <button
+              type="button"
+              className="add_image"
+              onClick={handleAddImage}
+            >
+              Add
+            </button>
+          </div>
         </label>
 
         <label>
@@ -227,16 +212,10 @@ export default function NewRental() {
           />
         </label>
         <br />
-        <button onClick={handleSubmit}>Submit</button>
+        <button type="submit" onClick={handleSubmit}>
+          Submit
+        </button>
       </form>
-
-      {/* <div>
-        {imageUrls.map((url, index) => (
-          <div key={index}>
-            <img src={url} alt={`${index}`} />
-          </div>
-        ))}
-      </div> */}
       <button
         className="go_back"
         onClick={() => {

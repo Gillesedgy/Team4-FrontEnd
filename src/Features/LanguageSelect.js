@@ -19,21 +19,18 @@ export const LanguageSelect = ({ selected, handleSelectedLanguage }) => {
     { value: "Vietnamese", label: "Vietnamese" },
   ];
   return (
-    <div>
-      <label>Languages: </label>
-      <select
-        //   id={newJob.native_language}
-        value={selected}
-        onChange={handleSelectedLanguage}
-        required
-      >
-        <option value="">Select a language</option>
-        {languages.map((language) => (
-          <option value={language.value} key={language.value}>
-            {language.label}
-          </option>
-        ))}
-      </select>{" "}
+    <div className="language_select">
+      <label>
+        Native Language:
+        <select value={selected} onChange={handleSelectedLanguage} required>
+          <option value="">Select a language</option>
+          {languages.map((language) => (
+            <option value={language.value} key={language.value}>
+              {language.label}
+            </option>
+          ))}
+        </select>
+      </label>
     </div>
   );
 };

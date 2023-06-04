@@ -59,7 +59,7 @@ export default function Contact() {
         <label htmlFor="first-name">First Name:</label>
         <input
           className="field"
-          name="name" //
+          name="name"
           type="text"
           id="first-name"
           placeholder="Enter first name"

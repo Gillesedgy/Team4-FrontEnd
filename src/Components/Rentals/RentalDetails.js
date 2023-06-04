@@ -69,26 +69,17 @@ export default function RentalDetails({ handleAddressSubmit }) {
 
   return (
     <div className="rental_details">
-      {console.log(rental)}
+      <div className="heart_button">
+        <button
+          className="fav_button"
+          style={{ border: "none", backgroundColor: "none", fontSize: "2em" }}
+        >
+          <BsSuitHeart style={{ color: "red" }} />
+        </button>
+      </div>
       <div className="details_main_content">
         <div className="rental_dets_image">
           <Carousel images={images} />
-          {/* {images.map((image) => {
-            return <img src={image} alt={image} />;
-          })} */}
-
-          {/* {typeof rental.image_url === "string" ? (
-            <img src={rental.image_url} alt={rental.image_url} />
-          ) : (
-            <img src={rental.image_url} alt={rental.image_url} />
-          )} */}
-          {/* <img src={images[0]} alt={rental.image_url} /> */}
-          {console.log(rental.image_url)}
-        </div>
-        <div>
-          <button>
-            <BsSuitHeart />
-          </button>
         </div>
 
         <h2 className="rental_dets_title">{rental.title}</h2>
@@ -108,6 +99,7 @@ export default function RentalDetails({ handleAddressSubmit }) {
             {rental.rooms}
           </p>
         </div>
+        <h3>Description</h3>
         <div className="rental_dets_description">
           <p>{rental.description}</p>
         </div>
@@ -146,32 +138,19 @@ export default function RentalDetails({ handleAddressSubmit }) {
             />
           </div>
         )}
-        {/* <div style={{ display: "flex", height: "400px" }}>
-          <MapContainer
-            handleAddressSubmit={handleAddressSubmit}
-            location={rental.location}
-          />
-        </div> */}
       </div>
-      <hr />
-      <div
-        className="contact-container"
-        style={{
-          marginTop: "1em",
-          marginBottom: "1em",
-          marginRight: "auto",
-          marginLeft: "auto",
-        }}
-      >
-        <h3 style={{ color: "teal" }}>Contact</h3>
-        <Contact />
-      </div>
-      <hr></hr>
-      <h3 className="rental_recs_h">Similar listings</h3>
-      <div className="rental_recs">
-        {filtered.map((rental) => {
-          return <Suggested key={rental.id} id={rental.id} rental={rental} />;
-        })}
+      <hr style={{ margin: "1em" }} />
+      <div className="contact-rec-container">
+        <div className="recommended-container">
+          <h3 className="rental_recs_h">Similar listings</h3>
+          {filtered.map((rental) => {
+            return <Suggested key={rental.id} id={rental.id} rental={rental} />;
+          })}
+        </div>
+        <div className="contact-container" style={{ height: "70%" }}>
+          <h3>Contact</h3>
+          <Contact />
+        </div>
       </div>
     </div>
   );

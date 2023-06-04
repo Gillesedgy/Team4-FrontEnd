@@ -7,7 +7,6 @@
 .rentals {
   display: flex;
   flex-direction: column;
-  /* display: grid; */
 }
 
 .rentals_title {
@@ -28,6 +27,7 @@
   border-radius: 10px;
   box-shadow: 3px 5px 4px rgb(225, 221, 221);
   padding: 0.8em;
+  background-color: rgba(139, 186, 186, 0.195);
 }
 
 .rental_image {
@@ -70,6 +70,7 @@
   background-color: teal;
   border-radius: 8px;
   font-size: medium;
+  margin-bottom: 22px;
 }
 
 .rentals_add:hover {
