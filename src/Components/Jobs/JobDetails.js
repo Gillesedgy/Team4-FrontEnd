@@ -7,8 +7,8 @@ import Contact from "../../Features/Contact";
 import Recommended from "./Recommended";
 import MapContainer from "../../Features/MapContainer";
 //
-import Job from "./Job"; //? imported to pass icon state
-import { handleIcons } from "../../Features/helper";
+// import Job from "./Job"; //? imported to pass icon state
+// import { handleIcons } from "../../Features/helper";
 
 const API = process.env.REACT_APP_API_URL;
 
