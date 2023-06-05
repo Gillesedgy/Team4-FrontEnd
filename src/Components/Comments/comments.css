@@ -1,16 +1,52 @@
-.comments {
-  display: block;
-  margin: 10px;
-}
 .post_comments {
-  /* border: 1px solid red; */
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  padding: 10px;
   margin-bottom: 10px;
-  border: 2px solid black;
 }
-.comment-form,
-.post_details_body {
-  /* margin-top: 10px; */
-  margin: 10px;
-  border: 2px solid black;
-  border-radius: 8px;
+
+.comment_date {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.comment_body {
+  margin-bottom: 10px;
+}
+
+.delete-comment button {
+  padding: 4px 8px;
+  border: none;
+  background-color: transparent;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.delete-comment button:hover {
+  color: #ff0000;
+}
+.show-more-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.showMore {
+  padding: 8px 16px;
+  border: none;
+  background-color: orange;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: var(--button-box-shadow);
+  border: var(--button-border);
+}
+.showMore:hover {
+  background-color: #f44336;
+  color: #f5f5f5;
+
+  box-shadow: var(--button-hover-box-shadow);
+  transform: var(--button-hover-transform);
 }

@@ -1,0 +1,79 @@
+.post_details {
+  margin: 20px;
+  border: 2px solid rgb(170, 168, 168);
+  border-style: double;
+  position: relative;
+}
+
+.post_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.back-button-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.comment_button {
+  padding: 8px 16px;
+  border: none;
+  background-color: darkorange;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: var(--button-box-shadow);
+  border: var(--button-border);
+}
+.comment_button:hover {
+  background-color: #f44336;
+  box-shadow: var(--button-hover-box-shadow);
+  transform: var(--button-hover-transform);
+}
+
+.post_image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.post_details_body {
+  text-align: center;
+}
+
+.post_details_buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.post_details_buttons button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #065fd4;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.post_details_buttons button:last-child {
+  background-color: #f44336;
+}
+
+hr {
+  margin: 20px 0;
+}
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust as needed */
+}

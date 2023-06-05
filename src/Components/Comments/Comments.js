@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router";
+
 import axios from "axios";
 import Comment from "./Comment";
 import "./comments.css";
@@ -7,6 +7,7 @@ import "./comments.css";
 const API = process.env.REACT_APP_API_URL;
 
 export default function Comments({ postId }) {
+  const [showComments, setShowComments] = useState(false);
   const [comments, setComments] = useState([]);
   // const navigate = useNavigate();
   useEffect(() => {
@@ -18,11 +19,27 @@ export default function Comments({ postId }) {
       })
       .catch((err) => console.warn(err));
   }, [postId]);
+
+  const handleToggleComments = () => {
+    setShowComments(!showComments);
+  };
+
+  const displayedComments = showComments ? comments : comments.slice(0, 3);
+
   return (
     <div className="comments">
-      {comments.map((comment) => {
-        return <Comment postId={postId} comment={comment} key={comment.id} />;
-      })}
+      {displayedComments.map((comment) => (
+        <Comment postId={postId} comment={comment} key={comment.id} />
+      ))}
+
+      {comments.length > 3 && (
+        <div className="show-more-button">
+          {" "}
+          <button className="showMore" onClick={handleToggleComments}>
+            {showComments ? "Show less comments" : "Show more comments"}
+          </button>
+        </div>
+      )}
     </div>
   );
 }

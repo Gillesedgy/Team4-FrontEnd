@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./comments.css";
+import "./commentForm.css";
 import { useParams, useNavigate } from "react-router";
 const API = process.env.REACT_APP_API_URL;
 
@@ -10,7 +10,6 @@ export default function NewCommentForm() {
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
-
     axios
       .post(`${API}/communityBoard/${commentId}/comments`, {
         comment_body: comment,
@@ -32,14 +31,16 @@ export default function NewCommentForm() {
           required
         ></textarea>
         <div className="comment-button-container">
-          <button type="submit">Post Comment</button>{" "}
-          <button
+          <button className="post-comment" type="submit">
+            Post Comment
+          </button>{" "}
+          {/* <button
             onClick={() => navigate(`/communityBoard`)}
             className="comment_button"
             type="submit"
           >
             Back
-          </button>
+          </button> */}
         </div>
       </form>
     </div>

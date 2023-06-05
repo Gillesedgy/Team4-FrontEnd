@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
@@ -24,10 +24,10 @@ export default function Comment({
   let middle = dateMade.split(" ").splice(1, 2).join(" ");
   return (
     <div className="post_comments">
-      <p>
+      <p className="comment_date">
         Date: {middle} {year}
       </p>
-      <p>{comment_body}</p>
+      <p className="comment_body">{comment_body}</p>
       <div className="delete-comment">
         <button onClick={deleteComment}>Delete</button>
       </div>
