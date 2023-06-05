@@ -1,0 +1,16 @@
+.comments {
+  display: block;
+  margin: 10px;
+}
+.post_comments {
+  /* border: 1px solid red; */
+  margin-bottom: 10px;
+  border: 2px solid black;
+}
+.comment-form,
+.post_details_body {
+  /* margin-top: 10px; */
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 8px;
+}

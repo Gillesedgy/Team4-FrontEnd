@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "../Comments/comments.css";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import NewCommentForm from "../Comments/NewCommentForm";
@@ -21,16 +22,6 @@ export default function PostDetails() {
       .catch((err) => console.warn(err));
   }, [id]);
 
-  let dateMade = new Date(post.created_at);
-  dateMade = dateMade.toDateString();
-  let year = dateMade.split(" ").pop();
-  let middle = dateMade.split(" ").splice(1, 2).join(" ");
-
-  let dateUpdated = new Date(post.updated_at);
-  dateUpdated = dateUpdated.toDateString();
-  let updatedYear = dateUpdated.split(" ").pop();
-  let updatedMid = dateUpdated.split(" ").splice(1, 2).join(" ");
-
   const deletePost = () => {
     axios
       .delete(`${API}/communityBoard/${id}`, {
@@ -43,7 +34,15 @@ export default function PostDetails() {
       })
       .catch((error) => console.warn(error));
   };
+  let dateMade = new Date(post.created_at);
+  dateMade = dateMade.toDateString();
+  let year = dateMade.split(" ").pop();
+  let middle = dateMade.split(" ").splice(1, 2).join(" ");
 
+  let dateUpdated = new Date(post.updated_at);
+  dateUpdated = dateUpdated.toDateString();
+  let updatedYear = dateUpdated.split(" ").pop();
+  let updatedMid = dateUpdated.split(" ").splice(1, 2).join(" ");
   return (
     <div className="post_details">
       <div className="post_details_body">
@@ -69,10 +68,10 @@ export default function PostDetails() {
         </div>
       ) : null}
       <hr />
-      {/* //* Comments pass id as props to render comments */}
-      <Comments postId={id} />
-      <hr />
       <NewCommentForm />
+      <hr />
+      {/* //* Comments pass id as props to render comments */}{" "}
+      <Comments postId={id} />
     </div>
   );
 }

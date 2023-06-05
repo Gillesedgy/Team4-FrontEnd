@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./comments.css";
 import { useParams, useNavigate } from "react-router";
 const API = process.env.REACT_APP_API_URL;
 
@@ -7,23 +8,22 @@ export default function NewCommentForm() {
   const [comment, setComment] = useState("");
   const { commentId } = useParams();
   const navigate = useNavigate();
-  axios
-    .post(`${API}//communityBoard/${commentId}`, { comment })
-    .then((res) => {
-      console.log(res.data);
-      setComment("");
-    })
-    .catch((err) => console.warn());
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-  const handleSubmit = (e) => {
-    e.event.preventDefault();
+    axios
+      .post(`${API}/communityBoard/${commentId}/comments`, {
+        comment_body: comment,
+      })
+      .then((res) => {
+        console.log(res.data);
+        setComment("");
+      })
+      .catch((err) => console.warn(err));
   };
-  // axios.delete(`${API}//communityBoard/${id}`, {
-
-  // }
 
   return (
-    <div>
+    <div className="comment-form">
       <form onSubmit={handleSubmit}>
         <textarea
           value={comment}
