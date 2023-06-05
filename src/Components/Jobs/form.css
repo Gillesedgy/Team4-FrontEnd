@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-h4 {
-  /* color: #f0a500; */
-}
-
 .jobForm {
   display: flex;
   flex-direction: column;
@@ -24,6 +20,7 @@ h4 {
   display: var(--form-label);
   width: var(--form-input-width);
   font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .jobForm input,
@@ -34,6 +31,7 @@ h4 {
   border: var(--form-input-border);
   border-radius: var(--form-input-border-radius);
   box-sizing: border-box;
+  margin-bottom: 15px;
 }
 
 .jobForm textarea {
@@ -52,7 +50,6 @@ h4 {
   border: var(--button-border);
   border-radius: 0.25rem;
   box-shadow: rgba(85, 133, 195, 0.325) 2px 5px 0 1px 3px 0;
-  /* box-sizing: border-box; */
   color: rgba(0, 0, 0, 0.85);
   cursor: pointer;
   display: inline-flex;
@@ -82,4 +79,23 @@ h4 {
   transform: var(--button-hover-transform);
   box-shadow: var(--button-hover-box-shadow);
   color: var(--button-hover-color);
+}
+
+@media (max-width: 768px) {
+  .jobForm label {
+    font-size: 12px;
+  }
+  .jobForm {
+    margin-top: 100px;
+  }
+}
+@media (max-width: 968px) {
+  .jobForm {
+    margin-top: 110px;
+  }
+  .button_edit {
+    font-size: 16px;
+    padding: 10px 14px;
+    min-height: 2rem;
+  }
 }

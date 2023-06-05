@@ -77,16 +77,6 @@ export default function NewJob({ data }) {
     setSelectLogo(selectedLogo);
     setNewJob({ ...newJob, logo: selectedLogo });
   };
-  //! Character Count Feature
-  // const characterLimit = 500;
-  // const handleCharacterCount = (e) => {
-  //   console.log(newJob.description);
-  //   if (characterLimit - newJob.description.length >= 1) {
-  //     setNewJob({ ...NewJob,z [e.target.id]: e.target.value });
-  //   } else {
-
-  //   }
-  // };
 
   return (
     <div className="jobForm">

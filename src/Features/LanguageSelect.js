@@ -1,5 +1,4 @@
 import React from "react";
-
 export const LanguageSelect = ({ selected, handleSelectedLanguage }) => {
   const languages = [
     { value: "English", label: "English" },
