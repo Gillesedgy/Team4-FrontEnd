@@ -90,7 +90,6 @@ export default function Signup() {
         </label>
         <br />
         <label>
-          Native Language:
           <LanguageSelect
             selected={selectedLanguage}
             handleSelectedLanguage={handleSelectedLanguage}
