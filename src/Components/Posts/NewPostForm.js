@@ -115,7 +115,7 @@ export default function NewPostForm() {
           </select>
         </label>
         <br />
-        <button type="submit">Submit!</button>
+        <button onClick={handleSubmit}>Submit!</button>
       </form>
       <button onClick={() => navigate(`/communityBoard`)}>Go back</button>
     </div>

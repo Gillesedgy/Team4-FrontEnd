@@ -1,5 +1,5 @@
-.post {
-  /* width: 310px; */
+/* .post {
+  width: 310px;
   border: 2px solid black;
   border-radius: 25px;
   margin: 20px 65px 25px 65px;
@@ -10,7 +10,7 @@
 
 .posts {
   display: grid;
-  /* flex-wrap: row wrap; */
+  flex-wrap: row wrap;
   justify-content: center;
   text-align: center;
   width: auto;
@@ -35,4 +35,4 @@
   margin: 10px;
   padding: 5px;
   text-align: center;
-}
+} */
