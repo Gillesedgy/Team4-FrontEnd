@@ -16,8 +16,7 @@
 .job-container:hover {
   background-color: rgba(85, 133, 195, 0.325);
 }
-.left-section {
-}
+
 .icon-company-container {
   font-size: 1.3em;
   display: flex;
@@ -28,10 +27,8 @@
   column-gap: 5px;
 }
 .company {
-
   margin: 0.4em;
   font-size: 0.8em;
-
 }
 .middle-section,
 .left-section {
@@ -39,14 +36,6 @@
   justify-content: center;
   align-items: center;
 }
-/* .job-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 5em;
-  height: 5em;
-  margin-right: 8px;
-} */
 
 .job-icon {
   border: 1px solid black;
@@ -91,15 +80,55 @@
   border-radius: 8px;
   font-size: medium;
 }
+.jobs {
+  margin-top: 20px;
+}
 .add-button:hover {
   transform: translateY(-1.5px);
 }
+@media (min-width: 1000px) {
+  .jobs {
+    margin-top: 20px;
+  }
+}
 @media (max-width: 768px) {
   .job-container {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr;
   }
 
+  .icon-company-container {
+    font-size: 1em;
+  }
+
+  .job-icon {
+    width: 3em;
+    height: 3em;
+  }
+
+  .company {
+    font-size: 0.7em;
+    margin-top: 0.5em;
+  }
+
+  .middle-section {
+    order: 2;
+    margin-top: 1em;
+  }
+
+  .left-section,
   .right-section {
-    text-align: left;
+    text-align: center;
+  }
+
+  .job-page {
+    padding: 0.8em;
+    margin: 0.8em;
+  }
+
+  .jobs-title {
+    margin-bottom: 0.5em;
+  }
+  .jobs {
+    margin-top: 150px;
   }
 }

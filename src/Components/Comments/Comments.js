@@ -9,7 +9,7 @@ const API = process.env.REACT_APP_API_URL;
 export default function Comments({ postId }) {
   const [showComments, setShowComments] = useState(false);
   const [comments, setComments] = useState([]);
-  // const navigate = useNavigate();
+
   useEffect(() => {
     axios
       .get(`${API}/communityBoard/${postId}/comments`)

@@ -7,7 +7,7 @@ const API = process.env.REACT_APP_API_URL;
 export default function NewCommentForm() {
   const [comment, setComment] = useState("");
   const { commentId } = useParams();
-  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
@@ -34,13 +34,6 @@ export default function NewCommentForm() {
           <button className="post-comment" type="submit">
             Post Comment
           </button>{" "}
-          {/* <button
-            onClick={() => navigate(`/communityBoard`)}
-            className="comment_button"
-            type="submit"
-          >
-            Back
-          </button> */}
         </div>
       </form>
     </div>
