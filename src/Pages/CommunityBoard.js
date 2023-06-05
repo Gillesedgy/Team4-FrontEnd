@@ -5,6 +5,7 @@ export default function CommunityBoard() {
   return (
     <div className="community_board">
       <Posts />
-    </div>
+    </div> 
+    
   );
 }
