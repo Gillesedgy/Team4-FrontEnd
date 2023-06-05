@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import "../Comments/comments.css";
+import "./postDetails.css";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import NewCommentForm from "../Comments/NewCommentForm";
@@ -43,35 +43,53 @@ export default function PostDetails() {
   dateUpdated = dateUpdated.toDateString();
   let updatedYear = dateUpdated.split(" ").pop();
   let updatedMid = dateUpdated.split(" ").splice(1, 2).join(" ");
+
   return (
-    <div className="post_details">
-      <div className="post_details_body">
-        <h3>{post.post_title}</h3>
-        <h5>
-          Last Updated on: {updatedMid}, {updatedYear}
-        </h5>
-        <h5>
-          Created on: {middle}, {year}
-        </h5>
-
-        <img src={post.image_url} alt={post.image_url} />
-
-        <p>{post.post_content}</p>
-      </div>
-      {localStorage.getItem("user_id") === String(post.user_id) ? (
-        <div className="post_details_buttons">
-          <button onClick={() => navigate(`/communityBoard`)}>Back</button>
-          <button onClick={() => navigate(`/communityBoard/${id}/edit`)}>
-            Edit
+    <div className="centered-content">
+      <div className="post_details">
+        <div className="back-button-container">
+          <button
+            onClick={() => navigate(`/communityBoard`)}
+            className="comment_button"
+            type="submit"
+          >
+            Back
           </button>
-          <button onClick={deletePost}>Delete!</button>
         </div>
-      ) : null}
-      <hr />
-      <NewCommentForm />
-      <hr />
-      {/* //* Comments pass id as props to render comments */}{" "}
-      <Comments postId={id} />
+        <div className="post_card">
+          <img
+            className="post_image"
+            src={post.image_url}
+            alt={post.image_url}
+          />
+          {/* <p>
+            Last Updated on: {updatedMid}, {updatedYear}
+          </p> */}
+          <p>
+            Posted on: {middle}, {year}
+          </p>
+          <div className="post_details_body">
+            <h3>{post.post_title}</h3>
+
+            <p>{post.post_content}</p>
+          </div>
+        </div>
+        {localStorage.getItem("user_id") === String(post.user_id) ? (
+          <div className="post_details_buttons">
+            <button onClick={() => navigate(`/communityBoard`)}>Back</button>
+            <button onClick={() => navigate(`/communityBoard/${id}/edit`)}>
+              Edit
+            </button>
+            <button onClick={deletePost}>Delete!</button>
+          </div>
+        ) : null}
+        <hr />
+        <NewCommentForm />
+
+        <hr />
+        {/* Comments pass id as props to render comments */}
+        <Comments postId={id} />
+      </div>
     </div>
   );
 }
