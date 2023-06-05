@@ -2,10 +2,11 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { BsSuitHeart } from "react-icons/bs";
+
 import Suggested from "./Suggested";
 import Contact from "../../Features/Contact";
 import Carousel from "./Carousel";
+import Liked from "../../Features/Liked";
 
 import "./RentalDetails.css";
 //* --------Map---------------
@@ -70,12 +71,8 @@ export default function RentalDetails({ handleAddressSubmit }) {
   return (
     <div className="rental_details">
       <div className="heart_button">
-        <button
-          className="fav_button"
-          style={{ border: "none", backgroundColor: "none", fontSize: "2em" }}
-        >
-          <BsSuitHeart style={{ color: "red" }} />
-        </button>
+        {console.log(rental)}
+        <Liked listingId={id} />
       </div>
       <div className="details_main_content">
         <div className="rental_dets_image">
