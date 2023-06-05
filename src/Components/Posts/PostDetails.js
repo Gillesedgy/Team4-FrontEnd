@@ -83,10 +83,9 @@ export default function PostDetails() {
             <button onClick={deletePost}>Delete!</button>
           </div>
         ) : null}
-        <hr />
+
         <NewCommentForm />
 
-        <hr />
         {/* Comments pass id as props to render comments */}
         <Comments postId={id} />
       </div>

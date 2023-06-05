@@ -23,10 +23,17 @@
 .comment_button {
   padding: 8px 16px;
   border: none;
-  background-color: #065fd4;
+  background-color: darkorange;
   color: #fff;
   cursor: pointer;
   border-radius: 4px;
+  box-shadow: var(--button-box-shadow);
+  border: var(--button-border);
+}
+.comment_button:hover {
+  background-color: #f44336;
+  box-shadow: var(--button-hover-box-shadow);
+  transform: var(--button-hover-transform);
 }
 
 .post_image {

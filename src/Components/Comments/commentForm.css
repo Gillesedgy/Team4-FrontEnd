@@ -44,8 +44,6 @@
 
 .post_details_body {
   margin: 10px;
-  border: 2px solid black;
-  border-radius: 8px;
 }
 
 .comment-form {
@@ -77,6 +75,13 @@
   color: white;
   cursor: pointer;
   border-radius: 5px;
+  box-shadow: var(--button-box-shadow);
+  border: var(--button-border);
+}
+.post-comment:hover {
+  background-color: #f44336;
+  box-shadow: var(--button-hover-box-shadow);
+  transform: var(--button-hover-transform);
 }
 
 .comment-button-container button.comment_button {

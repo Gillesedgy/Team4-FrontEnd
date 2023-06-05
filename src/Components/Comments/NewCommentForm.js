@@ -31,7 +31,9 @@ export default function NewCommentForm() {
           required
         ></textarea>
         <div className="comment-button-container">
-          <button type="submit">Post Comment</button>{" "}
+          <button className="post-comment" type="submit">
+            Post Comment
+          </button>{" "}
           {/* <button
             onClick={() => navigate(`/communityBoard`)}
             className="comment_button"
