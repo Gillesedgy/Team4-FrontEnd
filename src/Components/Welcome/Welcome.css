@@ -18,21 +18,18 @@
     margin: 0%;
     top: 0%;
     width: 100vw;
-    height: 20vh;
 
 }
 
 .welcometext {
-  margin-top: 120px;
-  font-size: 70px;
+  margin-top: 0px;
+  font-size: 80px;
   text-align: center;
  
 }
 
-
 .welcome_p {
-  font-size: 50px;
-  margin-top: -70px;
+  font-size: 60px;
   text-align: center;
   justify-content: center;
 }
@@ -84,7 +81,7 @@
   transform: translateY(-1px);
 }
 
-button:active {
+.welcome-btn:active {
   background-color: #f0f0f1;
   border-color: rgba(0, 0, 0, 0.15);
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
@@ -94,7 +91,7 @@ button:active {
 
 .doodle1{
   margin-top: 50px;
-padding: 0%;
+
   display: flex;
   align-items: center;
 }
