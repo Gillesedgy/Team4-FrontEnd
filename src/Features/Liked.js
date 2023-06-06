@@ -75,13 +75,11 @@ export default function Liked({ listingId }) {
 
   function handleAddLike() {
     handleLike(newFav);
-    console.log("newfav", newFav);
   }
 
   return (
     <div className="like_container">
       <button onClick={handleToggleLike} style={{ border: "none" }}>
-        {console.log(liked)}
         {isLiked ? (
           <BsSuitHeartFill
             style={{
@@ -100,6 +98,7 @@ export default function Liked({ listingId }) {
           />
         )}
       </button>
+      {console.log("sha-boop")}
     </div>
   );
 }
