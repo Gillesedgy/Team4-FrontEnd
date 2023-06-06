@@ -50,7 +50,7 @@
   border: var(--button-border);
   border-radius: 0.25rem;
   box-shadow: rgba(85, 133, 195, 0.325) 2px 5px 0 1px 3px 0;
-  color: rgba(0, 0, 0, 0.85);
+  color: white;
   cursor: pointer;
   display: inline-flex;
   font-size: 19px;
