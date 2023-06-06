@@ -4,19 +4,28 @@ import "./commentForm.css";
 import { useParams, useNavigate } from "react-router";
 const API = process.env.REACT_APP_API_URL;
 
-export default function NewCommentForm() {
+export default function NewCommentForm({ postId }) {
   const [comment, setComment] = useState("");
-  const { commentId } = useParams();
+  // const { commentId } = useParams();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post(`${API}/communityBoard/${commentId}/comments`, {
-        comment_body: comment,
-      })
+      .post(
+        `${API}/communityBoard/${postId}/comments`,
+        {
+          comment_body: comment,
+        },
+        {
+          headers: {
+            authorization: localStorage.getItem("jwtToken"),
+          },
+        }
+      )
       .then((res) => {
         console.log(res.data);
         setComment("");
+        window.location.reload();
       })
       .catch((err) => console.warn(err));
   };
@@ -33,7 +42,7 @@ export default function NewCommentForm() {
         <div className="comment-button-container">
           <button className="post-comment" type="submit">
             Post Comment
-          </button>{" "}
+          </button>
         </div>
       </form>
     </div>

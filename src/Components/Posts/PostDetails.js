@@ -84,7 +84,7 @@ export default function PostDetails() {
           </div>
         ) : null}
 
-        <NewCommentForm />
+        <NewCommentForm postId={id} />
 
         {/* Comments pass id as props to render comments */}
         <Comments postId={id} />

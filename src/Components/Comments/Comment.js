@@ -15,6 +15,7 @@ export default function Comment({
       })
       .then(() => {
         console.log("Comment deleted successfully");
+        window.location.reload();
       })
       .catch((error) => console.warn(error));
   };

@@ -8,23 +8,54 @@ const API = process.env.REACT_APP_API_URL;
 export default function UserFavs() {
   const [favorites, setFavorites] = useState([]);
 
+  const [starred, setStarred] = useState([]);
+
   useEffect(() => {
     axios
-      .get(`${API}/users/favorites`, {
+      .get(`${API}/favorites/listings`, {
         headers: {
           authorization: localStorage.getItem("jwtToken"),
         },
       })
-      .then((res) => setFavorites(res.data))
+      .then((res) => {
+        console.log(res.data);
+        setFavorites(res.data);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`${API}/favorites/jobs`, {
+        headers: {
+          authorization: localStorage.getItem("jwtToken"),
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setStarred(res.data);
+      })
       .catch((err) => console.error(err));
   }, []);
 
   return (
-    <div className="favorites">
-      <h3>Favorites</h3>
-      {favorites.map((fav) => {
-        return <Fav id={fav.id} fav={fav} />;
-      })}
+    <div className="saved_container">
+      <div className="favorites">
+        <h3>Favorite Listings</h3>
+        {favorites.length > 0
+          ? favorites.map((fav) => {
+              return <Fav id={fav.id} fav={fav} />;
+            })
+          : null}
+      </div>
+      <div className="starred_stuff">
+        <h3>Starred Jobs</h3>
+        {starred.length > 0
+          ? starred.map((fav) => {
+              return <li key={fav.id}>{fav.job_title}</li>;
+            })
+          : null}
+      </div>
     </div>
   );
 }

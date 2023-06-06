@@ -1,102 +1,99 @@
 import React, { useState, useEffect } from "react";
-import { BsSuitHeart } from "react-icons/bs";
-import { BsSuitHeartFill } from "react-icons/bs";
 import axios from "axios";
+import { BsStarFill } from "react-icons/bs";
+import { BsStar } from "react-icons/bs";
 
 const API = process.env.REACT_APP_API_URL;
 
-export default function Liked({ listingId }) {
-  const [liked, setLiked] = useState([]);
-  const [isLiked, setIsLiked] = useState(false);
+export default function Starred({ jobId }) {
+  const [starred, setStarred] = useState([]);
+  const [isStarred, setIsStarred] = useState(false);
 
   const userId = localStorage.getItem("user_id");
 
   const newFav = {
-    listing_id: listingId,
+    job_id: jobId,
     user_id: userId,
   };
 
   const handleLike = (newFav) => {
     axios
-      .post(`${API}/favorites/new-listing`, newFav, {
+      .post(`${API}/favorites/new-job`, newFav, {
         headers: {
           authorization: localStorage.getItem("jwtToken"),
         },
       })
-      .then((res) => {
-        setIsLiked(true);
+      .then(() => {
+        setIsStarred(true);
       })
       .catch((error) => console.error(error));
   };
 
   const handleUnlike = (newFav) => {
     axios
-      .delete(`${API}/favorites/listings/${listingId}`, {
+      .delete(`${API}/favorites/jobs/${jobId}`, {
         headers: {
           authorization: localStorage.getItem("jwtToken"),
         },
         data: newFav,
       })
       .then(() => {
-        setIsLiked(false);
+        setIsStarred(false);
       })
       .catch((error) => console.warn(error));
   };
 
   useEffect(() => {
     axios
-      .get(`${API}/favorites/listings`, {
+      .get(`${API}/favorites/jobs`, {
         headers: {
           authorization: localStorage.getItem("jwtToken"),
         },
       })
       .then((res) => {
-        setLiked(res.data);
-        console.log("setting first", liked);
+        setStarred(res.data);
+        console.log(starred);
       })
       .catch((error) => console.error(error));
-  }, [userId, listingId, isLiked]);
+  }, [userId, jobId, isStarred]);
 
   useEffect(() => {
-    let isListingLiked;
-    liked.length > 0
-      ? (isListingLiked = liked.find((listing) => listing.id == listingId))
-      : setIsLiked(false);
-    isListingLiked ? setIsLiked(true) : setIsLiked(false);
-    // let isListingLiked = liked.filter((listing) => listing.id == listingId);
-    // setIsLiked(!!isListingLiked);
-  }, [liked]);
+    let isJobStarred;
+    starred.length > 0
+      ? (isJobStarred = starred.some((job) => job.id == jobId))
+      : (isJobStarred = false);
+
+    setIsStarred(isJobStarred);
+  }, [starred]);
 
   function handleToggleLike() {
-    if (isLiked) {
+    if (isStarred) {
       handleUnlike(newFav);
     } else {
-      handleLike(newFav);
+      handleAddLike(newFav);
     }
   }
 
   function handleAddLike() {
     handleLike(newFav);
-    console.log("newfav", newFav);
   }
 
   return (
-    <div className="like_container">
+    <div className="star_container">
       <button onClick={handleToggleLike} style={{ border: "none" }}>
-        {console.log(liked)}
-        {isLiked ? (
-          <BsSuitHeartFill
+        {isStarred ? (
+          <BsStarFill
             style={{
               backgroundColor: "none",
-              color: "red",
+              color: "orange",
               fontSize: "2em",
             }}
           />
         ) : (
-          <BsSuitHeart
+          <BsStar
             style={{
               backgroundColor: "none",
-              color: "red",
+              color: "orange",
               fontSize: "2em",
             }}
           />
