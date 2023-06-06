@@ -63,8 +63,6 @@ export default function Liked({ listingId }) {
       ? (isListingLiked = liked.find((listing) => listing.id == listingId))
       : setIsLiked(false);
     isListingLiked ? setIsLiked(true) : setIsLiked(false);
-    // let isListingLiked = liked.filter((listing) => listing.id == listingId);
-    // setIsLiked(!!isListingLiked);
   }, [liked]);
 
   function handleToggleLike() {
