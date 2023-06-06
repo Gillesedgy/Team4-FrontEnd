@@ -7,6 +7,7 @@ import Contact from "../../Features/Contact";
 import Recommended from "./Recommended";
 import MapContainer from "../../Features/MapContainer";
 
+import jobImage from "../../Assets/logoJobImage.jpg";
 import Starred from "../../Features/Starred";
 //
 const API = process.env.REACT_APP_API_URL;
@@ -65,11 +66,10 @@ export default function JobDetails({ handleAddressSubmit }) {
   dateMade = dateMade.toDateString();
   let year = dateMade.split(" ").pop();
   let middle = dateMade.split(" ").splice(1, 2).join(" ");
+  // Logo handler
+  const logoImage = jobs.logo ? jobs.logo : jobImage;
   return (
     <div className="job-page-whole">
-      <div className="heart_button">
-        <Starred jobId={jobs.id} />
-      </div>
       <div className="page-container">
         <button className="back-button" onClick={() => navigate(`/jobs`)}>
           Back
@@ -81,15 +81,24 @@ export default function JobDetails({ handleAddressSubmit }) {
             {middle}, {year}
           </span>
         </p>
+
         <div className="details-icon">
-          {<img src={jobs.logo} alt="job-icon" />}
+          {<img src={logoImage} alt="job-icon" />}{" "}
         </div>
+
         <p className="is_favorite p1">
           {jobs.is_favorite ? "★" : null}
           <span>{jobs.is_favorite}</span>
         </p>
         <div className="top job-details-body">
-          <h2 className="job-title">{jobs.job_title}</h2>
+          <div className="job-title-star">
+            {" "}
+            <h2 className="job-title">{jobs.job_title}</h2>
+            <div className="heart_button star">
+              <Starred jobId={jobs.id} />
+            </div>
+          </div>
+
           <p className="company p1">
             <strong>Company:</strong>
             <span>{jobs.company}</span>
