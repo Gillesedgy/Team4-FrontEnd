@@ -20,7 +20,7 @@ function Welcome() {
       </div>
      
       <Welcoming />
-      <div className="doodle1">
+      <div>
           <img className="welcome-img" src={WelcomeImg} alt="doddle1" />
         </div>
         <About />

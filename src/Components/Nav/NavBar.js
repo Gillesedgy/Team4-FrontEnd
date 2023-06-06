@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect} from "react";
 import "./NavBar.css";
 import Button from "./Button";
 import { Link } from "react-router-dom";
@@ -8,7 +8,8 @@ import { GoCommentDiscussion } from "react-icons/go";
 import { VscAccount } from "react-icons/vsc";
 import { TbHomeDollar } from "react-icons/tb";
 import { MdWorkOutline } from "react-icons/md";
-import { BsWindowDesktop } from "react-icons/bs";
+// import { BsWindowDesktop } from "react-icons/bs";
+import { ContextData } from "../../Provider";
 
 function NavBar() {
   const [click, setClick] = useState(false);
@@ -19,6 +20,14 @@ function NavBar() {
     { text: "Jobs", icon: MdWorkOutline,  to:"/jobs"  },
     { text: "Community", icon: GoCommentDiscussion,  to:"/communityBoard"  },
   ];
+
+  const { user } = useContext(ContextData);
+  const handleLogout = () => {
+    window.localStorage.removeItem("jwtToken");
+    window.localStorage.removeItem("user_id");
+    window.localStorage.removeItem("user_info");
+    window.location.href = "/";
+  };
 
   const onHover = (index) => {
     setHover({ ...hover, [index]: true });
@@ -60,7 +69,7 @@ function NavBar() {
               className="nav-links"
               onClick={closeMobileMenu}
               onMouseEnter={() => onHover(index)}
-              onMouseOut={() => onLeave(index)}
+              onMouseLeave={() => onLeave(index)}
               role="button"
               tabIndex="-3"
             >
@@ -69,16 +78,11 @@ function NavBar() {
           </li>
         ))}
 
-        <Link
-          to="/login"
-          className="nav-links-mobile"
-          onClick={closeMobileMenu}
-        >
-          Sign in
-        </Link>
+        
+
       </ul>
 
-      <Button className="nav-sign-btn" />
+      <Button user={user} closeMobileMenu={closeMobileMenu} handleLogout={handleLogout} className="nav-sign-btn" />
     </nav>
   );
 }

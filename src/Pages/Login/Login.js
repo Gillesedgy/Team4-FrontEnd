@@ -53,12 +53,11 @@ export default function Login() {
           localStorage.setItem("jwtToken", jwtToken);
           localStorage.setItem("user_id", user_id);
           // handleUserInfo(user_id);
-          setUser(response.data);
-          console.log(response.data);
-          navigate("/");
+          localStorage.setItem("user_info", JSON.stringify(response.data));
         },
         (error) => console.log(error)
       )
+      .then(() => window.location.href = "/")
       .catch((c) => console.warn("catch", c));
   }
 

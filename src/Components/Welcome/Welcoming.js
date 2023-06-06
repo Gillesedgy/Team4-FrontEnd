@@ -2,21 +2,18 @@ import React from "react";
 import "./Welcome.css";
 import { Link } from "react-router-dom";
 import doodle1 from "../../Assets/doodle1.png";
+import doodleLeft from "../../Assets/doodleleft.png";
 
 function Welcoming() {
 
-
   return (
     <div className="welcome-page">
-      {/* <div>
-        <p className="welcometext">
-         Welcome
-        </p>
-      </div> */}
-      <p className="welcome_p">Find Your Community</p>
+      <div>
+        <p className="welcome_p">Find Your Community</p>
+      </div>
       <div className="welcome-btn-div">
         <div className="doodle1">
-          <img src={doodle1} alt="doddle1" width={100} height={100} />
+          <img src={doodle1} alt="doddle1" width={80} height={80} />
         </div>
 
         <div>
