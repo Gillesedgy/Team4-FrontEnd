@@ -6,6 +6,8 @@ import "./jobDetails.css";
 import Contact from "../../Features/Contact";
 import Recommended from "./Recommended";
 import MapContainer from "../../Features/MapContainer";
+
+import Starred from "../../Features/Starred";
 //
 const API = process.env.REACT_APP_API_URL;
 
@@ -65,6 +67,9 @@ export default function JobDetails({ handleAddressSubmit }) {
   let middle = dateMade.split(" ").splice(1, 2).join(" ");
   return (
     <div className="job-page-whole">
+      <div className="heart_button">
+        <Starred jobId={jobs.id} />
+      </div>
       <div className="page-container">
         <button className="back-button" onClick={() => navigate(`/jobs`)}>
           Back
@@ -80,7 +85,7 @@ export default function JobDetails({ handleAddressSubmit }) {
           {<img src={jobs.logo} alt="job-icon" />}
         </div>
         <p className="is_favorite p1">
-          <p>{jobs.is_favorite ? "★" : null}</p>
+          {jobs.is_favorite ? "★" : null}
           <span>{jobs.is_favorite}</span>
         </p>
         <div className="top job-details-body">
