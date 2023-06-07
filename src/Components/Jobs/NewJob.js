@@ -125,7 +125,7 @@ export default function NewJob({ data }) {
           onChange={handleTypeChange}
           required
         >
-          <option value="">Select a language</option>
+          <option value="">Select a Job Type</option>
           {jobType.map((job_type) => (
             <option value={job_type.value} key={job_type.value}>
               {job_type.label}

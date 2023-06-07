@@ -50,21 +50,21 @@ export default function PostDetails() {
         <div className="back-button-container">
           <button
             onClick={() => navigate(`/communityBoard`)}
-            className="comment_button"
+            className="comment_button "
             type="submit"
           >
             Back
           </button>
         </div>
         <div className="post_card">
-          <img
-            className="post_image"
-            src={post.image_url}
-            alt={post.image_url}
-          />
-          {/* <p>
-            Last Updated on: {updatedMid}, {updatedYear}
-          </p> */}
+          <div className="image-container">
+            <img
+              className="post_image"
+              src={post.image_url}
+              alt={post.image_url}
+            />
+          </div>
+
           <p>
             Posted on: {middle}, {year}
           </p>
@@ -76,7 +76,6 @@ export default function PostDetails() {
         </div>
         {localStorage.getItem("user_id") === String(post.user_id) ? (
           <div className="post_details_buttons">
-            <button onClick={() => navigate(`/communityBoard`)}>Back</button>
             <button onClick={() => navigate(`/communityBoard/${id}/edit`)}>
               Edit
             </button>

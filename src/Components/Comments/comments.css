@@ -25,7 +25,7 @@
 }
 
 .delete-comment button:hover {
-  color: #ff0000;
+  color: orangered;
 }
 .show-more-button {
   display: flex;
@@ -44,7 +44,7 @@
   border: var(--button-border);
 }
 .showMore:hover {
-  background-color: #f44336;
+  background-color: darkorange;
   color: #f5f5f5;
 
   box-shadow: var(--button-hover-box-shadow);

@@ -92,8 +92,10 @@ export default function JobEdit() {
   return (
     <div className="jobForm">
       <h2>Job Edit Form</h2>
+      <img className="form-logo" src={edit.logo} alt="job-logo" />
       <form onSubmit={handleSubmit}>
         <label htmlFor="job_title">Job Title:</label>
+
         <input
           type="text"
           id="job_title"
@@ -137,7 +139,7 @@ export default function JobEdit() {
           onChange={handleTypeChange}
           required
         >
-          <option value="">Select a language</option>
+          <option value="">Select a Job Type</option>
           {jobType.map((job_type) => (
             <option value={job_type.value} key={job_type.value}>
               {job_type.label}
@@ -152,15 +154,6 @@ export default function JobEdit() {
           onChange={handleTextChange}
           required
         />
-        {/* <label htmlFor="is_favorite">Favorite:</label>
-        <input
-          type="checkbox"
-          id="is_favorite"
-          checked={edit.is_favorite}
-          // value={edit.is_favorite}
-          onChange={handleCheckChange}
-          required
-        /> */}
 
         <label htmlFor="skills">Skills:</label>
         <input

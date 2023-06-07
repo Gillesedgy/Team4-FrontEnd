@@ -71,7 +71,7 @@ export default function JobDetails({ handleAddressSubmit }) {
   return (
     <div className="job-page-whole">
       <div className="page-container">
-        <button className="back-button" onClick={() => navigate(`/jobs`)}>
+        <button className="back-button-top" onClick={() => navigate(`/jobs`)}>
           Back
         </button>
         {/* //!LEFT ----- */}
@@ -142,22 +142,15 @@ export default function JobDetails({ handleAddressSubmit }) {
           {/* //!BUTTONS -----  */}
           {localStorage.getItem("user_id") === String(jobs.user_id) ? (
             <div className="buttons-container">
-              <button className="button" type="submit" onClick={deleteJob}>
-                Delete
-              </button>
               <button
                 className="button"
                 onClick={() => navigate(`/jobs/${id}/edit`)}
                 type="submit"
               >
                 Edit
-              </button>
-              <button
-                className="button"
-                onClick={() => navigate(`/jobs`)}
-                type="submit"
-              >
-                Back
+              </button>{" "}
+              <button className="button" type="submit" onClick={deleteJob}>
+                Delete
               </button>
             </div>
           ) : null}
