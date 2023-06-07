@@ -23,11 +23,18 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1em;
-  border: solid 1px teal;
+  border: solid 1px rgba(250, 208, 212 );
   border-radius: 10px;
   box-shadow: 3px 5px 4px rgb(225, 221, 221);
   padding: 0.8em;
-  background-color: rgba(139, 186, 186, 0.195);
+ 
+/* background: rgb(115,174,182);
+background: linear-gradient(90deg, rgba(115,174,182,1) 0%, rgba(241,237,236,1) 59%);
+ */
+background: rgb(253,209,186);
+background: linear-gradient(90deg, rgba(253,209,186,1) 0%, rgba(241,237,236,1) 59%);
+
+
 }
 
 .rental_image {
@@ -65,9 +72,9 @@
 .rentals_add {
   margin: 10px;
   padding: 0.5em;
-  border: 1px solid grey;
+  border: 1px solid rgb(150, 210, 238);
   color: white;
-  background-color: teal;
+  background-color: rgba(115,174,182,1);
   border-radius: 8px;
   font-size: medium;
   margin-bottom: 22px;
@@ -75,11 +82,12 @@
 
 .rentals_add:hover {
   transform: translateY(-1.5px);
+  background-color: gray;
 }
 
 .rental:hover {
   /* background-color: rgb(204, 240, 251); */
-  background-color: rgba(85, 195, 195, 0.325);
+  background-color: rgba(242, 193, 180, 0.901);
 }
 
 .rental_description {
