@@ -4,7 +4,6 @@ import jobImage from "../../Assets/logoJobImage.jpg";
 export default function Job({
   job: { id, job_title, company, location, native_language, posted_date, logo },
 }) {
-  // Image Place holder
   const logoImage = logo ? logo : jobImage;
 
   let dateMade = new Date(posted_date);
