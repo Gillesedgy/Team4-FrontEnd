@@ -8,13 +8,16 @@
 }
 .menuContainer{
   margin-top: 20px;
-  width: 20%;
+  width: 25%;
   height: fit-content;
-  padding: 5px;
+  padding: 7px;
   display: flex;
   flex-direction: column;
-  background-color: rgb(213, 211, 208);
-  border: 2px solid black;
+  background-color: rgb(233, 222, 205);
+  border: 1px solid rgb(142, 141, 141);
+  border-style: double;
+  border-width: 5px;
+  border-radius: 5px;
 }
 
 .resource-title{
@@ -117,3 +120,10 @@ text-align: center;
   color: black;
 }
 
+button.add-btn-comunity {
+  border-radius: 5px 20px;
+  width: 50px;
+  height: 40px;
+  background-color: rgb(240, 168, 67);
+
+}

@@ -13,8 +13,7 @@
 } */
 
 /* .main-container {
-  max-width: 1200px;
-  width: 100%;
+width: 100%;
   margin-right: auto;
   margin-left: auto;
 } */
@@ -28,7 +27,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Supreme", sans-serif;
-  margin-top: 5%;
+  margin-top: 4%;
+
   /* overflow-x: hidden; */
 }
 
