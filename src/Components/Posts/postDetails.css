@@ -90,9 +90,9 @@
   background-color: darkgoldenrod;
 }
 
-hr {
+/* hr {
   margin: 20px 0;
-}
+} */
 .centered-content {
   display: flex;
   justify-content: center;
