@@ -1,8 +1,9 @@
 .favorites_container_title,
 .starred_container_title {
-  font-size: 1.2em;
+  font-size: 1.6em;
   font-weight: bold;
   color: #0000ff;
+  text-decoration: underline double rgb(247, 170, 123);
   margin-left: 10px;
   margin-bottom: 0.5em;
   margin-top: 0.5em;
@@ -18,8 +19,8 @@
   flex-direction: row;
 
   gap: 0.7em;
-  border: 1px solid rgb(239, 238, 238);
-  border-radius: 8px;
+  border: 1px solid #f98648;
+  border-radius:  8px;
   background-color: #f1d6cb;
   padding: 0.6em;
 }

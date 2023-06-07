@@ -88,7 +88,7 @@ export default function Posts() {
       link: "https://www.nyc.gov/wic",
     },
   ];
-  const cardColors = ["#FFC107", "#147DF5", "#4CAF50", "#E91E63", "#9C27B0"];
+  const cardColors = ["#739CAE", "#8BAEA8", "#D07F7B", "#E4C17B", "#86B1B8"];
   //!----------------------------------------------------------------
   return (
     <div className="Posts-container">

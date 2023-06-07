@@ -57,7 +57,7 @@ svg.icon-nav{
 .nav-menu {
   display: grid;
   grid-template-columns: repeat(5, auto);
-  grid-gap: 10px;
+  grid-gap: 15px;
   list-style: none;
   text-align: center;
   width: 70vw;
@@ -78,8 +78,9 @@ svg.icon-nav{
 }
 
 .nav-links:hover {
-  background-color: rgb(255, 255, 255);
-  color:#45a0a0;
+  background-color: transparent;
+  font-size: larger;
+  color:#f59d22;
   border-radius: 4px;
   transition: all 0.2s ease-out;
 }
@@ -128,6 +129,7 @@ svg.icon-nav{
   }
 
   .nav-links {
+    justify-content: center;
     text-align: center;
     padding: 2rem;
     width: 100%;

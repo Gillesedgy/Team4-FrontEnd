@@ -53,7 +53,7 @@ export default function Account() {
 
         <div className="user-job-profile">
           <UserFavs />
-          <UserJob />
+          {/* <UserJob /> */}
         </div>
       </div>
     </div>

@@ -1,9 +1,10 @@
 .wrapper-user {
-  background-color: #ffe2d6a4;
+  background-color: #f2eae6;
+  height: 100%;
 }
 
 .user-profile {
-  width: 80%;
+  width: 60%;
   display: flex;
   margin-right: auto;
   margin-left: auto;
