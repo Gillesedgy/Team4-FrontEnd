@@ -107,7 +107,7 @@ export default function Contact() {
         ></textarea>
       </div>
       <button className="button" type="submit">
-        Send Your Message
+        Send
       </button>
     </form>
   );
