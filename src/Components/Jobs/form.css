@@ -6,16 +6,21 @@
 
 .jobForm {
   display: flex;
+  border: 1px solid rgba(85, 133, 195, 0.325);
   flex-direction: column;
   max-width: 700px;
   margin: 0 auto;
   background-color: var(--form-color);
   border-radius: 8px;
-  /* max-width: var(--form-width); */
   padding: var(--form-padding);
   margin-bottom: var(--form-margin-bottom);
 }
-
+.form-logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 200px; /* Adjust the maximum width as desired */
+  height: auto;
+}
 .jobForm label {
   display: var(--form-label);
   width: var(--form-input-width);
@@ -40,9 +45,11 @@
   font-family: sans-serif;
 }
 .form-button-container {
-  display: grid;
+  justify-content: space-between;
+  display: flex;
+  /* display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 20px; */
 }
 .button_edit {
   align-items: center;
@@ -67,7 +74,7 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: baseline;
-  width: auto;
+  width: 6rem;
 }
 .jobForm h2 {
   text-align: center;

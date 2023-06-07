@@ -14,21 +14,21 @@ export default function Post({
   date = month + " " + day + ", " + year;
 
   return (
-   <div className={`post ${postSize}`} key={id}>
-  {image_url ? (
-    <Link to={`/communityBoard/${id}`}>
-      <img src={image_url} alt={image_url} className="postImg" />
-    </Link>
-  ) : (
-    <Link to={`/communityBoard/${id}`}>
-      <p className={`post ${postSize}`} key={id}>{post_content}</p>
-     
-    </Link>
-  )}
-  <div className="post-title">
-    <h4>{post_title}</h4>
-  </div>
-</div>
-
+    <div className={`post ${postSize}`} key={id}>
+      {image_url ? (
+        <Link to={`/communityBoard/${id}`}>
+          <img src={image_url} alt={image_url} className="postImg" />
+        </Link>
+      ) : (
+        <Link to={`/communityBoard/${id}`}>
+          <p className={`post ${postSize}`} key={id}>
+            {post_content}
+          </p>
+        </Link>
+      )}
+      <div className="post-title">
+        <h4>{post_title}</h4>
+      </div>
+    </div>
   );
 }

@@ -1,7 +1,28 @@
+.centered-content {
+  width: 100%;
+  align-items: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
 .post_details {
-  margin: 20px;
+  /* margin: 20px;
   border: 2px solid rgb(170, 168, 168);
   border-style: double;
+  position: relative; */
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(170, 168, 168);
+  border-style: double;
+  border-width: 5px;
+  padding: 2em;
+  border-radius: 8px;
+  background-color: white;
+  width: 50vw;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 25px;
   position: relative;
 }
 
@@ -31,7 +52,7 @@
   border: var(--button-border);
 }
 .comment_button:hover {
-  background-color: #f44336;
+  background-color: orange;
   box-shadow: var(--button-hover-box-shadow);
   transform: var(--button-hover-transform);
 }
@@ -50,14 +71,15 @@
 
 .post_details_buttons {
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   margin-top: 20px;
+  justify-content: space-between;
 }
 
 .post_details_buttons button {
   padding: 8px 16px;
   border: none;
-  background-color: #065fd4;
+  background-color: darkorange;
   color: #fff;
   cursor: pointer;
   border-radius: 4px;
@@ -65,7 +87,7 @@
 }
 
 .post_details_buttons button:last-child {
-  background-color: #f44336;
+  background-color: darkgoldenrod;
 }
 
 hr {
