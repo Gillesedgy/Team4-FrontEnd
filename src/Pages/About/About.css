@@ -20,21 +20,21 @@
         .rentals-about {
           align-self: flex-start;
           margin-right: 20px;
-          background-color: white;
+          background-color: #fdd1ba;
           width: 50%;
         }
         
         .jobs-about {
           align-self: flex-end;
           margin-left: 20px;
-          background-color: white;
+          background-color: rgb(144,182,192);
           width: 50%;
         }
         
         .community-about {
           align-self: flex-start;
           margin-right: 20px;
-          background-color: white;
+          background-color: rgb(255,223,165);
           width: 50%;
         }
       

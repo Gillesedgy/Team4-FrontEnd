@@ -1,11 +1,11 @@
 .btn {
   align-items: center;
-  background-color: rgb(247, 182, 102);
+  background-color: #fb8e19;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
   box-sizing: border-box;
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(249, 245, 245, 0.85);
   cursor: pointer;
   display: inline-flex;
   font-size: 19px;
@@ -34,7 +34,7 @@
 
 .btn:hover {
   transform: translateY(-1px);
-  background-color: #45a0a0;
+  background-color: rgb(35, 51, 235);
   color: #f0f0f1;
 }
 

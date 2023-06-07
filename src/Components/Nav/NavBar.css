@@ -37,7 +37,7 @@ svg.icon-nav{
   /* overflow: hidden; */
 }
 .navbar.active {
-  background-color: rgb(252, 252, 252);
+  background-color: rgb(234, 230, 230);
   /* background-image: url("../../Assets/navimg1.png"); */
   /* opacity: 0.9; */
   background-size: cover;

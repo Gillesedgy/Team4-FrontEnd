@@ -4,17 +4,18 @@
   margin-left: auto;
   margin-right: auto;
   grid-template-columns: 1fr 1fr 1fr;
-  background-color: white;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 1em;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
   grid-column-gap: 1em;
-  border: solid 1px teal;
+  border: solid 1px rgb(76, 156, 227);
   overflow: hidden;
+  background: rgb(182,146,115);
+  background: linear-gradient(90deg, rgb(154, 214, 204) 0%, rgba(241,237,236,1) 59%);
 }
 .job-container:hover {
-  background-color: rgba(85, 133, 195, 0.325);
+  background-color: rgb(144,182,192);
 }
 
 .icon-company-container {
@@ -72,14 +73,20 @@
   cursor: pointer;
 }
 .add-button {
-  background: rgb(74, 110, 222);
+background: rgb(253,209,186);
   width: 90%;
   margin: 10px;
   padding: 0.5em;
-  color: #fff;
+  color: rgb(4, 4, 4);
   border-radius: 8px;
   font-size: medium;
 }
+
+.add-button:hover {
+  background:#9e9d9d;
+}
+
+
 .jobs {
   margin-top: 20px;
 }

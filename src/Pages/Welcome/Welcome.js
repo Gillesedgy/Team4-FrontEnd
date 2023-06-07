@@ -5,6 +5,7 @@ import MorphinWords from "./MorphinWords";
 import About from "../About/About";
 import Welcoming from "../../Components/Welcome/Welcoming";
 import WelcomeImg from "../../Assets/welcome1white.png"
+
 import "./welcomepg.css"
 // import Profile from "../Profile/Profile";
 // import { useContextProvider } from "../../Provider";
