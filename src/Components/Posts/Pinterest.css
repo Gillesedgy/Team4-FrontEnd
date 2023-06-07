@@ -9,7 +9,7 @@
 .menuContainer{
   margin-top: 20px;
   width: 20%;
-  height: 100%;
+  height: fit-content;
   padding: 5px;
   display: flex;
   flex-direction: column;
