@@ -1,9 +1,15 @@
 .rental_form {
+  display: flex;
+  flex-direction: column;
   max-width: 700px;
   margin: 0 auto;
-  padding: 20px;
+  padding: var(--form-padding);
   border: 1px solid #ccc;
+  margin-bottom: var(--form-margin-bottom);
+  padding-top: 1.4em;
+  margin-top: 5em;
   border-radius: 8px;
+  background-color: var(--form-color);
 }
 
 .rental_edit_title {
@@ -12,12 +18,17 @@
 }
 
 .new_rental_title {
-  margin-bottom: 1em;
+  /* margin-bottom: 1em; */
+  text-align: center;
+  margin-bottom: 20px;
+
+  text-shadow: rgba(147, 155, 166, 0.426) 2px 2px;
   color: #45a0a0;
 }
 
 .rental_form label {
-  display: block;
+  /* display: block; */
+  display: var(--form-label);
   margin-bottom: 1em;
   font-weight: bold;
 }
@@ -25,9 +36,11 @@
 .rental_form input[type="text"] {
   width: 100%;
   padding: 1em;
-  margin-top: 0.3em;
-  border: 1px solid #ccc;
+  /* margin-top: 0.3em; */
+  border: var(--form-input-border);
   border-radius: 5px;
+  margin-bottom: 15px;
+  margin-top: 0.5em;
 }
 
 .rental_form input[type="text"]:focus,
@@ -40,13 +53,13 @@
 
 .rental_form textarea {
   width: 100%;
-  height: 6em;
+  height: 100px;
   padding: 1.1em;
   margin-top: 0.5em;
   border: 1px solid #ccc;
   border-radius: 5px;
   resize: none;
-  margin-top: 0.5em;
+  /* margin-top: 0.5em; */
 }
 
 .rental_form button[type="submit"] {
@@ -84,8 +97,8 @@
 .go_back,
 .add_image {
   margin-bottom: 0.5em;
-
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
+  padding: 8px 10px;
   background-color: rgb(125, 188, 188);
   color: #fff;
   border: none;
@@ -96,8 +109,8 @@
 
 .add_image {
   display: block;
-  width: 15%;
-  margin-top: 0.3em;
+  width: 14%;
+  margin-top: 0.7em;
   margin-bottom: 0.2em;
   float: right;
 }
@@ -109,6 +122,8 @@
 
 .go_back {
   display: grid;
+  float: left;
+  width: 18%;
   margin-top: 1.8em;
 }
 
@@ -118,11 +133,13 @@
 }
 
 .language_select {
-  margin: -8px;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .image_adder {
   display: block;
+  text-align: center;
 }
 
 .delete_pic {
@@ -149,4 +166,19 @@
 .images_added_form {
   height: 80px;
   border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .rental_form label {
+    font-size: 12px;
+  }
+  .rental_form {
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 968px) {
+  .rental_form {
+    margin-top: 110px;
+  }
 }
