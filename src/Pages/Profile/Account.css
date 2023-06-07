@@ -1,7 +1,12 @@
+.wrapper-user {
+  background-color: #ffe2d6a4;
+}
+
 .user-profile {
-  /* margin-left: 3em; */
-  width: 100%;
+  width: 80%;
   display: flex;
+  margin-right: auto;
+  margin-left: auto;
   justify-content: center;
   flex-direction: column;
 }
@@ -10,42 +15,54 @@
 .profile-body {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   row-gap: 1em;
-  background-color: rgb(106, 195, 195);
+  background-color: #b7c8c6;
   margin-bottom: 1em;
   float: right;
   padding: 1.5em;
 }
 
+.profile-header {
+  border-radius: 7px;
+
+  width: 75%;
+  padding: 2em;
+}
 
 .user-container {
-  display: grid;
-  grid-template-columns: 2fr 4fr;
+  /* display: grid;
+    grid-template-columns: 2fr 4fr; */
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
   margin-left: auto;
   margin-right: auto;
   height: 50%;
-  width: 60%;
+  width: 100%;
   padding: 1em;
 }
-.user-avatar{
+.user-avatar {
   width: 200px;
-  height: 250px;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.503);
+  border-style: double;
+  border-width: 5px;
 }
 .userjob {
   margin-top: 1em;
   padding: 1em;
   width: 90%;
-
 }
 
 .favorites {
   margin-top: 1em;
   border-top: 1px gray solid;
   padding: 1em;
-
 }
 
-.user-job-profile{
+.user-job-profile {
   display: flex;
   flex-direction: column;
   justify-content: center;

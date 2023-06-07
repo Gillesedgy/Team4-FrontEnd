@@ -1,0 +1,83 @@
+.favorites_container_title,
+.starred_container_title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #0000ff;
+  margin-left: 10px;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+.starred_container_title {
+  margin-top: 1.5em;
+}
+
+.favorites_container,
+.starred_stuff {
+  display: flex;
+  flex-direction: row;
+
+  gap: 0.7em;
+  border: 1px solid rgb(239, 238, 238);
+  border-radius: 8px;
+  background-color: #f1d6cb;
+  padding: 0.6em;
+}
+
+.fav_rental,
+.star-job-container {
+  display: block;
+  height: 90%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  border: solid 1px rgba(250, 208, 212);
+  border-radius: 10px;
+  box-shadow: 3px 5px 4px rgb(225, 221, 221);
+  padding: 0.8em;
+
+  background-color: rgba(241, 237, 236, 1);
+  /* background: rgba(253, 209, 186, 0.457); */
+  /* background: linear-gradient(
+    90deg,
+    rgba(253, 209, 186, 1) 0%,
+    rgba(241, 237, 236, 1) 59%
+  ); */
+}
+
+.fav_rental:hover,
+.star-job-container:hover {
+  background-color: rgba(201, 200, 200, 0.434);
+  transform: translateY(-1.5px);
+}
+
+.fav_content,
+.star-content {
+  line-height: 1.6em;
+  color: black;
+  padding: 0.3em;
+}
+
+.fav_rental_image {
+  height: auto;
+  width: 10em;
+  border-radius: 8px;
+}
+
+.star-job-icon {
+  height: auto;
+  width: 6em;
+  border-radius: 8px;
+}
+
+.fav_img_container,
+.star-icon-company-container {
+  display: grid;
+  /* flex-direction: column; */
+  justify-content: center;
+  margin: 0.2em;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 0.3em;
+}

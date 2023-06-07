@@ -22,33 +22,39 @@ export default function Account() {
   }, []);
 
   return (
-    <div className="user-profile">
-      <div className="user-container">
-        <div>
-          <img className="user-avatar" src={user.image_url} alt="User Avatar" />
+    <div className="wrapper-user">
+      <div className="user-profile">
+        <div className="user-container">
+          <div>
+            <img
+              className="user-avatar"
+              src={user.image_url}
+              alt="User Avatar"
+            />
+          </div>
+          <div className="profile-header">
+            <h2>Username: {user.username}</h2>
+            <p>
+              <b>Email: </b>
+              {user.email}
+            </p>
+            {/* </div> */}
+            {/* <div className="profile-body"> */}
+            <p>
+              <b>Address: </b>
+              {user.address}
+            </p>
+            <p>
+              <b>Native Language: </b>
+              {user.native_language}
+            </p>
+          </div>
         </div>
-        <div className="profile-header">
-          <h2>Username: {user.username}</h2>
-          <p>
-            <b>Email: </b>
-            {user.email}
-          </p>
-          {/* </div> */}
-          {/* <div className="profile-body"> */}
-          <p>
-            <b>Address: </b>
-            {user.address}
-          </p>
-          <p>
-            <b>Native Language: </b>
-            {user.native_language}
-          </p>
-        </div>
-      </div>
 
-      <div className="user-job-profile">
-        <UserFavs />
-        <UserJob />
+        <div className="user-job-profile">
+          <UserFavs />
+          <UserJob />
+        </div>
       </div>
     </div>
   );
