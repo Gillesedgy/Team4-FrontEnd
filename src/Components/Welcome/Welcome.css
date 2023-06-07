@@ -1,25 +1,5 @@
-/* .welcome-img{
-  width: 50%;
-  background-image: url("../../Assets/welcome1white.png");
-  background-size: cover;
-  height: 800px;
-  width: 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom;
-} */
 
-.welcome-page{
-  display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 0%;
-    top: 0%;
-    width: 100vw;
 
-}
 
 .welcometext {
   margin-top: 0px;
@@ -39,26 +19,28 @@
   margin-left: -90px;
   display: flex;
   justify-content: center;
+  margin-bottom: 0%;
+
+
   
 }
 
 .welcome-btn {
   align-items: center;
-  background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fcaf33;
+  border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
   box-sizing: border-box;
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(252, 254, 255, 0.85);
   cursor: pointer;
   display: inline-flex;
   /* font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif; */
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   justify-content: center;
   line-height: 1.25;
-  margin: 0;
-  min-height: 3rem;
+  margin: 5px;
   padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
   /* position: relative; */
   text-decoration: none;
@@ -67,14 +49,15 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: baseline;
-  width: auto;
+
 }
 
 .welcome-btn:hover,
 .welcome-btn:focus {
-  border-color: rgba(255, 180, 68, 0.97);
+  border-color: rgba(68, 105, 255, 0.97);
+  background-color: #f0f0f1;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  color: rgba(255, 157, 60, 0.956);
+  color: rgba(40, 118, 236, 0.956);
 }
 
 .welcome-btn:hover {
@@ -90,10 +73,10 @@
 }
 
 .doodle1{
-  margin-top: 50px;
-
+  margin-top: 40px;
   display: flex;
   align-items: center;
+  margin-bottom: 0%;
 }
 
 @media screen and (max-width: 960px) {

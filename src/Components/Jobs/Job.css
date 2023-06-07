@@ -9,15 +9,16 @@
   margin-bottom: 1em;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
   grid-column-gap: 1em;
-  border: solid 1px rgb(76, 156, 227);
+  border: solid 1px rgb(62, 110, 97);
   overflow: hidden;
-  background: rgb(182,146,115);
-  background: linear-gradient(90deg, rgb(154, 214, 204) 0%, rgba(241,237,236,1) 59%);
+  background: rgb(227, 225, 224);
 }
 .job-container:hover {
-  background-color: rgb(144,182,192);
+  background:  rgba(241,237,236,1);  
+  background: linear-gradient(90deg, rgb(162, 211, 203) 0%, rgba(241,237,236,1) 59%);
+  background: linear-gradient(90deg, rgba(146,210,200,1) 0%, rgba(181,214,212,1) 36%, rgba(236,241,240,1) 74%);
+  
 }
-
 .icon-company-container {
   font-size: 1.3em;
   display: flex;
@@ -73,17 +74,18 @@
   cursor: pointer;
 }
 .add-button {
-background: rgb(253,209,186);
+/* background: rgb(253,209,186); */
+  background-color: rgb(162, 211, 203);
   width: 90%;
   margin: 10px;
   padding: 0.5em;
   color: rgb(4, 4, 4);
-  border-radius: 8px;
-  font-size: medium;
+font-size: 18px; 
+ border-radius: 8px;
 }
 
 .add-button:hover {
-  background:#9e9d9d;
+  background:#cfcbcb;
 }
 
 

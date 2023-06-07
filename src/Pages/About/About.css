@@ -1,60 +1,143 @@
-    /* .page {
-        overflow-y: scroll;
-        background-color:rgb(74,110,222);
-        height: 100vh;
-     
-      } */
+.page {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+  margin-bottom: 2%;
 
-      
-      .page {
-        display: flex;
-        flex-direction: column;
-      }
-      
-      .box {
-        margin: 5%;
-        width: 100%;
-        padding: 20px;
-        box-sizing: border-box;      }
-      
-        .rentals-about {
-          align-self: flex-start;
-          margin-right: 20px;
-          background-color: #fdd1ba;
-          width: 50%;
-        }
-        
-        .jobs-about {
-          align-self: flex-end;
-          margin-left: 20px;
-          background-color: rgb(144,182,192);
-          width: 50%;
-        }
-        
-        .community-about {
-          align-self: flex-start;
-          margin-right: 20px;
-          background-color: rgb(255,223,165);
-          width: 50%;
-        }
-      
-      
-      
-      
-      
-      
-      
 
-      
-      .rentals-about h1,
-      .jobs-about h1,
-      .community-about h1 {
-        margin: 0;
-      }
-      
-      .rentals-about p,
-      .jobs-about p,
-      .community-about p {
-        margin-top: 10px;
-      }
-      
+}
+
+.about-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 25px;
+  text-align: center;
+  color: rgb(124, 123, 123);
+  text-decoration: underline double rgb(254, 150, 76);
+  /* background: linear-gradient(90deg,rgb(13, 98, 236) 40%, rgba(241,146,32,1) 60%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;     */
+}
+
+.box {
+  margin: 2%;
+  width: 100%;
+  padding: 20px;
+  border-radius: 15px 60px;
+}
+
+.rentals-about {
+  display: flex;
+  flex-direction: row;
+  row-gap: 50px;
+  align-self: flex-start;
+  margin-right: 20px;
+  background-color: #fdd1ba;
+  width: 50%;
+  height: 330px;
+  padding-right: 15px;
+}
+
+.jobs-about {
+  display: flex;
+  flex-direction: row;
+  row-gap: 50px;
+  align-self: flex-end;
+  margin-left: 20px;
+  background: rgba(146, 210, 200, 1);
+  width: 50%;
+  height: 320px;
+  padding-right: 15px;
+
+}
+
+.community-about {
+  display: flex;
+  flex-direction: row;
+  row-gap: 50px;
+  align-self: flex-start;
+  margin-right: 20px;
+  background-color: rgb(255, 223, 165);
+  width: 50%;
+  height: 320px;
+  padding-right: 15px;
+
+}
+.about-text {
+  margin-left: 10px;
+  font-size: larger;
+}
+
+.about-img {
+  margin: 5px;
+}
+
+.rentals-about h1,
+.jobs-about h1,
+.community-about h1 {
+  margin-top: 5px;
+  margin-bottom: 15px;
+
+}
+
+.rentals-about p,
+.jobs-about p,
+.community-about p {
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.About-btn{
+  align-items: center;
+  background-color: #fb7f19;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(249, 245, 245, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 20px;
+  font-weight: 200;
+  justify-content: center;
+  line-height: 0.5;
+  margin-top: 20px;
+  min-height: 2.3rem;
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.About-btn:hover,
+.About-btn:focus {
+  border-color: rgba(249, 126, 3, 0.952);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.About-btn:hover {
+  transform: translateY(-1px);
+  background-color: rgb(249, 247, 243);
+  color: #f4a96b;
+}
+
+.About-btn:active {
+  background-color: #f0f0f1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
