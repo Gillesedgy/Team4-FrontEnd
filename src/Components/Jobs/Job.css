@@ -1,9 +1,18 @@
-.job-container {
+.jobs-container {
   display: grid;
-  width: 80%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.job-container {
+  display: flex;
+  flex-direction: column;
   margin-left: auto;
   margin-right: auto;
-  grid-template-columns: 1fr 1fr 1fr;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 1em;
@@ -12,12 +21,21 @@
   border: solid 1px rgb(62, 110, 97);
   overflow: hidden;
   background: rgb(227, 225, 224);
+  height: 320px;
 }
 .job-container:hover {
-  background:  rgba(241,237,236,1);  
-  background: linear-gradient(90deg, rgb(162, 211, 203) 0%, rgba(241,237,236,1) 59%);
-  background: linear-gradient(90deg, rgba(146,210,200,1) 0%, rgba(181,214,212,1) 36%, rgba(236,241,240,1) 74%);
-  
+  background: rgba(241, 237, 236, 1);
+  background: linear-gradient(
+    90deg,
+    rgb(162, 211, 203) 0%,
+    rgba(241, 237, 236, 1) 59%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(146, 210, 200, 1) 0%,
+    rgba(181, 214, 212, 1) 36%,
+    rgba(236, 241, 240, 1) 74%
+  );
 }
 .icon-company-container {
   font-size: 1.3em;
@@ -41,8 +59,8 @@
 
 .job-icon {
   border: 1px solid black;
-  width: 5em;
-  height: 5em;
+  width: 8em;
+  height: 8em;
   border-radius: 5px;
   background-color: rgba(245, 245, 245, 0.834);
 }
@@ -51,6 +69,10 @@
   display: grid;
   justify-content: center;
   align-items: center;
+  margin: 3px;
+}
+.right-section p {
+  margin: 3px;
 }
 
 .link {
@@ -74,20 +96,23 @@
   cursor: pointer;
 }
 .add-button {
-/* background: rgb(253,209,186); */
   background-color: rgb(162, 211, 203);
   width: 90%;
   margin: 10px;
   padding: 0.5em;
   color: rgb(4, 4, 4);
-font-size: 18px; 
- border-radius: 8px;
+  font-size: 18px;
+  border-radius: 8px;
 }
 
 .add-button:hover {
-  background:#cfcbcb;
+  background: #cfcbcb;
 }
-
+.company {
+  font-size: 1em;
+  color: rgb(74, 110, 222);
+  text-shadow: rgba(85, 133, 195, 0.325) 2px 5px;
+}
 
 .jobs {
   margin-top: 20px;

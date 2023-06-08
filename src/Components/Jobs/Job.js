@@ -13,22 +13,22 @@ export default function Job({
 
   return (
     <Link className="link" to={`/jobs/${id}`}>
-      <div className="job-container">
-        <div className="left-section">
+      <div className="job-container job-card">
+        <div className="left-section job-card-content">
           <div className="icon-company-container">
             <img className="job-icon" src={logoImage} alt="job-icon" />
             <h4 className="company">{company}</h4>
           </div>
         </div>
         {/* Middle  */}
-        <div className="middle-section">
+        <div className="middle-section job-card-title">
           <h2>{job_title}</h2>
         </div>
         {/* Right */}
-        <div className="right-section">
-          <p>
+        <div className="right-section job-card-p ">
+          {/* <p>
             <em>Posted Date:</em> {middle}, {year}
-          </p>
+          </p> */}
           <p>
             <strong>Location:</strong> {location}
           </p>
