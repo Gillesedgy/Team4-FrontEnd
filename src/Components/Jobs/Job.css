@@ -56,6 +56,8 @@
 .middle-section {
   align-items: center;
   text-align: center;
+  color: rgb(74, 110, 222);
+  text-shadow: rgba(85, 133, 195, 0.325) 2px 5px;
 }
 .left-section {
   display: flex;
@@ -95,6 +97,8 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1em;
+  color: rgb(74, 110, 222);
+  text-shadow: rgba(85, 133, 195, 0.325) 2px 5px;
 }
 .jobs-button-container {
   display: grid;
@@ -116,8 +120,6 @@
 }
 .company {
   font-size: 1em;
-  color: rgb(74, 110, 222);
-  text-shadow: rgba(85, 133, 195, 0.325) 2px 5px;
 }
 
 .jobs {
