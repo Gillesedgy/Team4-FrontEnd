@@ -35,7 +35,7 @@
     90deg,
     rgba(146, 210, 200, 1) 0%,
     rgba(236, 241, 240, 1) 74%
-
+  );
 }
 .icon-company-container {
   font-size: 1.3em;
@@ -54,7 +54,7 @@
   align-items: center;
   text-align: center;
   color: rgb(74, 110, 222);
-  text-shadow: rgba(85, 133, 195, 0.325) 2px 5px;
+  /* text-shadow: rgba(85, 133, 195, 0.325) 2px 5px; */
 }
 .left-section {
   display: flex;
@@ -95,7 +95,6 @@
   margin-right: auto;
   margin-bottom: 1em;
   color: rgb(74, 110, 222);
-  text-shadow: rgba(85, 133, 195, 0.325) 2px 5px;
 }
 .jobs-button-container {
   display: grid;
@@ -103,7 +102,6 @@
   cursor: pointer;
 }
 .add-button {
-
   background-color: rgb(162, 211, 203);
   width: 90%;
   margin: 10px;
@@ -121,15 +119,13 @@
   font-size: 1em;
 }
 
-
-font-size: 18px; 
+/* font-size: 18px; 
  border-radius: 8px;
-}
+} */
 
 .add-button:hover {
-  background:#cfcbcb;
+  background: #cfcbcb;
 }
-
 
 .jobs {
   margin-top: 20px;
