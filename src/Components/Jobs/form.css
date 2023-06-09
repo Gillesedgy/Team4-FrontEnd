@@ -18,7 +18,7 @@
 .form-logo {
   display: block;
   margin: 0 auto;
-  max-width: 200px; /* Adjust the maximum width as desired */
+  max-width: 200px;
   height: auto;
 }
 .jobForm label {

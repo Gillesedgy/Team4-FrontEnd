@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import axios from "axios";
 import Job from "./Job";
 import { RiFileAddLine } from "react-icons/ri";
-// import {CgFolderAdd} from 'react-icons/cg'
+import "./Job.css";
 const API = process.env.REACT_APP_API_URL;
 export default function Jobs() {
   const [jobs, setJobs] = useState([]);
@@ -30,10 +30,11 @@ export default function Jobs() {
           </button>
         </div>
       </h2>
-
-      {jobs.map((job) => {
-        return <Job job={job} key={job.id} />;
-      })}
+      <div className="jobs-container">
+        {jobs.map((job) => {
+          return <Job job={job} key={job.id} />;
+        })}
+      </div>
     </div>
   );
 }

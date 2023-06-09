@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 import "./commentForm.css";
-import { useParams, useNavigate } from "react-router";
+import { ContextData } from "../../Provider";
 const API = process.env.REACT_APP_API_URL;
 
 export default function NewCommentForm({ postId }) {
   const [comment, setComment] = useState("");
-  // const { commentId } = useParams();
+  const { username } = useContext(ContextData);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,9 +29,10 @@ export default function NewCommentForm({ postId }) {
       })
       .catch((err) => console.warn(err));
   };
-
   return (
     <div className="comment-form">
+      {console.log(localStorage.getItem("user"))}
+      {console.log(localStorage.getItem("user"))}
       <form onSubmit={handleSubmit}>
         <textarea
           value={comment}

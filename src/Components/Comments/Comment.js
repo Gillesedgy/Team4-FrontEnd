@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
+
 export default function Comment({
   comment: { comment_body, created_at, id },
   postId,
@@ -19,6 +20,7 @@ export default function Comment({
       })
       .catch((error) => console.warn(error));
   };
+
   let dateMade = new Date(created_at);
   dateMade = dateMade.toDateString();
   let year = dateMade.split(" ").pop();
