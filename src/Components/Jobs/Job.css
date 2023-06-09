@@ -21,6 +21,7 @@
   border: solid 1px rgb(62, 110, 97);
   overflow: hidden;
   background: rgb(227, 225, 224);
+
   height: 350px;
 }
 .job-container:hover {
@@ -35,7 +36,7 @@
     rgba(146, 210, 200, 1) 0%,
     rgba(181, 214, 212, 1) 36%,
     rgba(236, 241, 240, 1) 74%
-  );
+
 }
 .icon-company-container {
   font-size: 1.3em;
@@ -103,11 +104,13 @@
   cursor: pointer;
 }
 .add-button {
+
   background-color: rgb(162, 211, 203);
   width: 90%;
   margin: 10px;
   padding: 0.5em;
   color: rgb(4, 4, 4);
+
   font-size: 18px;
   border-radius: 8px;
 }
@@ -118,6 +121,16 @@
 .company {
   font-size: 1em;
 }
+
+
+font-size: 18px; 
+ border-radius: 8px;
+}
+
+.add-button:hover {
+  background:#cfcbcb;
+}
+
 
 .jobs {
   margin-top: 20px;

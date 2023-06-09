@@ -76,7 +76,6 @@ svg.icon-nav {
 .nav-links:hover {
   background-color: transparent;
   font-size: larger;
-  color: #f59d22;
   border-radius: 4px;
   transition: all 0.2s ease-out;
 }
