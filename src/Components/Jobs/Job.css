@@ -2,8 +2,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3em;
-  /* justify-content: space-between; */
-  /* align-items: center; */
   margin-left: auto;
   margin-right: auto;
   width: 86%;
@@ -49,7 +47,6 @@
   column-gap: 5px;
 }
 .company {
-  /* margin: 0.4em; */
   font-size: 0.8em;
 }
 /* JOB Title */
