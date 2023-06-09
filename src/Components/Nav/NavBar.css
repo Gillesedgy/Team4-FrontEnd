@@ -19,8 +19,7 @@ svg.icon-nav {
 }
 
 .navbar {
-  /* background: rgb(235, 229, 230); */
-  background: salmon;
+  background: rgb(235, 229, 230);
   height: 13%;
   width: 100%;
   display: flex;
