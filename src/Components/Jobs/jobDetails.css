@@ -29,7 +29,7 @@
   padding: 2em;
   border-radius: 8px;
   background-color: white;
-  width: 100%;
+  width: 70vw;
   margin-right: auto;
   margin-left: auto;
   margin-top: 25px;
@@ -37,7 +37,7 @@
 }
 .page-container .back-button {
   margin-left: 20px;
-  /* top: 10px; */
+
   left: 10px;
 }
 .back-button-top {
@@ -75,7 +75,10 @@
 .details-icon img {
   width: 50%;
 }
-
+.job-details-body {
+  background-color: orange;
+  padding: 5px;
+}
 .job-details-body strong {
   font-size: 14px;
 }
@@ -89,6 +92,9 @@
   border-radius: 8px;
   margin-top: 10px;
   padding: 10px;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: scroll;
 }
 .description-label strong {
   font-size: 1.2em;
@@ -100,6 +106,7 @@
 
 .company {
   margin-bottom: 10px;
+  margin-left: 0%;
 }
 .salary {
   margin-bottom: 10px;
@@ -113,18 +120,27 @@
 }
 .center {
   margin-top: 1em;
-  margin: 0;
+
   display: flex;
   border-radius: 10px;
   background-color: rgba(85, 133, 195, 0.325);
-  width: 50%;
+  width: 60%;
   padding: 0.5em;
   justify-content: space-between;
+  text-align: center;
+}
+.skill,
+.requirement {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  justify-content: center;
 }
 .divide {
   border: 1px solid black;
   border-radius: 3px;
   margin: 10px;
+  height: auto;
 }
 .rec {
   margin-bottom: 10px;

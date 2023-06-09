@@ -26,9 +26,6 @@ export default function Job({
         </div>
         {/* Right */}
         <div className="right-section job-card-p ">
-          {/* <p>
-            <em>Posted Date:</em> {middle}, {year}
-          </p> */}
           <p>
             <strong>Location:</strong> {location}
           </p>

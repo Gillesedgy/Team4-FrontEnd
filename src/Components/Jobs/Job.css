@@ -1,13 +1,15 @@
 .jobs-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  gap: 3em;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  margin-left: auto;
+  margin-right: auto;
+  width: 86%;
   padding: 20px;
 }
-
+/* Job Details */
 .job-container {
   display: flex;
   flex-direction: column;
@@ -47,9 +49,10 @@
   column-gap: 5px;
 }
 .company {
-  margin: 0.4em;
+  /* margin: 0.4em; */
   font-size: 0.8em;
 }
+/* JOB Title */
 .middle-section {
   align-items: center;
   text-align: center;
@@ -67,7 +70,7 @@
   border-radius: 5px;
   background-color: rgba(245, 245, 245, 0.834);
 }
-
+/* Location and Language */
 .right-section {
   display: grid;
   justify-content: center;
