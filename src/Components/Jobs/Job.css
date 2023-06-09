@@ -21,7 +21,7 @@
   border: solid 1px rgb(62, 110, 97);
   overflow: hidden;
   background: rgb(227, 225, 224);
-  height: 320px;
+  height: 350px;
 }
 .job-container:hover {
   background: rgba(241, 237, 236, 1);
@@ -50,7 +50,10 @@
   margin: 0.4em;
   font-size: 0.8em;
 }
-.middle-section,
+.middle-section {
+  align-items: center;
+  text-align: center;
+}
 .left-section {
   display: flex;
   justify-content: center;
