@@ -17,19 +17,22 @@
 .starred_stuff {
   display: flex;
   flex-direction: row;
-
+  height: 20em;
   gap: 0.7em;
   border: 1px solid #f98648;
-  border-radius:  8px;
+  border-radius: 8px;
   background-color: #f1d6cb;
   padding: 0.6em;
 }
 
 .fav_rental,
 .star-job-container {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
   height: 90%;
-  width: 100%;
+  width: 14em;
+  height: 18.5em;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1em;
@@ -81,4 +84,20 @@
   margin-right: auto;
   margin-left: auto;
   padding-bottom: 0.3em;
+}
+
+.placeholder_text_fav {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* media queries*/
+
+@media only screen and (max-width: 600px) {
+  .favorites_container,
+  .starred_stuff {
+    flex-direction: column;
+  }
 }

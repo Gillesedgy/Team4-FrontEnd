@@ -43,19 +43,27 @@ export default function UserFavs() {
     <div className="saved_container">
       <h3 className="favorites_container_title">Favorite Listings</h3>
       <div className="favorites_container">
-        {favorites.length > 0
-          ? favorites.map((fav) => {
-              return <Fav id={fav.id} fav={fav} />;
-            })
-          : null}
+        {favorites.length > 0 ? (
+          favorites.map((fav) => {
+            return <Fav id={fav.id} fav={fav} />;
+          })
+        ) : (
+          <div className="placeholder_text_fav">
+            <p>Nothing favorited yet</p>
+          </div>
+        )}
       </div>
       <h3 className="starred_container_title">Starred Jobs</h3>
       <div className="starred_stuff">
-        {starred.length > 0
-          ? starred.map((star) => {
-              return <Star key={star.id} star={star} />;
-            })
-          : null}
+        {starred.length > 0 ? (
+          starred.map((star) => {
+            return <Star key={star.id} star={star} />;
+          })
+        ) : (
+          <div className="placeholder_text_fav">
+            <p>Nothing saved yet</p>
+          </div>
+        )}
       </div>
     </div>
   );

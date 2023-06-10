@@ -1,6 +1,7 @@
 .wrapper-user {
   background-color: #f2eae6;
-  height: 100%;
+  height: auto;
+  padding-bottom: 2em;
 }
 
 .user-profile {
@@ -67,4 +68,36 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+@media only screen and (max-width: 820px) {
+  .wrapper-user {
+    padding-top: 5em;
+  }
+
+  .user-profile {
+    width: auto;
+  }
+
+  .user-avatar {
+    height: 12em;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .profile-header h2 {
+    font-size: large;
+    width: 120%;
+  }
+
+  .favorites_container {
+    overflow-x: scroll;
+  }
+
+  .user-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+  }
 }
