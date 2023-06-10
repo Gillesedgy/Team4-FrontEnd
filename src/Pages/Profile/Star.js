@@ -31,9 +31,6 @@ export default function Star({
         <div className="star-content">
           <h3>{job_title}</h3>
           <p>
-            <em>Posted Date:</em> {middle}, {year}
-          </p>
-          <p>
             <strong>Location:</strong> {location}
           </p>
           <p>

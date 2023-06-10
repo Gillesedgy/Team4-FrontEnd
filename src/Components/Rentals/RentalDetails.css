@@ -15,7 +15,7 @@
 }
 
 .rental_details {
-  width: 70%;
+  width: 70vw;
   margin-right: auto;
   margin-left: auto;
   padding: 2em;
@@ -128,9 +128,90 @@
 }
 
 .heart_button {
-  float: right;
-  background-color: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
+
 .heart_button button {
+  padding-top: 1.63em;
   background-color: white;
+}
+
+/*media queries */
+
+@media (max-width: 767px) {
+  .rental_details {
+    padding-top: 3em;
+    width: 100%;
+  }
+
+  .rental_dets_image img {
+    height: 16em;
+    width: 18em;
+    border-radius: 6px;
+  }
+
+  .important_dets {
+    width: 80%;
+    justify-content: space-evenly;
+  }
+
+  .important_dets p {
+    padding-right: 0.5em;
+  }
+
+  .hr {
+    margin-right: 1.3em;
+  }
+
+  .show-button {
+    width: 50%;
+  }
+
+  .like_container {
+    margin-bottom: 3em;
+  }
+
+  .heart_button {
+    width: 80%;
+  }
+
+  .recommended-container {
+    height: 40em;
+    overflow-y: scroll;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .rental_details {
+    padding-top: 3em;
+    width: 100%;
+  }
+
+  .contact-rec-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+  }
+
+  .recommended-container {
+    height: 50em;
+    overflow-y: scroll;
+    width: 100%;
+  }
+
+  .contact-container {
+    width: 100%;
+  }
+
+  .show-button {
+    width: 30%;
+  }
+
+  .rental_dets_image img {
+    height: 24em;
+    width: auto;
+    border-radius: 6px;
+  }
 }

@@ -27,19 +27,23 @@ export default function Rentals() {
   }, []);
 
   return (
-    <div className="rentals">
-      <h2 className="rentals_title">Rental Listings</h2>
-      <div className="rentals_button_container">
-        <button
-          className="rentals_add"
-          onClick={() => navigate(`/listings/new`)}
-        >
-          <RiFileAddLine /> Add New
-        </button>
+    <div className="rentals_page_main_container">
+      <div className="title_add_container">
+        <h2 className="rentals_title">Rental Listings</h2>
+        <div className="rentals_button_container">
+          <button
+            className="rentals_add"
+            onClick={() => navigate(`/listings/new`)}
+          >
+            <RiFileAddLine /> Add New
+          </button>
+        </div>
       </div>
-      {rentals.map((rental) => {
-        return <Rental key={rental.id} rental={rental} />;
-      })}
+      <div className="rentals">
+        {rentals.map((rental) => {
+          return <Rental key={rental.id} rental={rental} />;
+        })}
+      </div>
     </div>
   );
 }

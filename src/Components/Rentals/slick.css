@@ -18,11 +18,10 @@
 /* Slider */
 .slick-slider {
   position: relative;
-
   position: block;
   height: 500px;
   width: 700px;
-  /* background-color: rgb(205, 237, 246); */
+
   display: block;
   box-sizing: border-box;
 
@@ -120,4 +119,46 @@
 }
 .slick-arrow.slick-hidden {
   display: none;
+}
+
+/*media queries */
+@media (max-width: 767px) {
+  .carousel {
+    padding: 0;
+    padding-bottom: 1.6em;
+  }
+  .slick-slider {
+    position: relative;
+    height: 300px;
+    width: 300px;
+  }
+
+  .slick-dots {
+    bottom: -10px;
+  }
+
+  .slick-list img {
+    padding-right: 0.5em;
+    object-fit: contain;
+  }
+
+  .div_carousel div {
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1204px) {
+  .carousel {
+    padding: 0;
+    padding-bottom: 2.2em;
+  }
+  .slick-slider {
+    position: relative;
+    height: 400px;
+    width: 500px;
+  }
+
+  .slick-dots {
+    bottom: -10px;
+  }
 }

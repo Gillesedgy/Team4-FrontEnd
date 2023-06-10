@@ -5,44 +5,70 @@
 }
 
 .rentals {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3em;
 }
 
 .rentals_title {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1em;
-  width: 80%;
+  width: 90%;
+  font-size: 1.6em;
+  color: rgb(60, 60, 60);
 }
 
 .rental {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  width: 80%;
+  display: flex;
+  flex-direction: column;
+  height: 25em;
+
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1em;
   border: solid 1px rgb(202, 176, 179);
   border-radius: 10px;
   box-shadow: 3px 5px 4px rgb(225, 221, 221);
-  padding: 0.8em;
- 
-/* background: rgb(115,174,182);
-background: linear-gradient(90deg, rgba(115,174,182,1) 0%, rgba(241,237,236,1) 59%);
- */
-background: rgb(228, 226, 226);
 
-
+  background: rgb(228, 226, 226);
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .rental:hover {
-  /* background-color: rgb(204, 240, 251); */
-  background: linear-gradient(90deg, rgba(247,178,141,1) 13%, rgba(255,221,203,1) 53%, rgba(249,228,212,1) 66%, rgba(241,238,236,1) 79%);
+  background: linear-gradient(
+    90deg,
+    rgba(247, 178, 141, 1) 13%,
+    rgba(255, 221, 203, 1) 53%,
+    rgba(249, 228, 212, 1) 66%,
+    rgba(241, 238, 236, 1) 79%
+  );
 }
 .rental_image {
-  height: 10em;
-  border-radius: 8px;
+  height: 16em;
+  width: auto;
+
+  margin-right: auto;
+  margin-left: auto;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s;
+}
+
+.rental_image:hover {
+  transform: scale(1.12);
+}
+
+.rental_image_div {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  background-color: rgba(252, 252, 252, 0.469);
+
+  overflow: clip;
+  height: 15em;
 }
 
 .rental_title,
@@ -50,10 +76,24 @@ background: rgb(228, 226, 226);
   display: grid;
   justify-content: center;
   align-content: center;
+
+  margin: auto;
+}
+.title_add_container {
+  display: flex;
+  flex-direction: row;
+  padding-left: 1.6em;
+  padding-right: 1.6em;
+}
+
+.rentals_page_main_container {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .rental_descrip {
-  line-height: 2em;
+  line-height: 1.5em;
 }
 
 .rentals a {
@@ -62,14 +102,25 @@ background: rgb(228, 226, 226);
 }
 
 .rentals h3 {
-  margin-left: 1em;
+  margin-left: auto;
+  margin-right: auto;
   font-size: larger;
+  text-align: center;
 }
 
 .rentals_button_container {
-  width: 90%;
   display: grid;
   justify-content: right;
+}
+
+.bed_info_div {
+  display: grid;
+}
+
+.bed_info_div p {
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly;
 }
 
 .rentals_add {
@@ -77,34 +128,49 @@ background: rgb(228, 226, 226);
   padding: 0.5em;
   border: 1px solid rgb(132, 133, 133);
   color: rgb(15, 14, 14);
-  background-color: rgb(253,209,186);
+  background-color: rgb(253, 209, 186);
   border-radius: 8px;
-  font-size: medium;
+  font-size: 18px;
   margin-bottom: 22px;
+  width: 90%;
 }
 
 .rentals_add:hover {
   transform: translateY(-1.5px);
   background-color: rgb(177, 176, 176);
   border: 1px solid rgb(240, 184, 166);
-
 }
-
-
 
 .rental_description {
   margin-right: 1em;
 }
 
-@media (max-width: 768px) {
+/* media queries */
+@media (max-width: 767px) {
+  .title_add_container {
+    padding: 0px;
+  }
+
+  .rentals_page_main_container {
+    width: 75vw;
+    padding-top: 4em;
+  }
+
   .rental {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: left;
+  }
+
+  .rentals {
+    grid-template-columns: 1fr;
   }
 
   .rental_image {
     display: block;
+    height: 22em;
+
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 0.5em;
@@ -113,5 +179,48 @@ background: rgb(228, 226, 226);
   .rental_title,
   .rental_descrip {
     text-align: left;
+  }
+
+  .rentals h3 {
+    margin-left: 0;
+  }
+}
+
+/* (min-device-width: 768px) and ( */
+/* and (min-width: 720px) and  */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .rentals_page_main_container {
+    width: 70vw;
+    padding-top: 6em;
+  }
+
+  .rental {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .rentals {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rental_image {
+    display: block;
+    height: 22em;
+
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0.5em;
+  }
+
+  .rental_title,
+  .rental_descrip {
+    text-align: left;
+  }
+
+  .rentals h3 {
+    margin-left: 0;
   }
 }

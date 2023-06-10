@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { BiBed } from "react-icons/bi";
 
 export default function Rental({
   rental: { id, title, image_url, rooms, price },
@@ -7,7 +8,7 @@ export default function Rental({
   return (
     <Link to={`/listings/${id}`}>
       <div className="rental">
-        <div>
+        <div className="rental_image_div">
           <img className="rental_image" src={image_url[0]} alt={image_url} />
         </div>
         <div className="rental_title">
@@ -17,10 +18,13 @@ export default function Rental({
           <p>
             <b>Rent: </b>${price}
           </p>
-          <p>
-            <b>Beds: </b>
-            {rooms === 0 ? "Studio" : rooms + " BR"}{" "}
-          </p>
+          <div className="bed_info_div">
+            <p>
+              <BiBed style={{ fontSize: "1.2em", float: "left" }} />{" "}
+              {/* <b>Beds: </b> */}
+              {rooms === 0 ? "Studio" : rooms + " BR"}{" "}
+            </p>
+          </div>
         </div>
       </div>
     </Link>

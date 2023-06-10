@@ -47,7 +47,6 @@
 
 .slick-prev:before,
 .slick-next:before {
-  /*font-family: 'slick';*/
   font-size: 20px;
   line-height: 1;
 
@@ -166,3 +165,15 @@
   opacity: 0.75;
   color: black;
 }
+
+/* @media (max-width: 767px) {
+  .slick-dots {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .slick-dots {
+    display: none;
+  }
+} */

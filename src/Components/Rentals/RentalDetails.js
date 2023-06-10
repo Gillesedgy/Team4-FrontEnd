@@ -70,16 +70,18 @@ export default function RentalDetails({ handleAddressSubmit }) {
 
   return (
     <div className="rental_details">
-      <div className="heart_button">
-        {console.log(rental)}
+      {/* <div className="heart_button">
         <Liked listingId={id} />
-      </div>
+      </div> */}
       <div className="details_main_content">
         <div className="rental_dets_image">
           <Carousel images={images} />
         </div>
 
-        <h2 className="rental_dets_title">{rental.title}</h2>
+        <div className="heart_button">
+          <h2 className="rental_dets_title">{rental.title}</h2>
+          <Liked listingId={id} />
+        </div>
         <p>
           <em>
             Date Posted: {middle}, {year}

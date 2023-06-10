@@ -63,9 +63,7 @@ export default function Liked({ listingId }) {
       ? (isListingLiked = liked.find((listing) => listing.id == listingId))
       : setIsLiked(false);
     isListingLiked ? setIsLiked(true) : setIsLiked(false);
-    // let isListingLiked = liked.filter((listing) => listing.id == listingId);
-    // setIsLiked(!!isListingLiked);
-  }, [liked]);
+  }, [liked, listingId]);
 
   function handleToggleLike() {
     if (isLiked) {
@@ -83,7 +81,6 @@ export default function Liked({ listingId }) {
   return (
     <div className="like_container">
       <button onClick={handleToggleLike} style={{ border: "none" }}>
-        {console.log(liked)}
         {isLiked ? (
           <BsSuitHeartFill
             style={{
