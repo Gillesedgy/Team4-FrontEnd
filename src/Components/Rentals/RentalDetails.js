@@ -70,6 +70,13 @@ export default function RentalDetails({ handleAddressSubmit }) {
 
   return (
     <div className="rental_details">
+      <button
+        className="back-button-top"
+        style={{ backgroundColor: "teal" }}
+        onClick={() => navigate(`/rentals`)}
+      >
+        Back
+      </button>
       {/* <div className="heart_button">
         <Liked listingId={id} />
       </div> */}
