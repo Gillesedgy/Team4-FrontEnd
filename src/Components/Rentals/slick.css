@@ -20,7 +20,7 @@
   position: relative;
   position: block;
   height: 500px;
-  width: 700px;
+  width: 600px;
 
   display: block;
   box-sizing: border-box;
@@ -147,7 +147,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1204px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .carousel {
     padding: 0;
     padding-bottom: 2.2em;
