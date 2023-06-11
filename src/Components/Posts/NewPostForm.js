@@ -31,6 +31,21 @@ export default function NewPostForm() {
     { value: "Urdu", label: "Urdu" },
   ];
 
+  const onChange = (e) => {
+    async function fileToBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader(); // built in function
+        reader.readAsDataURL(file); // methods that reads the file and turns it into data uri
+        reader.onload = () => resolve(reader.result); // if file is read resolve with the uri
+        reader.onerror = (error) => reject(error); // if the file fails to be read reject with the error
+      });
+    }
+
+    fileToBase64(e.target.files[0]).then((uri) => {
+      setPost({ ...post, image_url: uri });
+    });
+  };
+
   const handleTextChange = (e) => {
     setPost({ ...post, [e.target.id]: e.target.value });
   };
@@ -84,12 +99,21 @@ export default function NewPostForm() {
           style={{ fontFamily: "Helvetica" }}
         />
         <br />
-        <label>Image: </label>
+        {/* <label>Image: </label>
         <input
           type="url"
           id="image_url"
           value={post.image_url}
           onChange={handleTextChange}
+        /> */}
+        <label htmlFor="image_url">Post Picture: </label>
+        <input
+          className="file"
+          id="image_url"
+          type="file"
+          accept=".png, .jpg, .jpeg"
+          placeholder="Post Picture"
+          onChange={onChange}
         />
         <label>Native Language: </label>
         <select
