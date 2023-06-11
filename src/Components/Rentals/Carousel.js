@@ -18,9 +18,9 @@ export default function Carousel({ images }) {
   return (
     <div className="carousel">
       <Slider ref={slider} {...settings}>
-        {images.map((image) => {
+        {images.map((image, index) => {
           return (
-            <div className="div_carousel">
+            <div key={index} className="div_carousel">
               <img src={image} alt={image} />
             </div>
           );
