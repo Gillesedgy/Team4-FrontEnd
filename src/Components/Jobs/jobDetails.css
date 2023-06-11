@@ -21,7 +21,6 @@
 }
 .job-title {
   color: rgb(74, 110, 222);
-  text-shadow: rgba(85, 133, 195, 0.325) 2px 5px;
 }
 
 .page-container {
@@ -82,11 +81,11 @@
   padding: 5px;
 }
 .job-details-body strong {
-  font-size: 14px;
+  font-size: 16px;
 }
 .job-details-body span {
   margin-left: 5px;
-  font-size: 14px;
+  font-size: 16px;
 }
 .description {
   border: 2px solid rgb(170, 168, 168);
@@ -203,9 +202,6 @@
 .buttons-container {
   justify-content: space-between;
   display: flex;
-  /* gap: 10px; */
-  /* grid-template-columns: repeat(3, 1fr); */
-  /* width: 30vw; */
 }
 .button {
   width: 6rem;
@@ -227,6 +223,25 @@
 .button:hover {
   box-shadow: var(--button-hover-box-shadow);
   transform: var(--button-hover-transform);
+}
+/* 480px */
+@media (max-width: 480px) {
+  .job-container {
+    padding: 10px;
+    height: auto;
+  }
+
+  .job-icon {
+    width: 6em;
+    height: 6em;
+  }
+
+  .right-section p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word; /* Add this property */
+  }
 }
 
 /* 844px */
@@ -259,6 +274,7 @@
 
   .center {
     width: 80%;
+    overflow: none;
   }
 
   .contact-rec-container {
