@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 //components
 import Account from "./Pages/Profile/Account";
-import Error from "./Pages/Error";
+// import Error from "./Features/Error";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
 import Welcome from "./Pages/Welcome/Welcome";
@@ -44,7 +44,7 @@ export default function RouteComponent() {
         <Route path="/communityBoard/:id/edit" element={<EditPostForm />} />
         <Route path="/communityBoard/new" element={<NewPostForm />} />
         <Route path="/account" element={<Account />} />
-        <Route path="/error" element={<Error />} />
+        {/* <Route path="/error" element={<Error />} /> */}
       </Routes>
     </div>
   );

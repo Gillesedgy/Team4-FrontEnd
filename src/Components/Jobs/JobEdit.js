@@ -4,12 +4,15 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { LogoSelect } from "./LogoSelect";
 import { LanguageSelect } from "../../Features/LanguageSelect";
+import Error from "../../Features/Error";
 const API = process.env.REACT_APP_API_URL;
 //
 export default function JobEdit() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [selectLogo, setSelectLogo] = useState("");
+  const [error, setError] = useState(""); // track err
+  const [success, setSuccess] = useState(""); // track success
+  const [selectLogo, setSelectLogo] = useState(""); // track logo
   const [selectedLanguage, setSelectLanguage] = useState("");
   const [edit, setEdit] = useState({
     logo: "",
@@ -71,12 +74,6 @@ export default function JobEdit() {
   const handleTextChange = (e) => {
     setEdit({ ...edit, [e.target.id]: e.target.value });
   };
-  // check change
-  // const handleCheckChange = () => {
-  //   setEdit({ ...edit, is_favorite: !edit.is_favorite });
-  // };
-  //* Logo
-
   useEffect(() => {
     axios.get(`${API}/jobs/${id}`).then(
       (response) => setEdit(response.data),
@@ -196,6 +193,7 @@ export default function JobEdit() {
           </button>
         </div>
       </form>
+      <Error error={error} success={success} />
     </div>
   );
 }

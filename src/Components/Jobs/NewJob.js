@@ -24,10 +24,8 @@ export default function NewJob({ data }) {
     salary: "",
   });
   //Todo: Job icon functionality
-  // const [logo, setLogo] = useState(handleLogo());
-  const [selectLogo, setSelectLogo] = useState(""); //tracks
 
-  // console.log("logo", logo);
+  const [selectLogo, setSelectLogo] = useState(""); //tracks
   const addNewJob = (addedJob) => {
     axios
       .post(`${API}/jobs`, addedJob, {
@@ -69,8 +67,6 @@ export default function NewJob({ data }) {
     setSelectLanguage(selected);
     setNewJob({ ...newJob, job_type: selected });
   };
-  //Todo: handleLogo Dropdown function
-  // const handleLogoChange = handleLogo;
 
   const handleLogoSelect = (e) => {
     const selectedLogo = e.target.value;

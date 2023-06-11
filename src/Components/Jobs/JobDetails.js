@@ -74,7 +74,7 @@ export default function JobDetails({ handleAddressSubmit }) {
         <button className="back-button-top" onClick={() => navigate(`/jobs`)}>
           Back
         </button>
-        {/* //!LEFT ----- */}
+        {/* // Top ----- */}
         <p className="date p1">
           Posted Date:
           <span>
@@ -86,16 +86,15 @@ export default function JobDetails({ handleAddressSubmit }) {
           {<img src={logoImage} alt="job-icon" />}{" "}
         </div>
 
-        <p className="is_favorite p1">
-          {jobs.is_favorite ? "★" : null}
-          <span>{jobs.is_favorite}</span>
-        </p>
+        {/* <p className="is_favorite p1">{jobs.is_favorite ? "★" : null}</p> */}
         <div className="top job-details-body">
           <div className="job-title-star">
             {" "}
-            <h2 className="job-title">{jobs.job_title}</h2>
             <div className="heart_button star">
-              <Starred jobId={jobs.id} />
+              <h2 className="job-title">{jobs.job_title}</h2>
+              {localStorage.getItem("user_id") === String(jobs.user_id) ? (
+                <Starred jobId={jobs.id} />
+              ) : null}
             </div>
           </div>
 
