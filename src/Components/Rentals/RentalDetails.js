@@ -73,7 +73,7 @@ export default function RentalDetails({ handleAddressSubmit }) {
       <button
         className="back-button-top"
         style={{ backgroundColor: "teal" }}
-        onClick={() => navigate(`/rentals`)}
+        onClick={() => navigate(`/listings`)}
       >
         Back
       </button>
