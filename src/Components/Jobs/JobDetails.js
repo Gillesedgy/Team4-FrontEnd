@@ -81,23 +81,14 @@ export default function JobDetails({ handleAddressSubmit }) {
             {middle}, {year}
           </span>
         </p>
-
         <div className="details-icon">
           {<img src={logoImage} alt="job-icon" />}{" "}
         </div>
-
-        {/* <p className="is_favorite p1">{jobs.is_favorite ? "★" : null}</p> */}
         <div className="top job-details-body">
           <div className="job-title-star">
-            {" "}
-            <div className="heart_button star">
-              <h2 className="job-title">{jobs.job_title}</h2>
-              {localStorage.getItem("user_id") === String(jobs.user_id) ? (
-                <Starred jobId={jobs.id} />
-              ) : null}
-            </div>
+            <h2 className="job-title">{jobs.job_title}</h2>{" "}
+            <Starred className="heart_button star" jobId={jobs.id} />
           </div>
-
           <p className="company p1">
             <strong>Company:</strong>
             <span>{jobs.company}</span>

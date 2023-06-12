@@ -128,7 +128,8 @@
   }
 }
 @media (max-width: 768px) {
-  .job-container {
+  .jobs-container {
+    display: grid;
     grid-template-columns: 1fr;
   }
 

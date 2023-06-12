@@ -6,23 +6,23 @@
   align-items: center;
   margin-top: 100px;
 }
-
 .job-title-star {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 10px;
 }
-.star {
-  margin-left: 10px;
-}
-.star:hover {
+
+.job-title-star .star {
   box-shadow: var(--button-hover-box-shadow);
   transform: var(--button-hover-transform);
+  border: 2px slid greenyellow;
 }
 .job-title {
   color: rgb(74, 110, 222);
+  text-align: center;
 }
-
 .page-container {
   display: flex;
   flex-direction: column;
@@ -36,7 +36,7 @@
   margin-right: auto;
   margin-left: auto;
   margin-top: 25px;
-  position: relative; /*  added for the back button  */
+  position: relative;
 }
 .page-container .back-button {
   margin-left: 20px;
