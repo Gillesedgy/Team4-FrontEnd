@@ -182,14 +182,14 @@ export default function JobEdit() {
         />
         <div className="form-button-container">
           {" "}
-          <button className="button_edit" onClick={handleSubmit} type="submit">
-            Done
-          </button>
           <button
             className="button_edit"
             onClick={() => navigate(`/jobs/${id}`)}
           >
             Back
+          </button>
+          <button className="button_edit" onClick={handleSubmit} type="submit">
+            Done
           </button>
         </div>
       </form>
