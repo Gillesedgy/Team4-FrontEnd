@@ -87,7 +87,7 @@ export default function RentalDetails({ handleAddressSubmit }) {
 
         <div className="heart_button">
           <h2 className="rental_dets_title">{rental.title}</h2>
-          <Liked listingId={id} />
+          {localStorage.getItem("user_id") ? <Liked listingId={id} /> : null}
         </div>
         <p>
           <em>
