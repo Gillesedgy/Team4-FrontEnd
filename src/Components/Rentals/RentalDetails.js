@@ -71,15 +71,13 @@ export default function RentalDetails({ handleAddressSubmit }) {
   return (
     <div className="rental_details">
       <button
-        className="back-button-top"
-        style={{ backgroundColor: "teal" }}
+        className="back-button-top back-button-rental"
+        style={{ backgroundColor: "rgb(216, 169, 143)" }}
         onClick={() => navigate(`/listings`)}
       >
         Back
       </button>
-      {/* <div className="heart_button">
-        <Liked listingId={id} />
-      </div> */}
+
       <div className="details_main_content">
         <div className="rental_dets_image">
           <Carousel images={images} />
@@ -126,12 +124,15 @@ export default function RentalDetails({ handleAddressSubmit }) {
       </>
 
       <div className="rental_map">
-        <h5>View on Map</h5>
+        <h4>View on Map</h4>
         <p>
           <button
             className="show-button button"
             onClick={handleToggle}
-            style={{ backgroundColor: "teal" }}
+            style={{
+              backgroundColor: "rgb(216, 169, 143)",
+              fontSize: ".9em",
+            }}
           >
             {showMap ? "Hide Map" : "View on map"}
           </button>

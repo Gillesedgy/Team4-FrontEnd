@@ -3,15 +3,13 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Rental from "./Rental";
-import { useContextProvider } from "../../Provider";
+
 import "./Rentals.css";
 import { RiFileAddLine } from "react-icons/ri";
 
 const API = process.env.REACT_APP_API_URL;
 
 export default function Rentals() {
-  const { user, setUser } = useContextProvider();
-
   const [rentals, setRentals] = useState([]);
   const navigate = useNavigate();
 

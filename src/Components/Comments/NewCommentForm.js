@@ -31,8 +31,6 @@ export default function NewCommentForm({ postId }) {
   };
   return (
     <div className="comment-form">
-      {console.log(localStorage.getItem("user"))}
-      {console.log(localStorage.getItem("user"))}
       <form onSubmit={handleSubmit}>
         <textarea
           value={comment}

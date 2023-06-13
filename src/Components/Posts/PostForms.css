@@ -1,3 +1,8 @@
+.post_form_container {
+  padding-top: 5em;
+  height: auto;
+}
+
 .post_form {
   border: 1px solid rgba(85, 133, 195, 0.325);
   display: flex;
@@ -49,7 +54,6 @@
   text-align: center;
   margin-bottom: 20px;
   color: darkorange;
-  text-shadow: rgba(85, 133, 195, 0.325) 2px 5px;
 }
 .post_button {
   background-color: orange;
@@ -57,4 +61,8 @@
 .post_button:hover {
   transform: var(--button-hover-transform);
   box-shadow: var(--button-hover-box-shadow);
+}
+
+.file {
+  padding: 0.5em;
 }

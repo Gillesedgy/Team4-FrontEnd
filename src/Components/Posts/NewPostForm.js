@@ -77,70 +77,72 @@ export default function NewPostForm() {
   };
 
   return (
-    <div className="post_form">
-      <h2>New Post</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Title: </label>
-        <input
-          type="text"
-          id="post_title"
-          value={post.post_title}
-          onChange={handleTextChange}
-          required
-        />
-        <br />
-        <label>Post: </label>
-        <textarea
-          type="text"
-          id="post_content"
-          value={post.post_content}
-          onChange={handleTextChange}
-          required
-          style={{ fontFamily: "Helvetica" }}
-        />
-        <br />
-        {/* <label>Image: </label>
+    <div className="post_form_container">
+      <div className="post_form">
+        <h2>New Post</h2>
+        <form onSubmit={handleSubmit}>
+          <label>Title: </label>
+          <input
+            type="text"
+            id="post_title"
+            value={post.post_title}
+            onChange={handleTextChange}
+            required
+          />
+          <br />
+          <label>Post: </label>
+          <textarea
+            type="text"
+            id="post_content"
+            value={post.post_content}
+            onChange={handleTextChange}
+            required
+            style={{ fontFamily: "Helvetica" }}
+          />
+          <br />
+          {/* <label>Image: </label>
         <input
           type="url"
           id="image_url"
           value={post.image_url}
           onChange={handleTextChange}
         /> */}
-        <label htmlFor="image_url">Post Picture: </label>
-        <input
-          className="file"
-          id="image_url"
-          type="file"
-          accept=".png, .jpg, .jpeg"
-          placeholder="Post Picture"
-          onChange={onChange}
-        />
-        <label>Native Language: </label>
-        <select
-          id="native_language"
-          value={post.native_language}
-          onChange={handleSelectChange}
-          required
-        >
-          <option value="">Select a language</option>
-          {languages.map((language) => (
-            <option value={language.value} key={language.value}>
-              {language.label}
-            </option>
-          ))}
-        </select>
-        <div className="form-button-container">
-          <button className="button_edit post_button" onClick={handleSubmit}>
-            Submit!
-          </button>{" "}
-          <button
-            className="button_edit post_button"
-            onClick={() => navigate(`/communityBoard`)}
+          <label htmlFor="image_url">Post Picture: </label>
+          <input
+            className="file"
+            id="image_url"
+            type="file"
+            accept=".png, .jpg, .jpeg"
+            placeholder="Post Picture"
+            onChange={onChange}
+          />
+          <label>Native Language: </label>
+          <select
+            id="native_language"
+            value={post.native_language}
+            onChange={handleSelectChange}
+            required
           >
-            Back
-          </button>
-        </div>
-      </form>
+            <option value="">Select a language</option>
+            {languages.map((language) => (
+              <option value={language.value} key={language.value}>
+                {language.label}
+              </option>
+            ))}
+          </select>
+          <div className="form-button-container">
+            <button
+              className="button_edit post_button"
+              onClick={() => navigate(`/communityBoard`)}
+            >
+              Back
+            </button>
+            <button className="button_edit post_button" onClick={handleSubmit}>
+              Submit!
+            </button>{" "}
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

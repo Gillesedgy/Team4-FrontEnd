@@ -79,6 +79,13 @@
 
   margin: auto;
 }
+.rental_title {
+  font-size: large;
+}
+
+.rental_descrip {
+  font-size: 1.05em;
+}
 .title_add_container {
   display: flex;
   flex-direction: row;
@@ -128,7 +135,7 @@
   padding: 0.5em;
   border: 1px solid rgb(132, 133, 133);
   color: rgb(15, 14, 14);
-  background-color: rgb(253, 209, 186);
+  background-color: rgb(216, 169, 143);
   border-radius: 8px;
   font-size: 18px;
   margin-bottom: 22px;
@@ -138,7 +145,7 @@
 .rentals_add:hover {
   transform: translateY(-1.5px);
   background-color: rgb(177, 176, 176);
-  border: 1px solid rgb(240, 184, 166);
+  border: 1px solid (240, 184, 166) rgb;
 }
 
 .rental_description {

@@ -90,12 +90,14 @@
   background-color: darkgoldenrod;
 }
 
-/* hr {
-  margin: 20px 0;
-} */
 .centered-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Adjust as needed */
+  height: auto;
+  padding-bottom: 1em;
+}
+
+.post_form {
+  padding-top: 5em;
 }

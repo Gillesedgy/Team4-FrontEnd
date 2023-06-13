@@ -15,19 +15,17 @@
 .rental_edit_title {
   margin-bottom: 1em;
   color: #45a0a0;
+  text-align: center;
 }
 
 .new_rental_title {
-  /* margin-bottom: 1em; */
   text-align: center;
   margin-bottom: 20px;
 
-  text-shadow: rgba(147, 155, 166, 0.426) 2px 2px;
   color: #45a0a0;
 }
 
 .rental_form label {
-  /* display: block; */
   display: var(--form-label);
   margin-bottom: 1em;
   font-weight: bold;
@@ -36,7 +34,6 @@
 .rental_form input[type="text"] {
   width: 100%;
   padding: 1em;
-  /* margin-top: 0.3em; */
   border: var(--form-input-border);
   border-radius: 5px;
   margin-bottom: 15px;
@@ -59,7 +56,6 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   resize: none;
-  /* margin-top: 0.5em; */
 }
 
 .rental_form button[type="submit"] {
@@ -97,7 +93,6 @@
 .go_back,
 .add_image {
   margin-bottom: 0.5em;
-  /* padding: 10px 20px; */
   padding: 8px 10px;
   background-color: rgb(125, 188, 188);
   color: #fff;

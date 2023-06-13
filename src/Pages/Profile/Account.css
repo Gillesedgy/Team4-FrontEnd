@@ -33,8 +33,6 @@
 }
 
 .user-container {
-  /* display: grid;
-    grid-template-columns: 2fr 4fr; */
   display: flex;
   flex-direction: row;
   gap: 3em;
@@ -91,7 +89,8 @@
     width: 120%;
   }
 
-  .favorites_container {
+  .favorites_container,
+  .starred_stuff {
     overflow-x: scroll;
   }
 
