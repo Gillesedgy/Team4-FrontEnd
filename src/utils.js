@@ -24,7 +24,7 @@ export const translateSite = async (siteContent, userNativeLanguage, originalLan
 export const getSiteTranslations = (page) => {
   const translations = localStorage.getItem('siteTranslations')
   if (translations) {
-    return JSON.parse(localStorage.getItem('siteTranslations'))[page]
+    // return JSON.parse(localStorage.getItem('siteTranslations'))[page]
   } else {
     return null
   }
