@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import "./Job.css";
 import jobImage from "../../Assets/logoJobImage.jpg";
-export default function Job({
+import { languages } from "../../constants";
+
+export default function Job({ 
   job: { id, job_title, company, location, native_language, posted_date, logo },
 }) {
   const logoImage = logo ? logo : jobImage;
@@ -30,7 +32,7 @@ export default function Job({
             <strong>Location:</strong> {location}
           </p>
           <p>
-            <strong>Native Language:</strong> {native_language}
+            <strong>Native Language:</strong> {languages[native_language]}
           </p>
         </div>
       </div>{" "}
