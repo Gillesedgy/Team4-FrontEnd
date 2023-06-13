@@ -12,13 +12,13 @@ const MorphinWords = () => {
       "Welcome!",
       "bienvenido!",
       "স্বাগতম!",
-      "مرحباً!",
+      "مرحباً",
       "स्वागत!",
       "いらっしゃいませ!",
       "欢迎!",
       "akeyi!",
       "maligayang pagdating!",
-      "خوش آمدید!",
+      "خوش آمدید",
     ];
 
 

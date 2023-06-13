@@ -18,8 +18,10 @@ svg.icon-nav {
   align-items: center;
 }
 
+
 .navbar {
-  background: rgb(235, 229, 230);
+  /* background: rgb(235, 229, 230); */
+  background: #f1edea;
   height: 13%;
   width: 100%;
   display: flex;
@@ -32,7 +34,7 @@ svg.icon-nav {
   /* overflow: hidden; */
 }
 .navbar.active {
-  background-color: rgb(234, 230, 230);
+  background-color: rgb(239, 236, 236);
   /* background-image: url("../../Assets/navimg1.png"); */
   /* opacity: 0.9; */
   background-size: cover;
@@ -90,8 +92,8 @@ svg.icon-nav {
 @media screen and (max-width: 960px) {
   .navbar {
     /* background: rgb(235, 229, 230); */
-    background: white;
-    height: 15%;
+    background: #fbf7f4;
+    height: 10%;
   }
 
   .NavbarItems {
@@ -103,6 +105,8 @@ svg.icon-nav {
   .nav-menu {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 90vh;
     position: absolute;

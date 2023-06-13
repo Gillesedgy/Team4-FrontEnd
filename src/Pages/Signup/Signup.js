@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { useContextProvider } from "../../Provider";
 import { LanguageSelect } from "../../Features/LanguageSelect";
 import "./Signup.css";
+import { translateSite } from "../../utils";
+import content from "../../content";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -34,10 +36,13 @@ export default function Signup() {
       .then(
         (res) => {
           console.log(res.data);
-          navigate("/login");
+          return translateSite(content, selectedLanguage)
         },
         (error) => console.log(error)
-      )
+      ).then((translationJson) => {
+        localStorage.setItem('siteTranslations', JSON.stringify(translationJson))
+        navigate("/login");
+      })
       .catch((c) => console.warn("catch", c));
   }
 

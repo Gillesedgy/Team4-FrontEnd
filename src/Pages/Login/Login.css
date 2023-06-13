@@ -4,6 +4,7 @@
     padding: 20px;
     background-color: #dbdee0;
     border-radius: 5px;
+    margin-top: 5%;
   }
   
   .login_title {
@@ -74,3 +75,16 @@
     color: #45a0a0;
   }
   
+
+  .pinksticker{
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    display: block;
+    position: fixed;
+    margin-top: 7%;
+    margin-left: 30%;
+
+    left: 0;
+    top: 0;
+  }

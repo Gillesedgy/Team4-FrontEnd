@@ -3,8 +3,8 @@
   flex-direction: column;
   margin-top: 2%;
   margin-bottom: 2%;
-
-
+/* background-image: url("https://www.tickettailor.com/v3/svg/report-archive-bg.svg"); */
+background-repeat: no-repeat;
 }
 
 .about-title {
@@ -141,3 +141,4 @@
   color: rgba(0, 0, 0, 0.65);
   transform: translateY(0);
 }
+
