@@ -9,6 +9,7 @@ import MapContainer from "../../Features/MapContainer";
 
 import jobImage from "../../Assets/logoJobImage.jpg";
 import Starred from "../../Features/Starred";
+import { languages } from "../../constants";
 //
 const API = process.env.REACT_APP_API_URL;
 
@@ -111,7 +112,7 @@ export default function JobDetails({ handleAddressSubmit }) {
           </p>
           <p className="native-language p1">
             <strong>Native Language:</strong>
-            <span>{jobs.native_language}</span>
+            <span>{languages[jobs.native_language]}</span>
           </p>
           <div className="center">
             <div className="skill">

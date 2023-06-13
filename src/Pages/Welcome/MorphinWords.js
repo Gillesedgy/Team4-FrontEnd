@@ -9,15 +9,15 @@ const MorphinWords = () => {
     };
 
     const texts = [
-      "Welcome!",
-      "bienvenido!",
-      "স্বাগতম!",
+      "Welcome",
+      "bienvenido",
+      "স্বাগতম",
       "مرحباً",
-      "स्वागत!",
-      "いらっしゃいませ!",
-      "欢迎!",
-      "akeyi!",
-      "maligayang pagdating!",
+      "स्वागत",
+      "いらっしゃいませ",
+      "欢迎",
+      "akeyi",
+      "maligayang pagdating",
       "خوش آمدید",
     ];
 

@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useContextProvider } from "../../Provider";
 import UserJob from "./userJob";
 import UserFavs from "./UserFavs";
+import {languages} from "../../constants"
 
 const API = process.env.REACT_APP_API_URL;
 export default function Account() {
@@ -46,7 +47,8 @@ export default function Account() {
             </p>
             <p>
               <b>Native Language: </b>
-              {user.native_language}
+              {languages[user.native_language]}
+
             </p>
           </div>
         </div>
