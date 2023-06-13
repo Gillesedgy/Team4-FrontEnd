@@ -4,7 +4,7 @@ import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
 export default function Comment({
-  comment: { comment_body, created_at, id },
+  comment: { comment_body, created_at, id, commenter_name, user_id },
   postId,
 }) {
   const deleteComment = () => {
@@ -28,12 +28,17 @@ export default function Comment({
   return (
     <div className="post_comments">
       <p className="comment_date">
-        Date: {middle} {year}
+        {middle} {year}
       </p>
+      <h4 style={{ marginBottom: "1em", color: "orange" }}>{commenter_name}</h4>
       <p className="comment_body">{comment_body}</p>
-      <div className="delete-comment">
-        <button onClick={deleteComment}>Delete</button>
-      </div>
+      {console.log(localStorage.getItem("user_id"))}
+
+      {+localStorage.getItem("user_id") === +user_id ? (
+        <div className="delete-comment">
+          <button onClick={deleteComment}>Delete</button>
+        </div>
+      ) : null}
     </div>
   );
 }

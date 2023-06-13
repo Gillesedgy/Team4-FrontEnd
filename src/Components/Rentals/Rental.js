@@ -6,7 +6,7 @@ export default function Rental({
   rental: { id, title, image_url, rooms, price },
 }) {
   return (
-    <Link to={`/listings/${id}`}>
+    <Link to={`/listings/${id}`} onClick={() => window.scrollTo(0, 0)}>
       <div className="rental">
         <div className="rental_image_div">
           <img className="rental_image" src={image_url[0]} alt={image_url} />
