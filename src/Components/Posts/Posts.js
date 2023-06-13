@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +7,9 @@ import Post from "./Post";
 import "./resources.css";
 import { GrAdd } from "react-icons/gr";
 import "./Pinterest.css";
+// import { getSiteTranslations } from "../../utils";
+// import { pages } from "../../constants";
+// import content from "../../content";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -13,40 +17,8 @@ export default function Posts() {
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
   const [searchPosts, setSearchPosts] = useState([]);
-
-  // let size = "large"
-  const getRandomSize = () => {
-    const sizes = ["small", "medium", "large"];
-    return sizes[Math.floor(Math.random() * sizes.length)];
-  };
-  useEffect(() => {
-    axios
-      .get(`${API}/communityBoard`)
-      .then((res) => {
-        setPosts(res.data);
-        setSearchPosts(res.data);
-        console.log(res.data);
-      })
-      .catch((err) => console.warn(err));
-  }, []);
-  //! ---------------Handle Search Functionality---------------------
-  const handleSearch = (event) => {
-    event.preventDefault();
-
-    if (event.target.value) {
-      setSearchPosts(
-        posts.filter((post) =>
-          post.post_title
-            .toLowerCase()
-            .includes(event.target.value.toLowerCase())
-        )
-      );
-    } else {
-      setSearchPosts(posts);
-    }
-  };
-  //?----------------------Resources-------------------------------
-  const resources = [
+  const [translatedResources, setTranslatedResources] = useState(null);
+  const [resources, setResources] = useState([
     {
       name: "New York City Employment Services",
       link: "https://www1.nyc.gov/site/sbs/careers/employment-services.page",
@@ -87,14 +59,65 @@ export default function Posts() {
       name: "Women, Infants, and Children (WIC)",
       link: "https://www.nyc.gov/wic",
     },
-  ];
+  ])
+
+  // let size = "large"
+  const getRandomSize = () => {
+    const sizes = ["small", "medium", "large"];
+    return sizes[Math.floor(Math.random() * sizes.length)];
+  };
+  useEffect(() => {
+    axios
+      .get(`${API}/communityBoard`)
+      .then((res) => {
+        setPosts(res.data);
+        setSearchPosts(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => console.warn(err));
+  }, []);
+  //! ---------------Handle Search Functionality---------------------
+  const handleSearch = (event) => {
+    event.preventDefault();
+
+    if (event.target.value) {
+      setSearchPosts(
+        posts.filter((post) =>
+          post.post_title
+            .toLowerCase()
+            .includes(event.target.value.toLowerCase())
+        )
+      );
+    } else {
+      setSearchPosts(posts);
+    }
+  };
+  //?----------------------Resources-------------------------------
+
+  // useEffect(() => {
+  //   if(!translatedResources) {
+  //     const translations = getSiteTranslations(pages.COMMUNITY_PAGE)
+  //     setTranslatedResources(translations)
+  //   }
+  // }, [translatedResources])
+
+  // useEffect(() => {
+  //   if(translatedResources) {
+  //     const mappedResources = resources.map((resource, index) => {
+  //       return {...resource, name: translatedResources.resources[index].name}
+  //     })
+  //     setResources(mappedResources)
+  //   }
+  // }, [translatedResources])
+
+
   const cardColors = ["#739CAE", "#8BAEA8", "#D07F7B", "#E4C17B", "#86B1B8"];
   //!----------------------------------------------------------------
   return (
     <div className="Posts-container">
       <main>
         <div className="searchBox">
-          <input onChange={handleSearch} type="search" placeholder="Search.." />
+          <input onChange={handleSearch} type="search" placeholder={translatedResources?.searchBarPlaceholderText || 'Search...'} />
           <button
             className="add-btn-comunity"
             onClick={() => navigate(`/communityBoard/new`)}

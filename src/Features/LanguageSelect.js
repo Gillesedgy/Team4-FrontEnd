@@ -1,21 +1,21 @@
 import React from "react";
 export const LanguageSelect = ({ selected, handleSelectedLanguage }) => {
   const languages = [
-    { value: "English", label: "English" },
-    { value: "Spanish", label: "Spanish" },
-    { value: "Chinese", label: "Chinese" },
-    { value: "Bengali", label: "Bengali" },
-    { value: "Hindi", label: "Hindi" },
-    { value: "Korean", label: "Korean" },
-    { value: "Arabic", label: "Arabic" },
-    { value: "Japanese", label: "Japanese" },
-    { value: "Creole", label: "Creole" },
-    { value: "Filipino", label: "Filipino" },
-    { value: "Urdu", label: "Urdu" },
-    { value: "French", label: "French" },
-    { value: "German", label: "German" },
-    { value: "Italian", label: "Italian" },
-    { value: "Vietnamese", label: "Vietnamese" },
+    { value: "en", label: "English" },
+    { value: "es", label: "Spanish" },
+    { value: "zh-CN", label: "Chinese Simplified" },
+    { value: "bn", label: "Bengali" },
+    { value: "hi", label: "Hindi" },
+    { value: "ko", label: "Korean" },
+    { value: "ar", label: "Arabic" },
+    { value: "ja", label: "Japanese" },
+    { value: "ht", label: "Hatian Creole" },
+    { value: "tl", label: "Filipino" },
+    { value: "ur", label: "Urdu" },
+    { value: "fr", label: "French" },
+    { value: "de", label: "German" },
+    { value: "it", label: "Italian" },
+    { value: "vi", label: "Vietnamese" },
   ];
   return (
     <div className="language_select">

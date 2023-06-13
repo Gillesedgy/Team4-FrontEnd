@@ -4,6 +4,8 @@ import "./Login.css";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useContextProvider } from "../../Provider";
+import { translateSite } from "../../utils";
+import content from "../../content";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -54,16 +56,19 @@ export default function Login() {
           localStorage.setItem("user_id", user_id);
           // handleUserInfo(user_id);
           localStorage.setItem("user_info", JSON.stringify(response.data));
+          return translateSite(content, response.data.native_language)
         },
         (error) => console.log(error)
       )
+      .then((translationJson) => localStorage.setItem('siteTranslations', JSON.stringify(translationJson)))
       .then(() => window.location.href = "/")
       .catch((c) => console.warn("catch", c));
   }
 
   return (
     <div className="login-form">
-      <h2 className="login_title">Log in</h2>
+            <img className="pinksticker" src="https://www.tickettailor.com/v3/svg/our-impact/sticker-pink.svg" alt="pinksticker"/>
+<h2 className="login_title">Log in</h2>
       <form onSubmit={handleLogin}>
         <label>
           Username:
