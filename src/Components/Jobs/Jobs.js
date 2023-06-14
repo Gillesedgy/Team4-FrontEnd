@@ -15,7 +15,11 @@ export default function Jobs() {
       .get(`${API}/jobs`)
       .then((res) => {
         console.log(res.data);
-        setJobs(res.data);
+        // sorting most recent at the top
+        const recent = res.data.sort(
+          (a, b) => new Date(b.posted_date) - new Date(a.posted_date)
+        );
+        setJobs(recent);
       })
       .catch((error) => console.warn(error));
   }, []);
@@ -23,13 +27,18 @@ export default function Jobs() {
   return (
     <div className="jobs">
       <h2 className="jobs-title">
-        Current Jobs{" "}
+        Current Jobs
         <div className="jobs-button-container">
+          {" "}
           <button onClick={() => navigate(`/jobs/new`)} className="add-button">
             <RiFileAddLine /> Add New
-          </button>
+          </button>{" "}
         </div>
-      </h2>
+      </h2>{" "}
+      <p className="current-jobs">
+        {/* //? Current jobs Count */}
+        {/* <strong>{jobs.length}</strong> <em>current Jobs</em> */}
+      </p>
       <div className="jobs-container">
         {jobs.map((job) => {
           return <Job job={job} key={job.id} />;
