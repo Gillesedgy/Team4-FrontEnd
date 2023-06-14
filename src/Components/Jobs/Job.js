@@ -3,7 +3,7 @@ import "./Job.css";
 import jobImage from "../../Assets/logoJobImage.jpg";
 import { languages } from "../../constants";
 
-export default function Job({ 
+export default function Job({
   job: { id, job_title, company, location, native_language, posted_date, logo },
 }) {
   const logoImage = logo ? logo : jobImage;
