@@ -15,7 +15,10 @@ export default function Comments({ postId }) {
       .get(`${API}/communityBoard/${postId}/comments`)
       .then((res) => {
         console.log("DATA:", res.data);
-        setComments(res.data);
+        const recent = res.data.sort(
+          (a, b) => new Date(b.created_at) - new Date(a.created_at)
+        );
+        setComments(recent);
       })
       .catch((err) => console.warn(err));
   }, [postId]);
