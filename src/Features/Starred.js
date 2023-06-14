@@ -80,7 +80,10 @@ export default function Starred({ jobId }) {
 
   return (
     <div className="star_container">
-      <button onClick={handleToggleLike} style={{ border: "none" }}>
+      <button
+        onClick={handleToggleLike}
+        style={{ border: "none", background: "white" }}
+      >
         {isStarred ? (
           <BsStarFill
             style={{
