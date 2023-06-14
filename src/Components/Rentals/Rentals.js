@@ -18,8 +18,10 @@ export default function Rentals() {
       .get(`${API}/listings`)
 
       .then((res) => {
-        setRentals(res.data);
-        // console.log(res.data);
+        const recent = res.data.sort(
+          (a, b) => new Date(b.date_posted) - new Date(a.date_posted)
+        );
+        setRentals(recent);
       })
       .catch((err) => console.warn(err));
   }, []);

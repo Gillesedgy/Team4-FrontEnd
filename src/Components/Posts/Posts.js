@@ -59,7 +59,7 @@ export default function Posts() {
       name: "Women, Infants, and Children (WIC)",
       link: "https://www.nyc.gov/wic",
     },
-  ])
+  ]);
 
   // let size = "large"
   const getRandomSize = () => {
@@ -70,7 +70,10 @@ export default function Posts() {
     axios
       .get(`${API}/communityBoard`)
       .then((res) => {
-        setPosts(res.data);
+        const recent = res.data.sort(
+          (a, b) => new Date(b.created_at) - new Date(a.created_at)
+        );
+        setPosts(recent);
         setSearchPosts(res.data);
         console.log(res.data);
       })
@@ -110,14 +113,19 @@ export default function Posts() {
   //   }
   // }, [translatedResources])
 
-
   const cardColors = ["#739CAE", "#8BAEA8", "#D07F7B", "#E4C17B", "#86B1B8"];
   //!----------------------------------------------------------------
   return (
     <div className="Posts-container">
       <main>
         <div className="searchBox">
-          <input onChange={handleSearch} type="search" placeholder={translatedResources?.searchBarPlaceholderText || 'Search...'} />
+          <input
+            onChange={handleSearch}
+            type="search"
+            placeholder={
+              translatedResources?.searchBarPlaceholderText || "Search..."
+            }
+          />
           <button
             className="add-btn-comunity"
             onClick={() => navigate(`/communityBoard/new`)}
