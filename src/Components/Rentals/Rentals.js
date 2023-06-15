@@ -31,12 +31,14 @@ export default function Rentals() {
       <div className="title_add_container">
         <h2 className="rentals_title">Rental Listings</h2>
         <div className="rentals_button_container">
-          <button
-            className="rentals_add"
-            onClick={() => navigate(`/listings/new`)}
-          >
-            <RiFileAddLine /> Add New
-          </button>
+          {localStorage.getItem("user_id") ? (
+            <button
+              className="rentals_add"
+              onClick={() => navigate(`/listings/new`)}
+            >
+              <RiFileAddLine /> Add New
+            </button>
+          ) : null}
         </div>
       </div>
       <div className="rentals">

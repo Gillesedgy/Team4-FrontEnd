@@ -1,7 +1,10 @@
 .wrapper-user {
   background-color: #f2eae6;
+  margin-top: 0px;
   height: auto;
   padding-bottom: 2em;
+  padding-top: 2em;
+  margin-top: -3.5%;
 }
 
 .user-profile {
@@ -43,8 +46,8 @@
   padding: 1em;
 }
 .user-avatar {
-  width: 200px;
-  height: auto;
+  width: auto;
+  height: 200px;
   border-radius: 10px;
   border: 1px solid rgba(128, 128, 128, 0.503);
   border-style: double;

@@ -17,12 +17,13 @@
 .starred_stuff {
   display: flex;
   flex-direction: row;
-  height: 20em;
+  height: 21em;
   gap: 0.7em;
   border: 1px solid #f98648;
   border-radius: 8px;
   background-color: #f1d6cb;
   padding: 0.6em;
+  overflow-y: scroll;
 }
 
 .fav_rental,

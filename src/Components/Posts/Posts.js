@@ -126,12 +126,14 @@ export default function Posts() {
               translatedResources?.searchBarPlaceholderText || "Search..."
             }
           />
-          <button
-            className="add-btn-comunity"
-            onClick={() => navigate(`/communityBoard/new`)}
-          >
-            <GrAdd />
-          </button>
+          {localStorage.getItem("user_id") ? (
+            <button
+              className="add-btn-comunity"
+              onClick={() => navigate(`/communityBoard/new`)}
+            >
+              <GrAdd />
+            </button>
+          ) : null}
         </div>
 
         <div className="mainContainer">
