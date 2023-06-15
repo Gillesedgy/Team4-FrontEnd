@@ -1,7 +1,7 @@
 const TRANSLATION_API = process.env.REACT_APP_TRANSLATE_API_KEY;
 
 export const translateSite = async (siteContent, userNativeLanguage, originalLanguage = "en") => {
-    try {
+  try {
         const response = await fetch('https://api.lecto.ai/v1/translate/json', {
           method: "POST",
           headers: {
@@ -24,7 +24,7 @@ export const translateSite = async (siteContent, userNativeLanguage, originalLan
 export const getSiteTranslations = (page) => {
   const translations = localStorage.getItem('siteTranslations')
   if (translations) {
-    // return JSON.parse(localStorage.getItem('siteTranslations'))[page]
+    return JSON.parse(localStorage.getItem('siteTranslations'))[page]
   } else {
     return null
   }
