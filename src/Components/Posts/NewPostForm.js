@@ -100,13 +100,7 @@ export default function NewPostForm() {
             style={{ fontFamily: "Helvetica" }}
           />
           <br />
-          {/* <label>Image: </label>
-        <input
-          type="url"
-          id="image_url"
-          value={post.image_url}
-          onChange={handleTextChange}
-        /> */}
+
           <label htmlFor="image_url">Post Picture: </label>
           <input
             className="file"

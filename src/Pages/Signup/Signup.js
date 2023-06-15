@@ -15,6 +15,21 @@ export default function Signup() {
   const { user, setUser } = useContextProvider();
   const [selectedLanguage, setSelectLanguage] = useState("");
 
+  const onChange = (e) => {
+    async function fileToBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader(); // built in function
+        reader.readAsDataURL(file); // methods that reads the file and turns it into data uri
+        reader.onload = () => resolve(reader.result); // if file is read resolve with the uri
+        reader.onerror = (error) => reject(error); // if the file fails to be read reject with the error
+      });
+    }
+
+    fileToBase64(e.target.files[0]).then((uri) => {
+      setUser({ ...user, image_url: uri });
+    });
+  };
+
   const handleTextChange = (e) => {
     setUser({ ...user, [e.target.id]: e.target.value });
   };
@@ -36,11 +51,15 @@ export default function Signup() {
       .then(
         (res) => {
           console.log(res.data);
-          return translateSite(content, selectedLanguage)
+          return translateSite(content, selectedLanguage);
         },
         (error) => console.log(error)
-      ).then((translationJson) => {
-        localStorage.setItem('siteTranslations', JSON.stringify(translationJson))
+      )
+      .then((translationJson) => {
+        localStorage.setItem(
+          "siteTranslations",
+          JSON.stringify(translationJson)
+        );
         navigate("/login");
       })
       .catch((c) => console.warn("catch", c));
@@ -91,6 +110,17 @@ export default function Signup() {
             value={user.address}
             onChange={handleTextChange}
             required
+          />
+        </label>
+        <label htmlFor="image_url" className="custom-file-upload">
+          Profile Picture:
+          <input
+            className="profile_pic"
+            id="image_url"
+            type="file"
+            accept=".png, .jpg, .jpeg"
+            placeholder="Post Picture"
+            onChange={onChange}
           />
         </label>
         <br />

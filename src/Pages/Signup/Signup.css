@@ -47,3 +47,24 @@
 .signup form button[type="submit"]:active {
   background-color: #7cbdce;
 }
+
+.profile_pic {
+  padding-bottom: 0.5em;
+  font-size: medium;
+  padding-left: 0.5em;
+  color: grey;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  cursor: pointer;
+  font-size: medium;
+  width: 100%;
+  padding-top: 10px;
+  border: none;
+  border-radius: 3px;
+  text-decoration: none;
+}
+.custom-file-upload:focus {
+  background-color: ;
+}
