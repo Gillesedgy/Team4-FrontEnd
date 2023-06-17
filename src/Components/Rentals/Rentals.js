@@ -48,13 +48,21 @@ export default function Rentals() {
     { value: "Creole", label: "Creole" },
     { value: "Filipino", label: "Filipino" },
     { value: "Urdu", label: "Urdu" },
+    { value: "French", label: "French" },
+    { value: "Italian", label: "Italian" },
+    { value: "German", label: "German" },
+    { value: "Vietnamese", label: "Vietnamese" },
   ];
 
   return (
     <div className="rentals_page_main_container">
       <div className="title_add_container">
         <h2 className="rentals_title">Rental Listings</h2>
-        <select value={selectedLanguage} onChange={handleSelectedLanguage}>
+        <select
+          className="lang_select"
+          value={selectedLanguage}
+          onChange={handleSelectedLanguage}
+        >
           <option value="">All Languages</option>
           {languages.map((language) => (
             <option key={language.value} value={language.value}>

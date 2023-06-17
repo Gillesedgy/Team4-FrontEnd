@@ -19,6 +19,20 @@
   color: rgb(60, 60, 60);
 }
 
+.lang_select {
+  padding: 0.5em;
+  margin: 1em;
+  height: 2.4em;
+  border-color: rgb(218, 181, 112);
+  border-radius: 4px;
+  font-size: medium;
+}
+
+.lang_select:focus,
+.lang_select:active {
+  border-color: orange;
+}
+
 .rental {
   display: flex;
   flex-direction: column;
@@ -89,6 +103,7 @@
 .title_add_container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   padding-left: 1.6em;
   padding-right: 1.6em;
 }
@@ -156,6 +171,7 @@
 @media (max-width: 767px) {
   .title_add_container {
     padding: 0px;
+    padding-right: 0.5em;
   }
 
   .rentals_page_main_container {
