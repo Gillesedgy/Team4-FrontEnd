@@ -11,7 +11,7 @@ function About() {
   return (
     <div className="page">
      <div className="about-title">
-      <h1>Why you can trust <br/> Out & About</h1>
+      <h1>Speak Your Language <br/> Find Your place!</h1>
      </div>
     <div className="box rentals-about">
       <div className="about-img">

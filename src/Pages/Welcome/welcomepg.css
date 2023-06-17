@@ -1,5 +1,16 @@
 .welcome-img{
-    width: 100%;
+    width: 80%;
     display: flex;
     margin-top: 0%;
+    justify-content: right;
+  }
+.welcome-doodle{
+  width: 20%;
+  margin-top: 50px;
+
+}
+  .welcome-image-container{
+    display: flex;
+    flex-direction: row;
+    margin-right: 0 ;
   }

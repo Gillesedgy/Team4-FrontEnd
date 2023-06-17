@@ -1,28 +1,24 @@
 
-
-
 .welcometext {
   margin-top: 0px;
-  font-size: 80px;
+  font-size: 20px;
   text-align: center;
  
 }
 
 .welcome_p {
-  font-size: 60px;
+  font-size: 40px;
   text-align: center;
   justify-content: center;
+  color: #B24121;
 }
 
 .welcome-btn-div {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-left: -90px;
   display: flex;
   justify-content: center;
   margin-bottom: 0%;
-
-
-  
 }
 
 .welcome-btn {
@@ -36,11 +32,11 @@
   cursor: pointer;
   display: inline-flex;
   /* font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif; */
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   justify-content: center;
   line-height: 1.25;
-  margin: 5px;
+  margin: 3px;
   padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
   /* position: relative; */
   text-decoration: none;
@@ -73,7 +69,7 @@
 }
 
 .doodle1{
-  margin-top: 40px;
+  margin-top: 50px;
   display: flex;
   align-items: center;
   margin-bottom: 0%;
