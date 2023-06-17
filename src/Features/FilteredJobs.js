@@ -1,18 +1,18 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-
-import Rental from "../Components/Rentals/Rental";
+import Job from "../Components/Jobs/Job";
 
 const API = process.env.REACT_APP_API_URL;
 
-export default function Filter({ selectedLanguage }) {
+export default function FilteredJobs({ selectedLanguage }) {
   const [filtered, setFiltered] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`${API}/listings?language=${selectedLanguage}`)
+      .get(`${API}/jobs?language=${selectedLanguage}`)
       .then((res) => {
+        console.log(res.data);
         setFiltered(res.data);
       })
       .catch((err) => {
@@ -22,8 +22,8 @@ export default function Filter({ selectedLanguage }) {
 
   return (
     <>
-      {filtered.map((rental) => {
-        return <Rental key={rental.id} rental={rental} />;
+      {filtered.map((job) => {
+        return <Job key={job.id} job={job} />;
       })}
     </>
   );

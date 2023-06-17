@@ -61,6 +61,7 @@
   height: 8em;
   border-radius: 5px;
   background-color: rgba(245, 245, 245, 0.834);
+  margin-bottom: 0.3em;
 }
 /* Location and Language */
 .right-section {
@@ -90,17 +91,21 @@
   color: rgb(74, 110, 222);
 }
 .jobs-button-container {
-  display: grid;
-  justify-content: right;
-  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+  justify-content: space-between;
 }
 .add-button {
   background-color: rgb(162, 211, 203);
-  width: 90%;
+  /* width: 90%; */
   margin: 10px;
   padding: 0.5em;
   color: rgb(4, 4, 4);
 
+  cursor: pointer;
   font-size: 18px;
   border-radius: 8px;
 }
@@ -122,12 +127,25 @@
 .add-button:hover {
   transform: translateY(-1.5px);
 }
-@media (min-width: 1000px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .jobs {
     margin-top: 20px;
   }
+  .jobs-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .jobs-button-container {
+    width: 100%;
+    padding-right: 1em;
+  }
+  .jobs-button-container h2 {
+    padding-left: 0.5em;
+  }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .jobs-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -167,5 +185,13 @@
   }
   .jobs {
     margin-top: 150px;
+  }
+
+  .jobs-button-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .add-button {
+    width: 50%;
   }
 }
