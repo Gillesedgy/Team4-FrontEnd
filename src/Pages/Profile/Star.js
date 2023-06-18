@@ -25,16 +25,17 @@ export default function Star({
       <div className="star-job-container">
         <div className="star-icon-company-container">
           <img className="star-job-icon" src={logoImage} alt="job-icon" />
-          <h4 className="company">{company}</h4>
         </div>
 
         <div className="star-content">
+          <h4 className="star_company">{company}</h4>
           <h3>{job_title}</h3>
+          <hr className="fav_hr" />
           <p>
             <strong>Location:</strong> {location}
           </p>
           <p>
-            <strong>Native Language:</strong> {native_language}
+            <strong>Language:</strong> {native_language}
           </p>
         </div>
       </div>

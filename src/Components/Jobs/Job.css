@@ -7,6 +7,10 @@
   width: 86%;
   padding: 20px;
 }
+
+.jobs-page {
+  padding-top: 5.2em;
+}
 /* Job Details */
 .job-container {
   display: flex;
@@ -130,6 +134,10 @@
 @media (min-width: 768px) and (max-width: 1024px) {
   .jobs {
     margin-top: 20px;
+  }
+
+  .job-page {
+    padding-top: 5em;
   }
   .jobs-container {
     display: grid;

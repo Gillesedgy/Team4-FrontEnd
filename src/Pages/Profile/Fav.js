@@ -17,6 +17,7 @@ export default function Fav({ fav: { id, title, image_url, rooms, price } }) {
           <div className="fav_rental_title">
             <h3>{title}</h3>
           </div>
+          <hr className="fav_hr" />
           <div className="fav_rental_descrip">
             <p>
               <b>Rent: </b>${price}

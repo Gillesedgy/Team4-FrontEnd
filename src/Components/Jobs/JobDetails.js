@@ -112,13 +112,16 @@ export default function JobDetails({ handleAddressSubmit }) {
           </p>
           <p className="native-language p1">
             <strong>Native Language:</strong>
-            <span>{languages[jobs.native_language]}</span>
+            <span>
+              {String(jobs.native_language).length > 2
+                ? jobs.native_language
+                : languages[jobs.native_language]}
+            </span>
           </p>
           <div className="center">
             <div className="skill">
               <strong>Skills:</strong> <span> {jobs.skills}</span>{" "}
             </div>
-            <p className="divide"> </p>
             <div className="requirement">
               <strong>Requirements:</strong> <span>{jobs.requirements}</span>{" "}
             </div>{" "}
