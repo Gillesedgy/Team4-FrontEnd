@@ -14,7 +14,11 @@ export default function Job({
   let middle = dateMade.split(" ").splice(1, 2).join(" ");
 
   return (
-    <Link className="link" to={`/jobs/${id}`}>
+    <Link
+      className="link"
+      to={`/jobs/${id}`}
+      onClick={() => window.scrollTo(0, 0)}
+    >
       <div className="job-container job-card">
         <div className="left-section job-card-content">
           <div className="icon-company-container">

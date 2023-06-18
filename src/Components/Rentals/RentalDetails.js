@@ -105,7 +105,7 @@ export default function RentalDetails({ handleAddressSubmit }) {
         </div>
         <h3>Description</h3>
         <div className="rental_dets_description">
-          <p>{rental.description}</p>
+          <p className="rental_dets_descip_p">{rental.description}</p>
         </div>
       </div>
       <>

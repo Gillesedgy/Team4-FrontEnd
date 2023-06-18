@@ -1,5 +1,6 @@
 .rentals_page {
   padding: 1.5em;
+  padding-top: 5.2em;
   margin: 1.5em;
   font-family: sans-serif;
 }
@@ -172,6 +173,7 @@
   .title_add_container {
     padding: 0px;
     padding-right: 0.5em;
+    margin-left: -8px;
   }
 
   .rentals_page_main_container {
@@ -188,6 +190,10 @@
 
   .rentals {
     grid-template-columns: 1fr;
+  }
+
+  .rentals_add {
+    padding: 0.11em;
   }
 
   .rental_image {
@@ -209,13 +215,15 @@
   }
 }
 
-/* (min-device-width: 768px) and ( */
-/* and (min-width: 720px) and  */
-
 @media (min-width: 768px) and (max-width: 1024px) {
   .rentals_page_main_container {
     width: 70vw;
     padding-top: 6em;
+  }
+
+  .title_add_container {
+    margin-left: -1.35em;
+    margin-right: -1em;
   }
 
   .rental {
