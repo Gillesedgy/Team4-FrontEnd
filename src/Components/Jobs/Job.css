@@ -135,14 +135,24 @@
   .jobs {
     margin-top: 20px;
   }
-
+  .job-icon {
+    height: 6em;
+    width: 6em;
+  }
   .job-page {
+    padding: 0;
     padding-top: 5em;
   }
   .jobs-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
+  }
+
+  .job-container {
+    height: 310px;
+    width: 320px;
+    margin-bottom: 0.5em;
   }
 
   .jobs-button-container {
