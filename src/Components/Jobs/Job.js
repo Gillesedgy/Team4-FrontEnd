@@ -39,7 +39,7 @@ export default function Job({
             <strong>Native Language:</strong> {languages[native_language]}
           </p>
         </div>
-      </div>{" "}
+      </div>
     </Link>
   );
 }

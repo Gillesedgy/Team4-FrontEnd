@@ -124,13 +124,17 @@ export default function Signup() {
           />
         </label>
         <br />
-        <label>
+        <label style={{ marginTop: "-13px" }}>
           <LanguageSelect
             selected={selectedLanguage}
             handleSelectedLanguage={handleSelectedLanguage}
           />
         </label>
-        <button type="submit" onClick={handleSignup}>
+        <button
+          type="submit"
+          onClick={handleSignup}
+          style={{ marginTop: "10px" }}
+        >
           Submit
         </button>
       </form>

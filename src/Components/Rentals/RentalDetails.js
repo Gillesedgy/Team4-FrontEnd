@@ -65,7 +65,9 @@ export default function RentalDetails({ handleAddressSubmit }) {
       .catch((err) => console.warn(err));
   }, []);
 
-  let filtered = moreRentals.filter((more) => rental.rooms === more.rooms);
+  let filtered = moreRentals.filter(
+    (more) => rental.rooms === more.rooms && rental.id !== more.id
+  );
   filtered = filtered.length > 3 ? filtered.splice(0, 3) : filtered;
 
   return (

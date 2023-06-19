@@ -1,4 +1,5 @@
 import React from "react";
+import "./LanguageSelect.css";
 export const LanguageSelect = ({ selected, handleSelectedLanguage }) => {
   const languages = [
     { value: "en", label: "English" },
@@ -20,8 +21,13 @@ export const LanguageSelect = ({ selected, handleSelectedLanguage }) => {
   return (
     <div className="language_select">
       <label>
-        Native Language:
-        <select value={selected} onChange={handleSelectedLanguage} required>
+        Native Language:{"   "}
+        <select
+          className="language_drop_down"
+          value={selected}
+          onChange={handleSelectedLanguage}
+          required
+        >
           <option value="">Select a language</option>
           {languages.map((language) => (
             <option value={language.value} key={language.value}>

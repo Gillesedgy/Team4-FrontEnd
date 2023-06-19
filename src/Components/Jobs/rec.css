@@ -4,6 +4,9 @@
   border-radius: 8px;
   text-align: center;
   margin: 10px;
+  width: 85%;
+  margin-right: auto;
+  margin-left: auto;
 }
 .recommended a {
   color: black;
@@ -14,10 +17,6 @@
   width: 5rem;
 }
 
-.recommended {
-  border: 2px solid rgb(170, 168, 168);
-  border-style: dotted;
-}
 .recommended:hover {
   box-shadow: var(--button-hover-box-shadow);
   transform: var(--button-hover-transform);
@@ -29,7 +28,7 @@
   color: whitesmoke;
 }
 .recommended:nth-child(even) {
-  background-color: rgb(74, 110, 222);
+  background-color: rgba(74, 111, 222, 0.661);
 }
 .recommended:nth-child(even) .color:hover {
   color: #fadabb;

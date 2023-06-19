@@ -78,6 +78,8 @@ export default function JobDetails({ handleAddressSubmit }) {
   // Logo handler
   const logoImage = jobs.logo ? jobs.logo : jobImage;
 
+  const reqs = String(jobs.requirements).split(".");
+
   return (
     <div className="job-page-whole">
       <div className="page-container">
@@ -92,12 +94,14 @@ export default function JobDetails({ handleAddressSubmit }) {
           </span>
         </p>
         <div className="details-icon">
-          {<img src={logoImage} alt="job-icon" />}{" "}
+          <img src={logoImage} alt="job-icon" />
         </div>
         <div className="top job-details-body">
           <div className="job-title-star">
             <h2 className="job-title">{jobs.job_title}</h2>{" "}
-            <Starred className="heart_button star" jobId={jobs.id} />
+            {localStorage.getItem("user_id") ? (
+              <Starred className="heart_button star" jobId={jobs.id} />
+            ) : null}
           </div>
           <p className="company p1">
             <strong>Company:</strong>
@@ -121,24 +125,32 @@ export default function JobDetails({ handleAddressSubmit }) {
           </p>
           <p className="native-language p1">
             <strong>Native Language:</strong>
-            <span>
-              {String(jobs.native_language).length > 2
-                ? jobs.native_language
-                : languages[jobs.native_language]}
-            </span>
+            <span>{languages[jobs.native_language]}</span>
           </p>
           <div className="center">
             <div className="skill">
-              <strong>Skills:</strong> <span> {jobs.skills}</span>{" "}
+              <strong>Skills:</strong> <span> {jobs.skills}</span>
             </div>
-            <div className="requirement">
-              <strong>Requirements:</strong> <span>{jobs.requirements}</span>{" "}
-            </div>{" "}
           </div>
           <p className="description-label p1">
             <strong>Description</strong>
           </p>
-          <p className="description">{jobs.description}</p>
+          <div className="description">
+            <p>{jobs.description}</p>
+            <div className="requirement">
+              <strong>
+                <p>Requirements:</p>
+              </strong>
+
+              <ul className="req_ul">
+                {reqs
+                  .filter((req) => req.length > 0)
+                  .map((req, index) => {
+                    return <li key={index}>{req}</li>;
+                  })}
+              </ul>
+            </div>
+          </div>
           <br />
           <hr />
 

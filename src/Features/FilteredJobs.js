@@ -22,9 +22,16 @@ export default function FilteredJobs({ selectedLanguage }) {
 
   return (
     <>
-      {filtered.map((job) => {
-        return <Job key={job.id} job={job} />;
-      })}
+      {filtered.length > 0 ? (
+        filtered.map((job) => {
+          return <Job key={job.id} job={job} />;
+        })
+      ) : (
+        <h3 className="no_results">
+          Sorry, there are no jobs right now that match that language
+          preference!
+        </h3>
+      )}
     </>
   );
 }

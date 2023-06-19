@@ -9,7 +9,7 @@
 }
 
 .jobs-page {
-  padding-top: 5.2em;
+  padding-top: 5em;
 }
 /* Job Details */
 .job-container {
@@ -85,13 +85,15 @@
 
 .job-page {
   padding: 1.5em;
+  padding-top: 3.5em;
   margin: 1.5em;
 }
 .jobs-title {
-  width: 80%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1em;
+  font-size: 1.8em;
   color: rgb(74, 110, 222);
 }
 .jobs-button-container {
@@ -99,17 +101,19 @@
   flex-direction: row;
   margin-right: auto;
   margin-left: auto;
-  width: 80%;
+  width: 83%;
   justify-content: space-between;
 }
 .add-button {
   background-color: rgb(249, 249, 249);
-  /* width: 90%; */
+
   margin: 10px;
   padding: 0.5em;
+  margin-top: 2em;
   color: rgb(171, 237, 237);
   background-color: rgb(255, 255, 255);
   width: auto;
+  height: 80%;
   cursor: pointer;
   font-size: 18px;
   border-radius: 8px;
@@ -121,7 +125,6 @@
 .company {
   font-size: 1em;
 }
-
 
 .jobs {
   margin-top: 20px;
@@ -165,6 +168,7 @@
   .jobs-container {
     display: grid;
     grid-template-columns: 1fr;
+    width: 100%;
   }
 
   .icon-company-container {
@@ -198,6 +202,7 @@
 
   .jobs-title {
     margin-bottom: 0.5em;
+    margin-right: 12px;
   }
   .jobs {
     margin-top: 150px;
@@ -206,8 +211,9 @@
   .jobs-button-container {
     display: flex;
     flex-direction: row;
+    width: 100%;
   }
   .add-button {
-    width: 50%;
+    height: 85%;
   }
 }
