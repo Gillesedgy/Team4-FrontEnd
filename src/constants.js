@@ -12,7 +12,7 @@ export const languages = {
     bg: "Bulgarian",
     ca: "Catalan",
     ceb: "Cebuano",
-    "zh-CN": "Chinese (Simplified)",
+    "zh-CN": "Chinese",
     hr: "Croatian",
     cs: "Czech",
     da: "Danish",

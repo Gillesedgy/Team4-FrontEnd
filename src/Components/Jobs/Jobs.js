@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
 import Job from "./Job";
-import { RiFileAddLine } from "react-icons/ri";
+import { GrAdd } from "react-icons/gr";
 import FilteredJobs from "../../Features/FilteredJobs";
 import "./Job.css";
 const API = process.env.REACT_APP_API_URL;
@@ -68,7 +68,7 @@ export default function Jobs() {
         </select>
         {localStorage.getItem("user_id") ? (
           <button onClick={() => navigate(`/jobs/new`)} className="add-button">
-            <RiFileAddLine /> Add New
+            <GrAdd />
           </button>
         ) : null}
       </div>

@@ -3,6 +3,7 @@ import "./Welcome.css";
 import { Link } from "react-router-dom";
 import doodle1 from "../../Assets/doodle1.png";
 import doodleLeft from "../../Assets/doodleleft.png";
+import orangeArrow from "../../Assets/orangearrow.gif"
 
 function Welcoming() {
 

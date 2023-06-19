@@ -34,7 +34,7 @@ svg.icon-nav {
   /* overflow: hidden; */
 }
 .navbar.active {
-  background-color: rgb(251, 200, 138);
+  background-color: #e5e1dd;
   /* background-image: url("../../Assets/navimg1.png"); */
   /* opacity: 0.9; */
   background-size: cover;
@@ -75,7 +75,7 @@ svg.icon-nav {
 }
 
 .nav-links:hover {
-  background-color: transparent;
+  color: rgb(169, 100, 44);
   font-size: larger;
   border-radius: 4px;
   transition: all 0.2s ease-out;
@@ -117,7 +117,7 @@ svg.icon-nav {
   }
 
   .nav-menu.active {
-    background: rgb(251, 197, 146);
+    background: rgb(242, 232, 222);
     background: linear-gradient(
       0deg,
       rgba(251, 197, 146, 1) 25%,

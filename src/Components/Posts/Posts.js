@@ -113,7 +113,7 @@ export default function Posts() {
   //   }
   // }, [translatedResources])
 
-  const cardColors = ["#739CAE", "#8BAEA8", "#D07F7B", "#E4C17B", "#86B1B8"];
+  const cardColors = ["#B2BEB5", "#C0C0C0", "#A9A9A9", "#D3D3D3", "#E5E4E2"];
   //!----------------------------------------------------------------
   return (
     <div className="Posts-container">

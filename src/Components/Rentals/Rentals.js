@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Rental from "./Rental";
 import Filter from "../../Features/Filter";
+import { MdOutlineAddHome } from "react-icons/md";
+
 // import { LanguageSelect } from "../../Features/LanguageSelect";
 
 import "./Rentals.css";
@@ -58,6 +60,7 @@ export default function Rentals() {
     <div className="rentals_page_main_container">
       <div className="title_add_container">
         <h2 className="rentals_title">Rental Listings</h2>
+        <img/>
         <select
           className="lang_select"
           value={selectedLanguage}
@@ -76,7 +79,7 @@ export default function Rentals() {
               className="rentals_add"
               onClick={() => navigate(`/listings/new`)}
             >
-              <RiFileAddLine /> Add New
+               <MdOutlineAddHome />
             </button>
           ) : null}
         </div>
