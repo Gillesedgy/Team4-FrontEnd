@@ -22,7 +22,6 @@ function NavBar() {
   
   // This structure represents the array of objects we display in the navbar
   const [navItems, setNavItems] = useState([
-    { text: "Account", icon: VscAccount, to: "/account", id: "accountLinkText" },
     { text: "Rentals", icon: TbHomeDollar, to: "/listings", id: "rentalsLinkText" },
     { text: "Jobs", icon: MdWorkOutline, to: "/jobs", id: "jobsLinkText" },
     { text: "Community", icon: GoCommentDiscussion, to: "/communityBoard", id: "communityLinkText" },
@@ -79,6 +78,16 @@ useEffect(() => {
     setNavBtnText({signInBtnText: navContent.signInBtnText, logoutBtnText: navContent.logoutBtnText})
   }
 }, [navContent])
+
+useEffect(() => {
+if(user.id && navContent) {
+  const newNavItems = [{ text: "Account", icon: VscAccount, to: "/account", id: "accountLinkText" }, ...navItems]
+  const translatedNavItems = newNavItems.map((item) => {
+    return {...item, text: navContent[item?.id]}
+  })
+  setNavItems(translatedNavItems)
+}
+}, [user])
 
   return (
     <nav className={navbar ? "navbar active" : "navbar"}>

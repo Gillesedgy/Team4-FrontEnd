@@ -7,6 +7,7 @@ import { LanguageSelect } from "../../Features/LanguageSelect";
 import "./Signup.css";
 import { translateSite } from "../../utils";
 import content from "../../content";
+import Floating from "../Login/Floating";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -66,78 +67,77 @@ export default function Signup() {
   }
 
   return (
-    <div className="signup">
-      <h2>Sign up</h2>
-      <form onSubmit={handleSignup}>
-        <label>
-          Username:
-          <input
-            type="text"
-            id="username"
-            value={user.username}
-            onChange={handleTextChange}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Email:
-          <input
-            type="text"
-            id="email"
-            value={user.email}
-            onChange={handleTextChange}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input
-            type="password"
-            id="password"
-            value={user.password}
-            onChange={handleTextChange}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Address:
-          <input
-            type="text"
-            id="address"
-            value={user.address}
-            onChange={handleTextChange}
-            required
-          />
-        </label>
-        <label htmlFor="image_url" className="custom-file-upload">
-          Profile Picture:
-          <input
-            className="profile_pic"
-            id="image_url"
-            type="file"
-            accept=".png, .jpg, .jpeg"
-            placeholder="Post Picture"
-            onChange={onChange}
-          />
-        </label>
-        <br />
-        <label style={{ marginTop: "-13px" }}>
-          <LanguageSelect
-            selected={selectedLanguage}
-            handleSelectedLanguage={handleSelectedLanguage}
-          />
-        </label>
-        <button
-          type="submit"
-          onClick={handleSignup}
-          style={{ marginTop: "10px" }}
-        >
-          Submit
-        </button>
-      </form>
+    <div>
+      <div className="signup">
+        <h2>Sign up</h2>
+        <form onSubmit={handleSignup}>
+          <label>
+            Username:
+            <input
+              type="text"
+              id="username"
+              value={user.username}
+              onChange={handleTextChange}
+              required
+            />
+          </label>
+          <br />
+          <label>
+            Email:
+            <input
+              type="text"
+              id="email"
+              value={user.email}
+              onChange={handleTextChange}
+              required
+            />
+          </label>
+          <br />
+          <label>
+            Password:
+            <input
+              type="password"
+              id="password"
+              value={user.password}
+              onChange={handleTextChange}
+              required
+            />
+          </label>
+          <br />
+          <label>
+            Address:
+            <input
+              type="text"
+              id="address"
+              value={user.address}
+              onChange={handleTextChange}
+              required
+            />
+          </label>
+          <label htmlFor="image_url" className="custom-file-upload">
+            Profile Picture:
+            <input
+              className="profile_pic"
+              id="image_url"
+              type="file"
+              accept=".png, .jpg, .jpeg"
+              placeholder="Post Picture"
+              onChange={onChange}
+            />
+          </label>
+          <br />
+          <label style={{ marginTop: "-13px" }}>
+            <LanguageSelect
+              selected={selectedLanguage}
+              handleSelectedLanguage={handleSelectedLanguage}
+            />
+          </label>
+          <button type="submit" onClick={handleSignup} style={{ marginTop: "10px" }}>
+            Submit
+          </button>
+        </form>
+      </div>
+      <Floating />
     </div>
   );
 }

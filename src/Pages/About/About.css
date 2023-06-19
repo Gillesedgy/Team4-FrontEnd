@@ -3,6 +3,7 @@
   flex-direction: column;
   margin-top: 2%;
   margin-bottom: 2%;
+  margin: 30px;
 /* background-image: url("https://www.tickettailor.com/v3/svg/report-archive-bg.svg"); */
 
 }
@@ -25,22 +26,32 @@
 }
 
 .box {
-  margin: 2%;
   width: 100%;
-  padding: 20px;
-  border-radius: 15px 60px;
+  display: flex;
+}
+
+.boxes {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.stagger{
+  justify-content: flex-end;
+
 }
 
 .rentals-about {
   display: flex;
   flex-direction: row;
   row-gap: 50px;
-  align-self: flex-start;
-  margin-right: 20px;
   background-color: #fdd1ba;
   width: 50%;
   height: 330px;
-  padding-right: 15px;
+  padding: 15px;
+  border-radius: 15px 60px;
+
 }
 
 
@@ -49,12 +60,11 @@
   display: flex;
   flex-direction: row;
   row-gap: 50px;
-  align-self: flex-end;
-  margin-left: 20px;
   background: rgba(146, 210, 200, 1);
   width: 50%;
   height: 320px;
-  padding-right: 15px;
+  padding: 15px;
+  border-radius: 60px 15px;
 
 }
 
@@ -67,9 +77,12 @@
   background-color: rgb(255, 223, 165);
   width: 50%;
   height: 320px;
-  padding-right: 15px;
+  padding: 15px;
+  border-radius: 15px 60px;
 
 }
+
+
 .about-text {
   margin-left: 10px;
   font-size: larger;
@@ -86,6 +99,8 @@
 .community-about h1 {
   margin-top: 5px;
   margin-bottom: 15px;
+  font-size: 1.85em;
+  margin-left: 40px;
 
 }
 
@@ -95,7 +110,10 @@
 
   margin-top: 10px;
   margin-bottom: 10px;
-
+  font-size: 1.2em;
+  word-wrap: break-word;
+  width: 85%;
+  margin-left: 40px;
 }
 
 .About-btn{
@@ -123,6 +141,8 @@
   touch-action: manipulation;
   vertical-align: baseline;
   width: auto;
+  margin-left: 40px;
+
 }
 
 .About-btn:hover,

@@ -6,7 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useContextProvider } from "../../Provider";
 import { translateSite } from "../../utils";
 import content from "../../content";
-import Floting from "./Floting";
+import Floating from "./Floating";
 
 const API = process.env.REACT_APP_API_URL;
 //const TRANSLATION_API = process.env.REACT_APP_TRANSLATE_API_KEY;
@@ -78,49 +78,45 @@ export default function Login() {
   }
 
   return (
-    <div className="login-form">
-      <img
-        className="pinksticker"
-        src="https://www.tickettailor.com/v3/svg/our-impact/sticker-pink.svg"
-        alt="pinksticker"
-      />
-
-      {/* <Floting/> */}
-      <h2 className="login_title">Log in</h2>
-      <form onSubmit={handleLogin}>
-        <label>
-          Username:
-          <input
-            type="text"
-            id="username"
-            value={userLogin.username}
-            onChange={handleTextChange}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input
-            type="password"
-            id="password"
-            value={userLogin.password}
-            onChange={handleTextChange}
-            required
-          />
-        </label>
-        <button type="submit">Submit</button>
-      </form>
-      <div className="signup-prompt">
-        <p>
-          Dont have an account?{" "}
-          <Link to="/signup">
-            {" "}
-            <button className="signup-btn">Sign Up</button>
-          </Link>
-        </p>
-      </div>
+    <div>
+      <div className="login-form">
+        <h2 className="login_title">Log in</h2>
+        <form onSubmit={handleLogin}>
+          <label>
+            Username:
+            <input
+              type="text"
+              id="username"
+              value={userLogin.username}
+              onChange={handleTextChange}
+              required
+            />
+          </label>
+          <br />
+          <label>
+            Password:
+            <input
+              type="password"
+              id="password"
+              value={userLogin.password}
+              onChange={handleTextChange}
+              required
+            />
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+        <div className="signup-prompt">
+          <p>
+            Dont have an account?{" "}
+            <Link to="/signup">
+              {" "}
+              <button className="signup-btn">Sign Up</button>
+            </Link>
+          </p>
+        </div>
       {error && <div className="error-message">{error}</div>}
+      </div>
+      <Floating />
     </div>
   );
 }

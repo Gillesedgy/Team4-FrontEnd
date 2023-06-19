@@ -1,10 +1,15 @@
 .login-form {
     max-width: 500px;
-    margin: 0 auto;
+    width: 500%;
     padding: 20px;
     background-color: #dbdee0;
     border-radius: 5px;
     margin-top: 5%;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
   }
   
   .login_title {
@@ -73,18 +78,4 @@
   .signup-btn:hover {
     text-decoration: none;
     color: #45a0a0;
-  }
-  
-
-  .pinksticker{
-    background-repeat: no-repeat;
-    background-size: contain;
-    content: '';
-    display: block;
-    position: fixed;
-    margin-top: 7%;
-    margin-left: 30%;
-
-    left: 0;
-    top: 0;
   }
