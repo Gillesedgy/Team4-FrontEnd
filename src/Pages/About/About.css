@@ -4,7 +4,7 @@
   margin-top: 2%;
   margin-bottom: 2%;
 /* background-image: url("https://www.tickettailor.com/v3/svg/report-archive-bg.svg"); */
-background-repeat: no-repeat;
+
 }
 
 .about-title {
@@ -43,6 +43,8 @@ background-repeat: no-repeat;
   padding-right: 15px;
 }
 
+
+
 .jobs-about {
   display: flex;
   flex-direction: row;
@@ -74,6 +76,8 @@ background-repeat: no-repeat;
 }
 
 .about-img {
+  width: 300px;
+  height: 250px;
   margin: 5px;
 }
 
@@ -142,3 +146,62 @@ background-repeat: no-repeat;
   transform: translateY(0);
 }
 
+/* Media Q */
+
+@media (max-width: 480px) {
+  
+  .box {
+    margin: 2%;
+    width: 100%;
+    padding: 0%;
+    border-radius: 15px 60px;
+  }
+
+  .rentals-about {
+    display: flex;
+    flex-direction: row;
+    row-gap: 50px;
+    align-self: flex-start;
+    margin-right: 20px;
+    background-color: #fdd1ba;
+    width: 40%;
+    height: 200px;
+  }
+  
+  .about-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 15px;
+    text-align: center;
+    color: rgb(124, 123, 123);
+    text-decoration: underline double rgb(254, 150, 76);
+    background: linear-gradient(90deg,rgb(13, 98, 236) 40%, rgba(241,146,32,1) 60%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          color: transparent;    
+  }
+  
+  .about-text {
+    margin-left: 10px;
+    font-size: small;
+  }
+  .about-img {
+    margin: 5px;
+    width: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+
+
+ 
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  
+}

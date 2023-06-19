@@ -30,6 +30,7 @@ function About() {
      
     </div>
     <div className="box jobs-about">
+      
     <div className="about-img">
       <img  src={jobAbout} alt="community-about1" width={300}/>
       </div>

@@ -26,7 +26,7 @@
       list-style: none;
       width: 20px;
       height: 20px;
-      /* background: rgba(117, 69, 7, 0.5); */
+      background: rgba(117, 69, 7, 0.5);
       animation: animate 25s linear infinite;
       bottom: -150px;
       opacity: -1;

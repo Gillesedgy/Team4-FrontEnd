@@ -103,27 +103,25 @@
   justify-content: space-between;
 }
 .add-button {
-  background-color: rgb(162, 211, 203);
+  background-color: rgb(249, 249, 249);
   /* width: 90%; */
   margin: 10px;
   padding: 0.5em;
-  color: rgb(4, 4, 4);
-
+  color: rgb(171, 237, 237);
+  background-color: rgb(255, 255, 255);
+  width: auto;
   cursor: pointer;
   font-size: 18px;
   border-radius: 8px;
 }
 
 .add-button:hover {
-  background: #cfcbcb;
+  background: #97e0da;
 }
 .company {
   font-size: 1em;
 }
 
-.add-button:hover {
-  background: #cfcbcb;
-}
 
 .jobs {
   margin-top: 20px;

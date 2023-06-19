@@ -101,3 +101,20 @@
 .post_form {
   padding-top: 5em;
 }
+
+@media (max-width: 480px) {
+  
+  
+   
+}
+
+@media (max-width: 767px) {
+
+
+ 
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  
+}
