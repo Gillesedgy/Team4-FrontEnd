@@ -22,9 +22,16 @@ export default function Filter({ selectedLanguage }) {
 
   return (
     <>
-      {filtered.map((rental) => {
-        return <Rental key={rental.id} rental={rental} />;
-      })}
+      {filtered.length > 0 ? (
+        filtered.map((rental) => {
+          return <Rental key={rental.id} rental={rental} />;
+        })
+      ) : (
+        <h3 className="no_results">
+          Sorry, there are no rentals right now that match that language
+          preference!
+        </h3>
+      )}
     </>
   );
 }

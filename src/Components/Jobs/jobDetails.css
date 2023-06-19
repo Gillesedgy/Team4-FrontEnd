@@ -75,7 +75,7 @@
   justify-content: center;
 }
 .details-icon img {
-  width: 50%;
+  height: 14em;
 }
 .job-details-body {
   padding: 5px;
@@ -123,32 +123,41 @@
 .center {
   margin-top: 1em;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  /* grid-template-columns: 1fr 2fr; */
   border-radius: 10px;
   background-color: rgba(85, 133, 195, 0.325);
-  width: 100%;
+  /* width: 100%; */
   padding: 0.5em;
   justify-content: space-between;
-  text-align: center;
+  text-align: left;
+  width: 50%;
 }
 
-.skill {
+/* .skill {
   border-right: 1px solid grey;
-}
-.skill,
-.requirement {
+} */
+.skill {
   width: 95%;
   padding: 12px 0;
   text-align: center;
   justify-content: center;
   line-height: 1.3;
 }
-.skill {
+/* .skill {
   padding-right: 10px;
-}
+} */
 
 .requirement {
-  padding-left: 10px;
+  margin-top: 1em;
+}
+.requirement p {
+  color: rgb(76, 74, 74);
+  margin-top: 4px;
+  margin-bottom: 2px;
+}
+.req_ul li {
+  margin-left: 1.3em;
+  list-style-type: circle;
 }
 
 .divide {

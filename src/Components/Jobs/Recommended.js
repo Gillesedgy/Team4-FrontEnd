@@ -13,7 +13,7 @@ export default function Recommended({
         {" "}
         <div className="img-details">
           <img className="img" src={logoImage} alt="job_icon" />
-          <h5>{job_title}</h5>@<p className="recommendedP">{company}</p>
+          <h4>{job_title}</h4>@<p className="recommendedP">{company}</p>
         </div>
       </Link>
     </div>

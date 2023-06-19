@@ -1,8 +1,11 @@
 .rentals_page {
   padding: 1.5em;
-  padding-top: 5.2em;
+  padding-top: 5em;
   margin: 1.5em;
   font-family: sans-serif;
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .rentals {
@@ -15,8 +18,8 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1em;
-  width: 90%;
-  font-size: 1.6em;
+  width: 100%;
+  font-size: 1.8em;
   color: rgb(60, 60, 60);
 }
 
@@ -105,8 +108,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-left: 1.6em;
-  padding-right: 1.6em;
+  margin-bottom: 1em;
 }
 
 .rentals_page_main_container {
@@ -146,25 +148,9 @@
   justify-content: space-evenly;
 }
 
-/* .rentals_add {
-  margin: 10px;
-  padding: 0.5em;
-  border: 1px solid rgb(132, 133, 133);
-  color: rgb(15, 14, 14);
-  background-color: rgb(216, 169, 143);
-  border-radius: 8px;
-  font-size: 18px;
-  margin-bottom: 22px;
-  width: 90%;
-}
-
-.rentals_add:hover {
-  transform: translateY(-1.5px);
-  background-color: rgb(177, 176, 176);
-  border: 1px solid (240, 184, 166) rgb;
-} */
 .rentals_add {
   margin: 10px;
+  margin-top: 0.9em;
   padding: 5px;
   border: 1px solid rgb(242, 162, 82);
   color: rgb(15, 14, 14);
@@ -172,16 +158,14 @@
   border-radius: 6px;
   font-size: 35px;
   width: 80%;
-  height: 70%;
-  }
-  
-  
-  .rentals_add:hover {
+  height: 50%;
+}
+
+.rentals_add:hover {
   transform: translateY(-1.5px);
   background-color: rgb(252, 182, 103);
   border: 1px solid (240, 184, 166) rgb;
-  }
-  
+}
 
 .rental_description {
   margin-right: 1em;
@@ -191,8 +175,9 @@
 @media (max-width: 767px) {
   .title_add_container {
     padding: 0px;
-    padding-right: 0.5em;
-    margin-left: -8px;
+
+    margin-left: -18px;
+    width: 110%;
   }
 
   .rentals_page_main_container {
@@ -212,7 +197,10 @@
   }
 
   .rentals_add {
-    padding: 0.11em;
+    padding: 0.1em;
+
+    width: auto;
+    height: 60%;
   }
 
   .rental_image {
