@@ -10,6 +10,10 @@
   text-decoration: none;
   padding: 10px;
 }
+.img {
+  width: 5rem;
+}
+
 .recommended {
   border: 2px solid rgb(170, 168, 168);
   border-style: dotted;

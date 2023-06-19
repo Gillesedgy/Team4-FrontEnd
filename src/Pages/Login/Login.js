@@ -12,6 +12,8 @@ const API = process.env.REACT_APP_API_URL;
 //const TRANSLATION_API = process.env.REACT_APP_TRANSLATE_API_KEY;
 
 export default function Login() {
+  //* ERROR HANDLING
+  const [error, setError] = useState("");
   const [userLogin, setUserLogin] = useState({
     username: "",
     password: "",
@@ -21,7 +23,7 @@ export default function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
+    setError(null);
     loginUser(user);
   };
 
@@ -60,7 +62,10 @@ export default function Login() {
           localStorage.setItem("user_info", JSON.stringify(response.data));
           return translateSite(content, response.data.native_language);
         },
-        (error) => console.log(error)
+        (error) => {
+          setError(error.response.data.message);
+          console.log(error);
+        }
       )
       .then((translationJson) =>
         localStorage.setItem(
@@ -115,6 +120,7 @@ export default function Login() {
           </Link>
         </p>
       </div>
+      {error && <div className="error-message">{error}</div>}
     </div>
   );
 }

@@ -17,6 +17,8 @@ export default function JobDetails({ handleAddressSubmit }) {
   const [jobs, setJobs] = useState([]);
   const [showMap, setShowMap] = useState(false);
   const [recommended, setRecommended] = useState([]);
+  // Show Recs
+  const [showRecs, setShowRecs] = useState(false);
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -38,10 +40,16 @@ export default function JobDetails({ handleAddressSubmit }) {
       })
       .catch((error) => console.warn(error));
   }, []); // Fetching for similar jobs
+  // TOGGLE RECS
+  const handleToggleRecs = () => {
+    setShowRecs(!showRecs);
+  };
 
+  // Rec Jobs Section
   const filtered = recommended.filter((rec) => {
-    return rec.skills === jobs.skills && rec.id !== jobs.id;
+    return rec.native_language === jobs.native_language && rec.id !== jobs.id;
   });
+  const displayedRecs = showRecs ? recommended : filtered.slice(0, 4);
   //
   const deleteJob = () => {
     axios
@@ -69,6 +77,7 @@ export default function JobDetails({ handleAddressSubmit }) {
   let middle = dateMade.split(" ").splice(1, 2).join(" ");
   // Logo handler
   const logoImage = jobs.logo ? jobs.logo : jobImage;
+
   return (
     <div className="job-page-whole">
       <div className="page-container">
@@ -169,9 +178,14 @@ export default function JobDetails({ handleAddressSubmit }) {
           <div className="contact-rec-container">
             <div className="recommended-container">
               <h3>Recommended</h3>
-              {filtered.map((rec) => {
+              {displayedRecs.map((rec) => {
                 return <Recommended key={rec.id} rec={rec} />;
               })}
+              {recommended.length > 3 && (
+                <div className="show-more-button" onClick={handleToggleRecs}>
+                  {showRecs ? "Show less" : "Show more"}
+                </div>
+              )}
             </div>
             <div className="contact-container">
               <h3>Contact</h3>
