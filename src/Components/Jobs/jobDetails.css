@@ -212,7 +212,9 @@
 
 .recommended-container {
   width: 45%;
+  /* overflow-y: scroll; */
 }
+
 /* button */
 .buttons-container {
   justify-content: space-between;
