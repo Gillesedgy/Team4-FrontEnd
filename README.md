@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Out&Abt
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Out&Abt is an app designed for immigrants in the US, providing them with a platform to find a supportive community and start a life based on their native language. The app allows users to filter through jobs and rentals specifically tailored to their language skills, enabling them to showcase their qualifications effectively, even if they don't align with local requirements.
 
-In the project directory, you can run:
+## Key Features
 
-### `npm start`
+- Filter jobs and rentals based on users' native language
+- Tailored opportunities from local businesses and employers
+- Ability to showcase skills and credentials effectively
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The Out&Abt app is built using the following technologies:
 
-### `npm test`
+- React
+- React Icons
+- React Dom
+- EmailJS
+- Google Cloud Translate
+- Google Maps API
+- React Router
+- React Paginate
+- React Slick
+- Axios
+- React Scroll
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+- Please go to  https://github.com/Gillesedgy/Team4-BackEnd-Server.git and follow install instructions
+  
+To install and set up the Out&Abt React app locally, follow these steps:
+1. git clone [https://github.com/Gillesedgy/Team4-BackEnd-Server.git](https://github.com/Gillesedgy/Team4-FrontEnd)
+2. Navigate to the cloned repository in your terminal: cd [Path to this repository]
+3. Install the required dependencies by running the following command: npm install
+4. Start the React app by running the following command: npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The app will open in your default web browser. If it doesn't open automatically, you can access it by visiting [http://localhost:3000](http://localhost:3000).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Once the Out&Abt app is launched, you can explore its various sections and features. Here's a brief overview:
 
-### `npm run eject`
+- Home Page: Scroll through the page to see the services of Out&Abt.
+- Get Started: Click the "Get Started" button to create an account and log in.
+- Language Selection: Notice that the text changes based on the language you choose during account creation.
+- Navbar: Use the navbar to navigate through the app and access pages like Account, Rentals, Jobs, and the Community Board. Click the logo to return to the home page.
+- Rentals Page: Filter rentals based on native language using the language dropdown. Click on a rental post to view more information. You can view the apartment location on the map and contact the lister using the provided contact form.
+- Jobs Page: Filter jobs based on language. Click on a job post to see more details, including the job's location on the map. You can also contact the lister directly through the contact form.
+- Community Board: Engage with the community by browsing and interacting with posts. Use the navbar to filter through the community page and create new posts.
+- Resource Section: Find additional help and support through curated links that direct you to official websites.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contributing
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Contributions to the Out&Abt project are welcome! If you'd like to contribute, please follow these guidelines:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Submit bug reports or feature requests by opening an issue on the GitHub repository.
+- Fork the repository, make changes, and submit a pull request for review.
+- Adhere to the coding standards and practices followed in the project.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Contact
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Feel free to reach out to us with any questions or feedback:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Dilruba: [LinkedIn](https://www.linkedin.com/in/dilruba-majumder-27bbb5243/)
+- Edgy: [LinkedIn](https://www.linkedin.com/in/edgy-gilles-421967148/)
+- Mina: [LinkedIn](https://www.linkedin.com/in/mina-grullon-961376243/)
+- Lennie: [LinkedIn](https://www.linkedin.com/in/lennie-nurse-943b3973/)
+- Nikesh: [LinkedIn](https://www.linkedin.com/in/nikesh-wankhade-517a01230/)
