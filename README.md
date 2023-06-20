@@ -6,9 +6,13 @@ Out&Abt is an app designed for immigrants in the US, providing them with a platf
 
 ## Key Features
 
-- Filter jobs and rentals based on users' native language
+- Tailored opportunities for immigrants based on their native language
+- Filter jobs and rentals by language to find relevant opportunities
+- Contact the lister directly through the provided contact form
 - Tailored opportunities from local businesses and employers
-- Ability to showcase skills and credentials effectively
+- Showcase skills and credentials effectively to local businesses and employers
+- Explore rental and job listings with detailed information and map view
+- Engage with the community through the community board, post, and interact with other users throught the comment section
 
 ## Technologies
 
@@ -18,13 +22,13 @@ The Out&Abt app is built using the following technologies:
 - React Icons
 - React Dom
 - EmailJS
-- Google Cloud Translate
 - Google Maps API
 - React Router
 - React Paginate
 - React Slick
 - Axios
 - React Scroll
+- Lecto.Ai API 
 
 ## Installation
 
