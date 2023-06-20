@@ -4,8 +4,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid grey;
-  border-radius: 8px;
+  /* border: 1px solid grey; */
+  /* border-radius: 8px; */
   padding-left: 1em;
   padding-bottom: 2em;
   padding-right: 1em;
@@ -121,7 +121,10 @@
 .slick-arrow.slick-hidden {
   display: none;
 }
-
+.slick-dots {
+  background-color: rgba(243, 233, 220, 0.637);
+  border-radius: 10px;
+}
 /*media queries */
 @media (max-width: 767px) {
   .carousel {

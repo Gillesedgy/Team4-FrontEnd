@@ -43,7 +43,7 @@
 .rental_dets_image img {
   border-radius: 8px;
   height: 28em;
-  margin-top: 1em;
+  /* margin-top: 1em; */
   margin-left: auto;
   margin-right: auto;
 }
@@ -109,6 +109,9 @@
   border-radius: 10px;
   padding: 1em;
   margin-bottom: 0.7em;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .suggested:hover {
@@ -238,8 +241,12 @@
   }
 
   .rental_dets_image img {
-    height: 24em;
+    height: 22em;
     width: auto;
     border-radius: 6px;
+  }
+
+  .sug_image {
+    height: 8em;
   }
 }
