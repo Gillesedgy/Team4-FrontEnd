@@ -21,7 +21,7 @@
   position: relative;
   position: block;
   height: 500px;
-  width: 600px;
+  width: 700px;
 
   display: block;
   box-sizing: border-box;
@@ -156,7 +156,7 @@
   .slick-slider {
     position: relative;
     height: 400px;
-    width: 500px;
+    width: 550px;
   }
 
   .slick-dots {
