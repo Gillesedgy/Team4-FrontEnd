@@ -59,9 +59,10 @@ Once the Out&Abt app is launched, you can explore its various sections and featu
 
 Contributions to the Out&Abt project are welcome! If you'd like to contribute, please follow these guidelines:
 
-- Submit bug reports or feature requests by opening an issue on the GitHub repository.
+- Submit bug reports or feature requests by conacting us.
 - Fork the repository, make changes, and submit a pull request for review.
 - Adhere to the coding standards and practices followed in the project.
+- Contact us for more information. 
 
 
 ## Contact
