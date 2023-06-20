@@ -15,12 +15,16 @@
 }
 
 .rentals_title {
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 1em;
-  width: 100%;
-  font-size: 1.8em;
-  color: rgb(60, 60, 60);
+  padding-top: 20px;
+  padding-left: 1rem;
+  font-size: 1.7em;
+  color: rgb(47, 48, 49);
+  background-image: url("../../Assets/rental-title.png");
+  background-repeat: no-repeat;
+background-size: 230px;
 }
 
 .lang_select {

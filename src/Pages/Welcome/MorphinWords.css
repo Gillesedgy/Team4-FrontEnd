@@ -17,12 +17,12 @@
 #text2 {
   position: absolute;
   display: inline-block;
-  top:15%;
+  top:10%;
     left: 50%;
   font-size: 60pt;
   text-align: center;
   user-select: none;
-  margin-top: 80px;
+  margin-top: 60px;
   transform: translate(-50%, -50%);
 
 }
