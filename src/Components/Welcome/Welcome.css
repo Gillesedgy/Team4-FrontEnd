@@ -1,21 +1,19 @@
-
 .welcometext {
   margin-top: 0px;
   font-size: 20px;
   text-align: center;
- 
 }
 
 .welcome_p {
   font-size: 40px;
   text-align: center;
   justify-content: center;
-  color: #B24121;
+  color: #b24121;
 }
 
 .welcome-btn-div {
   margin-top: 20px;
-  margin-left: -90px;
+  margin-left: -100px;
   display: flex;
   justify-content: center;
   margin-bottom: 0%;
@@ -45,7 +43,6 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: baseline;
-
 }
 
 .welcome-btn:hover,
@@ -68,33 +65,103 @@
   transform: translateY(0);
 }
 
-.doodle1{
-  margin-top: 50px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 0%;
+.doodle1 {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+.doodle-img {
+  height: 100%;
+  margin-top: 3rem;
 }
 
-@media screen and (max-width: 960px) {
-  .doodle1{
-    margin-left: 250px;
+@media (max-width: 1024px) {
+  .welcome_p {
+    font-size: 2.3rem;
+    text-align: center;
+    justify-content: center;
+  }
+  .welcome-btn-div {
+    margin-top: 20px;
+    margin-left: -90px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0%;
+  }
+
+  .doodle1 {
     position: relative;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+  }
+  .doodle-img {
+    height: 100%;
+    margin-top: 3rem;
   }
 }
 
-@media (max-width: 480px) {
-  
-  
-   
+@media (min-width: 768px) {
+  .welcome_p {
+    font-size: 3.3rem;
+    text-align: center;
+    justify-content: center;
+  }
+  .welcome-btn-div {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0%;
+  }
+
+  .doodle1 {
+    position: relative;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+  }
+  .doodle-img {
+    height: 100%;
+    margin-top: 3rem;
+  }
 }
 
-@media (max-width: 767px) {
 
+@media (max-width: 425px) {
+  .welcome_p {
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    justify-content: center;
+  }
 
- 
-}
+  .welcome-btn-div {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+  }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+  .welcome-btn {
+    align-items: center;
+    background-color: #fcaf33;
+    border-radius: 0.25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgba(252, 254, 255, 0.85);
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 16px;
+    line-height: 1.25;
+  }
 
-  
+  .doodle1 {
+    display: none;
+  }
+  .doodle-img {
+    height: 100%;
+    margin-top: 3rem;
+  }
 }

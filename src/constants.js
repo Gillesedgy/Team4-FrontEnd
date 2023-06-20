@@ -90,6 +90,27 @@ export const languages = {
     zu: "Zulu",
   };
 
+
+
+ export const countryFlagImages = [
+  "https://flagcdn.com/w640/us.png",     // English
+  "https://flagcdn.com/w640/mx.png",     // Spanish
+  "https://flagcdn.com/w640/cn.png",  // Chinese Simplified
+  "https://flagcdn.com/w640/bd.png",     // Bengali
+  "https://flagcdn.com/w640/in.png",     // Hindi
+  "https://flagcdn.com/w640/kr.png",     // Korean
+  "https://flagcdn.com/w640/ps.png",     // Arabic
+  "https://flagcdn.com/w640/jp.png",     // Japanese
+  "https://flagcdn.com/w640/ht.png",     // Hatian Creole
+  "https://flagcdn.com/w640/ph.png",     // Filipino
+  "https://flagcdn.com/w640/pk.png",     // Urdu
+  "https://flagcdn.com/w640/fr.png",     // French
+  "https://flagcdn.com/w640/de.png",     // German
+  "https://flagcdn.com/w640/it.png",     // Italian
+  "https://flagcdn.com/w640/vn.png"      // Vietnamese
+];
+
+
   export const pages = {
     WELCOME_PAGE: 'welcomePage',
     ABOUT_PAGE: 'aboutPage',
