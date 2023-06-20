@@ -29,13 +29,14 @@
   height: 350px;
 }
 .job-container:hover {
-  background: linear-gradient(
-    90deg,
-    rgba(146, 210, 200, 1) 0%,
-    rgba(236, 241, 240, 1) 74%
-  );
+
+  background: rgb(202,223,246);
+background: linear-gradient(90deg, rgba(202,223,246,1) 29%, rgba(223,224,226,1) 67%);
+
 }
-.icon-company-container {
+
+
+  .icon-company-container {
   font-size: 1.3em;
   display: flex;
   flex-direction: column;
@@ -51,7 +52,7 @@
 .middle-section {
   align-items: center;
   text-align: center;
-  color: rgb(74, 110, 222);
+  color: rgb(91, 126, 229);
 }
 .left-section {
   display: flex;
@@ -92,9 +93,13 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 1em;
+  margin-top: 20px;
+  padding-top: 20px;
   font-size: 1.8em;
-  color: rgb(74, 110, 222);
+  color: rgb(47, 48, 49);
+  background-image: url("../../Assets/blue4.png");
+  background-repeat: no-repeat;
+background-size: 200px;
 }
 .jobs-button-container {
   display: flex;
@@ -110,17 +115,16 @@
   margin: 10px;
   padding: 0.5em;
   margin-top: 2em;
-  color: rgb(171, 237, 237);
   background-color: rgb(255, 255, 255);
-  width: auto;
-  height: 80%;
+  width: 4rem;
   cursor: pointer;
   font-size: 18px;
   border-radius: 8px;
+  border-color: #97bae0;
 }
 
 .add-button:hover {
-  background: #97e0da;
+  background: #97bae0;
 }
 .company {
   font-size: 1em;

@@ -1,7 +1,6 @@
 .welcome-img {
   width: 105%;
   display: flex;
-  margin-top: 0%;
   justify-content: right;
 }
 .welcome-doodle {
@@ -16,6 +15,9 @@
   display: flex;
   flex-direction: row;
   margin-right: 0;
+}
+.people-image-container {
+  object-fit: cover;
 }
 
 .welcome-doodle-container{

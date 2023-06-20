@@ -1,5 +1,5 @@
 .welcometext {
-  margin-top: 0px;
+  margin-top: 100px;
   font-size: 20px;
   text-align: center;
 }
@@ -9,6 +9,7 @@
   text-align: center;
   justify-content: center;
   color: #b24121;
+  padding: .5rem;
 }
 
 .welcome-btn-div {
@@ -116,7 +117,7 @@
     margin-bottom: 0%;
   }
 
-  .doodle1 {
+  /* .doodle1 {
     position: relative;
     justify-content: center;
     width: 70px;
@@ -126,7 +127,7 @@
   .doodle-img {
     height: 100%;
     margin-top: 3rem;
-  }
+  } */
 }
 
 
