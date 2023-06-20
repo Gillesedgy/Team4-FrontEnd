@@ -79,7 +79,7 @@ export default function MapContainer({ location }) {
     <div className="map">
       {isLoaded ? (
         <GoogleMap
-          zoom={20}
+          zoom={17}
           center={{ lat: latitude, lng: longitude }}
           mapContainerStyle={{ height: "100%", width: "100%" }}
           onLoad={handleMapLoad}
