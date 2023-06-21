@@ -28,6 +28,8 @@
 .box {
   width: 100%;
   display: flex;
+  margin-left: 0 auto;
+  margin-right: 0 auto
 }
 
 .boxes {
@@ -221,7 +223,30 @@
  
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 1240px) {
 
+  .rentals-about {
+   width: fit-content;
+   justify-content: center;
+
+  }
   
+  .community-about {
+    width: fit-content;
+    justify-content: center;
+    margin-left: 0 auto;
+    margin-right: 0 auto
+  
+   }
+   
+  
+  .jobs-about {
+   
+    width: fit-content;
+   justify-content: center;
+   margin-left: 0 auto;
+   margin-right: 0 auto
+ 
+  
+  }
 }

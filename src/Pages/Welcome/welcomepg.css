@@ -1,15 +1,12 @@
 .welcome-img {
-  width: 105%;
+  width: 100%;
   display: flex;
   justify-content: right;
 }
 .welcome-doodle {
-  width: 5%;
-  margin-top: 300px;
-  margin-left: 0%;
-  margin-right: 0%;
-  height: 200px;
-  width: 200px;
+  
+    display: none;
+  
 }
 .welcome-image-container {
   display: flex;

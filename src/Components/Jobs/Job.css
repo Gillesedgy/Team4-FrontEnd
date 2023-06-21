@@ -221,3 +221,14 @@ background-size: 200px;
     height: 85%;
   }
 }
+
+
+
+@media (min-width: 1024px) {
+  
+  .jobs-title {
+font-size: 1.5em;  }
+   
+  
+
+}
