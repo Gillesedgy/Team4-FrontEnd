@@ -64,6 +64,13 @@ Contributions to the Out&Abt project are welcome! If you'd like to contribute, p
 - Adhere to the coding standards and practices followed in the project.
 - Contact us for more information. 
 
+## Team Members
+
+- Edgy: Full-stack Engineer with focus on front-end Development 
+- Dilruba: UX/UI Designer, Full-stack Engineer With focus on Front-end Development 
+- Mina: Full-stack Engineer with focus on front-end Development
+- Lennie: Full-stack Engineer with focus on back-end Development
+- Nikesh:Full-stack Engineer with focus on back-end Development
 
 ## Contact
 
